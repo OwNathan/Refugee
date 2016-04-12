@@ -35,9 +35,21 @@ namespace PixelCrushers.DialogueSystem
         [Tooltip("Optional audio source through which to play the clip")]
         public AudioSource audioSource = null;
 
+        /// <summary>
+        /// If audio clip is still playing from previous character, stop and restart it when typing next character.
+        /// </summary>
+        [Tooltip("If audio clip is still playing from previous character, stop and restart it when typing next character")]
+        public bool interruptAudioClip = false;
+
+        /// <summary>
+        /// Duration to pause on when text contains '\\.'
+        /// </summary>
         [Tooltip("Duration to pause on when text contains '\\.'")]
         public float fullPauseDuration = 1f;
 
+        /// <summary>
+        /// Duration to pause when text contains '\\,'
+        /// </summary>
         [Tooltip("Duration to pause when text contains '\\,'")]
         public float quarterPauseDuration = 0.25f;
 
@@ -46,6 +58,12 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         [Tooltip("Ensure this GameObject has only one typewriter effect")]
         public bool removeDuplicateTypewriterEffects = true;
+
+        /// <summary>
+        /// Wait one frame to allow layout elements to setup first.
+        /// </summary>
+        [Tooltip("Wait one frame to allow layout elements to setup first")]
+        public bool waitOneFrameBeforeStarting = false;
 
         public UnityEvent onBegin = new UnityEvent();
         public UnityEvent onCharacter = new UnityEvent();
@@ -185,7 +203,8 @@ namespace PixelCrushers.DialogueSystem
         {
             if ((control != null) && (charactersPerSecond > 0))
             {
-                yield return null;
+                if (waitOneFrameBeforeStarting) yield return null;
+                if (audioSource != null) audioSource.clip = audioClip;
                 onBegin.Invoke();
                 IsPlaying = true;
                 paused = false;
@@ -229,7 +248,13 @@ namespace PixelCrushers.DialogueSystem
                                 case TokenType.Pause:
                                     control.text = GetCurrentText(current, openTokenTypes, tokens);
                                     paused = true;
-                                    yield return new WaitForSeconds(token.duration);
+                                    var continueTime = DialogueTime.time + token.duration;
+                                    int pauseSafeguard = 0;
+                                    while (DialogueTime.time < continueTime && pauseSafeguard < 999)
+                                    {
+                                        pauseSafeguard++;
+                                        yield return null;
+                                    }
                                     paused = false;
                                     break;
                                 case TokenType.InstantOpen:
@@ -243,7 +268,13 @@ namespace PixelCrushers.DialogueSystem
                     //---Uncomment the line below to debug: 
                     // Debug.Log(control.text.Replace("<", "[").Replace(">", "]"));
                     lastTime = DialogueTime.time;
-                    yield return new WaitForSeconds(delay);
+                    var delayTime = DialogueTime.time + delay;
+                    int delaySafeguard = 0;
+                    while (DialogueTime.time < delayTime && delaySafeguard < 999)
+                    {
+                        delaySafeguard++;
+                        yield return null;
+                    }
                 }
             }
             Stop();
@@ -251,7 +282,16 @@ namespace PixelCrushers.DialogueSystem
 
         private void PlayCharacterAudio()
         {
-            if (audioClip != null && audioSource != null && !audioSource.isPlaying) audioSource.PlayOneShot(audioClip);
+            if (audioClip == null || audioSource == null) return;
+            if (interruptAudioClip)
+            {
+                if (audioSource.isPlaying) audioSource.Stop();
+                audioSource.Play();
+            }
+            else
+            {
+                if (!audioSource.isPlaying) audioSource.Play();
+            }
         }
 
         private Token GetNextToken(List<Token> tokens)
