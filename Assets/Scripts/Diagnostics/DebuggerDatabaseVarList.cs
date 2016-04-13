@@ -38,6 +38,6 @@ public class DebuggerDatabaseVarList : MonoBehaviour
     public void OnGUI()
     {
         if (isPanelActive)
-            GUI.TextArea(new Rect(10, 10, Screen.width - 10, Screen.height - 10), myLog);
+            GUI.TextArea(new Rect(10f, 10f, Screen.width * 0.3f, Screen.height * 0.3f), myLog);
     }
 }
