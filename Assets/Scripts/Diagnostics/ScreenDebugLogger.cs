@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScreenDebugLogger : MonoBehaviour
 {
-    private List<Variable> variables;
     private string myLog = string.Empty;
     private bool isPanelActive;
 
@@ -23,16 +22,7 @@ public class ScreenDebugLogger : MonoBehaviour
 
     private void UpdatePanel()
     {
-        variables = DialogueManager.Instance.DatabaseManager.MasterDatabase.variables;
-        variables.ForEach(hV =>
-        {
-            myLog += "[" + hV.Type + "]";
-            hV.fields.ForEach(hF =>
-            {
-                myLog += hF.value + " ";
-            });
-            myLog += "\n";
-        });
+        Debug.Log(DialogueLua.GetVariable("Firefight.Soldiers").AsTable);
     }
 
     public void OnGUI()
