@@ -78,7 +78,7 @@ ModelImporter:
     400068: //RootNode
     400070: SK_char_player_father_yelling_00
     4300000: SK_char_player_father_yelling_00
-    7400000: Father_Yelling
+    7400000: Rashid_Yelling
     9500000: //RootNode
     13700000: SK_char_player_father_yelling_00
   materials:
@@ -106,7 +106,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Father_Yelling
+      name: Rashid_Yelling
       takeName: Take 001
       firstFrame: 0
       lastFrame: 157
