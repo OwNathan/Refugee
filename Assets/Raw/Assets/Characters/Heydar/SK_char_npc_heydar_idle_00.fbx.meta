@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: c6ba220cb67cd7540acc30cb859da881
+timeCreated: 1461599437
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Heydar:Head
+    100002: Heydar:HeadTop_End
+    100004: Heydar:Heydar1
+    100006: Heydar:Hips
+    100008: Heydar:LeftArm
+    100010: Heydar:LeftFoot
+    100012: Heydar:LeftForeArm
+    100014: Heydar:LeftHand
+    100016: Heydar:LeftHandIndex1
+    100018: Heydar:LeftHandIndex2
+    100020: Heydar:LeftHandIndex3
+    100022: Heydar:LeftHandIndex4
+    100024: Heydar:LeftLeg
+    100026: Heydar:LeftShoulder
+    100028: Heydar:LeftToe_End
+    100030: Heydar:LeftToeBase
+    100032: Heydar:LeftUpLeg
+    100034: Heydar:Neck
+    100036: Heydar:RightArm
+    100038: Heydar:RightFoot
+    100040: Heydar:RightForeArm
+    100042: Heydar:RightHand
+    100044: Heydar:RightHandIndex1
+    100046: Heydar:RightHandIndex2
+    100048: Heydar:RightHandIndex3
+    100050: Heydar:RightHandIndex4
+    100052: Heydar:RightLeg
+    100054: Heydar:RightShoulder
+    100056: Heydar:RightToe_End
+    100058: Heydar:RightToeBase
+    100060: Heydar:RightUpLeg
+    100062: Heydar:Spine
+    100064: Heydar:Spine1
+    100066: Heydar:Spine2
+    100068: //RootNode
+    400000: Heydar:Head
+    400002: Heydar:HeadTop_End
+    400004: Heydar:Heydar1
+    400006: Heydar:Hips
+    400008: Heydar:LeftArm
+    400010: Heydar:LeftFoot
+    400012: Heydar:LeftForeArm
+    400014: Heydar:LeftHand
+    400016: Heydar:LeftHandIndex1
+    400018: Heydar:LeftHandIndex2
+    400020: Heydar:LeftHandIndex3
+    400022: Heydar:LeftHandIndex4
+    400024: Heydar:LeftLeg
+    400026: Heydar:LeftShoulder
+    400028: Heydar:LeftToe_End
+    400030: Heydar:LeftToeBase
+    400032: Heydar:LeftUpLeg
+    400034: Heydar:Neck
+    400036: Heydar:RightArm
+    400038: Heydar:RightFoot
+    400040: Heydar:RightForeArm
+    400042: Heydar:RightHand
+    400044: Heydar:RightHandIndex1
+    400046: Heydar:RightHandIndex2
+    400048: Heydar:RightHandIndex3
+    400050: Heydar:RightHandIndex4
+    400052: Heydar:RightLeg
+    400054: Heydar:RightShoulder
+    400056: Heydar:RightToe_End
+    400058: Heydar:RightToeBase
+    400060: Heydar:RightUpLeg
+    400062: Heydar:Spine
+    400064: Heydar:Spine1
+    400066: Heydar:Spine2
+    400068: //RootNode
+    4300000: Heydar:Heydar1
+    7400000: Heydar_Idle
+    9500000: //RootNode
+    13700000: Heydar:Heydar1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Heydar:Spine2' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Heydar_Idle
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 451
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Heydar:Heydar1
+        weight: 0
+      - path: Heydar:Hips
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot/Heydar:LeftToeBase
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot/Heydar:LeftToeBase/Heydar:LeftToe_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:RightUpLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot/Heydar:RightToeBase
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot/Heydar:RightToeBase/Heydar:RightToe_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2/Heydar:LeftHandIndex3
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2/Heydar:LeftHandIndex3/Heydar:LeftHandIndex4
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck/Heydar:Head
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck/Heydar:Head/Heydar:HeadTop_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2/Heydar:RightHandIndex3
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2/Heydar:RightHandIndex3/Heydar:RightHandIndex4
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Heydar:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Heydar:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SK_char_npc_heydar_idle_00(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:Heydar1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:Hips
+      position: {x: 0.00003532454, y: 1.0523392, z: 0.0048038224}
+      rotation: {x: -1.7205355e-18, y: -0.0000000014551915, z: -9.094947e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:Spine
+      position: {x: -0, y: 0.09019958, z: -0.0029707646}
+      rotation: {x: -0.01646102, y: 2.9941752e-12, z: -1.8187428e-10, w: 0.9998645}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:Spine1
+      position: {x: -0, y: 0.10528975, z: 0}
+      rotation: {x: -0.000000040978193, y: 7.2720163e-10, z: 2.3950716e-11, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Heydar:Spine2
+      position: {x: -0, y: 0.120331235, z: 0}
+      rotation: {x: 0.000000014901161, y: 7.2121364e-10, z: 2.0575108e-10, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:LeftShoulder
+      position: {x: -0.06514338, y: 0.111103855, z: -0.0008605265}
+      rotation: {x: 0.5718389, y: -0.4133379, z: 0.5792515, w: 0.4081908}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:LeftArm
+      position: {x: -0, y: 0.1397935, z: 2.842171e-16}
+      rotation: {x: -0.13450526, y: 0.0008299351, z: -0.004019618, w: 0.9909044}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:LeftForeArm
+      position: {x: 8.881784e-18, y: 0.21198326, z: -2.842171e-16}
+      rotation: {x: -0.055488423, y: -0.0010234416, z: 0.018413723, w: 0.99828905}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999998}
+      transformModified: 1
+    - name: Heydar:LeftHand
+      position: {x: -0, y: 0.30512828, z: -2.842171e-16}
+      rotation: {x: -0.014322236, y: 0.00095009804, z: -0.06618731, w: 0.997704}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: Heydar:LeftHandIndex1
+      position: {x: 8.881784e-18, y: 0.08248446, z: 2.842171e-16}
+      rotation: {x: 0.0132283075, y: 0.002595692, z: 0.07979271, w: 0.9967204}
+      scale: {x: 1.0000001, y: 0.99999976, z: 1}
+      transformModified: 1
+    - name: Heydar:LeftHandIndex2
+      position: {x: -8.881784e-18, y: 0.030510744, z: 0}
+      rotation: {x: -0.14340949, y: 0.000000044703473, z: 0.029783733, w: 0.98921525}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: Heydar:LeftHandIndex3
+      position: {x: 0.0030391333, y: 0.039356966, z: 0.014633385}
+      rotation: {x: -0.31549346, y: 0.005747726, z: 0.050064195, w: 0.94758874}
+      scale: {x: 1.0000001, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:LeftHandIndex4
+      position: {x: 0.002968686, y: 0.00986916, z: 0.017574849}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:Neck
+      position: {x: -0, y: 0.1353726, z: 0.000000006142639}
+      rotation: {x: 0.016461046, y: -9.056274e-11, z: -2.423139e-11, w: 0.9998645}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: Heydar:Head
+      position: {x: -0, y: 0.07131118, z: 0.015843114}
+      rotation: {x: 0.0000000014551917, y: -0.0000000057298166, z: 1.13686845e-10,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Heydar:HeadTop_End
+      position: {x: -0, y: 0.23425873, z: 0.052044954}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:RightShoulder
+      position: {x: 0.06514338, y: 0.111099824, z: -0.0007381983}
+      rotation: {x: -0.57257175, y: -0.4126862, z: 0.5785647, w: -0.40879664}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Heydar:RightArm
+      position: {x: -1.7763568e-17, y: 0.1397935, z: -2.842171e-16}
+      rotation: {x: -0.13427001, y: -0.001221001, z: 0.008921712, w: 0.99090385}
+      scale: {x: 1, y: 1, z: 0.9999997}
+      transformModified: 1
+    - name: Heydar:RightForeArm
+      position: {x: -0, y: 0.21198355, z: 2.842171e-16}
+      rotation: {x: -0.05550985, y: 0.0010931492, z: -0.019659355, w: 0.99826396}
+      scale: {x: 1, y: 0.99999994, z: 1.0000002}
+      transformModified: 1
+    - name: Heydar:RightHand
+      position: {x: -0, y: 0.30514002, z: 0}
+      rotation: {x: 0.011206001, y: 0.0006726384, z: -0.059920236, w: -0.99814004}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Heydar:RightHandIndex1
+      position: {x: -0, y: 0.07308991, z: 0}
+      rotation: {x: 0.04270476, y: -0.00612475, z: 0.06925303, w: -0.99666584}
+      scale: {x: 0.9999997, y: 1.0000002, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:RightHandIndex2
+      position: {x: -0, y: 0.030765025, z: 0}
+      rotation: {x: -0.21173756, y: -0.00000011920929, z: -0.017971039, w: 0.97716135}
+      scale: {x: 0.9999998, y: 0.9999996, z: 0.9999997}
+      transformModified: 1
+    - name: Heydar:RightHandIndex3
+      position: {x: -0.0019646832, y: 0.04349217, z: 0.023148011}
+      rotation: {x: -0.117532395, y: -0.13531506, z: 0.24426529, w: 0.95300084}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+      transformModified: 1
+    - name: Heydar:RightHandIndex4
+      position: {x: 0.013494901, y: 0.014955976, z: 0.0147783775}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:LeftUpLeg
+      position: {x: -0.08908844, y: -0.05006355, z: -0.000010788441}
+      rotation: {x: -0.00021967165, y: 0.011554175, z: 0.9997526, w: 0.019007543}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
+      transformModified: 1
+    - name: Heydar:LeftLeg
+      position: {x: 1.7763568e-17, y: 0.43301386, z: -2.220446e-18}
+      rotation: {x: -0.02680865, y: -0.00063022895, z: 0.023493523, w: 0.99936426}
+      scale: {x: 1.0000002, y: 1.0000004, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:LeftFoot
+      position: {x: 3.5527136e-17, y: 0.45580906, z: -8.881784e-18}
+      rotation: {x: 0.5315163, y: 0.0033510078, z: -0.0021027492, w: 0.84703887}
+      scale: {x: 0.9999998, y: 0.9999997, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:LeftToeBase
+      position: {x: 1.7763568e-17, y: 0.18368918, z: 8.881784e-18}
+      rotation: {x: 0.23678225, y: 0.01454097, z: -0.0035442226, w: 0.97144747}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Heydar:LeftToe_End
+      position: {x: -0, y: 0.06977439, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Heydar:RightUpLeg
+      position: {x: 0.08908844, y: -0.05006355, z: 0.0022684645}
+      rotation: {x: 0.0002754999, y: 0.014492957, z: 0.9997144, w: -0.019003898}
+      scale: {x: 0.99999964, y: 0.99999976, z: 1.0000002}
+      transformModified: 1
+    - name: Heydar:RightLeg
+      position: {x: -1.7763568e-17, y: 0.43308014, z: 2.220446e-18}
+      rotation: {x: -0.036146104, y: 0.000849728, z: -0.023486877, w: 0.9990701}
+      scale: {x: 1.0000002, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Heydar:RightFoot
+      position: {x: 1.7763568e-17, y: 0.45602435, z: -8.881784e-18}
+      rotation: {x: 0.5387312, y: -0.0033028184, z: 0.002112042, w: 0.84246856}
+      scale: {x: 0.99999976, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Heydar:RightToeBase
+      position: {x: -1.7763568e-17, y: 0.1852133, z: -8.881784e-18}
+      rotation: {x: 0.23470539, y: -0.014723781, z: 0.003555465, w: 0.97194856}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: Heydar:RightToe_End
+      position: {x: 1.7763568e-17, y: 0.07002637, z: -1.110223e-18}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
