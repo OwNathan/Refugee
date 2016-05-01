@@ -92,7 +92,7 @@ ModelImporter:
     400082: SK_char_player_father__00
     400084: //RootNode
     4300000: SK_char_player_father__00
-    7400000: Rashid_Scavage
+    7400000: RashidScavage
     9500000: //RootNode
     13700000: SK_char_player_father__00
   materials:
@@ -120,7 +120,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rashid_Scavage
+      name: RashidScavage
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 279

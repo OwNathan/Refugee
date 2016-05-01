@@ -92,7 +92,7 @@ ModelImporter:
     400082: Daughter:Spine2
     400084: //RootNode
     4300000: Daughter:Daughter1
-    7400000: Niesha_Talk5
+    7400000: NieshaSob
     9500000: //RootNode
     13700000: Daughter:Daughter1
   materials:
@@ -120,7 +120,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Niesha_Talk5
+      name: NieshaSob
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 395

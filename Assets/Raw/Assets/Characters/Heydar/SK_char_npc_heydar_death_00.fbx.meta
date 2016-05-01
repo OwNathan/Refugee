@@ -76,7 +76,7 @@ ModelImporter:
     400066: Heydar:Spine2
     400068: //RootNode
     4300000: Heydar:Heydar1
-    7400000: mixamo.com
+    7400000: HeydarShotDead
     9500000: //RootNode
     13700000: Heydar:Heydar1
   materials:
@@ -90,7 +90,10 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Heydar:Spine2' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -99,7 +102,105 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HeydarShotDead
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 153
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Heydar:Heydar1
+        weight: 0
+      - path: Heydar:Hips
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot/Heydar:LeftToeBase
+        weight: 1
+      - path: Heydar:Hips/Heydar:LeftUpLeg/Heydar:LeftLeg/Heydar:LeftFoot/Heydar:LeftToeBase/Heydar:LeftToe_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:RightUpLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot/Heydar:RightToeBase
+        weight: 1
+      - path: Heydar:Hips/Heydar:RightUpLeg/Heydar:RightLeg/Heydar:RightFoot/Heydar:RightToeBase/Heydar:RightToe_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2/Heydar:LeftHandIndex3
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:LeftShoulder/Heydar:LeftArm/Heydar:LeftForeArm/Heydar:LeftHand/Heydar:LeftHandIndex1/Heydar:LeftHandIndex2/Heydar:LeftHandIndex3/Heydar:LeftHandIndex4
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck/Heydar:Head
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:Neck/Heydar:Head/Heydar:HeadTop_End
+        weight: 0
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2/Heydar:RightHandIndex3
+        weight: 1
+      - path: Heydar:Hips/Heydar:Spine/Heydar:Spine1/Heydar:Spine2/Heydar:RightShoulder/Heydar:RightArm/Heydar:RightForeArm/Heydar:RightHand/Heydar:RightHandIndex1/Heydar:RightHandIndex2/Heydar:RightHandIndex3/Heydar:RightHandIndex4
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -78,7 +78,7 @@ ModelImporter:
     400068: SK_char_player_father__00
     400070: //RootNode
     4300000: SK_char_player_father__00
-    7400000: Rashid_PullTheGun
+    7400000: RashidPullTheGun
     9500000: //RootNode
     13700000: SK_char_player_father__00
   materials:
@@ -106,7 +106,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rashid_PullTheGun
+      name: RashidPullTheGun
       takeName: Take 001
       firstFrame: 1
       lastFrame: 120

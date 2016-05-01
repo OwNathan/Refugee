@@ -76,7 +76,7 @@ ModelImporter:
     400066: Mother:Mother:Spine2
     400068: //RootNode
     4300000: Mother:Mother:polySurface144
-    7400000: mixamo.com
+    7400000: AshaTalkOneHand
     9500000: //RootNode
     13700000: Mother:Mother:polySurface144
   materials:
@@ -90,16 +90,117 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Mother:Mother:Spine2' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: AshaTalkOneHand
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 264
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mother:Mother:Hips
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:LeftUpLeg
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:LeftUpLeg/Mother:Mother:LeftLeg
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:LeftUpLeg/Mother:Mother:LeftLeg/Mother:Mother:LeftFoot
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:LeftUpLeg/Mother:Mother:LeftLeg/Mother:Mother:LeftFoot/Mother:Mother:LeftToeBase
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:LeftUpLeg/Mother:Mother:LeftLeg/Mother:Mother:LeftFoot/Mother:Mother:LeftToeBase/Mother:Mother:LeftToe_End
+        weight: 0
+      - path: Mother:Mother:Hips/Mother:Mother:RightUpLeg
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:RightUpLeg/Mother:Mother:RightLeg
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:RightUpLeg/Mother:Mother:RightLeg/Mother:Mother:RightFoot
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:RightUpLeg/Mother:Mother:RightLeg/Mother:Mother:RightFoot/Mother:Mother:RightToeBase
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:RightUpLeg/Mother:Mother:RightLeg/Mother:Mother:RightFoot/Mother:Mother:RightToeBase/Mother:Mother:RightToe_End
+        weight: 0
+      - path: Mother:Mother:Hips/Mother:Mother:Spine
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm/Mother:Mother:LeftHand
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm/Mother:Mother:LeftHand/Mother:Mother:LeftHandIndex1
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm/Mother:Mother:LeftHand/Mother:Mother:LeftHandIndex1/Mother:Mother:LeftHandIndex2
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm/Mother:Mother:LeftHand/Mother:Mother:LeftHandIndex1/Mother:Mother:LeftHandIndex2/Mother:Mother:LeftHandIndex3
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:LeftShoulder/Mother:Mother:LeftArm/Mother:Mother:LeftForeArm/Mother:Mother:LeftHand/Mother:Mother:LeftHandIndex1/Mother:Mother:LeftHandIndex2/Mother:Mother:LeftHandIndex3/Mother:Mother:LeftHandIndex4
+        weight: 0
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:Neck
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:Neck/Mother:Mother:Head
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:Neck/Mother:Mother:Head/Mother:Mother:HeadTop_End
+        weight: 0
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm/Mother:Mother:RightHand
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm/Mother:Mother:RightHand/Mother:Mother:RightHandIndex1
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm/Mother:Mother:RightHand/Mother:Mother:RightHandIndex1/Mother:Mother:RightHandIndex2
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm/Mother:Mother:RightHand/Mother:Mother:RightHandIndex1/Mother:Mother:RightHandIndex2/Mother:Mother:RightHandIndex3
+        weight: 1
+      - path: Mother:Mother:Hips/Mother:Mother:Spine/Mother:Mother:Spine1/Mother:Mother:Spine2/Mother:Mother:RightShoulder/Mother:Mother:RightArm/Mother:Mother:RightForeArm/Mother:Mother:RightHand/Mother:Mother:RightHandIndex1/Mother:Mother:RightHandIndex2/Mother:Mother:RightHandIndex3/Mother:Mother:RightHandIndex4
+        weight: 0
+      - path: Mother:Mother:polySurface144
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -125,8 +226,402 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    human: []
-    skeleton: []
+    human:
+    - boneName: Mother:Mother:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mother:Mother:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SK_char_npc_asha_talk_onehand_00(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:polySurface144
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Hips
+      position: {x: 0.0025704945, y: 0.9853639, z: 0.0101545155}
+      rotation: {x: -0.000000005820765, y: -0.0000000029103826, z: 0.0000000020008881,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Spine
+      position: {x: -0, y: 0.08858032, z: -0.0076798084}
+      rotation: {x: -0.043227732, y: 0.0000000029138667, z: -1.7585808e-11, w: 0.9990653}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Spine1
+      position: {x: -0, y: 0.103731476, z: 0}
+      rotation: {x: -0.000000052154057, y: 1.13294416e-10, z: -0.0000000013067599,
+        w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Spine2
+      position: {x: -0, y: 0.118550204, z: 0}
+      rotation: {x: -0.0000000037252899, y: -7.855741e-11, z: 9.0609575e-10, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:RightShoulder
+      position: {x: 0.051287536, y: 0.117488876, z: -0.0014989363}
+      rotation: {x: -0.55986947, y: -0.42692408, z: 0.5762896, w: -0.41493642}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+      transformModified: 1
+    - name: Mother:Mother:RightArm
+      position: {x: 1.7763568e-17, y: 0.11089558, z: 0}
+      rotation: {x: -0.11777763, y: -0.0017079115, z: 0.013308376, w: 0.9929494}
+      scale: {x: 1.0000001, y: 0.99999964, z: 0.99999964}
+      transformModified: 1
+    - name: Mother:Mother:RightForeArm
+      position: {x: -2.6645352e-17, y: 0.25332728, z: 0}
+      rotation: {x: -0.0012965202, y: -0.000014483929, z: 0.011133239, w: 0.9999372}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: Mother:Mother:RightHand
+      position: {x: 1.7763568e-17, y: 0.25432143, z: -1.4210854e-16}
+      rotation: {x: -0.057622, y: -0.0038579702, z: 0.06669195, w: 0.9961009}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Mother:Mother:RightHandIndex1
+      position: {x: -0, y: 0.07460279, z: 0}
+      rotation: {x: -0.06662641, y: -0.46455657, z: 0.035078276, w: -0.88233644}
+      scale: {x: 1, y: 0.9999997, z: 0.99999964}
+      transformModified: 1
+    - name: Mother:Mother:RightHandIndex2
+      position: {x: 1.4210854e-16, y: 0.027298668, z: 0}
+      rotation: {x: 0.019947084, y: -0.00000007450581, z: -0.02695495, w: 0.99943763}
+      scale: {x: 1, y: 0.9999999, z: 1.0000004}
+      transformModified: 1
+    - name: Mother:Mother:RightHandIndex3
+      position: {x: -0.004421126, y: 0.037146993, z: -0.0032719204}
+      rotation: {x: -0.05457529, y: -0.031401146, z: -0.28276432, w: 0.9571206}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:RightHandIndex4
+      position: {x: -0.011899633, y: 0.012844146, z: 0.00087037846}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:LeftShoulder
+      position: {x: -0.051287536, y: 0.11746785, z: -0.0012564494}
+      rotation: {x: 0.5612852, y: -0.42587394, z: 0.57507575, w: 0.4157864}
+      scale: {x: 0.99999976, y: 0.99999994, z: 0.99999976}
+      transformModified: 1
+    - name: Mother:Mother:LeftArm
+      position: {x: -0, y: 0.11089558, z: -2.842171e-16}
+      rotation: {x: -0.1180322, y: 0.0013757645, z: -0.010473519, w: 0.99295366}
+      scale: {x: 1, y: 0.9999999, z: 1.0000002}
+      transformModified: 1
+    - name: Mother:Mother:LeftForeArm
+      position: {x: 8.881784e-18, y: 0.25330973, z: 0}
+      rotation: {x: -0.0010662228, y: 0.000014722347, z: -0.01376839, w: 0.99990463}
+      scale: {x: 0.9999999, y: 0.9999997, z: 0.99999994}
+      transformModified: 1
+    - name: Mother:Mother:LeftHand
+      position: {x: -0, y: 0.25433537, z: 0}
+      rotation: {x: -0.050287396, y: 0.003441006, z: -0.068179876, w: 0.996399}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: Mother:Mother:LeftHandIndex1
+      position: {x: 1.7763568e-17, y: 0.07235029, z: 0}
+      rotation: {x: 0.056569282, y: -0.6694956, z: 0.051257376, w: 0.73888326}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: Mother:Mother:LeftHandIndex2
+      position: {x: -0, y: 0.029154122, z: 0}
+      rotation: {x: 0.056264523, y: -0.000000007450577, z: 0.20791627, w: 0.97652715}
+      scale: {x: 1, y: 0.9999997, z: 0.99999994}
+      transformModified: 1
+    - name: Mother:Mother:LeftHandIndex3
+      position: {x: 0.018258682, y: 0.034937263, z: -0.0049410313}
+      rotation: {x: 0.23232175, y: -0.14434856, z: -0.1621628, w: 0.94809985}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000002}
+      transformModified: 1
+    - name: Mother:Mother:LeftHandIndex4
+      position: {x: 0.00034715442, y: 0.009997334, z: -0.0084016975}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Neck
+      position: {x: -0, y: 0.13336892, z: 0.0000000039648778}
+      rotation: {x: 0.043227796, y: -0.000000002915526, z: 5.5919505e-11, w: 0.9990653}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:Head
+      position: {x: -0, y: 0.065554656, z: 0.011035306}
+      rotation: {x: 0.0000000029103826, y: 0.000000005820766, z: -0.0000000020008886,
+        w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:HeadTop_End
+      position: {x: -0, y: 0.23924422, z: 0.04027379}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:LeftUpLeg
+      position: {x: -0.10602379, y: -0.04921127, z: -0.0065935403}
+      rotation: {x: -0.00000002041892, y: -0.005010823, z: 0.9999875, w: 0.000000009174648}
+      scale: {x: 0.99999976, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Mother:Mother:LeftLeg
+      position: {x: -0, y: 0.428375, z: 0}
+      rotation: {x: -0.012575734, y: -0.00044355955, z: 0.035242215, w: 0.9992996}
+      scale: {x: 0.99999964, y: 0.99999976, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:LeftFoot
+      position: {x: 8.881784e-18, y: 0.39402613, z: 0}
+      rotation: {x: 0.49409717, y: 0.09871365, z: -0.05658718, w: 0.86192894}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+      transformModified: 1
+    - name: Mother:Mother:LeftToeBase
+      position: {x: 8.881784e-18, y: 0.1603737, z: 8.881784e-18}
+      rotation: {x: 0.26955563, y: -0.0019905567, z: 0.0005572103, w: 0.96298265}
+      scale: {x: 0.9999997, y: 0.99999946, z: 0.9999997}
+      transformModified: 1
+    - name: Mother:Mother:LeftToe_End
+      position: {x: -0, y: 0.058253817, z: 2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:RightUpLeg
+      position: {x: 0.10602379, y: -0.04921127, z: -0.0059771924}
+      rotation: {x: 0.000000008695469, y: -0.0047710342, z: 0.9999886, w: 0.000000007499429}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:RightLeg
+      position: {x: -0, y: 0.42837298, z: 0}
+      rotation: {x: -0.014922329, y: 0.00052625174, z: -0.03524007, w: 0.99926734}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+      transformModified: 1
+    - name: Mother:Mother:RightFoot
+      position: {x: 8.881784e-18, y: 0.3940881, z: 0}
+      rotation: {x: 0.46970907, y: -0.11323636, z: 0.060897168, w: 0.87340856}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999976}
+      transformModified: 1
+    - name: Mother:Mother:RightToeBase
+      position: {x: -8.881784e-18, y: 0.14713672, z: 0}
+      rotation: {x: 0.29633182, y: 0.0032204986, z: -0.0009992011, w: 0.9550792}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
+      transformModified: 1
+    - name: Mother:Mother:RightToe_End
+      position: {x: -8.881784e-18, y: 0.05194725, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -137,7 +632,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
