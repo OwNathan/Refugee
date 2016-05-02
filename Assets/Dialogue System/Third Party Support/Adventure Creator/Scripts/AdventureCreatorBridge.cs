@@ -308,7 +308,8 @@ namespace PixelCrushers.DialogueSystem.AdventureCreator {
 			}
 		}
 
-		public void SyncLuaToVariables() {
+		public void SyncLuaToVariables()
+        {
 			SyncLuaToVarList(AC.KickStarter.runtimeVariables.globalVars, true);
 			SyncLuaToVarList(AC.KickStarter.localVariables.localVars, false);
 		}
