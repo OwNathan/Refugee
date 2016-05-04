@@ -1,0 +1,694 @@
+fileFormatVersion: 2
+guid: 23101a5ce88d31b41bbf5a3858fe8871
+timeCreated: 1462283488
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Rashid:Head
+    100002: Rashid:Hips
+    100004: Rashid:LeftArm
+    100006: Rashid:LeftFoot
+    100008: Rashid:LeftForeArm
+    100010: Rashid:LeftHand
+    100012: Rashid:LeftHandIndex1
+    100014: Rashid:LeftHandIndex2
+    100016: Rashid:LeftHandIndex3
+    100018: Rashid:LeftHandThumb1
+    100020: Rashid:LeftHandThumb2
+    100022: Rashid:LeftHandThumb3
+    100024: Rashid:LeftLeg
+    100026: Rashid:LeftShoulder
+    100028: Rashid:LeftToeBase
+    100030: Rashid:LeftUpLeg
+    100032: Rashid:Neck
+    100034: Rashid:RightArm
+    100036: Rashid:RightFoot
+    100038: Rashid:RightForeArm
+    100040: Rashid:RightHand
+    100042: Rashid:RightHandIndex1
+    100044: Rashid:RightHandIndex2
+    100046: Rashid:RightHandIndex3
+    100048: Rashid:RightHandThumb1
+    100050: Rashid:RightHandThumb2
+    100052: Rashid:RightHandThumb3
+    100054: Rashid:RightLeg
+    100056: Rashid:RightShoulder
+    100058: Rashid:RightToeBase
+    100060: Rashid:RightUpLeg
+    100062: Rashid:SK_char_player_father__00
+    100064: Rashid:Spine
+    100066: Rashid:Spine1
+    100068: Rashid:Spine2
+    100070: //RootNode
+    400000: Rashid:Head
+    400002: Rashid:Hips
+    400004: Rashid:LeftArm
+    400006: Rashid:LeftFoot
+    400008: Rashid:LeftForeArm
+    400010: Rashid:LeftHand
+    400012: Rashid:LeftHandIndex1
+    400014: Rashid:LeftHandIndex2
+    400016: Rashid:LeftHandIndex3
+    400018: Rashid:LeftHandThumb1
+    400020: Rashid:LeftHandThumb2
+    400022: Rashid:LeftHandThumb3
+    400024: Rashid:LeftLeg
+    400026: Rashid:LeftShoulder
+    400028: Rashid:LeftToeBase
+    400030: Rashid:LeftUpLeg
+    400032: Rashid:Neck
+    400034: Rashid:RightArm
+    400036: Rashid:RightFoot
+    400038: Rashid:RightForeArm
+    400040: Rashid:RightHand
+    400042: Rashid:RightHandIndex1
+    400044: Rashid:RightHandIndex2
+    400046: Rashid:RightHandIndex3
+    400048: Rashid:RightHandThumb1
+    400050: Rashid:RightHandThumb2
+    400052: Rashid:RightHandThumb3
+    400054: Rashid:RightLeg
+    400056: Rashid:RightShoulder
+    400058: Rashid:RightToeBase
+    400060: Rashid:RightUpLeg
+    400062: Rashid:SK_char_player_father__00
+    400064: Rashid:Spine
+    400066: Rashid:Spine1
+    400068: Rashid:Spine2
+    400070: //RootNode
+    4300000: Rashid:SK_char_player_father__00
+    7400000: Rashid_Idle
+    9500000: //RootNode
+    13700000: Rashid:SK_char_player_father__00
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Rashid:Spine2' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Rashid_Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 184
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rashid:Hips
+        weight: 1
+      - path: Rashid:Hips/Rashid:LeftUpLeg
+        weight: 1
+      - path: Rashid:Hips/Rashid:LeftUpLeg/Rashid:LeftLeg
+        weight: 1
+      - path: Rashid:Hips/Rashid:LeftUpLeg/Rashid:LeftLeg/Rashid:LeftFoot
+        weight: 1
+      - path: Rashid:Hips/Rashid:LeftUpLeg/Rashid:LeftLeg/Rashid:LeftFoot/Rashid:LeftToeBase
+        weight: 1
+      - path: Rashid:Hips/Rashid:RightUpLeg
+        weight: 1
+      - path: Rashid:Hips/Rashid:RightUpLeg/Rashid:RightLeg
+        weight: 1
+      - path: Rashid:Hips/Rashid:RightUpLeg/Rashid:RightLeg/Rashid:RightFoot
+        weight: 1
+      - path: Rashid:Hips/Rashid:RightUpLeg/Rashid:RightLeg/Rashid:RightFoot/Rashid:RightToeBase
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandIndex1
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandIndex1/Rashid:LeftHandIndex2
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandIndex1/Rashid:LeftHandIndex2/Rashid:LeftHandIndex3
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandThumb1
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandThumb1/Rashid:LeftHandThumb2
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:LeftShoulder/Rashid:LeftArm/Rashid:LeftForeArm/Rashid:LeftHand/Rashid:LeftHandThumb1/Rashid:LeftHandThumb2/Rashid:LeftHandThumb3
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:Neck
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:Neck/Rashid:Head
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandIndex1
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandIndex1/Rashid:RightHandIndex2
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandIndex1/Rashid:RightHandIndex2/Rashid:RightHandIndex3
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandThumb1
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandThumb1/Rashid:RightHandThumb2
+        weight: 1
+      - path: Rashid:Hips/Rashid:Spine/Rashid:Spine1/Rashid:Spine2/Rashid:RightShoulder/Rashid:RightArm/Rashid:RightForeArm/Rashid:RightHand/Rashid:RightHandThumb1/Rashid:RightHandThumb2/Rashid:RightHandThumb3
+        weight: 1
+      - path: Rashid:SK_char_player_father__00
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Rashid:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Rashid:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SK_char_player_rashid_idle_00(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rashid:SK_char_player_father__00
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rashid:Hips
+      position: {x: 0.00032898402, y: 1.0516843, z: 0.0065917945}
+      rotation: {x: -0.0000000029103835, y: -1.1911403e-18, z: 4.0927262e-10, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:RightUpLeg
+      position: {x: 0.09508542, y: -0.052684173, z: -0.0023569346}
+      rotation: {x: 0.00018350787, y: 0.012398798, z: 0.9998136, w: -0.014798131}
+      scale: {x: 1, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Rashid:RightLeg
+      position: {x: -1.7763568e-17, y: 0.43756694, z: -4.440892e-18}
+      rotation: {x: -0.021126227, y: 0.00037489022, z: -0.017739305, w: 0.99961936}
+      scale: {x: 0.99999976, y: 0.9999996, z: 0.9999997}
+      transformModified: 1
+    - name: Rashid:RightFoot
+      position: {x: -0, y: 0.43970168, z: 0}
+      rotation: {x: 0.5092207, y: -0.007583529, z: 0.00448723, w: 0.8605909}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: Rashid:RightToeBase
+      position: {x: 1.7763568e-17, y: 0.18732405, z: 8.881784e-18}
+      rotation: {x: 0.25435135, y: -0.008358322, z: 0.002198331, w: 0.96707326}
+      scale: {x: 1.0000001, y: 1, z: 1.0000005}
+      transformModified: 1
+    - name: Rashid:LeftUpLeg
+      position: {x: -0.09508542, y: -0.052684173, z: 0.0013281726}
+      rotation: {x: -0.0000552184, y: 0.0037302128, z: 0.9998835, w: 0.014803314}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:LeftLeg
+      position: {x: -0, y: 0.4374447, z: 0}
+      rotation: {x: -0.008371221, y: -0.00014856321, z: 0.017744878, w: 0.99980754}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1}
+      transformModified: 1
+    - name: Rashid:LeftFoot
+      position: {x: -0, y: 0.43965375, z: 0}
+      rotation: {x: 0.5059245, y: 0.0075817136, z: -0.0044470676, w: 0.86253303}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rashid:LeftToeBase
+      position: {x: -1.7763568e-17, y: 0.18749247, z: 0}
+      rotation: {x: 0.25411138, y: 0.008224782, z: -0.0021609894, w: 0.9671376}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.99999964}
+      transformModified: 1
+    - name: Rashid:Spine
+      position: {x: -0, y: 0.095001526, z: -0.0030532503}
+      rotation: {x: -0.016063223, y: 7.47955e-10, z: -0.000000001261441, w: 0.999871}
+      scale: {x: 1, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: Rashid:Spine1
+      position: {x: -0, y: 0.11089233, z: 4.440892e-18}
+      rotation: {x: -0.00000004656613, y: -3.9519876e-10, z: 9.711978e-10, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:Spine2
+      position: {x: -0, y: 0.12673411, z: 4.440892e-18}
+      rotation: {x: -0.0000000018626449, y: -2.9863617e-10, z: 7.9799534e-10, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Rashid:LeftShoulder
+      position: {x: -0.06567891, y: 0.1178031, z: -0.0006648976}
+      rotation: {x: 0.57297355, y: -0.41235667, z: 0.57812345, w: 0.4091901}
+      scale: {x: 0.9999999, y: 0.9999997, z: 1}
+      transformModified: 1
+    - name: Rashid:LeftArm
+      position: {x: -8.881784e-18, y: 0.14012755, z: 0}
+      rotation: {x: -0.1334686, y: 0.0010383427, z: -0.00941059, w: 0.9910078}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
+      transformModified: 1
+    - name: Rashid:LeftForeArm
+      position: {x: -0, y: 0.2629129, z: 0}
+      rotation: {x: -0.043007135, y: -0.0009058118, z: 0.02103749, w: 0.99885285}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.99999994}
+      transformModified: 1
+    - name: Rashid:LeftHand
+      position: {x: -0, y: 0.2748239, z: 0}
+      rotation: {x: -0.0005970597, y: -0.23711835, z: -0.11766589, w: 0.96432847}
+      scale: {x: 0.99999976, y: 0.99999964, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:LeftHandIndex1
+      position: {x: -1.4210854e-16, y: 0.0845228, z: -0.0000000048750883}
+      rotation: {x: 0.035235956, y: -0.00075539947, z: -0.021430194, w: 0.99914896}
+      scale: {x: 1, y: 0.9999999, z: 1.0000002}
+      transformModified: 1
+    - name: Rashid:LeftHandIndex2
+      position: {x: -0.009357888, y: 0.041305967, z: 0}
+      rotation: {x: 0.020012284, y: -0.0098097, z: 0.1874796, w: 0.9820156}
+      scale: {x: 1.0000002, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:LeftHandIndex3
+      position: {x: 0.006576338, y: 0.03752444, z: 0}
+      rotation: {x: -0.036832966, y: 0.00000008940697, z: 0.000000029802322, w: 0.99932146}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: Rashid:LeftHandThumb1
+      position: {x: 0.02303529, y: 0.0411805, z: -0.0000000030731893}
+      rotation: {x: -0.0511765, y: 0.011817518, z: -0.28511882, w: 0.957052}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Rashid:LeftHandThumb2
+      position: {x: -0.002117872, y: 0.03768884, z: 1.4210854e-16}
+      rotation: {x: 0.026646912, y: 0.016979247, z: 0.13115957, w: 0.99085766}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+      transformModified: 1
+    - name: Rashid:LeftHandThumb3
+      position: {x: 0.007392749, y: 0.029750267, z: 0}
+      rotation: {x: -0.044286024, y: 0.000000059604645, z: -0.000000052154064, w: 0.9990189}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: Rashid:Neck
+      position: {x: -0, y: 0.14257586, z: 0.0000000041701718}
+      rotation: {x: 0.016063286, y: 2.8769662e-10, z: -9.220454e-10, w: 0.999871}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: Rashid:Head
+      position: {x: -0, y: 0.04215042, z: 0.014725642}
+      rotation: {x: -0.000000011990778, y: -3.637979e-10, z: 7.2759576e-10, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Rashid:RightShoulder
+      position: {x: 0.06567891, y: 0.11781152, z: -0.0009271705}
+      rotation: {x: -0.57150704, y: -0.41361606, z: 0.57950217, w: -0.40801805}
+      scale: {x: 1, y: 0.9999995, z: 1}
+      transformModified: 1
+    - name: Rashid:RightArm
+      position: {x: -0, y: 0.14012755, z: -2.842171e-16}
+      rotation: {x: -0.13379356, y: -0.0007230341, z: 0.002666354, w: 0.9910054}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+      transformModified: 1
+    - name: Rashid:RightForeArm
+      position: {x: 8.881784e-18, y: 0.26292616, z: 0}
+      rotation: {x: -0.043035712, y: 0.0009110569, z: -0.02114424, w: 0.9988494}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Rashid:RightHand
+      position: {x: -0, y: 0.27480775, z: 0}
+      rotation: {x: 0.03432557, y: -0.29092783, z: -0.11518249, w: -0.9491658}
+      scale: {x: 1.0000002, y: 0.9999995, z: 0.99999976}
+      transformModified: 1
+    - name: Rashid:RightHandIndex1
+      position: {x: -0, y: 0.07701586, z: 7.8126416e-10}
+      rotation: {x: 0.058486253, y: 0.0031818748, z: 0.05423221, w: 0.99680895}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000006}
+      transformModified: 1
+    - name: Rashid:RightHandIndex2
+      position: {x: 0.01253587, y: 0.048225105, z: 0}
+      rotation: {x: 0.016937548, y: -0.0048806053, z: -0.2526096, w: 0.9674077}
+      scale: {x: 0.99999994, y: 0.9999995, z: 0.99999964}
+      transformModified: 1
+    - name: Rashid:RightHandIndex3
+      position: {x: -0.010130725, y: 0.035545323, z: 0}
+      rotation: {x: -0.124975525, y: 0.00000023841855, z: -0.00000013411044, w: 0.99215984}
+      scale: {x: 1, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: Rashid:RightHandThumb1
+      position: {x: -0.021760246, y: 0.040372122, z: -8.0287477e-10}
+      rotation: {x: -0.058779314, y: -0.017407836, z: 0.21002994, w: 0.9757712}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Rashid:RightHandThumb2
+      position: {x: -0.0029871278, y: 0.03656865, z: 1.4210854e-16}
+      rotation: {x: 0.03464135, y: -0.027725285, z: -0.08465442, w: 0.99542195}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1.0000001}
+      transformModified: 1
+    - name: Rashid:RightHandThumb3
+      position: {x: -0.008350625, y: 0.02865501, z: -1.4210854e-16}
+      rotation: {x: 0.041761693, y: -0.00000035762784, z: 0.000000104308114, w: 0.99912757}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

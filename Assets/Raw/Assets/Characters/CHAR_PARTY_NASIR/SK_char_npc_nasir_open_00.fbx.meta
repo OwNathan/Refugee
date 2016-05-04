@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 1d22422e0575835498743a6b5cfea0da
+timeCreated: 1462287315
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Nasir:Head
+    100002: Nasir:HeadTop_End
+    100004: Nasir:Hips
+    100006: Nasir:LeftArm
+    100008: Nasir:LeftFoot
+    100010: Nasir:LeftForeArm
+    100012: Nasir:LeftHand
+    100014: Nasir:LeftHandIndex1
+    100016: Nasir:LeftHandIndex2
+    100018: Nasir:LeftHandIndex3
+    100020: Nasir:LeftHandIndex4
+    100022: Nasir:LeftHandThumb1
+    100024: Nasir:LeftHandThumb2
+    100026: Nasir:LeftHandThumb3
+    100028: Nasir:LeftHandThumb4
+    100030: Nasir:LeftLeg
+    100032: Nasir:LeftShoulder
+    100034: Nasir:LeftToe_End
+    100036: Nasir:LeftToeBase
+    100038: Nasir:LeftUpLeg
+    100040: Nasir:Neck
+    100042: Nasir:Qusay
+    100044: Nasir:RightArm
+    100046: Nasir:RightFoot
+    100048: Nasir:RightForeArm
+    100050: Nasir:RightHand
+    100052: Nasir:RightHandIndex1
+    100054: Nasir:RightHandIndex2
+    100056: Nasir:RightHandIndex3
+    100058: Nasir:RightHandIndex4
+    100060: Nasir:RightHandThumb1
+    100062: Nasir:RightHandThumb2
+    100064: Nasir:RightHandThumb3
+    100066: Nasir:RightHandThumb4
+    100068: Nasir:RightLeg
+    100070: Nasir:RightShoulder
+    100072: Nasir:RightToe_End
+    100074: Nasir:RightToeBase
+    100076: Nasir:RightUpLeg
+    100078: Nasir:Spine
+    100080: Nasir:Spine1
+    100082: Nasir:Spine2
+    100084: //RootNode
+    400000: Nasir:Head
+    400002: Nasir:HeadTop_End
+    400004: Nasir:Hips
+    400006: Nasir:LeftArm
+    400008: Nasir:LeftFoot
+    400010: Nasir:LeftForeArm
+    400012: Nasir:LeftHand
+    400014: Nasir:LeftHandIndex1
+    400016: Nasir:LeftHandIndex2
+    400018: Nasir:LeftHandIndex3
+    400020: Nasir:LeftHandIndex4
+    400022: Nasir:LeftHandThumb1
+    400024: Nasir:LeftHandThumb2
+    400026: Nasir:LeftHandThumb3
+    400028: Nasir:LeftHandThumb4
+    400030: Nasir:LeftLeg
+    400032: Nasir:LeftShoulder
+    400034: Nasir:LeftToe_End
+    400036: Nasir:LeftToeBase
+    400038: Nasir:LeftUpLeg
+    400040: Nasir:Neck
+    400042: Nasir:Qusay
+    400044: Nasir:RightArm
+    400046: Nasir:RightFoot
+    400048: Nasir:RightForeArm
+    400050: Nasir:RightHand
+    400052: Nasir:RightHandIndex1
+    400054: Nasir:RightHandIndex2
+    400056: Nasir:RightHandIndex3
+    400058: Nasir:RightHandIndex4
+    400060: Nasir:RightHandThumb1
+    400062: Nasir:RightHandThumb2
+    400064: Nasir:RightHandThumb3
+    400066: Nasir:RightHandThumb4
+    400068: Nasir:RightLeg
+    400070: Nasir:RightShoulder
+    400072: Nasir:RightToe_End
+    400074: Nasir:RightToeBase
+    400076: Nasir:RightUpLeg
+    400078: Nasir:Spine
+    400080: Nasir:Spine1
+    400082: Nasir:Spine2
+    400084: //RootNode
+    4300000: Nasir:Qusay
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: Nasir:Qusay
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

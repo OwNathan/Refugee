@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 6bda9dc8ea7dd3f49b7f0917201760c9
+timeCreated: 1462287360
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Qusay:Head
+    100002: Qusay:HeadTop_End
+    100004: Qusay:Hips
+    100006: Qusay:LeftArm
+    100008: Qusay:LeftFoot
+    100010: Qusay:LeftForeArm
+    100012: Qusay:LeftHand
+    100014: Qusay:LeftHandIndex1
+    100016: Qusay:LeftHandIndex2
+    100018: Qusay:LeftHandIndex3
+    100020: Qusay:LeftHandIndex4
+    100022: Qusay:LeftHandThumb1
+    100024: Qusay:LeftHandThumb2
+    100026: Qusay:LeftHandThumb3
+    100028: Qusay:LeftHandThumb4
+    100030: Qusay:LeftLeg
+    100032: Qusay:LeftShoulder
+    100034: Qusay:LeftToe_End
+    100036: Qusay:LeftToeBase
+    100038: Qusay:LeftUpLeg
+    100040: Qusay:Neck
+    100042: Qusay:Qusay1
+    100044: Qusay:RightArm
+    100046: Qusay:RightFoot
+    100048: Qusay:RightForeArm
+    100050: Qusay:RightHand
+    100052: Qusay:RightHandIndex1
+    100054: Qusay:RightHandIndex2
+    100056: Qusay:RightHandIndex3
+    100058: Qusay:RightHandIndex4
+    100060: Qusay:RightHandThumb1
+    100062: Qusay:RightHandThumb2
+    100064: Qusay:RightHandThumb3
+    100066: Qusay:RightHandThumb4
+    100068: Qusay:RightLeg
+    100070: Qusay:RightShoulder
+    100072: Qusay:RightToe_End
+    100074: Qusay:RightToeBase
+    100076: Qusay:RightUpLeg
+    100078: Qusay:Spine
+    100080: Qusay:Spine1
+    100082: Qusay:Spine2
+    100084: //RootNode
+    400000: Qusay:Head
+    400002: Qusay:HeadTop_End
+    400004: Qusay:Hips
+    400006: Qusay:LeftArm
+    400008: Qusay:LeftFoot
+    400010: Qusay:LeftForeArm
+    400012: Qusay:LeftHand
+    400014: Qusay:LeftHandIndex1
+    400016: Qusay:LeftHandIndex2
+    400018: Qusay:LeftHandIndex3
+    400020: Qusay:LeftHandIndex4
+    400022: Qusay:LeftHandThumb1
+    400024: Qusay:LeftHandThumb2
+    400026: Qusay:LeftHandThumb3
+    400028: Qusay:LeftHandThumb4
+    400030: Qusay:LeftLeg
+    400032: Qusay:LeftShoulder
+    400034: Qusay:LeftToe_End
+    400036: Qusay:LeftToeBase
+    400038: Qusay:LeftUpLeg
+    400040: Qusay:Neck
+    400042: Qusay:Qusay1
+    400044: Qusay:RightArm
+    400046: Qusay:RightFoot
+    400048: Qusay:RightForeArm
+    400050: Qusay:RightHand
+    400052: Qusay:RightHandIndex1
+    400054: Qusay:RightHandIndex2
+    400056: Qusay:RightHandIndex3
+    400058: Qusay:RightHandIndex4
+    400060: Qusay:RightHandThumb1
+    400062: Qusay:RightHandThumb2
+    400064: Qusay:RightHandThumb3
+    400066: Qusay:RightHandThumb4
+    400068: Qusay:RightLeg
+    400070: Qusay:RightShoulder
+    400072: Qusay:RightToe_End
+    400074: Qusay:RightToeBase
+    400076: Qusay:RightUpLeg
+    400078: Qusay:Spine
+    400080: Qusay:Spine1
+    400082: Qusay:Spine2
+    400084: //RootNode
+    4300000: Qusay:Qusay1
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: Qusay:Qusay1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

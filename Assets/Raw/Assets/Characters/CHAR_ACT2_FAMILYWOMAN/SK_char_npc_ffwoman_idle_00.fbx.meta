@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: dad58c37955c1fe468e1c6fd055e8ceb
+timeCreated: 1462287363
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: FFWoman:FFWoman
+    100002: FFWoman:Head
+    100004: FFWoman:HeadTop_End
+    100006: FFWoman:Hips
+    100008: FFWoman:LeftArm
+    100010: FFWoman:LeftFoot
+    100012: FFWoman:LeftForeArm
+    100014: FFWoman:LeftHand
+    100016: FFWoman:LeftHandIndex1
+    100018: FFWoman:LeftHandIndex2
+    100020: FFWoman:LeftHandIndex3
+    100022: FFWoman:LeftHandIndex4
+    100024: FFWoman:LeftLeg
+    100026: FFWoman:LeftShoulder
+    100028: FFWoman:LeftToe_End
+    100030: FFWoman:LeftToeBase
+    100032: FFWoman:LeftUpLeg
+    100034: FFWoman:Neck
+    100036: FFWoman:RightArm
+    100038: FFWoman:RightFoot
+    100040: FFWoman:RightForeArm
+    100042: FFWoman:RightHand
+    100044: FFWoman:RightHandIndex1
+    100046: FFWoman:RightHandIndex2
+    100048: FFWoman:RightHandIndex3
+    100050: FFWoman:RightHandIndex4
+    100052: FFWoman:RightLeg
+    100054: FFWoman:RightShoulder
+    100056: FFWoman:RightToe_End
+    100058: FFWoman:RightToeBase
+    100060: FFWoman:RightUpLeg
+    100062: FFWoman:Spine
+    100064: FFWoman:Spine1
+    100066: FFWoman:Spine2
+    100068: //RootNode
+    400000: FFWoman:FFWoman
+    400002: FFWoman:Head
+    400004: FFWoman:HeadTop_End
+    400006: FFWoman:Hips
+    400008: FFWoman:LeftArm
+    400010: FFWoman:LeftFoot
+    400012: FFWoman:LeftForeArm
+    400014: FFWoman:LeftHand
+    400016: FFWoman:LeftHandIndex1
+    400018: FFWoman:LeftHandIndex2
+    400020: FFWoman:LeftHandIndex3
+    400022: FFWoman:LeftHandIndex4
+    400024: FFWoman:LeftLeg
+    400026: FFWoman:LeftShoulder
+    400028: FFWoman:LeftToe_End
+    400030: FFWoman:LeftToeBase
+    400032: FFWoman:LeftUpLeg
+    400034: FFWoman:Neck
+    400036: FFWoman:RightArm
+    400038: FFWoman:RightFoot
+    400040: FFWoman:RightForeArm
+    400042: FFWoman:RightHand
+    400044: FFWoman:RightHandIndex1
+    400046: FFWoman:RightHandIndex2
+    400048: FFWoman:RightHandIndex3
+    400050: FFWoman:RightHandIndex4
+    400052: FFWoman:RightLeg
+    400054: FFWoman:RightShoulder
+    400056: FFWoman:RightToe_End
+    400058: FFWoman:RightToeBase
+    400060: FFWoman:RightUpLeg
+    400062: FFWoman:Spine
+    400064: FFWoman:Spine1
+    400066: FFWoman:Spine2
+    400068: //RootNode
+    4300000: FFWoman:FFWoman
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: FFWoman:FFWoman
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
