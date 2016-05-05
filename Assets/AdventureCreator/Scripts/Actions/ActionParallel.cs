@@ -206,7 +206,7 @@ namespace AC
 						AdvGame.DrawNodeCurve (nodeRect, actions[i+1].nodeRect, wireColor, k * 43 -13, true, isDisplayed);
 					}
 				}
-				else if (ending.resultAction == ResultAction.Skip)
+				else if (ending.resultAction == ResultAction.Skip && showOutputSockets)
 				{
 					if (actions.Contains (ending.skipActionActual))
 					{

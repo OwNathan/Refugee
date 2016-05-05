@@ -145,7 +145,7 @@ namespace AC
 	public enum InputCheckType { Button, Axis, SingleTapOrClick, DoubleTapOrClick };
 	public enum IntCondition { EqualTo, NotEqualTo, LessThan, MoreThan };
 	public enum RightClickInventory { DeselectsItem, ExaminesItem };
-	public enum ParameterType { GameObject, InventoryItem, GlobalVariable, LocalVariable, String, Float, Integer, Boolean };
+	public enum ParameterType { GameObject, InventoryItem, GlobalVariable, LocalVariable, String, Float, Integer, Boolean, UnityObject };
 	
 	public enum ChangeNavMeshMethod { ChangeNavMesh, ChangeNumberOfHoles };
 	public enum InvAction { Add, Remove, Replace };
@@ -175,7 +175,7 @@ namespace AC
 	public enum QTEType { SingleKeypress, HoldKey, ButtonMash };
 	public enum QTEState { None, Win, Lose };
 
-	public enum FilterSpeechLine { Type, Text, Scene, Speaker, Description, All };
+	public enum FilterSpeechLine { Type, Text, Scene, Speaker, Description, ID, All };
 	public enum FilterInventoryItem { Name, Category };
 	public enum ActionCategory { ActionList, Camera, Character, Container, Dialogue, Engine, Hotspot, Input, Inventory, Menu, Moveable, Object, Player, Save, Sound, ThirdParty, Variable, Custom };
 	public enum VolumeControl { AudioSources, AudioMixerGroups };

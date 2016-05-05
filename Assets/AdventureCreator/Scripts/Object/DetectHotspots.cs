@@ -33,7 +33,10 @@ namespace AC
 		private List<Hotspot> hotspots = new List<Hotspot>();
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			hotspots.Clear ();
 			selected = 0;

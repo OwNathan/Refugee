@@ -28,6 +28,7 @@ namespace AC
 			if (_target.source == ActionListSource.AssetFile)
 			{
 				_target.assetFile = ActionListAssetMenu.AssetGUI ("ActionList asset:", _target.assetFile);
+				_target.syncParamValues = EditorGUILayout.Toggle ("Sync parameter values?", _target.syncParamValues);
 			}
 			if (_target.actionListType == ActionListType.PauseGameplay)
 			{

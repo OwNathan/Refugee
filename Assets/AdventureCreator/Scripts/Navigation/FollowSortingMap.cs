@@ -144,7 +144,10 @@ namespace AC
 		}
 		
 		
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			if (KickStarter.settingsManager.IsInLoadingScene ())
 			{

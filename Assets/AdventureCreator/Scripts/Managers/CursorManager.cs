@@ -346,11 +346,16 @@ namespace AC
 
 		/**
 		 * <summary>Gets an array of the CursorIcon labels defined in cursorIcons.</summary>
+		 * <param name = "includeNone">If True, then the array will begin with a (none) option.</param>
 		 * <returns>An array of the CursorIcon labels defined in cursorIcons</returns>
 		 */
-		public string[] GetLabelsArray ()
+		public string[] GetLabelsArray (bool includeNone = false)
 		{
 			List<string> iconLabels = new List<string>();
+			if (includeNone)
+			{
+				iconLabels.Add ("(None)");
+			}
 			foreach (CursorIcon cursorIcon in cursorIcons)
 			{
 				iconLabels.Add (cursorIcon.label);

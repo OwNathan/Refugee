@@ -66,10 +66,8 @@ namespace AC
 		
 		override public bool CheckCondition ()
 		{
-			if (inputName != "")
+			switch (checkType)
 			{
-				switch (checkType)
-				{
 				case InputCheckType.SingleTapOrClick:
 					return KickStarter.playerInput.ClickedRecently ();
 
@@ -77,15 +75,18 @@ namespace AC
 					return KickStarter.playerInput.ClickedRecently (true);
 
 				case InputCheckType.Button:
-					if (KickStarter.playerInput.InputGetButton (inputName))
+					if (inputName != "" && KickStarter.playerInput.InputGetButton (inputName))
 					{
 						return true;
 					}
 					break;
 					
 				case InputCheckType.Axis:
-					return CheckAxisValue (KickStarter.playerInput.InputGetAxis (inputName));
-				}
+					if (inputName != "")
+					{
+						return CheckAxisValue (KickStarter.playerInput.InputGetAxis (inputName));
+					}
+					break;
 			}
 			return false;
 		}

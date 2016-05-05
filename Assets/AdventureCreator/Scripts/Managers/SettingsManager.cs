@@ -260,6 +260,8 @@ namespace AC
 		public float hotspotIconSize = 0.04f;
 		/** If True, then 3D player prefabs will turn their head towards the active Hotspot */
 		public bool playerFacesHotspots = false;
+		/** If true, and playerFacesHotspots = True, and interactionMethod = AC_InteractionMethod.ChooseHotspotThenInteraction, then players will only turn their heads once a Hotspot has been selected */
+		public bool onlyFaceHotspotOnSelect = false;
 		/** If True, then Hotspots will highlight according to how close the cursor is to them */
 		public bool scaleHighlightWithMouseProximity = false;
 		/** The factor by which distance affects the highlighting of Hotspots, if scaleHighlightWithMouseProximity = True */
@@ -752,14 +754,18 @@ namespace AC
 			if (cameraPerspective != CameraPerspective.TwoD)
 			{
 				playerFacesHotspots = EditorGUILayout.ToggleLeft ("Player turns head to active Hotspot?", playerFacesHotspots);
+				if (interactionMethod == AC_InteractionMethod.ChooseHotspotThenInteraction && playerFacesHotspots)
+				{
+					onlyFaceHotspotOnSelect = EditorGUILayout.ToggleLeft ("Only turn head when select Hotspot?", onlyFaceHotspotOnSelect);
+				}
 			}
 			
 			hotspotIconDisplay = (HotspotIconDisplay) EditorGUILayout.EnumPopup ("Display Hotspot icons:", hotspotIconDisplay);
 			if (hotspotIconDisplay != HotspotIconDisplay.Never)
 			{
+				hotspotDrawing = (ScreenWorld) EditorGUILayout.EnumPopup ("Draw icons in:", hotspotDrawing);
 				if (cameraPerspective != CameraPerspective.TwoD)
 				{
-					hotspotDrawing = (ScreenWorld) EditorGUILayout.EnumPopup ("Draw icons in:", hotspotDrawing);
 					occludeIcons = EditorGUILayout.ToggleLeft ("Don't show behind Colliders?", occludeIcons);
 				}
 				hotspotIcon = (HotspotIcon) EditorGUILayout.EnumPopup ("Hotspot icon type:", hotspotIcon);
@@ -985,7 +991,7 @@ namespace AC
 
 			if (runConversationsWithKeys)
 			{
-				result = SmartAddInput (result, "DialogueOption[0-9] (Buttons)");
+				result = SmartAddInput (result, "DialogueOption[1-9] (Buttons)");
 			}
 
 			return result;

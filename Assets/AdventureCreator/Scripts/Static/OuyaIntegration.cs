@@ -56,18 +56,7 @@ namespace AC
 		{
 			#if OUYAIsPresent && UNITY_ANDROID && !UNITY_EDITOR
 
-			if (KickStarter.playerInput)
-			{
-				KickStarter.playerInput.InputMousePositionDelegate = MousePosition;
-				KickStarter.playerInput.InputGetAxisDelegate = GetAxis;
-				KickStarter.playerInput.InputGetButtonDelegate = GetButton;
-				KickStarter.playerInput.InputGetButtonDownDelegate = GetButtonDown;
-				KickStarter.playerInput.InputGetMouseButtonDelegate = GetMouseButton;
-				KickStarter.playerInput.InputGetMouseButtonDownDelegate = GetMouseButtonDown;
-
-				currentMousePosition = new Vector2 (Screen.width * 0.5f, Screen.height * 0.5f);
-				KickStarter.settingsManager.assumeInputsDefined = false;
-			}
+			AssignOverrides ();
 
 			#elif OUYAIsPresent
 
@@ -83,7 +72,45 @@ namespace AC
 
 		#if OUYAIsPresent && UNITY_ANDROID && !UNITY_EDITOR
 
-		private Vector2 MousePosition ()
+		private void AssignOverrides ()
+		{
+			if (KickStarter.playerInput)
+			{
+				KickStarter.playerInput.InputMousePositionDelegate = MousePosition;
+				KickStarter.playerInput.InputGetAxisDelegate = GetAxis;
+				KickStarter.playerInput.InputGetButtonDelegate = GetButton;
+				KickStarter.playerInput.InputGetButtonDownDelegate = GetButtonDown;
+				KickStarter.playerInput.InputGetMouseButtonDelegate = GetMouseButton;
+				KickStarter.playerInput.InputGetMouseButtonDownDelegate = GetMouseButtonDown;
+
+				currentMousePosition = new Vector2 (Screen.width * 0.5f, Screen.height * 0.5f);
+				KickStarter.settingsManager.assumeInputsDefined = false;
+			}
+		}
+
+
+		#if UNITY_5_4_OR_NEWER
+		private void Awake ()
+		{
+			UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneLoaded;
+		}
+		private void OnDestroy ()
+		{
+			UnityEngine.SceneManagement.SceneManager.sceneLoaded -= SceneLoaded;
+		}
+		private void SceneLoaded (UnityEngine.SceneManagement.Scene _scene, UnityEngine.SceneManagement.LoadSceneMode _loadSceneMode)
+		{
+			AssignOverrides ();
+		}
+		#else
+		private void OnLevelWasLoaded ()
+		{
+			AssignOverrides ();
+		}
+		#endif
+
+
+		private Vector2 MousePosition (bool cursorIsLocked = false)
 		{
 			Vector2 mouseDelta = new Vector2 (OuyaSDK.OuyaInput.GetAxis(0, OuyaController.AXIS_LS_X),
 											  OuyaSDK.OuyaInput.GetAxis(0, OuyaController.AXIS_LS_Y) * ((invertMouseY) ? -1f : 1f));

@@ -316,6 +316,7 @@ namespace AC
 				if (action.GetType ().ToString () != className && action.GetType ().ToString () != ("AC." + className))
 				{
 					bool _showComment = action.showComment;
+					bool _showOutputSockets = action.showOutputSockets;
 					string _comment = action.comment;
 
 					action = (AC.Action) CreateInstance (className);
@@ -325,6 +326,7 @@ namespace AC
 					action.linkedCutscene = _linkedCutscene;
 
 					action.showComment = _showComment;
+					action.showOutputSockets = _showOutputSockets;
 					action.comment = _comment;
 				}
 			}

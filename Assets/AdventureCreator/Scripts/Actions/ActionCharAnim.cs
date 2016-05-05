@@ -43,6 +43,7 @@ namespace AC
 
 		public bool changeSound = false;
 		public AudioClip newSound;
+		public int newSoundParameterID = -1;
 
 		public int layerInt;
 		public bool idleAfter = true;
@@ -75,6 +76,7 @@ namespace AC
 		override public void AssignValues (List<ActionParameter> parameters)
 		{
 			animChar = AssignFile <Char> (parameters, parameterID, constantID, animChar);
+			newSound = (AudioClip) AssignObject <AudioClip> (parameters, newSoundParameterID, newSound);
 
 			if (isPlayer)
 			{
@@ -157,7 +159,7 @@ namespace AC
 
 			if (editingAnimEngine != null)
 			{
-				editingAnimEngine.ActionCharAnimGUI (this);
+				editingAnimEngine.ActionCharAnimGUI (this, parameters);
 			}
 			else
 			{

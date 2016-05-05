@@ -11,6 +11,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -28,6 +29,7 @@ namespace AC
 		public float fadeSpeed = 0.5f;
 		public bool setTexture;
 		public Texture2D tempTexture;
+		public int tempTextureParameterID = -1;
 		public bool forceCompleteTransition = true;
 		
 		
@@ -37,6 +39,12 @@ namespace AC
 			category = ActionCategory.Camera;
 			title = "Fade";
 			description = "Fades the camera in or out. The fade speed can be adjusted, as can the overlay texture – this is black by default.";
+		}
+
+
+		override public void AssignValues (List<ActionParameter> parameters)
+		{
+			tempTexture = (Texture2D) AssignObject <Texture2D> (parameters, tempTextureParameterID, tempTexture);
 		}
 		
 		
@@ -112,7 +120,7 @@ namespace AC
 		
 		#if UNITY_EDITOR
 
-		override public void ShowGUI ()
+		override public void ShowGUI (List<ActionParameter> parameters)
 		{
 			fadeType = (FadeType) EditorGUILayout.EnumPopup ("Type:", fadeType);
 
@@ -121,7 +129,11 @@ namespace AC
 				setTexture = EditorGUILayout.Toggle ("Custom fade texture?", setTexture);
 				if (setTexture)
 				{
-					tempTexture = (Texture2D) EditorGUILayout.ObjectField ("Fade texture:", tempTexture, typeof (Texture2D), false);
+					tempTextureParameterID = Action.ChooseParameterGUI ("Fade texture:", parameters, tempTextureParameterID, ParameterType.UnityObject);
+					if (tempTextureParameterID < 0)
+					{
+						tempTexture = (Texture2D) EditorGUILayout.ObjectField ("Fade texture:", tempTexture, typeof (Texture2D), false);
+					}
 				}
 			}
 

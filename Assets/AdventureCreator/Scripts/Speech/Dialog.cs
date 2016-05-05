@@ -548,6 +548,9 @@ namespace AC
 			{
 				KickStarter.stateHandler.UpdateAllMaxVolumes ();
 			}
+
+			// Call event
+			KickStarter.eventManager.Call_OnStopSpeech (oldSpeech.GetSpeakingCharacter ());
 		}
 
 

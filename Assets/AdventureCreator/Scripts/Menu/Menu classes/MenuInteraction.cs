@@ -38,6 +38,8 @@ namespace AC
 		public TextAnchor anchor;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The ID number of the interaction's associated CursorIcon */
 		public int iconID;
 
@@ -66,6 +68,7 @@ namespace AC
 			SetSize (new Vector2 (5f, 5f));
 			iconID = -1;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			overrideTexture = false;
 			activeTexture = null;
 			
@@ -94,6 +97,7 @@ namespace AC
 			displayType = _element.displayType;
 			anchor = _element.anchor;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			iconID = _element.iconID;
 			overrideTexture = _element.overrideTexture;
 			activeTexture = _element.activeTexture;
@@ -160,6 +164,10 @@ namespace AC
 				{
 					anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 					textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+					if (textEffects != TextEffects.None)
+					{
+						outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+					}
 				}
 
 				if (displayType != AC_DisplayType.TextOnly)
@@ -183,6 +191,7 @@ namespace AC
 				displayType = (AC_DisplayType) EditorGUILayout.EnumPopup ("Display type:", displayType);
 				GetCursorGUI ();
 			}
+			alternativeInputButton = EditorGUILayout.TextField ("Alernative input button:", alternativeInputButton);
 			EditorGUILayout.EndVertical ();
 
 			base.ShowGUI (source);
@@ -248,7 +257,7 @@ namespace AC
 			{
 				if (textEffects != TextEffects.None)
 				{
-					AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), label, _style, Color.black, _style.normal.textColor, 2, textEffects);
+					AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), label, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 				}
 				else
 				{

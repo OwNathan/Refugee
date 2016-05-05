@@ -36,7 +36,20 @@ namespace AC
 		public void OnStart ()
 		{
 			LoadPrefs ();
-			OnLevelWasLoaded ();
+
+			if (KickStarter.settingsManager.IsInLoadingScene ())
+			{
+				return;
+			}
+
+			StartCoroutine (OnStartCoroutine ());
+		}
+
+
+		private IEnumerator OnStartCoroutine ()
+		{
+			yield return new WaitForEndOfFrame ();
+			AfterLoad ();
 		}
 		
 
@@ -490,13 +503,26 @@ namespace AC
 		}
 		
 		
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			if (KickStarter.settingsManager.IsInLoadingScene ())
 			{
 				return;
 			}
-			
+
+			UpdateMixerVolumes ();
+
+			SetVolume (SoundType.Music);
+			SetVolume (SoundType.SFX);
+			SetVolume (SoundType.Speech);
+		}
+
+
+		private void UpdateMixerVolumes ()
+		{
 			#if UNITY_5
 			if (KickStarter.settingsManager.volumeControl == VolumeControl.AudioMixerGroups)
 			{
@@ -509,9 +535,6 @@ namespace AC
 				AdvGame.SetMixerVolume (KickStarter.settingsManager.speechMixerGroup, KickStarter.settingsManager.speechAttentuationParameter, optionsData.speechVolume);
 			}
 			#endif
-			SetVolume (SoundType.Music);
-			SetVolume (SoundType.SFX);
-			SetVolume (SoundType.Speech);
 		}
 		
 

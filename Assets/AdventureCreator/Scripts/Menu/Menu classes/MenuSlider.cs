@@ -37,6 +37,8 @@ namespace AC
 		public string label;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The text alignement */
 		public TextAnchor anchor;
 		/** The fill-bar texture, or moveable block texture (OnGUI Menus only) */
@@ -82,6 +84,7 @@ namespace AC
 			useFullWidth = false;
 			varID = 0;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			numberOfSteps = 0;
 			actionListOnChange = null;
 
@@ -108,6 +111,7 @@ namespace AC
 			label = _element.label;
 			isClickable = _element.isClickable;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			amount = _element.amount;
 			minValue = _element.minValue;
 			maxValue = _element.maxValue;
@@ -194,6 +198,10 @@ namespace AC
 				label = EditorGUILayout.TextField ("Label text:", label);
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 				useFullWidth = EditorGUILayout.Toggle ("Use full width?", useFullWidth);
 				sliderDisplayType = (SliderDisplayType) EditorGUILayout.EnumPopup ("Display type:", sliderDisplayType);
 				
@@ -317,7 +325,7 @@ namespace AC
 			
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

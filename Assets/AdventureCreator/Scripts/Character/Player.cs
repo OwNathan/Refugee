@@ -174,28 +174,6 @@ namespace AC
 		}
 		
 		
-		private bool IsGrounded ()
-		{
-			if (_characterController != null)
-			{
-				return _characterController.isGrounded;
-			}
-
-			if (_rigidbody != null && Mathf.Abs (_rigidbody.velocity.y) > 0.1f)
-			{
-				return false;
-			}
-			
-			if (_collider != null)
-			{
-				return Physics.CheckCapsule (transform.position + new Vector3 (0f, _collider.bounds.size.y, 0f), transform.position + new Vector3 (0f, _collider.bounds.size.x / 4f, 0f), _collider.bounds.size.x / 2f);
-			}
-			
-			ACDebug.Log ("Player has no Collider component");
-			return false;
-		}
-
-
 		/**
 		 * <summary>Makes the Player spot-turn left during gameplay. This needs to be called every frame of the turn.</summary>
 		 * <param name = "intensity">The relative speed of the turn. Set this to the value of the input axis for smooth movement.</param>
@@ -261,6 +239,10 @@ namespace AC
 						ACDebug.Log ("Player cannot jump without a Rigidbody component.");
 					}
 				}
+			}
+			else if (_collider == null)
+			{
+				ACDebug.Log (gameObject.name + " has no Collider component");
 			}
 		}
 		

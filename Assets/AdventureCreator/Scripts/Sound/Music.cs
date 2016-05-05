@@ -189,11 +189,11 @@ namespace AC
 					return 0f;
 				}
 				
-				if (queuedMusic.Count > 0 && queuedMusic[0].trackLoop)
+				/*if (queuedMusic.Count > 0 && queuedMusic[0].trackLoop)
 				{
 					// Looping current, ignore
 					return 0f;
-				}
+				}*/
 
 				// End other music objects
 				Sound[] sounds = FindObjectsOfType (typeof (Sound)) as Sound[];

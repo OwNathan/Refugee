@@ -40,6 +40,8 @@ namespace AC
 
 		public GameObject gameobjectValue;
 		public int gameObjectConstantID;
+
+		public Object unityObjectValue;
 		
 		private ActionParameter _parameter;
 		#if UNITY_EDITOR
@@ -63,9 +65,23 @@ namespace AC
 				if (actionListSource == ActionListSource.InScene)
 				{
 					actionList = AssignFile <ActionList> (actionListConstantID, actionList);
-					if (actionList != null && actionList.useParameters)
+					if (actionList != null)
 					{
-						_parameter = GetParameterWithID (actionList.parameters, parameterID);
+						if (actionList.source == ActionListSource.AssetFile && actionList.assetFile != null)
+						{
+							if (actionList.syncParamValues && actionList.assetFile.useParameters)
+							{
+								_parameter = GetParameterWithID (actionList.assetFile.parameters, parameterID);
+							}
+							else
+							{
+								_parameter = GetParameterWithID (actionList.parameters, parameterID);
+							}
+						}
+						else if (actionList.source == ActionListSource.InScene && actionList.useParameters)
+						{
+							_parameter = GetParameterWithID (actionList.parameters, parameterID);
+						}
 					}
 				}
 				else if (actionListSource == ActionListSource.AssetFile)
@@ -109,11 +125,14 @@ namespace AC
 			{
 				_parameter.stringValue = stringValue;
 			}
-			
 			else if (_parameter.parameterType == ParameterType.GameObject)
 			{
 				_parameter.gameObject = gameobjectValue;
 				_parameter.intValue = gameObjectConstantID;
+			}
+			else if (_parameter.parameterType == ParameterType.UnityObject)
+			{
+				_parameter.objectValue = unityObjectValue;
 			}
 
 			return 0f;
@@ -147,10 +166,29 @@ namespace AC
 
 					if (actionList != null)
 					{
-						if (actionList.useParameters && actionList.parameters.Count > 0)
+						if (actionList.source == ActionListSource.InScene)
 						{
-							parameterID = Action.ChooseParameterGUI (actionList.parameters, parameterID);
-							SetParamGUI (actionList.parameters);
+							if (actionList.useParameters && actionList.parameters.Count > 0)
+							{
+								parameterID = Action.ChooseParameterGUI (actionList.parameters, parameterID);
+								SetParamGUI (actionList.parameters);
+							}
+							else
+							{
+								EditorGUILayout.HelpBox ("This ActionList has no parameters defined!", MessageType.Warning);
+							}
+						}
+						else if (actionList.source == ActionListSource.AssetFile && actionList.assetFile != null)
+						{
+							if (actionList.assetFile.useParameters && actionList.assetFile.parameters.Count > 0)
+							{
+								parameterID = Action.ChooseParameterGUI (actionList.assetFile.parameters, parameterID);
+								SetParamGUI (actionList.assetFile.parameters);
+							}
+							else
+							{
+								EditorGUILayout.HelpBox ("This ActionList has no parameters defined!", MessageType.Warning);
+							}
 						}
 						else
 						{
@@ -234,6 +272,10 @@ namespace AC
 				{
 					intValue = ShowVarSelectorGUI (AdvGame.GetReferences ().variablesManager.vars, intValue);
 				}
+			}
+			else if (_parameter.parameterType == ParameterType.UnityObject)
+			{
+				unityObjectValue = (Object) EditorGUILayout.ObjectField ("Set to:", unityObjectValue, typeof (Object), true);
 			}
 			else if (_parameter.parameterType == ParameterType.InventoryItem)
 			{

@@ -43,6 +43,7 @@ namespace AC
 		public BoolCondition boolCondition;
 
 		public string stringValue;
+		public bool checkCase = true;
 
 		public VariableLocation location = VariableLocation.Global;
 
@@ -239,6 +240,12 @@ namespace AC
 					compareValue = _compareVar.textVal;
 				}
 
+				if (!checkCase)
+				{
+					fieldValue = fieldValue.ToLower ();
+					compareValue = compareValue.ToLower ();
+				}
+
 				if (boolCondition == BoolCondition.EqualTo)
 				{
 					if (fieldValue == compareValue)
@@ -365,7 +372,8 @@ namespace AC
 						checkParameterID = Action.ChooseParameterGUI ("Boolean:", parameters, checkParameterID, ParameterType.Boolean);
 						if (checkParameterID < 0)
 						{
-							boolValue = (BoolValue) EditorGUILayout.EnumPopup ("Boolean:", boolValue);
+							EditorGUILayout.LabelField ("Boolean:", GUILayout.MaxWidth (60f));
+							boolValue = (BoolValue) EditorGUILayout.EnumPopup (boolValue);
 						}
 					}
 				}
@@ -377,7 +385,8 @@ namespace AC
 						checkParameterID = Action.ChooseParameterGUI ("Integer:", parameters, checkParameterID, ParameterType.Integer);
 						if (checkParameterID < 0)
 						{
-							intValue = EditorGUILayout.IntField ("Integer:", intValue);
+							EditorGUILayout.LabelField ("Integer:", GUILayout.MaxWidth (60f));
+							intValue = EditorGUILayout.IntField (intValue);
 						}
 					}
 				}
@@ -389,7 +398,8 @@ namespace AC
 						checkParameterID = Action.ChooseParameterGUI ("Value:", parameters, checkParameterID, ParameterType.Integer);
 						if (checkParameterID < 0)
 						{
-							intValue = EditorGUILayout.Popup ("Value:", intValue, vars [variableNumber].popUps);
+							EditorGUILayout.LabelField ("Value:", GUILayout.MaxWidth (60f));
+							intValue = EditorGUILayout.Popup (intValue, vars [variableNumber].popUps);
 						}
 					}
 				}
@@ -401,7 +411,8 @@ namespace AC
 						checkParameterID = Action.ChooseParameterGUI ("Float:", parameters, checkParameterID, ParameterType.Float);
 						if (checkParameterID < 0)
 						{
-							floatValue = EditorGUILayout.FloatField ("Float:", floatValue);
+							EditorGUILayout.LabelField ("Float:", GUILayout.MaxWidth (60f));
+							floatValue = EditorGUILayout.FloatField (floatValue);
 						}
 					}
 				}
@@ -413,7 +424,8 @@ namespace AC
 						checkParameterID = Action.ChooseParameterGUI ("String:", parameters, checkParameterID, ParameterType.String);
 						if (checkParameterID < 0)
 						{
-							stringValue = EditorGUILayout.TextField ("String:", stringValue);
+							EditorGUILayout.LabelField ("String:", GUILayout.MaxWidth (60f));
+							stringValue = EditorGUILayout.TextField (stringValue);
 						}
 					}
 				}
@@ -452,6 +464,11 @@ namespace AC
 				if (parameters == null || parameters.Count == 0)
 				{
 					EditorGUILayout.EndHorizontal ();
+				}
+
+				if (vars [variableNumber].type == VariableType.String)
+				{
+					checkCase = EditorGUILayout.Toggle ("Case-senstive?", checkCase);
 				}
 			}
 			else

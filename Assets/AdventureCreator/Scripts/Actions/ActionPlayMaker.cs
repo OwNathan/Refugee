@@ -32,7 +32,9 @@ namespace AC
 		public GameObject linkedObject;
 
 		public string fsmName;
+		public int fsmNameParameterID = -1;
 		public string eventName;
+		public int eventNameParameterID = -1;
 
 
 		public ActionPlayMaker ()
@@ -54,6 +56,9 @@ namespace AC
 			{
 				linkedObject = AssignFile (parameters, parameterID, constantID, linkedObject);
 			}
+
+			fsmName = AssignString (parameters, fsmNameParameterID, fsmName);
+			eventName = AssignString (parameters, eventNameParameterID, eventName);
 		}
 
 
@@ -99,8 +104,16 @@ namespace AC
 					}
 				}
 
-				fsmName = EditorGUILayout.TextField ("FSM to call (optional):", fsmName);
-				eventName = EditorGUILayout.TextField ("Event to call:", eventName);
+				fsmNameParameterID = Action.ChooseParameterGUI ("FSM to call (optional):", parameters, fsmNameParameterID, ParameterType.String);
+				if (fsmNameParameterID < 0)
+				{
+					fsmName = EditorGUILayout.TextField ("FSM to call (optional):", fsmName);
+				}
+				eventNameParameterID = Action.ChooseParameterGUI ("Event to call (optional):", parameters, eventNameParameterID, ParameterType.String);
+				if (eventNameParameterID < 0)
+				{
+					eventName = EditorGUILayout.TextField ("Event to call:", eventName);
+				}
 			}
 			else
 			{

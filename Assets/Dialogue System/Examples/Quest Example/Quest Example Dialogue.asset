@@ -269,11 +269,27 @@ MonoBehaviour:
     - title: Actor
       value: 1
       type: 5
-      typeString: 
+      typeString: CustomFieldType_Actor
     - title: Conversant
       value: 2
       type: 5
-      typeString: 
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      responseTimeout: 0
     nodeColor: 
     dialogueEntries:
     - id: 0
@@ -342,8 +358,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 300
+        y: 20
         width: 160
         height: 30
     - id: 1
@@ -394,8 +410,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 30
+        y: 70
         width: 160
         height: 30
     - id: 2
@@ -441,8 +457,8 @@ MonoBehaviour:
         Thin the Ranks"'
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 30
+        y: 120
         width: 160
         height: 30
     - id: 3
@@ -494,8 +510,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 210
+        y: 70
         width: 160
         height: 30
     - id: 4
@@ -540,8 +556,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 210
+        y: 120
         width: 160
         height: 30
     - id: 5
@@ -594,8 +610,8 @@ MonoBehaviour:
         "Completed: Thin the Ranks"'
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 390
+        y: 70
         width: 160
         height: 30
     - id: 6
@@ -640,8 +656,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 390
+        y: 120
         width: 160
         height: 30
     - id: 7
@@ -692,8 +708,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 570
+        y: 70
         width: 160
         height: 30
     - id: 8
@@ -738,8 +754,8 @@ MonoBehaviour:
       userScript: 
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 570
+        y: 120
         width: 160
         height: 30
   - id: 2
@@ -760,6 +776,22 @@ MonoBehaviour:
       value: 3
       type: 5
       typeString: 
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      responseTimeout: 0
     nodeColor: 
     dialogueEntries:
     - id: 0
@@ -1139,6 +1171,22 @@ MonoBehaviour:
       value: 4
       type: 5
       typeString: 
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      responseTimeout: 0
     nodeColor: 
     dialogueEntries:
     - id: 0
@@ -1578,6 +1626,22 @@ MonoBehaviour:
       value: 5
       type: 5
       typeString: 
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      responseTimeout: 0
     nodeColor: 
     dialogueEntries:
     - id: 0

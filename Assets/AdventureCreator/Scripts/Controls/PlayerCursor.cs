@@ -486,8 +486,21 @@ namespace AC
 			{
 				if (invItem.lookActionList != null && CanDisplayIconsSideBySide ())
 				{
-					CursorIcon icon = KickStarter.cursorManager.GetCursorIconFromID (invItem.useIconID);
-					DrawIcon (new Vector2 (-icon.size * Screen.width / 2f, 0f), icon, false);
+					if (invItem.useIconID < 0)
+					{
+						// Hide use
+						if (invItem.lookActionList != null)
+						{
+							CursorIcon icon = KickStarter.cursorManager.GetCursorIconFromID (KickStarter.cursorManager.lookCursor_ID);
+							DrawIcon (icon, true);
+						}
+						return;
+					}
+					else
+					{
+						CursorIcon icon = KickStarter.cursorManager.GetCursorIconFromID (invItem.useIconID);
+						DrawIcon (new Vector2 (-icon.size * Screen.width / 2f, 0f), icon, false);
+					}
 				}
 				else
 				{

@@ -53,6 +53,7 @@ namespace AC
 		private int sideMenu = -1;
 		private int sideElement = -1;
 
+		private string nameFilter = "";
 		private bool oldVisibility;
 		private int typeNumber = 0;
 		private string[] elementTypes = { "Button", "Crafting", "Cycle", "DialogList", "Drag", "Graphic", "Input", "Interaction", "InventoryBox", "Journal", "Label", "ProfilesList", "SavesList", "Slider", "Timer", "Toggle" };
@@ -178,6 +179,12 @@ namespace AC
 		
 		private void CreateMenusGUI ()
 		{
+			if (menus != null && menus.Count > 1)
+			{
+				nameFilter = EditorGUILayout.TextField ("Filter by name:", nameFilter);
+				EditorGUILayout.Space ();
+			}
+
 			foreach (AC.Menu _menu in menus)
 			{
 				if (_menu == null)
@@ -187,7 +194,9 @@ namespace AC
 					return;
 				}
 
-				EditorGUILayout.BeginHorizontal ();
+				if (nameFilter == "" || _menu.title.ToLower ().Contains (nameFilter.ToLower ()))
+				{
+					EditorGUILayout.BeginHorizontal ();
 				
 					string buttonLabel = _menu.title;
 					if (buttonLabel == "")
@@ -208,7 +217,8 @@ namespace AC
 						SideMenu (_menu);
 					}
 			
-				EditorGUILayout.EndHorizontal ();
+					EditorGUILayout.EndHorizontal ();
+				}
 			}
 
 			EditorGUILayout.Space ();
@@ -271,6 +281,15 @@ namespace AC
 						ACDebug.Log ("Deleted unset menu: " + _menu.title);
 						DestroyImmediate (_object, true);
 					}
+
+					for (int i=0; i<_menu.elements.Count; i++)
+					{
+						if (_menu.elements[i] == null)
+						{
+							_menu.elements.RemoveAt (i);
+							i=0;
+						}
+					}
 				}
 			}
 
@@ -279,7 +298,7 @@ namespace AC
 				if (_object is MenuElement)
 				{
 					MenuElement _element = (MenuElement) _object;
-					
+
 					bool found = false;
 					foreach (AC.Menu menu in menus)
 					{
@@ -420,6 +439,7 @@ namespace AC
 		{
 			foreach (MenuElement menuElement in menu.elements)
 			{
+				if (menuElement != null)
 				menuElement.isEditing = false;
 			}
 		}

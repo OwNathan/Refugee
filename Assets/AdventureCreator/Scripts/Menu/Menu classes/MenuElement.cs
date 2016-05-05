@@ -48,6 +48,8 @@ namespace AC
 		public float slotSpacing = 0f;
 		/** The translation ID, as set within SpeechManager */
 		public int lineID = -1;
+		/** The name of the input button that triggers the element when pressed */
+		public string alternativeInputButton = "";
 
 		/** The text font (OnGUI only) */
 		public Font font;
@@ -115,6 +117,7 @@ namespace AC
 			changeCursor = false;
 			cursorID = 0;
 			uiHideStyle = UIHideStyle.DisableObject;
+			alternativeInputButton = "";
 		}
 
 
@@ -168,6 +171,7 @@ namespace AC
 			changeCursor = _element.changeCursor;
 			cursorID = _element.cursorID;
 			uiHideStyle = _element.uiHideStyle;
+			alternativeInputButton = _element.alternativeInputButton;
 		}
 
 

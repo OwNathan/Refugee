@@ -36,6 +36,8 @@ namespace AC
 		public GameObject compareObject;
 		public int compareObjectConstantID;
 
+		public Object compareUnityObject;
+
 		public BoolValue boolValue = BoolValue.True;
 		public BoolCondition boolCondition;
 
@@ -246,6 +248,18 @@ namespace AC
 				}
 			}
 
+			else if (_parameter.parameterType == ParameterType.UnityObject)
+			{
+				if (compareUnityObject != null && _parameter.objectValue == (Object) compareUnityObject)
+				{
+					return true;
+				}
+				if (compareUnityObject == null && _parameter.objectValue == null)
+				{
+					return true;
+				}
+			}
+
 			else if (_parameter.parameterType == ParameterType.GlobalVariable || _parameter.parameterType == ParameterType.LocalVariable)
 			{
 				if (_compareVar != null && _parameter.intValue == _compareVar.id)
@@ -313,6 +327,10 @@ namespace AC
 				
 				compareObjectConstantID = FieldToID (compareObject, compareObjectConstantID);
 				compareObject = IDToField (compareObject, compareObjectConstantID, false);
+			}
+			else if (parameter.parameterType == ParameterType.UnityObject)
+			{
+				compareUnityObject = (Object) EditorGUILayout.ObjectField ("Is equal to:", compareUnityObject, typeof (Object), true);
 			}
 			else if (parameter.parameterType == ParameterType.GlobalVariable)
 			{

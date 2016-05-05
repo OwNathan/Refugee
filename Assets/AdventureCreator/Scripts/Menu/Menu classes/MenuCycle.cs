@@ -35,6 +35,8 @@ namespace AC
 		public string label = "Element";
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The text alignment */
 		public TextAnchor anchor;
 		/** The index number of the currently-shown text in optionsArray */
@@ -63,6 +65,7 @@ namespace AC
 			isClickable = true;
 			numSlots = 1;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			SetSize (new Vector2 (15f, 5f));
 			anchor = TextAnchor.MiddleLeft;
 			cycleType = AC_CycleType.CustomScript;
@@ -94,6 +97,7 @@ namespace AC
 			uiText = null;
 			label = _element.label;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			anchor = _element.anchor;
 			selected = _element.selected;
 			optionsArray = _element.optionsArray;
@@ -169,6 +173,10 @@ namespace AC
 			{
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 
 			cycleType = (AC_CycleType) EditorGUILayout.EnumPopup ("Cycle type:", cycleType);
@@ -217,6 +225,7 @@ namespace AC
 
 				actionListOnClick = (ActionListAsset) EditorGUILayout.ObjectField ("ActionList on click:", actionListOnClick, typeof (ActionListAsset), false);
 			}
+			alternativeInputButton = EditorGUILayout.TextField ("Alernative input button:", alternativeInputButton);
 			EditorGUILayout.EndVertical ();
 			
 			base.ShowGUI (source);
@@ -295,7 +304,7 @@ namespace AC
 
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), cycleText, _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), cycleText, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

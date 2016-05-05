@@ -698,7 +698,7 @@ namespace AC
 				}
 			}
 		}
-		
+
 
 		/**
 		 * <summary>Gets the cursor's position in screen space.</summary>
@@ -815,6 +815,17 @@ namespace AC
 						return;
 					}
 				}
+			}
+		}
+
+
+		/**
+		 * Detects the pressing of the defined input buttons if they can be used to trigger a Conversation's dialogue options.
+		 */
+		public void DetectConversationInputs ()
+		{		
+			if (activeConversation != null && KickStarter.settingsManager.runConversationsWithKeys)
+			{
 
 				if (InputGetButtonDown ("DialogueOption1"))
 				{
@@ -907,7 +918,7 @@ namespace AC
 					{
 						Vector2 normalizedVector = new Vector2 (InputGetAxis ("Horizontal"), InputGetAxis ("Vertical"));
 
-						if (normalizedVector.magnitude > 0f)
+						if (normalizedVector.sqrMagnitude > 0f)
 						{
 							if (KickStarter.settingsManager.inputMethod == InputMethod.TouchScreen && dragState == DragState.ScreenArrows)
 							{
@@ -1108,7 +1119,7 @@ namespace AC
 			if (cameraLockSnap)
 			{
 				Vector2 newMoveKeys = new Vector2 (h, v);
-				if (newMoveKeys.magnitude < 0.1f || Vector2.Angle (newMoveKeys, moveKeys) > 5f)
+				if (newMoveKeys.sqrMagnitude < 0.01f || Vector2.Angle (newMoveKeys, moveKeys) > 5f)
 				{
 					cameraLockSnap = false;
 					return newMoveKeys;
@@ -1650,7 +1661,7 @@ namespace AC
 			if (dragState != DragState.None)
 			{
 				// Calculate change in mouse position
-				if (freeAim.magnitude != 0f)
+				if (freeAim.sqrMagnitude > 0f)
 				{
 					deltaDragMouse = freeAim * 500f / Time.deltaTime;
 				}
@@ -1712,6 +1723,7 @@ namespace AC
 		private void LetGo (bool unlockFPSCamera)
 		{
 			dragObject.LetGo ();
+			KickStarter.eventManager.Call_OnDropMoveable (dragObject);
 			dragObject = null;
 		}
 		
@@ -1721,6 +1733,7 @@ namespace AC
 			if (dragObject)
 			{
 				dragObject.LetGo ();
+				KickStarter.eventManager.Call_OnDropMoveable (dragObject);
 				dragObject = null;
 			}
 			else if (canDragMoveable)
@@ -1738,6 +1751,8 @@ namespace AC
 						dragObject.Grab (hit.point);
 						lastMousePosition = mousePosition;
 						lastCameraPosition = Camera.main.transform.position;
+
+						KickStarter.eventManager.Call_OnGrabMoveable (dragObject);
 					}
 				}
 			}
@@ -1892,7 +1907,7 @@ namespace AC
 		
 		private float GetDeltaTime ()
 		{
-			if (Time.deltaTime == 0f)
+			if (Time.deltaTime == 0f || KickStarter.stateHandler.gameState == GameState.Paused)
 			{
 				return 0.02f;
 			}
@@ -2175,7 +2190,7 @@ namespace AC
 		 */
 		public void InputControlMenu (Menu menu)
 		{
-			if ((KickStarter.stateHandler.gameState == GameState.Paused && menu.pauseWhenEnabled) || (KickStarter.stateHandler.gameState == GameState.DialogOptions && menu.appearType == AppearType.DuringConversation))
+			if ((KickStarter.stateHandler.gameState == GameState.Paused && menu.IsBlocking ()) || (KickStarter.stateHandler.gameState == GameState.DialogOptions && menu.appearType == AppearType.DuringConversation))
 			{
 				selected_option = menu.ControlSelected (selected_option);
 			}

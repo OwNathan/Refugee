@@ -11,7 +11,8 @@ namespace PixelCrushers.DialogueSystem.Examples {
 	/// demonstration purposes.
 	/// </summary>
 	public class FeatureDemo : MonoBehaviour {
-		
+
+        public KeyCode menuKey = KeyCode.Escape;
 		public GUISkin guiSkin;
 		public QuestLogWindow questLogWindow;
 		
@@ -21,11 +22,11 @@ namespace PixelCrushers.DialogueSystem.Examples {
 		
 		void Start() {
 			if (questLogWindow == null) questLogWindow = FindObjectOfType<QuestLogWindow>();
-			DialogueManager.ShowAlert("Press Escape for Menu");
+			DialogueManager.ShowAlert("Press " + menuKey + " for Menu");
 		}
 		
 		void Update() {
-			if (Input.GetKeyDown(KeyCode.Escape) && !DialogueManager.IsConversationActive && !IsQuestLogOpen()) {
+			if (Input.GetKeyDown(menuKey) && !DialogueManager.IsConversationActive && !IsQuestLogOpen()) {
 				SetMenuStatus(!isMenuOpen);
 			}
 			// If you want to lock the cursor during gameplay, add ShowCursorOnConversation to the Player,

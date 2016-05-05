@@ -85,7 +85,10 @@ namespace AC
 		}
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			// Search for duplicates carried over from scene change
 			if (GetComponent <ConstantID>())

@@ -38,7 +38,7 @@ namespace AC
 				
 				_menu.Recalculate ();
 			}
-        }
+		}
 		
 
 		public static void OnElementClick (AC.Menu _menu, MenuElement _element, int _slot, int _buttonPressed)

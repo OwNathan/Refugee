@@ -63,8 +63,11 @@ namespace AC
 		private vp_FPCamera fpCamera;
 		private vp_FPController fpController;
 		private vp_FPInput fpInput;
+		private vp_FPPlayerEventHandler fpPlayerEventHandler;
+
 		private AudioListener _audioListener;
 		private Player player;
+		private bool isClimbing;
 		
 		#endif
 		
@@ -81,6 +84,7 @@ namespace AC
 			fpCamera = GetComponentInChildren <vp_FPCamera>();
 			fpController = GetComponentInChildren <vp_FPController>();
 			fpInput = GetComponentInChildren <vp_FPInput>();
+			fpPlayerEventHandler = GetComponentInChildren <vp_FPPlayerEventHandler>();
 			_audioListener = GetComponentInChildren <AudioListener>();
 			
 			if (fpController == null)
@@ -126,6 +130,13 @@ namespace AC
 
 			// Fixes gun sounds from not always playing
 			AudioListener.pause = false;
+
+			// Add events to climbing interactable
+			if (fpPlayerEventHandler != null)
+			{
+				fpPlayerEventHandler.Climb.StartCallbacks += OnStartClimb;
+				fpPlayerEventHandler.Climb.StopCallbacks += OnStopClimb;
+			}
 			
 			#endif
 		}
@@ -141,7 +152,11 @@ namespace AC
 				return;
 			}
 
-			if (KickStarter.settingsManager.movementMethod != MovementMethod.FirstPerson)
+			if (isClimbing)
+			{
+				SetMovementState (false);
+			}
+			else if (KickStarter.settingsManager.movementMethod != MovementMethod.FirstPerson)
 			{
 				// Disable everything unless we are using First Person movement
 				SetMovementState (false);
@@ -369,6 +384,18 @@ namespace AC
 				return false;
 			}
 			return true;
+		}
+
+
+		private void OnStartClimb ()
+		{
+			isClimbing = true;
+		}
+
+
+		private void OnStopClimb ()
+		{
+			isClimbing = false;
 		}
 		
 		#endif

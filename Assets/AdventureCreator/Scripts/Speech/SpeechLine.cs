@@ -480,6 +480,7 @@ namespace AC
 				    || scene.ToLower ().Contains (filter)
 				    || owner.ToLower ().Contains (filter)
 				    || text.ToLower ().Contains (filter)
+				    || lineID.ToString ().Contains (filter)
 				    || textType.ToString ().ToLower ().Contains (filter))
 				{
 					return true;
@@ -504,6 +505,10 @@ namespace AC
 			else if (filterSpeechLine == FilterSpeechLine.Type)
 			{
 				return textType.ToString ().ToLower ().Contains (filter);
+			}
+			else if (filterSpeechLine == FilterSpeechLine.ID)
+			{
+				return lineID.ToString ().Contains (filter);
 			}
 			return false;
 		}

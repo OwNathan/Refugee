@@ -79,6 +79,10 @@ namespace AC
 		public int lastInteractionIndex = 0;
 		/** The translation ID number of the Hotspot's name, if it was changed mid-game */
 		public int displayLineID = -1;
+		/** The 'Sorting Layer' of the icon's SpriteRenderer, if drawn in World Space */
+		public string iconSortingLayer = "";
+		/** The 'Order in Layer' of the icon's SpriteRenderer, if drawn in World Space */
+		public int iconSortingOrder = 0;
 
 		/** The effect that double-clicking on the Hotspot has, if interactionMethod = AC_InteractionMethod.ContextSensitive in SettingsManager (MakesPlayerRun, TriggersInteractionInstantly) */
 		public DoubleClickingHotspot doubleClickingHotspot = DoubleClickingHotspot.MakesPlayerRun;
@@ -92,6 +96,7 @@ namespace AC
 		private float iconAlpha = 0;
 		private UnityEngine.Sprite iconSprite = null;
 		private SpriteRenderer iconRenderer = null;
+		private CursorIcon mainIcon;
 
 		
 		private void Awake ()
@@ -264,14 +269,20 @@ namespace AC
 						{
 							iconOb.transform.parent = GameObject.Find ("_Hotspots").transform;
 						}
+
+						if (iconSortingLayer != "")
+						{
+							iconRenderer.GetComponent <SpriteRenderer>().sortingLayerName = iconSortingLayer;
+						}
+						iconRenderer.GetComponent <SpriteRenderer>().sortingOrder = iconSortingOrder;
 					}
 
 					if (KickStarter.settingsManager.hotspotIcon == HotspotIcon.UseIcon)
 					{
-						CursorIconBase icon = GetMainIcon ();
-						if (icon != null)
+						GetMainIcon ();
+						if (mainIcon != null)
 						{
-							iconRenderer.sprite = icon.GetSprite ();
+							iconRenderer.sprite = mainIcon.GetSprite ();
 						}
 					}
 					else
@@ -303,10 +314,10 @@ namespace AC
 					
 					if (KickStarter.settingsManager.hotspotIcon == HotspotIcon.UseIcon)
 					{
-						CursorIconBase icon = GetMainIcon ();
-						if (icon != null)
+						GetMainIcon ();
+						if (mainIcon != null)
 						{
-							icon.Draw (GetIconScreenPosition ());
+							mainIcon.Draw (GetIconScreenPosition (), !KickStarter.playerMenus.IsMouseOverInteractionMenu ());
 						}
 					}
 					else if (KickStarter.settingsManager.hotspotIconTexture != null)
@@ -672,31 +683,57 @@ namespace AC
 			}
 			return worldPoint;
 		}
-		
-		
-		private CursorIconBase GetMainIcon ()
+
+
+		/**
+		 * Clears the Hotspot's internal 'use' icon, as used when the Hotspot is highlighted.
+		 */
+		public void ResetMainIcon ()
 		{
+			mainIcon = null;
+		}
+		
+		
+		private void GetMainIcon ()
+		{
+			if (mainIcon != null)
+			{
+				return;
+			}
+
 			if (KickStarter.cursorManager == null)
 			{
-				return null;
+				return;
 			}
 			
 			if (provideUseInteraction && useButton != null && useButton.iconID >= 0 && !useButton.isDisabled)
 			{
-				return KickStarter.cursorManager.GetCursorIconFromID (useButton.iconID);
+				mainIcon = new CursorIcon ();
+				mainIcon.Copy (KickStarter.cursorManager.GetCursorIconFromID (useButton.iconID));
+				return;
 			}
 			
 			if (provideLookInteraction && lookButton != null && lookButton.iconID >= 0 && !lookButton.isDisabled)
 			{
-				return KickStarter.cursorManager.GetCursorIconFromID (lookButton.iconID);
+				mainIcon = new CursorIcon ();
+				mainIcon.Copy (KickStarter.cursorManager.GetCursorIconFromID (lookButton.iconID));
+				return;
 			}
 			
-			if (provideUseInteraction && useButtons != null && useButtons.Count > 0 && !useButtons[0].isDisabled)
+			if (provideUseInteraction && useButtons != null && useButtons.Count > 0)
 			{
-				return KickStarter.cursorManager.GetCursorIconFromID (useButtons[0].iconID);
+				for (int i=0; i<useButtons.Count; i++)
+				{
+					if (!useButtons[i].isDisabled)
+					{
+						mainIcon = new CursorIcon ();
+						mainIcon.Copy (KickStarter.cursorManager.GetCursorIconFromID (useButtons[i].iconID));
+						return;
+					}
+				}
 			}
 			
-			return null;
+			return;
 		}
 		
 

@@ -115,6 +115,7 @@ namespace AC
 				{
 					_hotspot.SetName (data.hotspotName, data.displayLineID);
 				}
+				_hotspot.ResetMainIcon ();
 			}
 
 			loadedData = true;

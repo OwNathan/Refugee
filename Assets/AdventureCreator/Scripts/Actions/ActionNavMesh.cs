@@ -76,7 +76,7 @@ namespace AC
 			{
 				sortingMap = AssignFile <SortingMap> (parameters, parameterID, constantID, sortingMap);
 			}
-			else if (sceneSetting == SceneSetting.SortingMap)
+			else if (sceneSetting == SceneSetting.TintMap)
 			{
 				tintMap = AssignFile <TintMap> (parameters, parameterID, constantID, tintMap);
 			}

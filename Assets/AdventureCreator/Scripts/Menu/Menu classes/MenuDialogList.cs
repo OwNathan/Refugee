@@ -30,6 +30,8 @@ namespace AC
 		public UISlot[] uiSlots;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** How the Conversation's dialogue options are displayed (IconOnly, TextOnly) */
 		public ConversationDisplayType displayType = ConversationDisplayType.TextOnly;
 		/** A temporary dialogue option icon, used for test purposes when the game is not running */
@@ -46,6 +48,8 @@ namespace AC
 		public bool markAlreadyChosen = false;
 		/** The font colour for options already chosen (If markAlreadyChosen = True, OnGUI only) */
 		public Color alreadyChosenFontColour = Color.white;
+		/** If True, and displayType = ConversationDisplayType.TextOnly, then each option's index number will be prefixed to the label */
+		public bool showIndexNumbers = false;
 		
 		private int numOptions = 0;
 		private string[] labels = null;
@@ -71,8 +75,10 @@ namespace AC
 			maxSlots = 10;
 			anchor = TextAnchor.MiddleLeft;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			markAlreadyChosen = false;
 			alreadyChosenFontColour = Color.white;
+			showIndexNumbers = false;
 
 			base.Declare ();
 		}
@@ -96,6 +102,7 @@ namespace AC
 			uiSlots = _element.uiSlots;
 
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			displayType = _element.displayType;
 			testIcon = _element.testIcon;
 			anchor = _element.anchor;
@@ -105,6 +112,7 @@ namespace AC
 			maxSlots = _element.maxSlots;
 			markAlreadyChosen = _element.markAlreadyChosen;
 			alreadyChosenFontColour = _element.alreadyChosenFontColour;
+			showIndexNumbers = _element.showIndexNumbers;
 
 			base.Copy (_element);
 		}
@@ -224,6 +232,10 @@ namespace AC
 				{
 					anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 					textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+					if (textEffects != TextEffects.None)
+					{
+						outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+					}
 				}
 			}
 			else
@@ -246,6 +258,11 @@ namespace AC
 				{
 					uiSlots[i].LinkedUiGUI (i, source);
 				}
+			}
+
+			if (displayType == ConversationDisplayType.TextOnly)
+			{
+				showIndexNumbers = EditorGUILayout.Toggle ("Prefix with index numbers?", showIndexNumbers);
 			}
 
 			ChangeCursorGUI (source);
@@ -292,11 +309,14 @@ namespace AC
 				if (fixedOption)
 				{
 					fullText = "Dialogue option " + optionToShow.ToString ();
+					fullText = AddIndexNumber (fullText, optionToShow);
 				}
 				else
 				{
 					fullText = "Dialogue option " + _slot.ToString ();
+					fullText = AddIndexNumber (fullText, _slot + 1);
 				}
+
 				if (labels == null || labels.Length != numSlots)
 				{
 					labels = new string[numSlots];
@@ -304,6 +324,16 @@ namespace AC
 				chosens = new bool[numSlots];
 				labels [_slot] = fullText;
 			}
+		}
+
+
+		private string AddIndexNumber (string _label, int _i)
+		{
+			if (showIndexNumbers)
+			{
+				return (_i.ToString () + ". " + _label);
+			}
+			return _label;
 		}
 		
 
@@ -350,7 +380,7 @@ namespace AC
 			{
 				if (textEffects != TextEffects.None)
 				{
-					AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels [_slot], _style, Color.black, _style.normal.textColor, 2, textEffects);
+					AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels [_slot], _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 				}
 				else
 				{
@@ -397,6 +427,7 @@ namespace AC
 							numSlots = 1;
 							labels = new string[numSlots];
 							labels[0] = KickStarter.playerInput.activeConversation.GetOptionName (optionToShow - 1);
+							labels[0] = AddIndexNumber (labels[0], optionToShow);
 							
 							icons = new Texture2D[numSlots];
 							icons[0] = KickStarter.playerInput.activeConversation.GetOptionIcon (optionToShow - 1);
@@ -419,6 +450,7 @@ namespace AC
 						for (int i=0; i<numSlots; i++)
 						{
 							labels[i] = KickStarter.playerInput.activeConversation.GetOptionName (i + offset);
+							labels[i] = AddIndexNumber (labels[i], i + offset + 1);
 							icons[i] = KickStarter.playerInput.activeConversation.GetOptionIcon (i + offset);
 							chosens[i] = KickStarter.playerInput.activeConversation.OptionHasBeenChosen (i + offset);
 

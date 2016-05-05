@@ -61,7 +61,10 @@ namespace AC
 		private float deltaHeight = 0f;
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			Awake ();
 		}
@@ -96,9 +99,9 @@ namespace AC
 				deltaHeight = 0f;
 
 				Vector2 moveKeys = KickStarter.playerInput.GetMoveKeys ();
-				if ((moveKeys.x == 0f && moveKeys.y == 0f) || KickStarter.settingsManager.IsFirstPersonDragRotation () || (KickStarter.settingsManager.IsFirstPersonDragComplex () && Input.touchCount == 1))
+				if ((moveKeys.x == 0f && moveKeys.y == 0f) || KickStarter.settingsManager.IsFirstPersonDragRotation () || (KickStarter.settingsManager.IsFirstPersonDragComplex () && Input.touchCount == 1) || !KickStarter.player.IsGrounded ())
 				{ 
-				   bobTimer = 0f;
+					bobTimer = 0f;
 				} 
 				else
 				{

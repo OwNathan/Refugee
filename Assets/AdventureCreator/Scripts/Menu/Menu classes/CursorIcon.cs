@@ -16,7 +16,7 @@ using UnityEditor;
 
 namespace AC
 {
-
+	
 	/**
 	 * A data container for interaction cursor icons.
 	 * These are stored in CursorManager.
@@ -24,7 +24,7 @@ namespace AC
 	[System.Serializable]
 	public class CursorIcon : CursorIconBase
 	{
-
+		
 		/** If True, then the cursor will be left out of the cycle when right-clicking (only applies if SettingsManager's interactionMethod is ChooseInteractionThenHotspot) */
 		public bool dontCycle = false;
 		/** The display name of the icon */
@@ -33,8 +33,8 @@ namespace AC
 		public int lineID = -1;
 		/** A unique identifier */
 		public int id;
-
-
+		
+		
 		/**
 		 * The default Constructor.
 		 */
@@ -47,11 +47,11 @@ namespace AC
 			isAnimated = false;
 			numFrames = 1;
 			size = 0.04f;
-
+			
 			label = "Icon " + (id + 1).ToString ();
 		}
-
-
+		
+		
 		/**
 		 * <summary>A Constructor that generates a unique id number.</summary>
 		 * <param name = "idArray">An array of previously-assigned id numbers</param>
@@ -64,7 +64,7 @@ namespace AC
 			lineID = -1;
 			isAnimated = false;
 			numFrames = 1;
-
+			
 			// Update id based on array
 			foreach (int _id in idArray)
 			{
@@ -76,8 +76,8 @@ namespace AC
 			
 			label = "Icon " + (id + 1).ToString ();
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets the name of the expected input button that is used to quick-select the cursor (only applies if SettingsManager's interactionMethod is ChooseInteractionThenHotspot).</summary>
 		 * <returns>The name of the expected input button, which should be defined in Unity's Input Manager</returns>
@@ -90,8 +90,8 @@ namespace AC
 			}
 			return "Icon_" + id.ToString ();
 		}
-
-
+		
+		
 		/**
 		 * <summary>Copies the values from another CursorIcon.</summary>
 		 * <param name = "_cursorIcon">The CursorIcon to copy from</param>
@@ -102,20 +102,20 @@ namespace AC
 			lineID = _cursorIcon.lineID;
 			id = _cursorIcon.id;
 			dontCycle = _cursorIcon.dontCycle;
-
+			
 			base.Copy (_cursorIcon);
 		}
-
+		
 	}
-
-
+	
+	
 	/**
 	 * A data container for all cursor icons, as well as animated textures used by MenuGraphic.
 	 */
 	[System.Serializable]
 	public class CursorIconBase
 	{
-
+		
 		/** The texture to use */
 		public Texture2D texture;
 		/** If True, then the texture will be considered to consist of multiple animation frames, and they will be displayed sequentially */
@@ -134,14 +134,14 @@ namespace AC
 		public bool endAnimOnLastFrame = false;
 		/** The offset of the "click point", when used as a cursor */
 		public Vector2 clickOffset;
-
+		
 		private string uniqueIdentifier;
 		private float frameIndex = 0f;
 		private float frameWidth = -1f;
 		private float frameHeight = -1;
 		private UnityEngine.Sprite[] sprites;
-
-
+		
+		
 		/**
 		 * The default Constructor.
 		 */
@@ -158,7 +158,7 @@ namespace AC
 			clickOffset = Vector2.zero;
 		}
 		
-
+		
 		/**
 		 * <summary>Copies the values from another CursorIconBase.</summary>
 		 * <param name = "_icon">The CursorIconBase to copy from</param>
@@ -173,9 +173,12 @@ namespace AC
 			clickOffset = _icon.clickOffset;
 			numRows = _icon.numRows;
 			numCols = _icon.numCols;
+			size = _icon.size;
+			
+			Reset ();
 		}
-
-
+		
+		
 		/**
 		 * <summary>Draws the graphic as part of a Menu, for when it's displayed within a MenuGraphic or MenuInteraction.</summary>
 		 * <param name = "_rect">The dimensions to draw the graphic</param>
@@ -187,7 +190,7 @@ namespace AC
 			{
 				return;
 			}
-
+			
 			if (isAnimated && numFrames > 0)
 			{
 				if (Application.isPlaying)
@@ -214,8 +217,8 @@ namespace AC
 				GUI.DrawTexture (_rect, texture, ScaleMode.StretchToFill, true, 0f);
 			}
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a Sprite based on the texture supplied.
 		 * The Sprite will be generated on the fly if it does not already exist.</summary>
@@ -232,14 +235,14 @@ namespace AC
 			{
 				sprites = new UnityEngine.Sprite[1];
 			}
-			if (sprites[0] == null)
+			if (sprites != null && sprites.Length > 0 && sprites[0] == null)
 			{
 				sprites[0] = UnityEngine.Sprite.Create (texture, new Rect (0f, 0f, texture.width, texture.height), new Vector2 (0.5f, 0.5f));
 			}
 			return sprites[0];
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a Sprite based on the animated texture supplied.
 		 * The Sprite will be generated on the fly if it does not already exist.</summary>
@@ -252,7 +255,7 @@ namespace AC
 			{
 				return null;
 			}
-
+			
 			int frameInRow = _frameIndex + 1;
 			int currentRow = 1;
 			while (frameInRow > numCols)
@@ -266,7 +269,7 @@ namespace AC
 				frameInRow = 1;
 				currentRow = 1;
 			}
-
+			
 			if (sprites == null || sprites.Length <= _frameIndex)
 			{
 				sprites = new UnityEngine.Sprite[_frameIndex+1];
@@ -276,11 +279,11 @@ namespace AC
 				Rect _rect = new Rect (frameWidth * (frameInRow-1) * texture.width, frameHeight * (numRows - currentRow) * texture.height, frameWidth * texture.width, frameHeight * texture.height);
 				sprites[_frameIndex] = UnityEngine.Sprite.Create (texture, _rect, new Vector2 (0.5f, 0.5f));
 			}
-
+			
 			return sprites[_frameIndex];
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a Sprite based on the animated texture supplied, when the texture is used within a MenuElement (MenuGraphic or MenuInteraction).
 		 * The Sprite will be generated on the fly if it does not already exist.</summary>
@@ -302,11 +305,11 @@ namespace AC
 					{
 						sprites = new UnityEngine.Sprite[numFrames];
 					}
-
+					
 					if (isActive)
 					{
 						Rect animatedRect = GetAnimatedRect ();
-
+						
 						int i = Mathf.FloorToInt (frameIndex);
 						if (sprites[i] == null)
 						{
@@ -328,11 +331,11 @@ namespace AC
 			}
 			else
 			{
-				if (sprites == null)
+				if (sprites == null || sprites.Length < 1)
 				{
 					sprites = new UnityEngine.Sprite[1];
 				}
-				if (sprites[0] == null)
+				if (sprites != null && sprites.Length > 0 && sprites[0] == null)
 				{
 					sprites[0] = UnityEngine.Sprite.Create (texture, new Rect (0, 0, texture.width, texture.height), new Vector2 (0.5f, 0.5f));
 				}
@@ -340,8 +343,8 @@ namespace AC
 			}
 			return null;
 		}
-
-
+		
+		
 		/**
 		 * Clears the generated sprite.
 		 */
@@ -349,8 +352,8 @@ namespace AC
 		{
 			sprites = null;
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a slice of the texture that represents the current frame, if the texture consists of animated frames.</summary>
 		 * <returns>A frame of animation</returns>
@@ -361,26 +364,36 @@ namespace AC
 			{
 				return null;
 			}
-
+			
 			if (isAnimated)
 			{
 				Rect animatedRect = GetAnimatedRect ();
-
+				
 				int x = Mathf.FloorToInt (animatedRect.x * texture.width);
 				int y = Mathf.FloorToInt (animatedRect.y * texture.height);
 				int width = Mathf.FloorToInt (animatedRect.width * texture.width);
 				int height = Mathf.FloorToInt (animatedRect.height * texture.height);
-
-				Color[] pix = texture.GetPixels (x, y, width, height);
-				Texture2D frameTex = new Texture2D ((int) (frameWidth * texture.width), (int) (frameHeight * texture.height));
-				frameTex.SetPixels (pix);
-				frameTex.Apply();
-				return frameTex;
+				
+				if (animatedRect.width >= 0f && animatedRect.height >= 0f)
+				{
+					try
+					{
+						Color[] pix = texture.GetPixels (x, y, width, height);
+						Texture2D frameTex = new Texture2D ((int) (frameWidth * texture.width), (int) (frameHeight * texture.height));
+						frameTex.SetPixels (pix);
+						frameTex.Apply ();
+						return frameTex;
+					}
+					catch
+					{
+						ACDebug.LogWarning ("Cannot read texture '" + texture.name + "' - it may need to be set to type 'Advanced' and have 'Read/Write Enabled' checked.");
+					}
+				}
 			}
 			return texture;
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a unique identifier, based on the texture and current animation frame.</summary>
 		 * <returns>A unique identifier for the instance</returns>
@@ -389,8 +402,8 @@ namespace AC
 		{
 			return uniqueIdentifier;
 		}
-
-
+		
+		
 		/**
 		 * <summary>Draws the texture as a cursor icon</summary>
 		 * <param name = "centre">The cursor's centre position on-screen</param>
@@ -403,18 +416,18 @@ namespace AC
 			{
 				return null;
 			}
-
+			
 			float _size = size;
-
+			
 			if (KickStarter.cursorManager.cursorRendering == CursorRendering.Hardware)
 			{
 				_size = (float) ((float) texture.width / (float) Screen.width);
 			}
 			Rect _rect = AdvGame.GUIBox (centre, _size);
-
+			
 			_rect.x -= clickOffset.x * _rect.width;
 			_rect.y -= clickOffset.y * _rect.height;
-
+			
 			if (isAnimated && numFrames > 0 && Application.isPlaying)
 			{
 				if (!canAnimate)
@@ -430,8 +443,8 @@ namespace AC
 				return texture;
 			}
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a Rect that describes a slice of the animated texture that represents the current frame.</summary>
 		 * <returns>A Rect that describes a slice of the animated texture that represents the current frame</returns>
@@ -440,7 +453,7 @@ namespace AC
 		{
 			int currentRow = 1;
 			int frameInRow = 1;
-
+			
 			if (frameIndex < 0f)
 			{
 				frameIndex = 0f;
@@ -458,14 +471,14 @@ namespace AC
 					frameIndex += Time.deltaTime * animSpeed;
 				}
 			}
-
+			
 			frameInRow = Mathf.FloorToInt (frameIndex)+1;
 			while (frameInRow > numCols)
 			{
 				frameInRow -= numCols;
 				currentRow ++;
 			}
-
+			
 			if (frameIndex >= numFrames)
 			{
 				if (!endAnimOnLastFrame)
@@ -480,15 +493,15 @@ namespace AC
 					frameInRow -= 1;
 				}
 			}
-
+			
 			if (texture != null)
 			{
 				uniqueIdentifier = texture.name + frameInRow.ToString () + currentRow.ToString ();
 			}
 			return new Rect (frameWidth * (frameInRow-1), frameHeight * (numRows - currentRow), frameWidth, frameHeight);
 		}
-
-
+		
+		
 		/**
 		 * <summary>Gets a Rect that describes a slice of the animated texture that represents a specific frame.</summary>
 		 * <param name = "_frameIndex">The frame in question</param>
@@ -512,8 +525,8 @@ namespace AC
 			
 			return new Rect (frameWidth * (frameInRow-1), frameHeight * (numRows - currentRow), frameWidth, frameHeight);
 		}
-
-
+		
+		
 		/**
 		 * Resets the animation, if the texture is animated.
 		 */
@@ -531,24 +544,24 @@ namespace AC
 				{
 					ACDebug.LogWarning ("Cannot have an animated cursor with less than one frame!");
 				}
-
+				
 				if (animSpeed < 0)
 				{
 					animSpeed = 0;
 				}
 			}
 		}
-
-
+		
+		
 		#if UNITY_EDITOR
-
+		
 		public void ShowGUI (bool includeSize, CursorRendering cursorRendering = CursorRendering.Software, string _label = "Texture:")
 		{
 			EditorGUILayout.BeginHorizontal ();
 			EditorGUILayout.LabelField (_label, GUILayout.Width (145));
 			texture = (Texture2D) EditorGUILayout.ObjectField (texture, typeof (Texture2D), false, GUILayout.Width (70), GUILayout.Height (70));
 			EditorGUILayout.EndHorizontal ();
-
+			
 			if (includeSize)
 			{
 				EditorGUILayout.BeginHorizontal ();
@@ -577,30 +590,30 @@ namespace AC
 				EditorGUILayout.LabelField ("Columns:", GUILayout.Width (50f));
 				numCols = EditorGUILayout.IntField (numCols, GUILayout.Width (70f));
 				EditorGUILayout.EndHorizontal ();
-
+				
 				animSpeed = EditorGUILayout.FloatField ("Animation speed:", animSpeed);
 				endAnimOnLastFrame = EditorGUILayout.Toggle ("End on last frame?", endAnimOnLastFrame);
 			}
 		}
-
+		
 		#endif
-
+		
 	}
-
-
+	
+	
 	/**
 	 * A data container for labels that might surround a Hotspot, but aren't CursorIcons (e.g. "Use X on Y", "Give X to Y")
 	 */
 	[System.Serializable]
 	public class HotspotPrefix
 	{
-
+		
 		/** The display text */
 		public string label;
 		/** The translation ID, as used by SpeechManager */
 		public int lineID;
-
-
+		
+		
 		/**
 		 * The default Constructor.
 		 */
@@ -609,7 +622,7 @@ namespace AC
 			label = text;
 			lineID = -1;
 		}
-
+		
 	}
-
+	
 }

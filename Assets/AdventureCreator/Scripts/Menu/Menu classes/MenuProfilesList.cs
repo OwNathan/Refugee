@@ -29,6 +29,8 @@ namespace AC
 		public UISlot[] uiSlots;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The text alignment */
 		public TextAnchor anchor;
 		/** The maximum number of profiles that can be displayed at once */
@@ -59,6 +61,7 @@ namespace AC
 
 			actionListOnClick = null;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 
 			base.Declare ();
 		}
@@ -82,6 +85,7 @@ namespace AC
 			uiSlots = _element.uiSlots;
 			
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			anchor = _element.anchor;
 			maxSlots = _element.maxSlots;
 			actionListOnClick = _element.actionListOnClick;
@@ -180,6 +184,10 @@ namespace AC
 			{
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 			
 			actionListOnClick = ActionListAssetMenu.AssetGUI ("ActionList after selecting:", actionListOnClick);
@@ -326,7 +334,7 @@ namespace AC
 			
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

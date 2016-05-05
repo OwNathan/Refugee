@@ -57,7 +57,7 @@ namespace AC
 			#endif
 		}
 
-		public virtual void ActionCharAnimGUI (ActionCharAnim action)
+		public virtual void ActionCharAnimGUI (ActionCharAnim action, List<ActionParameter> parameters = null)
 		{
 			#if UNITY_EDITOR
 			action.method = (ActionCharAnim.AnimMethodChar) EditorGUILayout.EnumPopup ("Method:", action.method);

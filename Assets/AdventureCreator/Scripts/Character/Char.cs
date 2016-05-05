@@ -228,7 +228,8 @@ namespace AC
 		public bool antiGlideMode = false;
 
 		protected float pathfindUpdateTime = 0f;
-		protected bool isJumping = false;
+		/** If True, then the character is mid-jump */
+		public bool isJumping = false;
 		
 		private float sortingMapScale = 1f;
 		private bool isReversing = false;
@@ -514,8 +515,11 @@ namespace AC
 
 		private void OnDrawGizmos ()
 		{
-			Gizmos.color = Color.yellow;
-			Gizmos.DrawWireSphere (transform.position, KickStarter.settingsManager.GetDestinationThreshold ());
+			if (KickStarter.settingsManager != null)
+			{
+				Gizmos.color = Color.yellow;
+				Gizmos.DrawWireSphere (transform.position, KickStarter.settingsManager.GetDestinationThreshold ());
+			}
 		}
 		
 		
@@ -716,7 +720,7 @@ namespace AC
 			{
 				ProcessLipSync ();
 			}
-			
+
 			if (isJumping)
 			{
 				animEngine.PlayJump ();
@@ -2096,7 +2100,7 @@ namespace AC
 		}
 		
 		
-		protected void StopStandardAudio ()
+		private void StopStandardAudio ()
 		{
 			if (audioSource && audioSource.isPlaying)
 			{
@@ -2108,7 +2112,7 @@ namespace AC
 		}
 		
 		
-		protected void PlayStandardAudio ()
+		private void PlayStandardAudio ()
 		{
 			if (audioSource)
 			{
@@ -2118,15 +2122,24 @@ namespace AC
 					{
 						return;
 					}
+
+					if (!IsGrounded ())
+					{
+						return;
+					}
 					
 					audioSource.loop = false;
 					audioSource.clip = runSound;
 					audioSource.Play ();
 				}
-				
 				else if (walkSound)
 				{
 					if (audioSource.isPlaying && audioSource.clip == walkSound)
+					{
+						return;
+					}
+
+					if (!IsGrounded ())
 					{
 						return;
 					}
@@ -2758,7 +2771,7 @@ namespace AC
 		/**
 		 * Initialises the character after a scene change. This is called manually by SaveSystem so that the order is correct.
 		 */
-		public void _OnLevelWasLoaded ()
+		public void AfterLoad ()
 		{
 			headFacing = HeadFacing.None;
 			lockDirection = false;
@@ -2923,8 +2936,13 @@ namespace AC
 			{
 				RogoLipSyncIntegration.Stop (this);
 			}
+			else if (KickStarter.speechManager.lipSyncMode == LipSyncMode.FaceFX)
+			{
+				FaceFXIntegration.Stop (this);
+			}
 			
 			lipSyncShapes.Clear ();
+			isLipSyncing = false;
 			
 			if (speechAudioSource)
 			{
@@ -3017,6 +3035,31 @@ namespace AC
 				return currentExpression.portraitIcon;
 			}
 			return portraitIcon;
+		}
+
+
+		/**
+		 * <summary>Checks if the character (if 3D) is in contact with the ground.</summary>
+		 * <returns>True if the character (if 3D) is in contact with the ground</returns>
+		 */
+		public bool IsGrounded ()
+		{
+			if (_characterController != null)
+			{
+				return _characterController.isGrounded;
+			}
+			
+			if (_rigidbody != null && Mathf.Abs (_rigidbody.velocity.y) > 0.1f)
+			{
+				return false;
+			}
+			
+			if (_collider != null)
+			{
+				return Physics.CheckCapsule (transform.position + new Vector3 (0f, _collider.bounds.size.y, 0f), transform.position + new Vector3 (0f, _collider.bounds.size.x / 4f, 0f), _collider.bounds.size.x / 2f);
+			}
+			
+			return false;
 		}
 		
 		

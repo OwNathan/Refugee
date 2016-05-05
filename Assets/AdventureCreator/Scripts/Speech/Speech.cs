@@ -277,7 +277,8 @@ namespace AC
 			}
 			
 			log.fullText = _message;
-			
+			KickStarter.eventManager.Call_OnStartSpeech (_speaker, log.fullText, lineID);
+
 			if (!CanScroll ())
 			{
 				if (continueIndex > 0)
@@ -297,10 +298,8 @@ namespace AC
 			else
 			{
 				displayText = "";
+				KickStarter.eventManager.Call_OnStartSpeechScroll (_speaker, log.fullText, lineID);
 			}
-
-			// Call event
-			KickStarter.eventManager.Call_OnStartSpeech (_speaker, log.fullText, lineID);
 
 			isAlive = true;
 			isSkippable = true;
@@ -348,7 +347,7 @@ namespace AC
 						scrollAmount += KickStarter.speechManager.textScrollSpeed / 100f / log.fullText.Length;
 						if (scrollAmount > 1f)
 						{
-							scrollAmount = 1f;
+							StopScrolling ();
 						}
 						
 						int currentCharIndex = (int) (scrollAmount * log.fullText.Length);
@@ -535,8 +534,7 @@ namespace AC
 							if (KickStarter.speechManager.endScrollBeforeSkip && CanScroll () && displayText != log.fullText)
 							{
 								// Stop scrolling
-								scrollAmount = 1f;
-								displayText = log.fullText;
+								StopScrolling ();
 
 								// Find last non-encountered expression
 								if (speechGaps != null && speechGaps.Count > gapIndex)
@@ -582,13 +580,7 @@ namespace AC
 								
 								if (gapIndex == speechGaps.Count)
 								{
-									scrollAmount = 1f;
-									displayText = log.fullText;
-
-									if (holdForever)
-									{
-										EndMessage ();
-									}
+									StopScrolling ();
 								}
 								else
 								{
@@ -598,13 +590,7 @@ namespace AC
 							}
 							else
 							{
-								scrollAmount = 1f;
-								displayText = log.fullText;
-
-								if (holdForever)
-								{
-									EndMessage ();
-								}
+								StopScrolling ();
 							}
 						}
 						else
@@ -614,6 +600,21 @@ namespace AC
 					}
 				}
 			}
+		}
+
+
+		private void StopScrolling ()
+		{
+			scrollAmount = 1f;
+			displayText = log.fullText;
+			
+			if (holdForever)
+			{
+				EndMessage ();
+			}
+
+			// Call event
+			KickStarter.eventManager.Call_OnEndSpeechScroll (speaker, log.fullText, log.lineID);
 		}
 
 

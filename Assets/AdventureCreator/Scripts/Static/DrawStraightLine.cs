@@ -149,7 +149,11 @@ namespace AC
 		 */
 		public static void Draw (Vector2 pointA, Vector2 pointB, Color color, float width, bool antiAlias)
 		{
+			#if UNITY_5_4_OR_NEWER
+			if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+			#else
 			if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsWebPlayer)
+			#endif
 			{
 				DrawLineWindows (pointA, pointB, color, width, antiAlias);
 			}

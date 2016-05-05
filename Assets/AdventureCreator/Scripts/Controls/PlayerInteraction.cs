@@ -31,6 +31,7 @@ namespace AC
 
 		private Hotspot hotspotMovingTo;
 		private Hotspot hotspot;
+		private Hotspot lastHotspot = null;
 		private Button button = null;
 		private int interactionIndex = -1;
 
@@ -115,11 +116,18 @@ namespace AC
 				
 				if (KickStarter.settingsManager.playerFacesHotspots && KickStarter.player != null)
 				{
-					if (hotspot && hotspot.playerTurnsHead)
+					if (KickStarter.settingsManager.interactionMethod != AC_InteractionMethod.ChooseHotspotThenInteraction || !KickStarter.settingsManager.onlyFaceHotspotOnSelect)
 					{
-						KickStarter.player.SetHeadTurnTarget (hotspot.transform, hotspot.GetIconPosition (true), false, HeadFacing.Hotspot);
+						if (hotspot && hotspot.playerTurnsHead)
+						{
+							KickStarter.player.SetHeadTurnTarget (hotspot.transform, hotspot.GetIconPosition (true), false, HeadFacing.Hotspot);
+						}
+						else if (button == null)
+						{
+							KickStarter.player.ClearHeadTurnTarget (false, HeadFacing.Hotspot);
+						}
 					}
-					else if (button == null)
+					else if (button == null && hotspot == null && !KickStarter.playerMenus.IsInteractionMenuOn ())
 					{
 						KickStarter.player.ClearHeadTurnTarget (false, HeadFacing.Hotspot);
 					}
@@ -310,7 +318,7 @@ namespace AC
 							KickStarter.playerMenus.SetInteractionMenus (false);
 						}
 						
-						hotspot = newHotspot;
+						lastHotspot = hotspot = newHotspot;
 						hotspot.Select ();
 					}
 
@@ -340,6 +348,14 @@ namespace AC
 							}
 							else if (KickStarter.playerMenus)
 							{
+								if (KickStarter.settingsManager.playerFacesHotspots && KickStarter.player != null && KickStarter.settingsManager.onlyFaceHotspotOnSelect)
+								{
+									if (hotspot && hotspot.playerTurnsHead)
+									{
+										KickStarter.player.SetHeadTurnTarget (hotspot.transform, hotspot.GetIconPosition (true), false, HeadFacing.Hotspot);
+									}
+								}
+
 								if (KickStarter.playerMenus.IsInteractionMenuOn () && KickStarter.settingsManager.SelectInteractionMethod () == SelectInteractions.CyclingMenuAndClickingHotspot)
 								{
 									ClickHotspotToInteract ();
@@ -381,7 +397,8 @@ namespace AC
 			if (CanDoDoubleTap ())
 			{
 				// Detect Hotspots only on mouse click
-				if (KickStarter.playerInput.GetMouseState () == MouseState.SingleClick)
+				if (KickStarter.playerInput.GetMouseState () == MouseState.SingleClick ||
+				    KickStarter.playerInput.GetMouseState () == MouseState.DoubleClick)
 				{
 					// Check Hotspots only when click/tap
 					ContextSensitiveClick_Process (true, CheckForHotspots ());
@@ -436,7 +453,7 @@ namespace AC
 				{
 					DeselectHotspot (false); 
 					
-					hotspot = newHotspot;
+					lastHotspot = hotspot = newHotspot;
 					hotspot.Select ();
 
 					if (KickStarter.settingsManager.SelectInteractionMethod () == SelectInteractions.CyclingCursorAndClickingHotspot)
@@ -652,7 +669,7 @@ namespace AC
 
 			if (clickedHotspot != null)
 			{
-				hotspot = clickedHotspot;
+				lastHotspot = hotspot = clickedHotspot;
 			}
 			
 			if (KickStarter.player)
@@ -754,6 +771,7 @@ namespace AC
 		{
 			bool doRun = false;
 			bool doSnap = false;
+
 			if (hotspotMovingTo == hotspot && KickStarter.playerInput.LastClickWasDouble ())
 			{
 				if (hotspotMovingTo.doubleClickingHotspot == DoubleClickingHotspot.TriggersInteractionInstantly)
@@ -1168,6 +1186,21 @@ namespace AC
 			}
 			return Vector2.zero;
 		}
+
+
+		/**
+		 * <summary>Gets the centre of the last-active Hotspot in screen space</summary>
+		 * <returns>The centre of the last-active Hotspot in screen space</returns>
+		 */
+		public Vector2 GetLastHotspotScreenCentre ()
+		{
+			if (GetLastOrActiveHotspot ())
+			{
+				Vector2 screenPos = GetLastOrActiveHotspot ().GetIconScreenPosition ();
+				return new Vector2 (screenPos.x / Screen.width, 1f - (screenPos.y / Screen.height));
+			}
+			return Vector2.zero;
+		}
 		
 
 		/**
@@ -1283,6 +1316,21 @@ namespace AC
 		{
 			return hotspot;
 		}
+
+
+		/**
+		 * <summary>Gets the last Hotspot to be active, even if none is currently active.</summary>
+		 * <returns>The last Hotspot to be active</returns>
+		 */
+		public Hotspot GetLastOrActiveHotspot ()
+		{
+			if (hotspot != null)
+			{
+				lastHotspot = hotspot;
+				return hotspot;
+			}
+			return lastHotspot;
+		}
 		
 
 		/**
@@ -1297,7 +1345,7 @@ namespace AC
 				{
 					if (interactionIndex == -1)
 					{
-						if (KickStarter.runtimeInventory.hoverItem.interactions.Count == 0)
+						if (KickStarter.runtimeInventory.hoverItem.interactions == null || KickStarter.runtimeInventory.hoverItem.interactions.Count == 0)
 						{
 							return -1;
 						}
@@ -1308,7 +1356,7 @@ namespace AC
 						}
 					}
 					
-					if (interactionIndex < KickStarter.runtimeInventory.hoverItem.interactions.Count)
+					if (KickStarter.runtimeInventory.hoverItem.interactions != null && interactionIndex < KickStarter.runtimeInventory.hoverItem.interactions.Count)
 					{
 						return KickStarter.runtimeInventory.hoverItem.interactions [interactionIndex].icon.id;
 					}
@@ -1359,7 +1407,7 @@ namespace AC
 						return -1;
 					}
 					
-					if (interactionIndex < KickStarter.runtimeInventory.hoverItem.interactions.Count)
+					if (KickStarter.runtimeInventory.hoverItem.interactions != null && interactionIndex < KickStarter.runtimeInventory.hoverItem.interactions.Count)
 					{
 						return KickStarter.runtimeInventory.hoverItem.interactions [interactionIndex].icon.id;
 					}
@@ -1400,9 +1448,10 @@ namespace AC
 			{
 				if (KickStarter.runtimeInventory.hoverItem != null && KickStarter.settingsManager.inventoryInteractions == AC.InventoryInteractions.Multiple)
 				{
-					if (interactionIndex >= KickStarter.runtimeInventory.hoverItem.interactions.Count && KickStarter.runtimeInventory.matchingInvInteractions.Count > 0)
+					int numInteractions = (KickStarter.runtimeInventory.hoverItem.interactions != null) ? KickStarter.runtimeInventory.hoverItem.interactions.Count : 0;
+					if (interactionIndex >= numInteractions && KickStarter.runtimeInventory.matchingInvInteractions.Count > 0)
 					{
-						int combineIndex = KickStarter.runtimeInventory.matchingInvInteractions [interactionIndex - KickStarter.runtimeInventory.hoverItem.interactions.Count];
+						int combineIndex = KickStarter.runtimeInventory.matchingInvInteractions [interactionIndex - numInteractions];
 						return KickStarter.runtimeInventory.hoverItem.combineID [combineIndex];
 					}
 				}
@@ -1424,9 +1473,10 @@ namespace AC
 				
 				if (KickStarter.runtimeInventory.hoverItem != null && KickStarter.settingsManager.inventoryInteractions == AC.InventoryInteractions.Multiple)
 				{
-					if (interactionIndex >= KickStarter.runtimeInventory.hoverItem.interactions.Count && KickStarter.runtimeInventory.matchingInvInteractions.Count > 0)
+					int numInteractions = (KickStarter.runtimeInventory.hoverItem.interactions != null) ? KickStarter.runtimeInventory.hoverItem.interactions.Count : 0;
+					if (interactionIndex >= numInteractions && KickStarter.runtimeInventory.matchingInvInteractions.Count > 0)
 					{
-						return KickStarter.runtimeInventory.hoverItem.combineID [KickStarter.runtimeInventory.matchingInvInteractions [interactionIndex - KickStarter.runtimeInventory.hoverItem.interactions.Count]];
+						return KickStarter.runtimeInventory.hoverItem.combineID [KickStarter.runtimeInventory.matchingInvInteractions [interactionIndex - numInteractions]];
 					}
 				}
 				else if (GetActiveHotspot ())

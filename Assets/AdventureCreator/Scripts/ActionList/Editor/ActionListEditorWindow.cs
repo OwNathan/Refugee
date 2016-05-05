@@ -1455,17 +1455,20 @@ namespace AC
 				ActionCheck actionCheck = (ActionCheck) action;
 				if (actionCheck.resultActionFail != ResultAction.RunCutscene)
 				{
-					Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y - 22 + action.nodeRect.height, 16, 16);
-					
-					if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+					if (actionCheck.resultActionFail != ResultAction.Skip || action.showOutputSockets)
 					{
-						offsetChanging = 10;
-						resultType = false;
-						actionChanging = action;
+						Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y - 22 + action.nodeRect.height, 16, 16);
+						
+						if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+						{
+							offsetChanging = 10;
+							resultType = false;
+							actionChanging = action;
+						}
+						
+						GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 					}
-					
-					GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
-					
+
 					if (actionCheck.resultActionFail == ResultAction.Skip)
 					{
 						offset = 17;
@@ -1473,16 +1476,19 @@ namespace AC
 				}
 				if (actionCheck.resultActionTrue != ResultAction.RunCutscene)
 				{
-					Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y - 40 - offset + action.nodeRect.height, 16, 16);
-					
-					if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+					if (actionCheck.resultActionTrue != ResultAction.Skip || action.showOutputSockets)
 					{
-						offsetChanging = 30 + offset;
-						resultType = true;
-						actionChanging = action;
+						Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y - 40 - offset + action.nodeRect.height, 16, 16);
+						
+						if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+						{
+							offsetChanging = 30 + offset;
+							resultType = true;
+							actionChanging = action;
+						}
+						
+						GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 					}
-					
-					GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 				}
 			}
 			else if (action is ActionCheckMultiple)
@@ -1496,19 +1502,22 @@ namespace AC
 
 					if (ending.resultAction != ResultAction.RunCutscene)
 					{
-						Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2,
-						                            action.nodeRect.y + action.nodeRect.height
-						                            - totalHeight,
-						                            16, 16);
-
-						if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+						if (ending.resultAction != ResultAction.Skip || action.showOutputSockets)
 						{
-							offsetChanging = totalHeight - 10;
-							multipleResultType = actionCheckMultiple.endings.IndexOf (ending);
-							actionChanging = action;
+							Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2,
+							                            action.nodeRect.y + action.nodeRect.height
+							                            - totalHeight,
+							                            16, 16);
+
+							if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+							{
+								offsetChanging = totalHeight - 10;
+								multipleResultType = actionCheckMultiple.endings.IndexOf (ending);
+								actionChanging = action;
+							}
+							
+							GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 						}
-						
-						GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 					}
 
 					if (ending.resultAction == ResultAction.Skip)
@@ -1531,16 +1540,19 @@ namespace AC
 					
 					if (ending.resultAction != ResultAction.RunCutscene)
 					{
-						Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y + (j * 43) - (ActionParallel.endings.Count * 43) + action.nodeRect.height, 16, 16);
-						
-						if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+						if (ending.resultAction != ResultAction.Skip || action.showOutputSockets)
 						{
-							offsetChanging = (ActionParallel.endings.Count - j) * 43 - 13;
-							multipleResultType = ActionParallel.endings.IndexOf (ending);
-							actionChanging = action;
+							Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width - 2, action.nodeRect.y + (j * 43) - (ActionParallel.endings.Count * 43) + action.nodeRect.height, 16, 16);
+							
+							if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+							{
+								offsetChanging = (ActionParallel.endings.Count - j) * 43 - 13;
+								multipleResultType = ActionParallel.endings.IndexOf (ending);
+								actionChanging = action;
+							}
+							
+							GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 						}
-						
-						GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 					}
 				}
 			}
@@ -1548,15 +1560,18 @@ namespace AC
 			{
 				if (action.endAction != ResultAction.RunCutscene)
 				{
-					Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width / 2f - 8, action.nodeRect.y + action.nodeRect.height, 16, 16);
-					
-					if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+					if (action.endAction != ResultAction.Skip || action.showOutputSockets)
 					{
-						offsetChanging = 10;
-						actionChanging = action;
+						Rect buttonRect = new Rect (action.nodeRect.x + action.nodeRect.width / 2f - 8, action.nodeRect.y + action.nodeRect.height, 16, 16);
+						
+						if (e.isMouse && actionChanging == null && e.type == EventType.MouseDown && action.isEnabled && buttonRect.Contains(e.mousePosition))
+						{
+							offsetChanging = 10;
+							actionChanging = action;
+						}
+						
+						GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 					}
-					
-					GUI.Button (buttonRect, "", Resource.NodeSkin.customStyles[10]);
 				}
 			}
 			
@@ -1662,6 +1677,9 @@ namespace AC
 				menu.AddSeparator ("");
 				menu.AddItem (new GUIContent ("Comment selected"), false, EmptyCallback, "Comment selected");
 				menu.AddItem (new GUIContent ("Uncomment selected"), false, EmptyCallback, "Uncomment selected");
+				menu.AddSeparator ("");
+				menu.AddItem (new GUIContent ("Show output socket(s)"), false, EmptyCallback, "Show output socket(s)");
+				menu.AddItem (new GUIContent ("Hide output socket(s)"), false, EmptyCallback, "Hide output socket(s)");
 
 				if (NumActionsMarked (isAsset) == 1)
 				{
@@ -1699,6 +1717,7 @@ namespace AC
 			menu.AddSeparator ("");
 			menu.AddItem (new GUIContent ("Toggle breakpoint"), false, EmptyCallback, "Toggle breakpoint");
 			menu.AddItem (new GUIContent ("Toggle comment"), false, EmptyCallback, "Toggle comment");
+			menu.AddItem (new GUIContent ("Toggle output socket(s)"), false, EmptyCallback, "Toggle output socket(s)");
 			
 			menu.ShowAsContext ();
 		}
@@ -1859,6 +1878,26 @@ namespace AC
 					}
 				}
 			}
+			else if (objString == "Show output socket(s)")
+			{
+				foreach (Action action in actionList)
+				{
+					if (action.isMarked)
+					{
+						action.showOutputSockets = true;
+					}
+				}
+			}
+			else if (objString == "Hide output socket(s)")
+			{
+				foreach (Action action in actionList)
+				{
+					if (action.isMarked)
+					{
+						action.showOutputSockets = false;
+					}
+				}
+			}
 			else if (objString == "Cut selected" || objString == "Copy selected")
 			{
 				List<Action> copyList = new List<Action>();
@@ -1989,6 +2028,17 @@ namespace AC
 					if (action.isMarked)
 					{
 						action.showComment = !action.showComment;
+						action.isMarked = false;
+					}
+				}
+			}
+			else if (objString == "Toggle output socket(s)")
+			{
+				foreach (Action action in actionList)
+				{
+					if (action.isMarked)
+					{
+						action.showOutputSockets = !action.showOutputSockets;
 						action.isMarked = false;
 					}
 				}

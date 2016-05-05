@@ -65,15 +65,15 @@ namespace AC
 		 * <param name = "intensity">The intensity of the effect, where 0 = fully white, 1 = fully tinted</param>
 		 * <returns>The colour tint. If no appropriate texture is found, Color.white will be returned</returns>
 		 */
-		public Color GetColorData (Vector2 position, float intensity = 1f)
+		public Color GetColorData (Vector2 position, float intensity = 1f, float alpha = 1f)
 		{
-			if (actualTexture != null || intensity <= 0f)
+			if (actualTexture != null && intensity > 0f)
 			{
 				RaycastHit hit;
 				var ray = new Ray (new Vector3 (position.x, position.y, transform.position.z - 0.0005f), Vector3.forward);
 				if (!Physics.Raycast (ray, out hit, 0.001f))
 				{
-					return Color.white;
+					return new Color (1f, 1f, 1f, alpha);
 				}
 				Vector2 pixelUV = hit.textureCoord;
 
@@ -81,9 +81,10 @@ namespace AC
 				{
 					return actualTexture.GetPixelBilinear (pixelUV.x, pixelUV.y);
 				}
-				return Color.Lerp (Color.white, actualTexture.GetPixelBilinear (pixelUV.x, pixelUV.y), intensity);
+				Color newColour = Color.Lerp (Color.white, actualTexture.GetPixelBilinear (pixelUV.x, pixelUV.y), intensity);
+				return new Color (newColour.r, newColour.g, newColour.b, alpha);
 			}
-			return Color.white;
+			return new Color (1f, 1f, 1f, alpha);
 		}
 
 	}

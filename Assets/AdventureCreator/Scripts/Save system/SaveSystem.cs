@@ -49,6 +49,27 @@ namespace AC
 		private SaveData saveData;
 		private SelectiveLoad activeSelectiveLoad = new SelectiveLoad ();
 
+
+		#if UNITY_5_4_OR_NEWER
+		private void Awake ()
+		{
+			UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneLoaded;
+		}
+		private void OnDestroy ()
+		{
+			UnityEngine.SceneManagement.SceneManager.sceneLoaded -= SceneLoaded;
+		}
+		private void SceneLoaded (UnityEngine.SceneManagement.Scene _scene, UnityEngine.SceneManagement.LoadSceneMode _loadSceneMode)
+		{
+			_OnLevelWasLoaded ();
+		}
+		#else
+		private void OnLevelWasLoaded ()
+		{
+			_OnLevelWasLoaded ();
+		}
+		#endif
+
 		
 		public void OnStart ()
 		{
@@ -635,7 +656,7 @@ namespace AC
 						}
 					}
 
-					OnLevelWasLoaded ();
+					_OnLevelWasLoaded ();
 				}
 			}
 		}
@@ -712,8 +733,10 @@ namespace AC
 		}
 
 
-		private void OnLevelWasLoaded ()
+		private void _OnLevelWasLoaded ()
 		{
+			KickStarter.stateHandler.AfterLoad ();
+
 			if (KickStarter.settingsManager.IsInLoadingScene ())
 			{
 				return;
@@ -777,7 +800,7 @@ namespace AC
 			}
 
 			AssetLoader.UnloadAssets ();
-        }
+		}
 
 
 		/**
@@ -1071,6 +1094,7 @@ namespace AC
 
 			// Camera
 			MainCamera mainCamera = KickStarter.mainCamera;
+            mainCamera.SnapToAttached ();
 			if (mainCamera.attachedCamera)
 			{
 				playerData.gameCamera = Serializer.GetConstantID (mainCamera.attachedCamera.gameObject);
@@ -2089,11 +2113,48 @@ namespace AC
 			AC.Char[] characters = FindObjectsOfType (typeof (AC.Char)) as AC.Char[];
 			foreach (AC.Char character in characters)
 			{
-				character._OnLevelWasLoaded ();
+				character.AfterLoad ();
 			}
 
-			KickStarter.playerMenus._OnLevelWasLoaded ();
-			KickStarter.runtimeInventory._OnLevelWasLoaded ();
+			AC.Sound[] sounds = FindObjectsOfType (typeof (AC.Sound)) as AC.Sound[];
+			foreach (AC.Sound sound in sounds)
+			{
+				if (sound != null)
+				{
+					sound.AfterLoad ();
+				}
+			}
+
+			FirstPersonCamera[] firstPersonCameras = FindObjectsOfType (typeof (FirstPersonCamera)) as FirstPersonCamera[];
+			foreach (FirstPersonCamera firstPersonCamera in firstPersonCameras)
+			{
+				firstPersonCamera.AfterLoad ();
+			}
+
+			FollowTintMap[] followTintMaps = FindObjectsOfType (typeof (FollowTintMap)) as FollowTintMap[];
+			foreach (FollowTintMap followTintMap in followTintMaps)
+			{
+				followTintMap.AfterLoad ();
+			}
+
+			FollowSortingMap[] followSortingMaps = FindObjectsOfType (typeof (FollowSortingMap)) as FollowSortingMap[];
+			foreach (FollowSortingMap followSortingMap in followSortingMaps)
+			{
+				followSortingMap.AfterLoad ();
+			}
+
+			DetectHotspots[] detectHotspots = FindObjectsOfType (typeof (DetectHotspots)) as DetectHotspots[];
+			foreach (DetectHotspots detectHotspot in detectHotspots)
+			{
+				detectHotspot.AfterLoad ();
+			}
+
+			KickStarter.playerMenus.AfterLoad ();
+			KickStarter.runtimeInventory.AfterLoad ();
+			KickStarter.sceneChanger.AfterLoad ();
+			KickStarter.options.AfterLoad ();
+
+			KickStarter.kickStarter.AfterLoad ();
 		}
 
 	}

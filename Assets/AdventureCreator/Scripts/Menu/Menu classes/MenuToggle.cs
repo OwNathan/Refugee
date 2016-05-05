@@ -39,6 +39,8 @@ namespace AC
 		public bool isOn;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The text alignment */
 		public TextAnchor anchor;
 		/** The ID number of the Boolean global variable to link to, if toggleType = AC_ToggleType.Variable */
@@ -74,6 +76,7 @@ namespace AC
 			onTexture = null;
 			offTexture = null;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			actionListOnClick = null;
 			
 			base.Declare ();
@@ -100,6 +103,7 @@ namespace AC
 			label = _element.label;
 			isOn = _element.isOn;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			anchor = _element.anchor;
 			toggleType = _element.toggleType;
 			varID = _element.varID;
@@ -191,6 +195,10 @@ namespace AC
 			{
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			
 				EditorGUILayout.BeginHorizontal ();
 				EditorGUILayout.LabelField ("'On' texture:", GUILayout.Width (145f));
@@ -225,6 +233,7 @@ namespace AC
 			{
 				actionListOnClick = (ActionListAsset) EditorGUILayout.ObjectField ("ActionList on click:", actionListOnClick, typeof (ActionListAsset), false);
 			}
+			alternativeInputButton = EditorGUILayout.TextField ("Alernative input button:", alternativeInputButton);
 			EditorGUILayout.EndVertical ();
 			
 			base.ShowGUI (source);
@@ -297,7 +306,7 @@ namespace AC
 			
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (rect, fullText, _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (rect, fullText, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

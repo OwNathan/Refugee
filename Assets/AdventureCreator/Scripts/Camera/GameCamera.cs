@@ -330,7 +330,14 @@ namespace AC
 			
 			if (!lockFOV)
 			{
-				_camera.fieldOfView = Mathf.Lerp (_camera.fieldOfView, desiredFOV, Time.deltaTime * dampSpeed);
+				if (_camera.orthographic)
+				{
+					_camera.orthographicSize = Mathf.Lerp (_camera.orthographicSize, desiredFOV, Time.deltaTime * dampSpeed);
+				}
+				else
+				{
+					_camera.fieldOfView = Mathf.Lerp (_camera.fieldOfView, desiredFOV, Time.deltaTime * dampSpeed);
+				}
 			}
 
 			float newPitch = transform.eulerAngles.x;
@@ -612,7 +619,14 @@ namespace AC
 		{
 			if (lockFOV)
 			{
-				desiredFOV = _camera.fieldOfView;
+				if (_camera.orthographic)
+				{
+					desiredFOV = _camera.orthographicSize;
+				}
+				else
+				{
+					desiredFOV = _camera.fieldOfView;
+				}
 			}
 			else
 			{

@@ -29,6 +29,7 @@ namespace AC
 		public Transform origin;
 
 		public AudioClip audioClip;
+		public int audioClipParameterID = -1;
 
 		
 		public ActionSoundShot ()
@@ -43,6 +44,7 @@ namespace AC
 		override public void AssignValues (List<ActionParameter> parameters)
 		{
 			origin = AssignFile (parameters, parameterID, constantID, origin);
+			audioClip = (AudioClip) AssignObject <AudioClip> (parameters, audioClipParameterID, audioClip);
 		}
 		
 		
@@ -100,7 +102,11 @@ namespace AC
 		
 		override public void ShowGUI (List<ActionParameter> parameters)
 		{
-			audioClip = (AudioClip) EditorGUILayout.ObjectField ("Clip to play:", audioClip, typeof (AudioClip), false);
+			audioClipParameterID = Action.ChooseParameterGUI ("Clip to play:", parameters, audioClipParameterID, ParameterType.UnityObject);
+			if (audioClipParameterID < 0)
+			{
+				audioClip = (AudioClip) EditorGUILayout.ObjectField ("Clip to play:", audioClip, typeof (AudioClip), false);
+			}
 
 			parameterID = Action.ChooseParameterGUI ("Position (optional):", parameters, parameterID, ParameterType.GameObject);
 			if (parameterID >= 0)

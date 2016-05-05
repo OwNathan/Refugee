@@ -54,6 +54,8 @@ namespace AC
 		[HideInInspector] public List<ActionParameter> parameters = new List<ActionParameter>();
 		/** The ID of the associated SpeechTag */
 		[HideInInspector] public int tagID;
+		/** If True, and source = ActionListSource.AssetFile, the asset file's parameter values will be shared amongst all linked ActionLists */
+		[HideInInspector] public bool syncParamValues = true;
 
 		protected bool isSkipping = false;
 		protected LayerMask LayerHotspot;
@@ -88,7 +90,23 @@ namespace AC
 						actions.Add (action);
 					}
 					useParameters = assetFile.useParameters;
-					parameters = assetFile.parameters;
+
+					if (syncParamValues)
+					{
+						parameters = assetFile.parameters;
+					}
+					else
+					{
+						parameters.Clear ();
+						foreach (ActionParameter parameter in assetFile.parameters)
+						{
+							if (parameter != null)
+							{
+								ActionParameter newParameter = new ActionParameter (parameter);
+								parameters.Add (newParameter);
+							}
+						}
+					}
 				}
 			}
 			

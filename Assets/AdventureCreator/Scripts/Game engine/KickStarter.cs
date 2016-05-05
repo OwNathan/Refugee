@@ -69,6 +69,7 @@ namespace AC
 		private static LocalVariables localVariablesComponent = null;
 		private static MenuPreview menuPreviewComponent = null;
 		private static EventManager eventManagerComponent = null;
+		private static KickStarter kickStarterComponent = null;
 
 
 		private static void SetGameEngine ()
@@ -672,6 +673,26 @@ namespace AC
 				return null;
 			}
 		}
+
+
+		public static KickStarter kickStarter
+		{
+			get
+			{
+				if (kickStarterComponent != null) return kickStarterComponent;
+				else
+				{
+					SetGameEngine ();
+				}
+				
+				if (gameEnginePrefab && gameEnginePrefab.GetComponent <KickStarter>())
+				{
+					kickStarterComponent = gameEnginePrefab.GetComponent <KickStarter>();
+					return kickStarterComponent;
+				}
+				return null;
+			}
+		}
 		
 		
 		public static Player player
@@ -1072,7 +1093,10 @@ namespace AC
 		}
 		
 		
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			if (GameObject.FindWithTag (Tags.player) && GameObject.FindWithTag (Tags.player).GetComponent <Player>())
 			{

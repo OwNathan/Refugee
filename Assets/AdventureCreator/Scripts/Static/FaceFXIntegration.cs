@@ -75,6 +75,32 @@ namespace AC
 			ACDebug.LogError ("The 'FaceFXIsPresent' preprocessor define must be declared in the Player Settings.");
 			#endif
 		}
+
+
+		/**
+		 * <summary>Stops the FaceFX animation on a character.</summary>
+		 * <param name = "speaker">The speaking character</param>
+		 */
+		public static void Stop (AC.Char speaker)
+		{
+			#if FaceFXIsPresent
+			FaceFXControllerScript_Base fcs = speaker.GetComponent <FaceFXControllerScript_Base>();
+			if (fcs == null)
+			{
+				fcs = speaker.GetComponentInChildren <FaceFXControllerScript_Base>();
+			}
+			if (fcs != null)
+			{
+				fcs.StopAnim ();
+			}
+			else
+			{
+				ACDebug.LogError ("No FaceFXControllerScript_Base script found on " + speaker.gameObject.name);
+			}
+			#else
+			ACDebug.LogError ("The 'FaceFXIsPresent' preprocessor define must be declared in the Player Settings.");
+			#endif
+		}
 		
 	}
 	

@@ -184,12 +184,12 @@ namespace AC
 		
 		private bool IsObjectCorrect (GameObject obToCheck)
 		{
-			if (KickStarter.stateHandler.gameState != GameState.Normal || obToCheck == null)
+			if (KickStarter.stateHandler == null || KickStarter.stateHandler.gameState != GameState.Normal || obToCheck == null)
 			{
 				return false;
 			}
 
-			if (KickStarter.stateHandler.AreTriggersDisabled ())
+			if (KickStarter.stateHandler != null && KickStarter.stateHandler.AreTriggersDisabled ())
 			{
 				return false;
 			}

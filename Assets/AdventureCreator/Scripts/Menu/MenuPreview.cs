@@ -128,9 +128,12 @@ namespace AC
 									}
 								}
 
-								if (menu.IsPointerOverSlot (element, 0, Event.current.mousePosition + new Vector2 (menu.GetRect ().x, menu.GetRect ().y)))
+								if (UnityEditor.EditorWindow.mouseOverWindow != null && UnityEditor.EditorWindow.mouseOverWindow.ToString ().Contains ("(UnityEditor.GameView)"))
 								{
-									menuManager.SelectElementFromPreview (menu, element);
+									if (menu.IsPointerOverSlot (element, 0, Event.current.mousePosition + new Vector2 (menu.GetRect ().x, menu.GetRect ().y)))
+									{
+										menuManager.SelectElementFromPreview (menu, element);
+									}
 								}
 							}
 					

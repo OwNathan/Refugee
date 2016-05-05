@@ -45,6 +45,8 @@ namespace AC
 		public bool showComment;
 		/** A user-defined comment about the Action's purpose */
 		public string comment;
+		/** If True, then output sockets and wires will be visible when the Action is viewed within the ActionList Editor window */
+		public bool showOutputSockets = true;
 
 		/** How many output sockets the Action has */
 		public int numSockets = 1;
@@ -255,7 +257,7 @@ namespace AC
 					AdvGame.DrawNodeCurve (nodeRect, actions[i+1].nodeRect, new Color (0.3f, 0.3f, 1f, 1f), 10, false, isDisplayed);
 				}
 			}
-			else if (endAction == ResultAction.Skip)
+			else if (endAction == ResultAction.Skip && showOutputSockets)
 			{
 				if (actions.Contains (skipActionActual))
 				{
@@ -860,6 +862,38 @@ namespace AC
 				}
 			}
 			
+			return file;
+		}
+
+
+		/**
+		 * <summary>Replaces a GameObject based on an ActionParameter or ConstantID instance, if appropriate.</summary>
+		 * <param name = "parameters">A List of ActionParameters that may override the GameObject</param>
+		 * <param name = "_parameterID">The ID of the ActionParameter to search for within parameters that will replace the GameObject</param>
+		 * <param name = "field">The Object to replace</param>
+		 * <returns>The replaced Object, or field if no replacements were found</returns>
+		 */
+		protected Object AssignObject <T> (List<ActionParameter> parameters, int _parameterID, Object field) where T : Object
+		{
+			Object file = field;
+			ActionParameter parameter = GetParameterWithID (parameters, _parameterID);
+
+			if (parameter != null && parameter.parameterType == ParameterType.UnityObject)
+			{
+				file = null;
+				if (parameter.objectValue != null)
+				{
+					if (parameter.objectValue is T)
+					{
+						file = parameter.objectValue;
+					}
+					else
+					{
+						ACDebug.LogWarning ("Cannot convert " + parameter.objectValue.name + " to type '" + typeof (T) + "'");
+					}
+				}
+			}
+
 			return file;
 		}
 

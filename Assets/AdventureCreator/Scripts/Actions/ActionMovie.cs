@@ -11,7 +11,7 @@
 
 using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -25,8 +25,13 @@ namespace AC
 		
 		#if !(UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_WEBGL)
 		public MovieClipType movieClipType = MovieClipType.FullScreen;
+
 		public Material material;
+		public int materialParameterID = -1;
+
 		public MovieTexture movieClip;
+		public int movieClipParameterID = -1;
+
 		public Sound sound;
 		public bool includeAudio;
 		public string skipKey;
@@ -43,6 +48,17 @@ namespace AC
 			title = "Play movie clip";
 			category = ActionCategory.Engine;
 			description = "Plays movie clips either on a Texture, or full-screen on mobile devices.";
+		}
+
+
+		override public void AssignValues (List<ActionParameter> parameters)
+		{
+			#if UNITY_WEBGL
+			#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8
+			#elif UNITY_5 || UNITY_PRO_LICENSE
+			material = (Material) AssignObject <Material> (parameters, materialParameterID, material);
+			movieClip = (MovieTexture) AssignObject <MovieTexture> (parameters, movieClipParameterID, movieClip);
+			#endif
 		}
 		
 		
@@ -183,7 +199,7 @@ namespace AC
 		
 		#if UNITY_EDITOR
 		
-		override public void ShowGUI ()
+		override public void ShowGUI (List<ActionParameter> parameters)
 		{
 			#if UNITY_WEBGL
 
@@ -198,12 +214,20 @@ namespace AC
 
 			#elif UNITY_5 || UNITY_PRO_LICENSE
 
-			movieClip = (MovieTexture) EditorGUILayout.ObjectField ("Movie clip:", movieClip, typeof (MovieTexture), false);
+			movieClipParameterID = Action.ChooseParameterGUI ("Movie clip:", parameters, movieClipParameterID, ParameterType.UnityObject);
+			if (movieClipParameterID < 0)
+			{
+				movieClip = (MovieTexture) EditorGUILayout.ObjectField ("Movie clip:", movieClip, typeof (MovieTexture), false);
+			}
 
 			movieClipType = (MovieClipType) EditorGUILayout.EnumPopup ("Play clip:", movieClipType);
 			if (movieClipType == MovieClipType.OnMaterial)
 			{
-				material = (Material) EditorGUILayout.ObjectField ("Material to play on:", material, typeof (Material), true);
+				materialParameterID = Action.ChooseParameterGUI ("Material to play on:", parameters, materialParameterID, ParameterType.UnityObject);
+				if (materialParameterID < 0)
+				{
+					material = (Material) EditorGUILayout.ObjectField ("Material to play on:", material, typeof (Material), true);
+				}
 			}
 
 			includeAudio = EditorGUILayout.Toggle ("Include audio?", includeAudio);

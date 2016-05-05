@@ -44,8 +44,11 @@ namespace AC
 		
 		private void Awake ()
 		{
-			LayerOn = LayerMask.NameToLayer (KickStarter.settingsManager.hotspotLayer);
-			LayerOff = LayerMask.NameToLayer (KickStarter.settingsManager.deactivatedLayer);
+			if (KickStarter.settingsManager != null)
+			{
+				LayerOn = LayerMask.NameToLayer (KickStarter.settingsManager.hotspotLayer);
+				LayerOff = LayerMask.NameToLayer (KickStarter.settingsManager.deactivatedLayer);
+			}
 
 			_Awake ();
 		}

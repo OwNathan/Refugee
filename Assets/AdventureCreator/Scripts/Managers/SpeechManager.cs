@@ -349,7 +349,7 @@ namespace AC
 			
 			EditorGUILayout.BeginHorizontal ();
 			EditorGUILayout.LabelField ("Text filter:", GUILayout.Width (65f));
-			filterSpeechLine = (FilterSpeechLine) EditorGUILayout.EnumPopup (filterSpeechLine);
+			filterSpeechLine = (FilterSpeechLine) EditorGUILayout.EnumPopup (filterSpeechLine, GUILayout.MaxWidth (100f));
 			textFilter = EditorGUILayout.TextField (textFilter);
 			EditorGUILayout.EndHorizontal ();
 
@@ -551,7 +551,10 @@ namespace AC
 		private void PopulateList ()
 		{
 			string originalScene = UnityVersionHandler.GetCurrentSceneFilepath ();
-			
+
+			bool canProceed = EditorUtility.DisplayDialog ("Gather game text", "AC will now go through your game, and collect all game text so that it can be translated/voiced.\n\nIt is recommended to back up your project beforehand.", "OK", "Cancel");
+			if (!canProceed) return;
+
 			if (UnityVersionHandler.SaveSceneIfUserWants ())
 			{
 				Undo.RecordObject (this, "Update speech list");
@@ -724,7 +727,7 @@ namespace AC
 					_label = invItem.altLabel;
 				}
 				
-				newLine = new SpeechLine (GetIDArray(), UnityVersionHandler.GetCurrentSceneName (), _label, languages.Count - 1, AC_TextType.InventoryItem);
+				newLine = new SpeechLine (GetIDArray(), "", _label, languages.Count - 1, AC_TextType.InventoryItem);
 				invItem.lineID = newLine.lineID;
 				lines.Add (newLine);
 			}
@@ -738,7 +741,7 @@ namespace AC
 					_label = invItem.altLabel;
 				}
 				
-				SpeechLine existingLine = new SpeechLine (invItem.lineID, UnityVersionHandler.GetCurrentSceneName (), _label, languages.Count - 1, AC_TextType.InventoryItem);
+				SpeechLine existingLine = new SpeechLine (invItem.lineID, "", _label, languages.Count - 1, AC_TextType.InventoryItem);
 				
 				int lineID = SmartAddLine (existingLine);
 				if (lineID >= 0) invItem.lineID = lineID;
@@ -940,6 +943,10 @@ namespace AC
 								action.multiLineIDs [i-1] = ProcessSpeechLine (onlySeekNew, isInScene, action.multiLineIDs [i-1], speaker, messages[i], isPlayer, tagID);
 							}
 						}
+						else
+						{
+							action.multiLineIDs = null;
+						}
 					}
 				}
 				else
@@ -1071,12 +1078,13 @@ namespace AC
 				// Same ID, different text, so re-assign ID
 				int lineID = 0;
 				
-				foreach (int _id in GetIDArray ())
+				foreach (int _id in GetIDArray (true))
 				{
 					if (lineID == _id)
 						lineID ++;
 				}
 				
+				ACDebug.LogWarning ("Conflicting ID number (" + existingLine.lineID + ") found with '"  + existingLine.text + "'. Changing to " + lineID + ".");
 				existingLine.lineID = lineID;
 				lines.Add (existingLine);
 				return lineID;
@@ -1103,6 +1111,7 @@ namespace AC
 					return true;
 				}
 			}
+
 			return false;
 		}
 
@@ -1432,7 +1441,7 @@ namespace AC
 		}
 		
 		
-		private int[] GetIDArray ()
+		private int[] GetIDArray (bool includeTempLines = false)
 		{
 			// Returns a list of id's in the list
 			
@@ -1441,6 +1450,11 @@ namespace AC
 			foreach (SpeechLine line in lines)
 			{
 				idArray.Add (line.lineID);
+			}
+
+			foreach (SpeechLine tempLine in tempLines)
+			{
+				idArray.Add (tempLine.lineID);
 			}
 			
 			idArray.Sort ();
@@ -1659,6 +1673,7 @@ namespace AC
 					if (translationText.Contains (CSVReader.csvDelimiter))
 					{
 						fail = true;
+						ACDebug.LogError ("Cannot export translation since line " + line.lineID.ToString () + "'s translation (" + translationText + ") contains the character '" + CSVReader.csvDelimiter + "'.");
 					}
 				}
 				
@@ -1667,11 +1682,7 @@ namespace AC
 				if (line.textType != AC_TextType.JournalEntry && line.text.Contains (CSVReader.csvDelimiter))
 				{
 					fail = true;
-				}
-				
-				if (fail)
-				{
-					ACDebug.LogError ("Cannot export translation since line " + line.lineID.ToString () + " contains the character '" + CSVReader.csvDelimiter + "'.");
+					ACDebug.LogError ("Cannot export translation since line " + line.lineID.ToString () + " (" + line.text + ") contains the character '" + CSVReader.csvDelimiter + "'.");
 				}
 			}
 			
@@ -2194,6 +2205,11 @@ namespace AC
 						SmartAddAsset (item.unhandledActionList);
 						SmartAddAsset (item.unhandledCombineActionList);
 
+						foreach (InvInteraction invInteraction in item.interactions)
+						{
+							SmartAddAsset (invInteraction.actionList);
+						}
+
 						foreach (ActionListAsset actionList in item.combineActionList)
 						{
 							SmartAddAsset (actionList);
@@ -2277,6 +2293,28 @@ namespace AC
 						{
 							SmartAddAsset (runActionList.invActionList);
 						}
+
+						if ((runActionList.actionList != null && runActionList.actionList.useParameters) ||
+						    (runActionList.linkedAsset != null && runActionList.linkedAsset.useParameters))
+						{
+							if (runActionList.localParameters != null)
+							{
+								foreach (ActionParameter localParameter in runActionList.localParameters)
+								{
+									if (localParameter.parameterType == ParameterType.UnityObject)
+									{
+										if (localParameter.objectValue != null)
+										{
+											if (localParameter.objectValue is ActionListAsset)
+											{
+												ActionListAsset _actionListAsset = (ActionListAsset) localParameter.objectValue;
+												SmartAddAsset (_actionListAsset);
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 					
 					if (action is ActionCheck)
@@ -2315,7 +2353,7 @@ namespace AC
 					}
 					else
 					{
-						if (action.endAction == ResultAction.RunCutscene)
+						if (action != null && action.endAction == ResultAction.RunCutscene)
 						{
 							SmartAddAsset (action.linkedAsset);
 						}

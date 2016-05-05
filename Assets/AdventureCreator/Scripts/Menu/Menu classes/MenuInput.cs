@@ -33,6 +33,8 @@ namespace AC
 		public TextAnchor anchor;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** What kind of characters can be entered in by the player (AlphaNumeric, NumericOnly) */
 		public AC_InputType inputType;
 		/** The character limit on text that can be entered */
@@ -61,6 +63,7 @@ namespace AC
 			characterLimit = 10;
 			linkedButton = "";
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			allowSpaces = false;
 
 			base.Declare ();
@@ -86,6 +89,7 @@ namespace AC
 			label = _element.label;
 			anchor = _element.anchor;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			inputType = _element.inputType;
 			characterLimit = _element.characterLimit;
 			linkedButton = _element.linkedButton;
@@ -145,6 +149,10 @@ namespace AC
 				characterLimit = EditorGUILayout.IntField ("Character limit:", characterLimit);
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 				linkedButton = EditorGUILayout.TextField ("'Enter' key's linked Button:", linkedButton);
 			}
 			else
@@ -229,7 +237,7 @@ namespace AC
 
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

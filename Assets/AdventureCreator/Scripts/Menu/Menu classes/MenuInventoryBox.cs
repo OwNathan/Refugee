@@ -30,6 +30,8 @@ namespace AC
 		public UISlot[] uiSlots;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** How the items to display are chosen (Default, HotspotBased, CustomScript, DisplaySelected, DisplayLastSelected, Container) */
 		public AC_InventoryBoxType inventoryBoxType;
 		/** The maximum number of inventory items that can be shown at once */
@@ -70,6 +72,7 @@ namespace AC
 			categoryID = -1;
 			displayType = ConversationDisplayType.IconOnly;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			items = new List<InvItem>();
 		}
 
@@ -93,6 +96,7 @@ namespace AC
 
 			isClickable = _element.isClickable;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			inventoryBoxType = _element.inventoryBoxType;
 			numSlots = _element.numSlots;
 			maxSlots = _element.maxSlots;
@@ -168,6 +172,10 @@ namespace AC
 			if (source == MenuSource.AdventureCreator)
 			{
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 			displayType = (ConversationDisplayType) EditorGUILayout.EnumPopup ("Display:", displayType);
 			inventoryBoxType = (AC_InventoryBoxType) EditorGUILayout.EnumPopup ("Inventory box type:", inventoryBoxType);
@@ -428,7 +436,7 @@ namespace AC
 					
 					if (textEffects != TextEffects.None)
 					{
-						AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), GetCount (_slot), _style, Color.black, _style.normal.textColor, 2, textEffects);
+						AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), GetCount (_slot), _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 					}
 					else
 					{
@@ -439,7 +447,7 @@ namespace AC
 				{
 					if (textEffects != TextEffects.None)
 					{
-						AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, 2, textEffects);
+						AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 					}
 					else
 					{
@@ -1001,7 +1009,7 @@ namespace AC
 			{
 				if (invItem.id == itemID)
 				{
-					return items.IndexOf (invItem);
+					return items.IndexOf (invItem) - offset;
 				}
 			}
 			return 0;

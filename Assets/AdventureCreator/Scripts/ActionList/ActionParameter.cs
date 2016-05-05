@@ -36,6 +36,8 @@ namespace AC
 		public string stringValue = "";
 		/** The new value, if parameterType = ParameterType.GameObject */
 		public GameObject gameObject;
+		/** The new value, if parameterType = ParameterType.UnityObject */
+		public Object objectValue;
 
 
 		/**
@@ -50,6 +52,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			gameObject = null;
+			objectValue = null;
 			parameterType = ParameterType.GameObject;
 			
 			// Update id based on array
@@ -75,6 +78,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			gameObject = null;
+			objectValue = null;
 			parameterType = ParameterType.GameObject;
 			
 			label = "Parameter " + (ID + 1).ToString ();
@@ -94,6 +98,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			gameObject = null;
+			objectValue = null;
 		}
 
 
@@ -107,6 +112,7 @@ namespace AC
 			floatValue = otherParameter.floatValue;
 			stringValue = otherParameter.stringValue;
 			gameObject = otherParameter.gameObject;
+			objectValue = otherParameter.objectValue;
 		}
 
 
@@ -119,6 +125,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			gameObject = null;
+			objectValue = null;
 		}
 
 
@@ -150,6 +157,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			gameObject = null;
+			objectValue = null;
 		}
 
 
@@ -163,6 +171,7 @@ namespace AC
 			stringValue = "";
 			intValue = -1;
 			gameObject = null;
+			objectValue = null;
 		}
 
 
@@ -176,6 +185,7 @@ namespace AC
 			floatValue = 0f;
 			intValue = -1;
 			gameObject = null;
+			objectValue = null;
 		}
 
 
@@ -189,6 +199,21 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			intValue = -1;
+			objectValue = null;
+		}
+
+
+		/**
+		 * <summary>Sets the objectValue that the parameter assigns</summary>
+		 * <param name = "_object">The new Unity Object, if parameterType = ParameterType.UnityObject</param>
+		 */
+		public void SetValue (Object _object)
+		{
+			gameObject = null;
+			floatValue = 0f;
+			stringValue = "";
+			intValue = -1;
+			objectValue = _object;
 		}
 
 
@@ -203,6 +228,7 @@ namespace AC
 			floatValue = 0f;
 			stringValue = "";
 			intValue = _value;
+			objectValue = null;
 		}
 
 
@@ -225,6 +251,13 @@ namespace AC
 						return gameObject.GetComponent <ConstantID>().constantID.ToString ();
 					}
 					ACDebug.LogWarning ("Could not save parameter data for '" + gameObject.name + "' as it has no Constant ID number.", gameObject);
+				}
+			}
+			else if (parameterType == ParameterType.UnityObject)
+			{
+				if (objectValue != null)
+				{
+					return objectValue.name;
 				}
 			}
 			else
@@ -256,6 +289,25 @@ namespace AC
 					if (_constantID != null)
 					{
 						gameObject = _constantID.gameObject;
+					}
+				}
+			}
+			else if (parameterType == ParameterType.UnityObject)
+			{
+				if (dataString == "")
+				{
+					objectValue = null;
+				}
+				else
+				{
+					Object[] objects = (Object[]) Resources.LoadAll ("");
+					foreach (Object _object in objects)
+					{
+						if (_object.name == dataString)
+						{
+							objectValue = _object;
+							return;
+						}
 					}
 				}
 			}

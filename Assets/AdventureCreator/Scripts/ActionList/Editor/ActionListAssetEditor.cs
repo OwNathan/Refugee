@@ -194,6 +194,7 @@ namespace AC
 			if (actionsManager)
 			{
 				bool _showComment = action.showComment;
+				bool _showOutputSockets = action.showOutputSockets;
 				string _comment = action.comment;
 
 				ActionListAssetEditor.DeleteAction (action, _target);
@@ -205,6 +206,7 @@ namespace AC
 
 				newAction.showComment = _showComment;
 				newAction.comment = _comment;
+				newAction.showOutputSockets = _showOutputSockets;
 
 				AssetDatabase.AddObjectToAsset (newAction, _target);
 				AssetDatabase.ImportAsset (AssetDatabase.GetAssetPath (newAction));

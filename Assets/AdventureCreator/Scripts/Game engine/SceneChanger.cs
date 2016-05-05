@@ -48,7 +48,10 @@ namespace AC
 		}
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			AssignThisSceneInfo ();
 		}

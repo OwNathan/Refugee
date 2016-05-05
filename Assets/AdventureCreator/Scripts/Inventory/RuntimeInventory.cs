@@ -86,7 +86,7 @@ namespace AC
 		/**
 		 * Initialises the inventory after a scene change. This is called manually by SaveSystem so that the order is correct.
 		 */
-		public void _OnLevelWasLoaded ()
+		public void AfterLoad ()
 		{
 			if (!KickStarter.settingsManager.IsInLoadingScene () && KickStarter.sceneSettings != null)
 			{

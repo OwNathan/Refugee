@@ -65,13 +65,15 @@ namespace AC
 		private MoveMethod moveMethod;
 		private float changeTime;
 		private AnimationCurve timeCurve;
-		
+
+        private _Camera previousAttachedCamera = null;
 		private	Vector3 startPosition;
 		private	Quaternion startRotation;
 		private float startFOV;
 		private float startOrtho;
 		private	float startTime;
 		private float startFocalDistance;
+        private bool retainPreviousSpeed = false;
 
 		/** The object to point towards. Since this object is assumed to be a child, the "LookAt" becomes an offset to regular rotation rather than a replacement */
 		public Transform lookAtTransform;
@@ -214,13 +216,17 @@ namespace AC
 		
 
 		/**
-		 * Pauses the game.
+		 * <summary>Pauses the game.</summary>
+		 * <param name = "canWait">If True and the game cannot currently be paused, the game will paused at the next possible time</para>
 		 */
-		public void PauseGame ()
+		public void PauseGame (bool canWait = false)
 		{
 			if (hideSceneWhileLoading)
 			{
-				//StartCoroutine ("PauseWhenLoaded"); //
+				if (canWait)
+				{
+					StartCoroutine ("PauseWhenLoaded"); //
+				}
 			}
 			else
 			{
@@ -228,7 +234,13 @@ namespace AC
 				KickStarter.sceneSettings.PauseGame ();
 			}
 		}
-		
+
+
+		public void CancelPauseGame ()
+		{
+			StopCoroutine ("PauseWhenLoaded");
+		}
+
 		
 		private IEnumerator PauseWhenLoaded ()
 		{
@@ -477,7 +489,15 @@ namespace AC
 					}
 					else
 					{
-						_camera.fieldOfView = attachedCamera._camera.fieldOfView;
+						if (attachedCamera._camera.orthographic)
+						{
+							_camera.orthographicSize = attachedCamera._camera.orthographicSize;
+						}
+						else
+						{
+							_camera.fieldOfView = attachedCamera._camera.fieldOfView;
+						}
+
 						if (cursorAffectsRotation)
 						{
 							SetlookAtTransformation ();
@@ -494,37 +514,7 @@ namespace AC
 					// Move from one GameCamera to another
 					if (Time.time < startTime + changeTime)
 					{
-						if (attachedCamera.Is2D ())
-						{
-							perspectiveOffset.x = AdvGame.Lerp (startPerspectiveOffset.x, attachedCamera.GetPerspectiveOffset ().x, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-							perspectiveOffset.y = AdvGame.Lerp (startPerspectiveOffset.y, attachedCamera.GetPerspectiveOffset ().y, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-							
-							_camera.ResetProjectionMatrix ();
-						}
-						
-						if (moveMethod == MoveMethod.Curved)
-						{
-							// Don't slerp y position as this will create a "bump" effect
-							Vector3 newPosition = Vector3.Slerp (startPosition, attachedCamera.transform.position, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-							newPosition.y = Mathf.Lerp (startPosition.y, attachedCamera.transform.position.y, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-							transform.position = newPosition;
-							
-							transform.rotation = Quaternion.Slerp (startRotation, attachedCamera.transform.rotation, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-						}
-						else
-						{
-							transform.position = AdvGame.Lerp (startPosition, attachedCamera.transform.position, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve)); 
-							transform.rotation = AdvGame.Lerp (startRotation, attachedCamera.transform.rotation, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-						}
-						
-						focalDistance = AdvGame.Lerp (startFocalDistance, attachedCamera.focalDistance, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-						_camera.fieldOfView = AdvGame.Lerp (startFOV, attachedCamera._camera.fieldOfView, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-						_camera.orthographicSize = AdvGame.Lerp (startOrtho, attachedCamera._camera.orthographicSize, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
-						
-						if (attachedCamera.Is2D () && !_camera.orthographic)
-						{
-							_camera.projectionMatrix = AdvGame.SetVanishingPoint (_camera, perspectiveOffset);
-						}
+                        UpdateCameraTransition ();
 					}
 					else
 					{
@@ -577,6 +567,52 @@ namespace AC
 				StopShaking ();
 			}
 		}
+
+
+        private void UpdateCameraTransition ()
+        {
+            if (retainPreviousSpeed && previousAttachedCamera != null)
+            {
+                startPerspectiveOffset = previousAttachedCamera.GetPerspectiveOffset ();
+                startPosition = previousAttachedCamera.transform.position;
+                startRotation = previousAttachedCamera.transform.rotation;
+                startFOV = previousAttachedCamera._camera.fieldOfView;
+                startOrtho = previousAttachedCamera._camera.orthographicSize;
+                startFocalDistance = previousAttachedCamera.focalDistance;
+            }
+
+            if (attachedCamera.Is2D ())
+            {
+                perspectiveOffset.x = AdvGame.Lerp (startPerspectiveOffset.x, attachedCamera.GetPerspectiveOffset ().x, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+                perspectiveOffset.y = AdvGame.Lerp (startPerspectiveOffset.y, attachedCamera.GetPerspectiveOffset ().y, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+
+                _camera.ResetProjectionMatrix();
+            }
+
+            if (moveMethod == MoveMethod.Curved)
+            {
+                // Don't slerp y position as this will create a "bump" effect
+                Vector3 newPosition = Vector3.Slerp (startPosition, attachedCamera.transform.position, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+                newPosition.y = Mathf.Lerp(startPosition.y, attachedCamera.transform.position.y, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+                transform.position = newPosition;
+
+                transform.rotation = Quaternion.Slerp (startRotation, attachedCamera.transform.rotation, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+            }
+            else
+            {
+                transform.position = AdvGame.Lerp (startPosition, attachedCamera.transform.position, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+                transform.rotation = AdvGame.Lerp (startRotation, attachedCamera.transform.rotation, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+            }
+
+            focalDistance = AdvGame.Lerp (startFocalDistance, attachedCamera.focalDistance, AdvGame.Interpolate(startTime, changeTime, moveMethod, timeCurve));
+            _camera.fieldOfView = AdvGame.Lerp (startFOV, attachedCamera._camera.fieldOfView, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+            _camera.orthographicSize = AdvGame.Lerp (startOrtho, attachedCamera._camera.orthographicSize, AdvGame.Interpolate (startTime, changeTime, moveMethod, timeCurve));
+
+            if (attachedCamera.Is2D () && !_camera.orthographic)
+            {
+                _camera.projectionMatrix = AdvGame.SetVanishingPoint (_camera, perspectiveOffset);
+            }
+        }
 		
 		
 		private void LookAtCentre ()
@@ -754,7 +790,7 @@ namespace AC
 			
 			startTime = Time.time;
 			changeTime = _changeTime;
-			
+
 			startPosition = transform.position;
 			startRotation = transform.rotation;
 			startFOV = _camera.fieldOfView;
@@ -780,13 +816,16 @@ namespace AC
 		 * <param name = "transitionTime">The time, in seconds, that it will take to move towards the new _Camera</param>
 		 * <param name = "_moveMethod">How the Camera should move towards the new _Camera, if transitionTime > 0f (Linear, Smooth, Curved, EaseIn, EaseOut, CustomCurve)</param>
 		 * <param name = "_animationCurve">The AnimationCurve that dictates movement over time, if _moveMethod = MoveMethod.CustomCurve</param>
+         * <param name = "_retainPreviousSpeed">If True, and transitionTime > 0, then the previous _Camera's speed will influence the transition, allowing for a smoother effect</param>
 		 */
-		public void SetGameCamera (_Camera newCamera, float transitionTime = 0f, MoveMethod _moveMethod = MoveMethod.Linear, AnimationCurve _animationCurve = null)
+		public void SetGameCamera (_Camera newCamera, float transitionTime = 0f, MoveMethod _moveMethod = MoveMethod.Linear, AnimationCurve _animationCurve = null, bool _retainPreviousSpeed = false)
 		{
 			if (newCamera == null)
 			{
 				return;
 			}
+
+			KickStarter.eventManager.Call_OnSwitchCamera (attachedCamera, newCamera, transitionTime);
 			
 			if (attachedCamera != null && attachedCamera is GameCamera25D)
 			{
@@ -797,6 +836,9 @@ namespace AC
 					RemoveBackground ();
 				}
 			}
+
+            previousAttachedCamera = attachedCamera;
+            retainPreviousSpeed = _retainPreviousSpeed;
 			
 			AssignOwnCamera ();
 			_camera.ResetProjectionMatrix ();

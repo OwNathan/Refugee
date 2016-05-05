@@ -99,7 +99,7 @@ namespace AC
 		}
 		
 		
-		public override void ActionCharAnimGUI (ActionCharAnim action)
+		public override void ActionCharAnimGUI (ActionCharAnim action, List<ActionParameter> parameters = null)
 		{
 			#if UNITY_EDITOR
 			

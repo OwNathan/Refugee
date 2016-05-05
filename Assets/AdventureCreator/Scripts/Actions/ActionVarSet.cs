@@ -214,7 +214,37 @@ namespace AC
 			}
 			else if (var.type == VariableType.PopUp)
 			{
-				var.SetValue (intValue);
+			//	var.SetValue (intValue);
+
+				int _value = 0;
+				
+				if (setVarMethod == SetVarMethod.Formula)
+				{
+					_value = (int) AdvGame.CalculateFormula (AdvGame.ConvertTokens (formula));
+				}
+				else if (setVarMethod == SetVarMethod.SetAsRandom)
+				{
+					if (var.popUps != null)
+					{
+						_value = var.popUps.Length;
+					}
+				}
+				else
+				{
+					_value = intValue;
+				}
+
+				if (setVarMethod == SetVarMethod.IncreaseByValue && doSkip)
+				{
+					var.RestoreBackupValue ();
+				}
+				
+				var.SetValue (_value, setVarMethod);
+				
+				if (doSkip)
+				{
+					var.BackupValue ();
+				}
 			}
 			else if (var.type == VariableType.String)
 			{
@@ -334,8 +364,7 @@ namespace AC
 					variableNumber = 0;
 					variableID = 0;
 				}
-				
-				
+
 				parameterID = Action.ChooseParameterGUI ("Variable:", parameters, parameterID, parameterType);
 				if (parameterID >= 0)
 				{
@@ -371,12 +400,59 @@ namespace AC
 				}
 				if (vars [variableNumber].type == VariableType.PopUp)
 				{
+					/*
 					label += "=";
 
 					setParameterID = Action.ChooseParameterGUI (label, parameters, setParameterID, ParameterType.Integer);
 					if (setParameterID < 0)
 					{
 						intValue = EditorGUILayout.Popup (label, intValue, vars[variableNumber].popUps);
+					}*/
+
+					setVarMethod = (SetVarMethod) EditorGUILayout.EnumPopup ("Method:", setVarMethod);
+					
+					if (setVarMethod == SetVarMethod.Formula)
+					{
+						label += "=";
+						
+						setParameterID = Action.ChooseParameterGUI (label, parameters, setParameterID, ParameterType.String);
+						if (setParameterID < 0)
+						{
+							formula = EditorGUILayout.TextField (label, formula);
+						}
+						
+						#if UNITY_WP8
+						EditorGUILayout.HelpBox ("This feature is not available for Windows Phone 8.", MessageType.Warning);
+						#endif
+					}
+					else if (setVarMethod == SetVarMethod.IncreaseByValue || setVarMethod == SetVarMethod.SetValue)
+					{
+						if (setVarMethod == SetVarMethod.IncreaseByValue)
+						{
+							label += "+=";
+						}
+						else if (setVarMethod == SetVarMethod.SetValue)
+						{
+							label += "=";
+						}
+
+						setParameterID = Action.ChooseParameterGUI (label, parameters, setParameterID, ParameterType.Integer);
+						if (setParameterID < 0)
+						{
+							if (setVarMethod == SetVarMethod.SetValue)
+							{
+								intValue = EditorGUILayout.Popup (label, intValue, vars[variableNumber].popUps);
+							}
+							else
+							{
+								intValue = EditorGUILayout.IntField (label, intValue);
+							}
+							
+							if (setVarMethod == SetVarMethod.SetAsRandom && intValue < 0)
+							{
+								intValue = 0;
+							}
+						}
 					}
 
 				}
@@ -428,7 +504,6 @@ namespace AC
 								}
 							}
 						}
-
 					}
 					else if (setVarMethodIntBool == SetVarMethodIntBool.SetAsMecanimParameter)
 					{

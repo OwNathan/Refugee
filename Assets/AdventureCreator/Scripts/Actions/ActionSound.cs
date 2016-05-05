@@ -29,6 +29,8 @@ namespace AC
 		public Sound soundObject;
 
 		public AudioClip audioClip;
+		public int audioClipParameterID = -1;
+
 		public enum SoundAction { Play, FadeIn, FadeOut, Stop }
 		public float fadeTime;
 		public bool loop;
@@ -50,9 +52,10 @@ namespace AC
 
 		override public void AssignValues (List<ActionParameter> parameters)
 		{
+			audioClip = (AudioClip) AssignObject <AudioClip> (parameters, audioClipParameterID, audioClip);
 			soundObject = AssignFile <Sound> (parameters, parameterID, constantID, soundObject);
-			runtimeSound = soundObject;
 
+			runtimeSound = soundObject;
 			if (runtimeSound == null && audioClip != null)
 			{
 				runtimeSound = KickStarter.sceneSettings.defaultSound;
@@ -213,7 +216,12 @@ namespace AC
 			{
 				loop = EditorGUILayout.Toggle ("Loop?", loop);
 				ignoreIfPlaying = EditorGUILayout.Toggle ("Ignore if already playing?", ignoreIfPlaying);
-				audioClip = (AudioClip) EditorGUILayout.ObjectField ("New clip (optional)", audioClip, typeof (AudioClip), false);
+
+				audioClipParameterID = Action.ChooseParameterGUI ("New clip (optional):", parameters, audioClipParameterID, ParameterType.UnityObject);
+				if (audioClipParameterID < 0)
+				{
+					audioClip = (AudioClip) EditorGUILayout.ObjectField ("New clip (optional):", audioClip, typeof (AudioClip), false);
+				}
 			}
 			
 			if (soundAction == SoundAction.FadeIn || soundAction == SoundAction.FadeOut)

@@ -37,6 +37,8 @@ namespace AC
 		public TextAnchor anchor;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects = TextEffects.None;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** What kind of text the label displays (Normal, Hotspot, DialogueLine, DialogueSpeaker, GlobalVariable, ActiveSaveProfile, JournalPageNumber, InventoryProperty) */
 		public AC_LabelType labelType;
 
@@ -87,6 +89,7 @@ namespace AC
 			useCharacterColour = false;
 			autoAdjustHeight = true;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			newLabel = "";
 			updateIfEmpty = false;
 			inventoryPropertyType = InventoryPropertyType.SelectedItem;
@@ -116,6 +119,7 @@ namespace AC
 			label = _element.label;
 			anchor = _element.anchor;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			labelType = _element.labelType;
 			variableID = _element.variableID;
 			useCharacterColour = _element.useCharacterColour;
@@ -244,6 +248,10 @@ namespace AC
 			{
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 			EditorGUILayout.EndVertical ();
 
@@ -375,7 +383,7 @@ namespace AC
 			
 			newLabel = AdvGame.ConvertTokens (newLabel, languageNumber);
 
-			if (uiText != null)
+			if (uiText != null && Application.isPlaying)
 			{
 				uiText.text = newLabel;
 				UpdateUIElement (uiText);
@@ -437,7 +445,7 @@ namespace AC
 
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), newLabel, _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), newLabel, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

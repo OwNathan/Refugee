@@ -1209,6 +1209,12 @@ namespace AC
 				effectText = text;
 			}
 
+			if (style.normal.background != null)
+			{
+				GUI.Label(rect, "", style);
+			}
+			style.normal.background = null;
+
 			outColor.a = GUI.color.a;
 			style.normal.textColor = outColor;
 			GUI.color = outColor;
@@ -1239,6 +1245,12 @@ namespace AC
 			{
 				effectText = text;
 			}
+
+			if (style.normal.background != null)
+			{
+				GUI.Label(rect, "", style);
+			}
+			style.normal.background = null;
 			
 			outColor.a = GUI.color.a;
 			style.normal.textColor = outColor;

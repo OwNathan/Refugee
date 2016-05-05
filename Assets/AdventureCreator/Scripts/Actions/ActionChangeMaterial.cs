@@ -31,6 +31,7 @@ namespace AC
 		public GameObject obToAffect;
 		public int materialIndex;
 		public Material newMaterial;
+		public int newMaterialParameterID = -1;
 		
 		
 		public ActionChangeMaterial ()
@@ -64,6 +65,8 @@ namespace AC
 			{
 				obToAffect = AssignFile (parameters, parameterID, constantID, obToAffect);
 			}
+
+			newMaterial = (Material) AssignObject <Material> (parameters, newMaterialParameterID, newMaterial);
 		}
 
 		
@@ -102,7 +105,12 @@ namespace AC
 			}
 
 			materialIndex = EditorGUILayout.IntSlider ("Material index:", materialIndex, 0, 10);
-			newMaterial = (Material) EditorGUILayout.ObjectField ("New material:", newMaterial, typeof (Material), false);
+
+			newMaterialParameterID = Action.ChooseParameterGUI ("New material:", parameters, newMaterialParameterID, ParameterType.UnityObject);
+			if (newMaterialParameterID < 0)
+			{
+				newMaterial = (Material) EditorGUILayout.ObjectField ("New material:", newMaterial, typeof (Material), false);
+			}
 
 			AfterRunningOption ();
 		}

@@ -30,6 +30,8 @@ namespace AC
 
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** What part of the crafting process this element is used for (Ingredients, Output) */
 		public CraftingElementType craftingType = CraftingElementType.Ingredients;
 		/** The List of InvItem instances that are currently on display */
@@ -53,6 +55,7 @@ namespace AC
 			numSlots = 4;
 			SetSize (new Vector2 (6f, 10f));
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			craftingType = CraftingElementType.Ingredients;
 			displayType = ConversationDisplayType.IconOnly;
 			items = new List<InvItem>();
@@ -77,6 +80,7 @@ namespace AC
 			uiSlots = _element.uiSlots;
 			isClickable = _element.isClickable;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			numSlots = _element.numSlots;
 			craftingType = _element.craftingType;
 			displayType = _element.displayType;
@@ -153,6 +157,10 @@ namespace AC
 			if (source == MenuSource.AdventureCreator)
 			{
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 			displayType = (ConversationDisplayType) EditorGUILayout.EnumPopup ("Display:", displayType);
 			craftingType = (CraftingElementType) EditorGUILayout.EnumPopup ("Crafting element type:", craftingType);
@@ -363,7 +371,7 @@ namespace AC
 		{
 			if (textEffects != TextEffects.None)
 			{
-				AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, 2, textEffects);
+				AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 			}
 			else
 			{

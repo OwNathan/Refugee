@@ -149,7 +149,9 @@ namespace PixelCrushers.DialogueSystem {
 				for (int i = 1; i <= entryCount; i++) {
 					var entryState = QuestLog.GetQuestEntryState(quest, i);
 					var entryText = FormattedText.Parse(GetQuestEntryText(quest, i, entryState), DialogueManager.MasterDatabase.emphasisSettings).text;
-					questTrack.AddEntryDescription(entryText, entryState);
+                    if (!string.IsNullOrEmpty(entryText)) {
+                        questTrack.AddEntryDescription(entryText, entryState);
+                    }
 				}
 			}
 		}
@@ -157,10 +159,12 @@ namespace PixelCrushers.DialogueSystem {
 		private string GetQuestEntryText(string quest, int entryNum, QuestState entryState) {
 			if (entryState == QuestState.Unassigned || entryState == QuestState.Abandoned) {
 				return string.Empty;
-			} else if (entryState == QuestState.Success && showCompletedEntryText) {
+			} else if ((entryState == QuestState.Success || entryState == QuestState.Failure) && !showCompletedEntryText) {
+                return string.Empty;
+            } else if (entryState == QuestState.Success) {
 				var text = DialogueLua.GetQuestField(quest, "Entry " + entryNum + " Success").AsString;
 				if (!string.IsNullOrEmpty(text)) return text;
-			} else if (entryState == QuestState.Failure && showCompletedEntryText) {
+			} else if (entryState == QuestState.Failure) {
 				var text = DialogueLua.GetQuestField(quest, "Entry " + entryNum + " Failure").AsString;
 				if (!string.IsNullOrEmpty(text)) return text;
 			}

@@ -28,9 +28,11 @@ namespace AC
 		public ListSource listSource = ListSource.InScene;
 
 		public ActionList actionList;
-		public ActionListAsset invActionList;
 		public int constantID = 0;
 		public int parameterID = -1;
+
+		public ActionListAsset invActionList;
+		public int assetParameterID = -1;
 
 		public bool runFromStart = true;
 		public int jumpToAction;
@@ -44,8 +46,6 @@ namespace AC
 		public List<int> parameterIDs = new List<int>();
 
 		public bool setParameters = true;
-
-		private RuntimeActionList runtimeActionList = null;
 
 
 		public ActionRunActionList ()
@@ -74,6 +74,10 @@ namespace AC
 			{
 				actionList = AssignFile <ActionList> (parameters, parameterID, constantID, actionList);
 				jumpToAction = AssignInteger (parameters, jumpToActionParameterID, jumpToAction);
+			}
+			else if (listSource == ListSource.AssetFile)
+			{
+				invActionList = (ActionListAsset) AssignObject <ActionListAsset> (parameters, assetParameterID, invActionList);
 			}
 
 			if (localParameters != null && localParameters.Count > 0)
@@ -104,13 +108,23 @@ namespace AC
 				Upgrade ();
 
 				isRunning = true;
-				runtimeActionList = null;
 
 				if (listSource == ListSource.InScene && actionList != null && !actionList.actions.Contains (this))
 				{
 					KickStarter.actionListManager.EndList (actionList);
 
-					if (actionList.useParameters)
+					if (actionList.source == ActionListSource.AssetFile && actionList.assetFile != null && actionList.assetFile.useParameters)
+					{
+						if (actionList.syncParamValues)
+						{
+							SendParameters (actionList.assetFile.parameters, true);
+						}
+						else
+						{
+							SendParameters (actionList.parameters, false);
+						}
+					}
+					else if (actionList.source == ActionListSource.InScene && actionList.useParameters)
 					{
 						SendParameters (actionList.parameters, false);
 					}
@@ -135,11 +149,11 @@ namespace AC
 
 					if (runFromStart)
 					{
-						runtimeActionList = AdvGame.RunActionListAsset (invActionList, 0, !isSkippable);
+						AdvGame.RunActionListAsset (invActionList, 0, !isSkippable);
 					}
 					else
 					{
-						runtimeActionList = AdvGame.RunActionListAsset (invActionList, GetSkipIndex (invActionList.actions), !isSkippable);
+						AdvGame.RunActionListAsset (invActionList, GetSkipIndex (invActionList.actions), !isSkippable);
 					}
 				}
 
@@ -163,7 +177,7 @@ namespace AC
 				}
 				else if (listSource == ListSource.AssetFile && invActionList != null)
 				{
-					if (KickStarter.actionListManager.IsListRunning (runtimeActionList))
+					if (KickStarter.actionListAssetManager.IsListRunning (invActionList))
 					{
 						return defaultPauseTime;
 					}
@@ -187,7 +201,18 @@ namespace AC
 					return;
 				}*/
 
-				if (actionList.useParameters)
+				if (actionList.source == ActionListSource.AssetFile && actionList.assetFile != null && actionList.assetFile.useParameters)
+				{
+					if (actionList.syncParamValues)
+					{
+						SendParameters (actionList.assetFile.parameters, true);
+					}
+					else
+					{
+						SendParameters (actionList.parameters, false);
+					}
+				}
+				else if (actionList.source == ActionListSource.InScene && actionList.useParameters)
 				{
 					SendParameters (actionList.parameters, false);
 				}
@@ -215,11 +240,11 @@ namespace AC
 
 				if (runFromStart)
 				{
-					runtimeActionList = AdvGame.SkipActionListAsset (invActionList);
+					AdvGame.SkipActionListAsset (invActionList);
 				}
 				else
 				{
-					runtimeActionList = AdvGame.SkipActionListAsset (invActionList, GetSkipIndex (invActionList.actions));
+					AdvGame.SkipActionListAsset (invActionList, GetSkipIndex (invActionList.actions));
 				}
 			}
 		}
@@ -254,6 +279,10 @@ namespace AC
 					else if (externalParameters[i].parameterType == ParameterType.Float)
 					{
 						externalParameters[i].SetValue (localParameters[i].floatValue);
+					}
+					else if (externalParameters[i].parameterType == ParameterType.UnityObject)
+					{
+						externalParameters[i].SetValue (localParameters[i].objectValue);
 					}
 					else if (externalParameters[i].parameterType != ParameterType.GameObject)
 					{
@@ -326,7 +355,11 @@ namespace AC
 						{
 							EditorGUILayout.HelpBox ("This Action cannot be used to run the ActionList it is in - use the Skip option below instead.", MessageType.Warning);
 						}
-						else if (actionList.useParameters && actionList.parameters.Count > 0)
+						else if (actionList.source == ActionListSource.AssetFile && actionList.assetFile != null && actionList.assetFile.useParameters && actionList.assetFile.parameters.Count > 0)
+						{
+							SetParametersGUI (actionList.assetFile.parameters, parameters);
+						}
+						else if (actionList.source == ActionListSource.InScene && actionList.useParameters && actionList.parameters.Count > 0)
 						{
 							SetParametersGUI (actionList.parameters, parameters);
 						}
@@ -347,7 +380,11 @@ namespace AC
 			}
 			else if (listSource == ListSource.AssetFile)
 			{
-				invActionList = (ActionListAsset) EditorGUILayout.ObjectField ("ActionList asset:", invActionList, typeof (ActionListAsset), true);
+				assetParameterID = Action.ChooseParameterGUI ("ActionList asset:", parameters, assetParameterID, ParameterType.UnityObject);
+				if (assetParameterID < 0)
+				{
+					invActionList = (ActionListAsset) EditorGUILayout.ObjectField ("ActionList asset:", invActionList, typeof (ActionListAsset), true);
+				}
 
 				if (invActionList != null)
 				{
@@ -507,7 +544,6 @@ namespace AC
 				return;
 			}
 
-
 			// Ensure target and local parameter lists match
 			
 			int numParameters = externalParameters.Count;
@@ -549,7 +585,8 @@ namespace AC
 			{
 				string label = externalParameters[i].label;
 				int linkedID = parameterIDs[i];
-				
+
+				localParameters[i].parameterType = externalParameters[i].parameterType;
 				if (externalParameters[i].parameterType == ParameterType.GameObject)
 				{
 					linkedID = Action.ChooseParameterGUI (label + ":", ownParameters, linkedID, ParameterType.GameObject);
@@ -563,7 +600,7 @@ namespace AC
 						}
 						else
 						{
-							/// Gameobject
+							// Gameobject
 							localParameters[i].gameObject = (GameObject) EditorGUILayout.ObjectField (label + ":", localParameters[i].gameObject, typeof (GameObject), true);
 							localParameters[i].intValue = 0;
 							if (localParameters[i].gameObject != null && localParameters[i].gameObject.GetComponent <ConstantID>() == null)
@@ -571,6 +608,14 @@ namespace AC
 								localParameters[i].gameObject.AddComponent <ConstantID>();
 							}
 						}
+					}	
+				}
+				else if (externalParameters[i].parameterType == ParameterType.UnityObject)
+				{
+					linkedID = Action.ChooseParameterGUI (label + ":", ownParameters, linkedID, ParameterType.UnityObject);
+					if (linkedID < 0)
+					{
+						localParameters[i].objectValue = (Object) EditorGUILayout.ObjectField (label + ":", localParameters[i].objectValue, typeof (Object), true);
 					}	
 				}
 				else if (externalParameters[i].parameterType == ParameterType.GlobalVariable)

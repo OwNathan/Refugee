@@ -183,7 +183,7 @@ namespace AC
 		{}
 
 
-		public override void ActionCharAnimGUI (ActionCharAnim action)
+		public override void ActionCharAnimGUI (ActionCharAnim action, List<ActionParameter> parameters = null)
 		{
 			#if UNITY_EDITOR
 
@@ -640,7 +640,7 @@ namespace AC
 				
 				if (player.jumpParameter != "")
 				{
-					character.GetAnimator ().SetBool (player.jumpParameter, false);
+					character.GetAnimator ().SetBool (player.jumpParameter, player.isJumping);
 				}
 			}
 		}
@@ -666,7 +666,7 @@ namespace AC
 				
 				if (player.jumpParameter != "")
 				{
-					character.GetAnimator ().SetBool (player.jumpParameter, true);
+					character.GetAnimator ().SetBool (player.jumpParameter, player.isJumping);
 				}
 			}
 		}
@@ -708,7 +708,7 @@ namespace AC
 				
 				if (player.jumpParameter != "")
 				{
-					character.GetAnimator ().SetBool (player.jumpParameter, true);
+					character.GetAnimator ().SetBool (player.jumpParameter, player.isJumping);
 				}
 			}
 		}

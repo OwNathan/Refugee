@@ -30,6 +30,8 @@ namespace AC
 		public UISlot[] uiSlots;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** The text alignment */
 		public TextAnchor anchor;
 		/** How this list behaves (Load, Save, Import) */
@@ -90,6 +92,7 @@ namespace AC
 			actionListOnSave = null;
 			newSaveSlot = false;
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			displayType = SaveDisplayType.LabelOnly;
 			blankSlotTexture = null;
 
@@ -129,6 +132,7 @@ namespace AC
 
 			newSaveText = _element.newSaveText;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			anchor = _element.anchor;
 			saveListType = _element.saveListType;
 			maxSlots = _element.maxSlots;
@@ -239,6 +243,10 @@ namespace AC
 			{
 				anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 				textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+				if (textEffects != TextEffects.None)
+				{
+					outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+				}
 			}
 
 			displayType = (SaveDisplayType) EditorGUILayout.EnumPopup ("Display:", displayType);
@@ -498,7 +506,7 @@ namespace AC
 				
 				if (textEffects != TextEffects.None)
 				{
-					AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, 2, textEffects);
+					AdvGame.DrawTextEffect (ZoomRect (GetSlotRectRelative (_slot), zoom), labels[_slot], _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 				}
 				else
 				{

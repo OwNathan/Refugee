@@ -26,8 +26,7 @@ namespace AC
 	public class StateHandler : MonoBehaviour
 	{
 
-		/** The current state of the game (Normal, Cutscene, Paused, DialogOptions) */
-		public GameState gameState = GameState.Normal;
+		private GameState _gameState = GameState.Normal;
 
 		private Music music;
 		private bool inScriptedCutscene;
@@ -85,6 +84,24 @@ namespace AC
 		}
 
 
+		/** The current state of the game (Normal, Cutscene, Paused, DialogOptions) */
+		public GameState gameState
+		{
+			get
+			{
+				return _gameState;
+			}
+			set
+			{
+				if (KickStarter.mainCamera)
+				{
+					KickStarter.mainCamera.CancelPauseGame ();
+				}
+				_gameState = value;
+			}
+		}
+
+
 		/**
 		 * Alerts the StateHandler that a Game Engine prefab is present in the scene.
 		 * This is called from KickStarter when the game begins - the StateHandler will not run until this is done.
@@ -108,7 +125,10 @@ namespace AC
 		}
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			GetReferences ();
 		}
@@ -237,6 +257,10 @@ namespace AC
 			}
 			if (!inputIsOff)
 			{
+				if (gameState == GameState.DialogOptions)
+				{
+					KickStarter.playerInput.DetectConversationInputs ();
+				}
 				KickStarter.playerInput.UpdateInput ();
 
 				if (gameState == GameState.Normal)
@@ -261,7 +285,7 @@ namespace AC
 					foreach (Hotspot hotspot in hotspots)
 					{
 						hotspot.UpdateIcon ();
-						if (KickStarter.settingsManager.hotspotDrawing == ScreenWorld.WorldSpace && KickStarter.settingsManager.cameraPerspective != CameraPerspective.TwoD)
+						if (KickStarter.settingsManager.hotspotDrawing == ScreenWorld.WorldSpace)
 						{
 							hotspot.DrawHotspotIcon (true);
 						}
@@ -269,10 +293,10 @@ namespace AC
 				}
 			}
 
-			/*if (!menuIsOff)
+			if (!menuIsOff)
 			{
-				KickStarter.playerMenus.UpdateAllMenus ();
-			}*/
+				KickStarter.playerMenus.CheckForInput ();
+			}
 
 			if (!interactionIsOff)
 			{
@@ -501,7 +525,7 @@ namespace AC
 			if (!cursorIsOff && gameState == GameState.Normal && KickStarter.settingsManager)
 			{
 				if (KickStarter.settingsManager.hotspotIconDisplay != HotspotIconDisplay.Never &&
-				   (KickStarter.settingsManager.hotspotDrawing == ScreenWorld.ScreenSpace || KickStarter.settingsManager.cameraPerspective == CameraPerspective.TwoD))
+				   KickStarter.settingsManager.hotspotDrawing == ScreenWorld.ScreenSpace)
 				{
 					foreach (Hotspot hotspot in hotspots)
 					{

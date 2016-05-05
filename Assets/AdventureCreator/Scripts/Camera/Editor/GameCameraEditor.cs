@@ -217,7 +217,14 @@ namespace AC
 			EditorGUILayout.Space ();
 
 			EditorGUILayout.BeginVertical ("Button");
-			EditorGUILayout.LabelField ("Field of view", EditorStyles.boldLabel);
+			if (_target.GetComponent <Camera>() && _target.GetComponent <Camera>().orthographic)
+			{
+				EditorGUILayout.LabelField ("Orthographic size", EditorStyles.boldLabel);
+			}
+			else
+			{
+				EditorGUILayout.LabelField ("Field of view", EditorStyles.boldLabel);
+			}
 			
 			_target.lockFOV = EditorGUILayout.Toggle ("Lock?", _target.lockFOV);
 			

@@ -38,6 +38,7 @@ namespace AC
 			if (_target.source == ActionListSource.AssetFile)
 			{
 				_target.assetFile = (ActionListAsset) EditorGUILayout.ObjectField ("ActionList asset:", _target.assetFile, typeof (ActionListAsset), false);
+				_target.syncParamValues = EditorGUILayout.Toggle ("Sync parameter values?", _target.syncParamValues);
 			}
 			_target.actionListType = (ActionListType) EditorGUILayout.EnumPopup ("When running:", _target.actionListType);
 			if (_target.actionListType == ActionListType.PauseGameplay)

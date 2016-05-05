@@ -35,7 +35,8 @@ namespace AC
 		public AnimationCurve timeCurve = new AnimationCurve (new Keyframe(0, 0), new Keyframe(1, 1));
 		public MoveMethod moveMethod;
 		public bool returnToLast;
-		
+        public bool retainPreviousSpeed = false;
+
 
 		public ActionCamera ()
 		{
@@ -92,7 +93,7 @@ namespace AC
 							}
 							else
 							{
-								mainCam.SetGameCamera (cam, transitionTime, moveMethod, timeCurve);
+								mainCam.SetGameCamera (cam, transitionTime, moveMethod, timeCurve, retainPreviousSpeed);
 
 								if (willWait)
 								{
@@ -217,6 +218,7 @@ namespace AC
 					{
 						timeCurve = EditorGUILayout.CurveField ("Time curve:", timeCurve);
 					}
+                    retainPreviousSpeed = EditorGUILayout.Toggle ("Smooth transition out?", retainPreviousSpeed);
 				}
 			}
 			
@@ -250,8 +252,8 @@ namespace AC
 			return labelAdd;
 		}
 		
-		#endif
-		
-	}
+#endif
+
+    }
 	
 }

@@ -71,6 +71,11 @@ namespace AC
 				_target.interactionSource = (InteractionSource) EditorGUILayout.EnumPopup ("Interaction source:", _target.interactionSource);
 				_target.hotspotName = EditorGUILayout.TextField ("Label (if not name):", _target.hotspotName);
 				_target.highlight = (Highlight) EditorGUILayout.ObjectField ("Object to highlight:", _target.highlight, typeof (Highlight), true);
+				if (AdvGame.GetReferences ().settingsManager != null && AdvGame.GetReferences ().settingsManager.hotspotDrawing == ScreenWorld.WorldSpace)
+				{
+					_target.iconSortingLayer = EditorGUILayout.TextField ("Icon sorting layer:", _target.iconSortingLayer);
+					_target.iconSortingOrder = EditorGUILayout.IntField ("Icon sprite order:", _target.iconSortingOrder);
+				}
 
 				EditorGUILayout.BeginHorizontal ();
 				_target.centrePoint = (Transform) EditorGUILayout.ObjectField ("Centre point (override):", _target.centrePoint, typeof (Transform), true);

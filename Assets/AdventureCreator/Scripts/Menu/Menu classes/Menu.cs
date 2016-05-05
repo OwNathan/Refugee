@@ -650,6 +650,7 @@ namespace AC
 				rectTransform = Menu.IDToField <RectTransform> (rectTransform, rectTransformID, menuSource);
 
 				firstSelectedElement = EditorGUILayout.TextField ("First selected Element:", firstSelectedElement);
+				EditorGUILayout.HelpBox ("For UIs to be keyboard-controlled, the name of the first selected element must be entered above.", MessageType.Info);
 			}
 		}
 
@@ -828,13 +829,16 @@ namespace AC
 				{
 					if (canvas.renderMode != RenderMode.WorldSpace)
 					{
-						float minLeft = rectTransform.sizeDelta.x / 2f * canvas.scaleFactor * rectTransform.localScale.x;
-						float minTop = rectTransform.sizeDelta.y / 2f * canvas.scaleFactor * rectTransform.localScale.y;
+						float minLeft = rectTransform.sizeDelta.x * (1f - rectTransform.pivot.x) * canvas.scaleFactor * rectTransform.localScale.x;
+						float minTop = rectTransform.sizeDelta.y * (1f - rectTransform.pivot.y) * canvas.scaleFactor * rectTransform.localScale.y;
+
+						float maxLeft = rectTransform.sizeDelta.x * rectTransform.pivot.x * canvas.scaleFactor * rectTransform.localScale.x;
+						float maxTop = rectTransform.sizeDelta.y * rectTransform.pivot.y * canvas.scaleFactor * rectTransform.localScale.y;
 
 						if (fitWithinScreen)
 						{
-							_position.x = Mathf.Clamp (_position.x, minLeft, Screen.width - minLeft);
-							_position.y = Mathf.Clamp (_position.y, minTop, Screen.height - minTop);
+							_position.x = Mathf.Clamp (_position.x, maxLeft, Screen.width - minLeft);
+							_position.y = Mathf.Clamp (_position.y, maxTop, Screen.height - minTop);
 						}
 					}
 
@@ -1312,7 +1316,7 @@ namespace AC
 		}
 		
 
-		/*
+		/**
 		 * <summary>Checks if the Menu is fully on or not.</summary>
 		 * <returns>True if the Menu is fully on.</returns>
 		 */
@@ -1326,7 +1330,7 @@ namespace AC
 		}
 		
 
-		/*
+		/**
 		 * <summary>Checks if the Menu is fully off or not.</summary>
 		 * <returns>True if the Menu is fully off.</returns>
 		 */
@@ -1369,7 +1373,7 @@ namespace AC
 		}
 		
 
-		/*
+		/**
 		 * <summary>Turns the Menu on.</summary>
 		 * <param name = "doFade">If True, the Menu will play its transition animation; otherwise, it will turn on instantly.</param>
 		 * <returns>True if the Menu was turned on. False if the Menu was already on.</returns>
@@ -1452,7 +1456,7 @@ namespace AC
 		}
 
 
-		/*
+		/**
 		 * <summary>Turns the Menu off.</summary>
 		 * <param name = "doFade">If True, the Menu will play its transition animation; otherwise, it will turn off instantly.</param>
 		 * <returns>True if the Menu was turned off. False if the Menu was already off.</returns>
@@ -1518,6 +1522,7 @@ namespace AC
 				isEnabled = false;
 				DisableUI ();
 				ClearSpeechText ();
+				ReturnGameState ();
 			}
 		}
 
@@ -1713,6 +1718,18 @@ namespace AC
 				}
 			}
 		}
+
+
+		/**
+		 * Pauses the game if appropriate after a scene-change.
+		 */
+		public void AfterSceneChange ()
+		{
+			if (IsOn ())
+			{
+				ChangeGameState ();
+			}
+		}
 		
 		
 		private void ChangeGameState ()
@@ -1724,7 +1741,7 @@ namespace AC
 					KickStarter.playerInteraction.DeselectHotspot (true);
 				}
 				KickStarter.mainCamera.FadeIn (0);
-				KickStarter.mainCamera.PauseGame ();
+				KickStarter.mainCamera.PauseGame (true);
 			}
 		}
 		
@@ -1740,7 +1757,7 @@ namespace AC
 
 		private bool CanPause ()
 		{
-			if (appearType == AppearType.Manual || appearType == AppearType.OnInputKey || appearType != AC.AppearType.OnInteraction || appearType != AppearType.OnContainer)
+			if (appearType == AppearType.Manual || appearType == AppearType.OnInputKey || appearType == AC.AppearType.OnInteraction || appearType == AppearType.OnContainer)
 			{
 				return true;
 			}

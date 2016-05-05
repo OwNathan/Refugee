@@ -274,7 +274,7 @@ namespace AC
 					AdvGame.DrawNodeCurve (nodeRect, actions[i+1].nodeRect, new Color (0.1f, 0.7f, 0.1f), 27 + offset, true, isDisplayed);
 				}
 			}
-			else if (resultActionTrue == ResultAction.Skip)
+			else if (resultActionTrue == ResultAction.Skip && showOutputSockets)
 			{
 				if (actions.Contains (skipActionTrueActual))
 				{
@@ -289,7 +289,7 @@ namespace AC
 					AdvGame.DrawNodeCurve (nodeRect, actions[i+1].nodeRect, Color.red, 10, true, isDisplayed);
 				}
 			}
-			else if (resultActionFail == ResultAction.Skip)
+			else if (resultActionFail == ResultAction.Skip && showOutputSockets)
 			{
 				if (actions.Contains (skipActionFailActual))
 				{

@@ -82,6 +82,7 @@ namespace AC
 					ACDebug.LogWarning ("Cannot change Hotspot " + hotspot.gameObject.name + "'s Inventory button " + number.ToString () + " because it doesn't exist!");
 				}
 			}
+			hotspot.ResetMainIcon ();
 
 			return 0f;
 		}

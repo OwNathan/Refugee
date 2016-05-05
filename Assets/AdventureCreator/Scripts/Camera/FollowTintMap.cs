@@ -12,6 +12,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace AC
 {
@@ -46,6 +47,9 @@ namespace AC
 		private float fadeStartTime;
 		private float fadeTime;
 
+		private float spriteAlpha = 1f;
+		private float[] spriteAlphas;
+
 
 		private void Awake ()
 		{
@@ -56,13 +60,31 @@ namespace AC
 
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteRenderers = GetComponentsInChildren <SpriteRenderer>();
+
+			if (_spriteRenderer != null)
+			{
+				spriteAlpha = _spriteRenderer.color.a;
+			}
+			if (_spriteRenderers != null)
+			{
+				List<float> spriteAlphasList = new List<float>();
+				foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+				{
+					spriteAlphasList.Add (spriteRenderer.color.a);
+				}
+				spriteAlphas = spriteAlphasList.ToArray ();
+			}
+
 			targetIntensity = initialIntensity = intensity;
 
 			ResetTintMap ();
 		}
 
 
-		private void OnLevelWasLoaded ()
+		/**
+		 * Called after a scene change.
+		 */
+		public void AfterLoad ()
 		{
 			ResetTintMap ();
 		}
@@ -85,6 +107,21 @@ namespace AC
 				{
 					ACDebug.Log (this.gameObject.name + " cannot find Tint Map to follow!");
 				}
+			}
+
+			if (affectChildren)
+			{
+				for (int i=0; i<_spriteRenderers.Length; i++)
+				{
+					if (spriteAlphas.Length > i)
+					{
+						_spriteRenderers[i].color = new Color (1f, 1f, 1f, spriteAlphas[i]);
+					}
+				}
+			}
+			else
+			{
+				_spriteRenderer.color = new Color (1f, 1f, 1f, spriteAlpha);
 			}
 		}
 
@@ -113,7 +150,7 @@ namespace AC
 		}
 
 
-		private void Update ()
+		private void LateUpdate ()
 		{
 			if (actualTintMap)
 			{
@@ -129,14 +166,23 @@ namespace AC
 
 				if (affectChildren)
 				{
-					foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+					for (int i=0; i<_spriteRenderers.Length; i++)
 					{
-						spriteRenderer.color = actualTintMap.GetColorData (transform.position, intensity);
+						Debug.Log ("Change " + _spriteRenderers[i].name + " to " + actualTintMap.GetColorData (transform.position, intensity) + ", is: " + _spriteRenderers[i].color);
+
+						if (spriteAlphas.Length > i)
+						{
+							_spriteRenderers[i].color = actualTintMap.GetColorData (transform.position, intensity, spriteAlphas[i]);
+						}
+						else
+						{
+							_spriteRenderers[i].color = actualTintMap.GetColorData (transform.position, intensity);
+						}
 					}
 				}
 				else
 				{
-					_spriteRenderer.color = actualTintMap.GetColorData (transform.position, intensity);
+					_spriteRenderer.color = actualTintMap.GetColorData (transform.position, intensity, spriteAlpha);
 				}
 			}
 		}

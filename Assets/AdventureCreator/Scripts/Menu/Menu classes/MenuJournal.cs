@@ -41,6 +41,8 @@ namespace AC
 		public TextAnchor anchor;
 		/** The special FX applied to the text (None, Outline, Shadow, OutlineAndShadow) */
 		public TextEffects textEffects;
+		/** The outline thickness, if textEffects != TextEffects.None */
+		public float outlineSize = 2f;
 		/** An ActionList to run whenever a new page is added */
 		public ActionListAsset actionListOnAddPage;
 		/** What type of journal this is (NewJournal, DisplayExistingJournal) */
@@ -71,6 +73,7 @@ namespace AC
 			anchor = TextAnchor.MiddleCenter;
 			SetSize (new Vector2 (10f, 5f));
 			textEffects = TextEffects.None;
+			outlineSize = 2f;
 			fullText = "";
 			actionListOnAddPage = null;
 			journalType = JournalType.NewJournal;
@@ -115,6 +118,7 @@ namespace AC
 			}
 			anchor = _element.anchor;
 			textEffects = _element.textEffects;
+			outlineSize = _element.outlineSize;
 			fullText = "";
 			actionListOnAddPage = _element.actionListOnAddPage;
 			journalType = _element.journalType;
@@ -216,6 +220,10 @@ namespace AC
 				{
 					anchor = (TextAnchor) EditorGUILayout.EnumPopup ("Text alignment:", anchor);
 					textEffects = (TextEffects) EditorGUILayout.EnumPopup ("Text effect:", textEffects);
+					if (textEffects != TextEffects.None)
+					{
+						outlineSize = EditorGUILayout.Slider ("Effect size:", outlineSize, 1f, 5f);
+					}
 				}
 				else
 				{
@@ -359,7 +367,7 @@ namespace AC
 			{
 				if (textEffects != TextEffects.None)
 				{
-					AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, 2, textEffects);
+					AdvGame.DrawTextEffect (ZoomRect (relativeRect, zoom), fullText, _style, Color.black, _style.normal.textColor, outlineSize, textEffects);
 				}
 				else
 				{

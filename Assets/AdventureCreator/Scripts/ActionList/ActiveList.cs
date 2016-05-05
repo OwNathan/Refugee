@@ -189,9 +189,27 @@ namespace AC
 		 */
 		public void Skip ()
 		{
-			if (inSkipQueue && actionList != null)
+			if (inSkipQueue)
 			{
-				actionList.Skip (startIndex);
+				if (actionListAsset != null)
+				{
+					// Destroy old list, but don't go through ActionListManager's Reset code, to bypass changing GameState etc
+					KickStarter.actionListAssetManager.DestroyAssetList (actionListAsset);
+					actionList = AdvGame.SkipActionListAsset (actionListAsset, startIndex);
+				}
+				else if (actionList != null)
+				{
+					actionList.Skip (startIndex);
+				}
+
+				/*if (actionList != null)
+				{
+					actionList.Skip (startIndex);
+				}
+				else if (actionListAsset != null)
+				{
+					AdvGame.SkipActionListAsset (actionListAsset, startIndex);
+				}*/
 			}
 		}
 

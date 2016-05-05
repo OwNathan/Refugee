@@ -72,7 +72,7 @@ namespace AC
 		}
 
 
-		public override void ActionCharAnimGUI (ActionCharAnim action)
+		public override void ActionCharAnimGUI (ActionCharAnim action, List<ActionParameter> parameters = null)
 		{
 			#if UNITY_EDITOR
 
@@ -109,7 +109,11 @@ namespace AC
 					action.changeSound = EditorGUILayout.Toggle ("Change sound?", action.changeSound);
 					if (action.changeSound)
 					{
-						action.newSound = (AudioClip) EditorGUILayout.ObjectField ("New sound:", action.newSound, typeof (AudioClip), false);
+						action.newSoundParameterID = Action.ChooseParameterGUI ("New sound:", parameters, action.newSoundParameterID, ParameterType.UnityObject);
+						if (action.newSoundParameterID < 0)
+						{
+							action.newSound = (AudioClip) EditorGUILayout.ObjectField ("New sound:", action.newSound, typeof (AudioClip), false);
+						}
 					}
 					action.changeSpeed = EditorGUILayout.Toggle ("Change speed?", action.changeSpeed);
 					if (action.changeSpeed)

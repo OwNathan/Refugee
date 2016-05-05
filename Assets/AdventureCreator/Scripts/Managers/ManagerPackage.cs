@@ -100,6 +100,7 @@ namespace AC
 					KickStarter.sceneManager.GetPrefabsInScene ();
 				}
 
+				UnityVersionHandler.CustomSetDirty (AdvGame.GetReferences (), true);
 				AssetDatabase.SaveAssets ();
 				#endif
 

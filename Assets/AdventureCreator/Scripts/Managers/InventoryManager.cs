@@ -187,32 +187,7 @@ namespace AC
 					selectedItem.binID = -1;
 					EditorGUILayout.LabelField ("No categories defined!", EditorStyles.miniLabel, GUILayout.Width (146f));
 				}
-				EditorGUILayout.EndHorizontal ();	
-
-				EditorGUILayout.BeginHorizontal ();
-				EditorGUILayout.LabelField ("Main graphic:", GUILayout.Width (145));
-				selectedItem.tex = (Texture2D) EditorGUILayout.ObjectField (selectedItem.tex, typeof (Texture2D), false, GUILayout.Width (70), GUILayout.Height (70));
 				EditorGUILayout.EndHorizontal ();
-
-				EditorGUILayout.BeginHorizontal ();
-				EditorGUILayout.LabelField ("Active graphic:", GUILayout.Width (145));
-				selectedItem.activeTex = (Texture2D) EditorGUILayout.ObjectField (selectedItem.activeTex, typeof (Texture2D), false, GUILayout.Width (70), GUILayout.Height (70));
-				EditorGUILayout.EndHorizontal ();
-
-				if (AdvGame.GetReferences ().settingsManager != null && AdvGame.GetReferences ().settingsManager.selectInventoryDisplay == SelectInventoryDisplay.ShowSelectedGraphic)
-				{
-					selectedItem.selectedTex = (Texture2D) EditorGUILayout.ObjectField ("Selected graphic:", selectedItem.selectedTex, typeof (Texture2D), false);
-				}
-				if (AdvGame.GetReferences ().cursorManager != null)
-				{
-					CursorManager cursorManager = AdvGame.GetReferences ().cursorManager;
-					if (cursorManager.inventoryHandling == InventoryHandling.ChangeCursor || cursorManager.inventoryHandling == InventoryHandling.ChangeCursorAndHotspotLabel)
-					{
-						GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
-						selectedItem.cursorIcon.ShowGUI (true, cursorManager.cursorRendering, "Cursor (optional):");
-						GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
-					}
-				}
 
 				selectedItem.carryOnStart = EditorGUILayout.Toggle ("Carry on start?", selectedItem.carryOnStart);
 				if (selectedItem.carryOnStart && AdvGame.GetReferences ().settingsManager && AdvGame.GetReferences ().settingsManager.playerSwitching == PlayerSwitching.Allow && !AdvGame.GetReferences ().settingsManager.shareInventory)
@@ -249,7 +224,34 @@ namespace AC
 					EditorGUILayout.LabelField ("(hotspot)", GUILayout.MaxWidth (55f));
 					EditorGUILayout.EndHorizontal ();
 				}
-				
+
+				GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
+
+				EditorGUILayout.BeginHorizontal ();
+				EditorGUILayout.LabelField ("Main graphic:", GUILayout.Width (145));
+				selectedItem.tex = (Texture2D) EditorGUILayout.ObjectField (selectedItem.tex, typeof (Texture2D), false, GUILayout.Width (70), GUILayout.Height (70));
+				EditorGUILayout.EndHorizontal ();
+
+				EditorGUILayout.BeginHorizontal ();
+				EditorGUILayout.LabelField ("Active graphic:", GUILayout.Width (145));
+				selectedItem.activeTex = (Texture2D) EditorGUILayout.ObjectField (selectedItem.activeTex, typeof (Texture2D), false, GUILayout.Width (70), GUILayout.Height (70));
+				EditorGUILayout.EndHorizontal ();
+
+				if (AdvGame.GetReferences ().settingsManager != null && AdvGame.GetReferences ().settingsManager.selectInventoryDisplay == SelectInventoryDisplay.ShowSelectedGraphic)
+				{
+					selectedItem.selectedTex = (Texture2D) EditorGUILayout.ObjectField ("Selected graphic:", selectedItem.selectedTex, typeof (Texture2D), false);
+				}
+				if (AdvGame.GetReferences ().cursorManager != null)
+				{
+					CursorManager cursorManager = AdvGame.GetReferences ().cursorManager;
+					if (cursorManager.inventoryHandling == InventoryHandling.ChangeCursor || cursorManager.inventoryHandling == InventoryHandling.ChangeCursorAndHotspotLabel)
+					{
+						GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
+						selectedItem.cursorIcon.ShowGUI (true, cursorManager.cursorRendering, "Cursor (optional):");
+						GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
+					}
+				}
+
 				EditorGUILayout.Space ();
 				EditorGUILayout.LabelField ("Standard interactions", EditorStyles.boldLabel);
 				if (settingsManager && settingsManager.interactionMethod != AC_InteractionMethod.ContextSensitive && settingsManager.inventoryInteractions == InventoryInteractions.Multiple && AdvGame.GetReferences ().cursorManager)
@@ -297,9 +299,18 @@ namespace AC
 					selectedItem.useActionList = ActionListAssetMenu.AssetGUI ("Use:", selectedItem.useActionList);
 					if (cursorManager && cursorManager.allowInteractionCursorForInventory && cursorManager.cursorIcons.Count > 0)
 					{
-						int useCursor_int = cursorManager.GetIntFromID (selectedItem.useIconID);
-						useCursor_int = EditorGUILayout.Popup ("Use cursor icon:", useCursor_int, cursorManager.GetLabelsArray ());
-						selectedItem.useIconID = cursorManager.cursorIcons[useCursor_int].id;
+						int useCursor_int = cursorManager.GetIntFromID (selectedItem.useIconID) + 1;
+						if (selectedItem.useIconID == -1) useCursor_int = 0;
+						useCursor_int = EditorGUILayout.Popup ("Use cursor icon:", useCursor_int, cursorManager.GetLabelsArray (true));
+
+						if (useCursor_int == 0)
+						{
+							selectedItem.useIconID = -1;
+						}
+						else if (cursorManager.cursorIcons.Count > (useCursor_int - 1))
+						{
+							selectedItem.useIconID = cursorManager.cursorIcons[useCursor_int-1].id;
+						}
 					}
 					else
 					{

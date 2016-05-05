@@ -155,7 +155,7 @@ namespace AC
 				}
 				Invoke ("RunCutsceneOnStart", 0.01f);
 			}
-			else
+			else if (!KickStarter.playerMenus.ArePauseMenusOn ())
 			{
 				KickStarter.stateHandler.gameState = GameState.Normal;
 			}
