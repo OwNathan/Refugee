@@ -12,10 +12,12 @@ public class PropManager : MonoBehaviour
 
     public void OnBoolIsKinematicOn()
     {
-        rigidbody.isKinematic = true;
+        if(rigidbody != null)
+            rigidbody.isKinematic = true;
     }
     public void OnBoolIsKinematicOff()
     {
-        rigidbody.isKinematic = false;
+        if (rigidbody != null)
+            rigidbody.isKinematic = false;
     }
 }

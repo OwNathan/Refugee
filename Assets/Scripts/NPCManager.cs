@@ -11,11 +11,13 @@ public class NPCManager : MonoBehaviour
 
     public void OnHandsColliderEnable()
     {
-        handsCollider.enabled = true;
+        if(handsCollider != null)
+            handsCollider.enabled = true;
     }
 
     public void OnHandsColliderDisable()
     {
-        handsCollider.enabled = false;
+        if (handsCollider != null)
+            handsCollider.enabled = false;
     }
 }
