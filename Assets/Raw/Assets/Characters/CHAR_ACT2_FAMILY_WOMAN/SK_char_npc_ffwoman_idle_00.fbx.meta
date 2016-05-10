@@ -1,0 +1,537 @@
+fileFormatVersion: 2
+guid: dad58c37955c1fe468e1c6fd055e8ceb
+timeCreated: 1462287363
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: FFWoman:FFWoman
+    100002: FFWoman:Head
+    100004: FFWoman:HeadTop_End
+    100006: FFWoman:Hips
+    100008: FFWoman:LeftArm
+    100010: FFWoman:LeftFoot
+    100012: FFWoman:LeftForeArm
+    100014: FFWoman:LeftHand
+    100016: FFWoman:LeftHandIndex1
+    100018: FFWoman:LeftHandIndex2
+    100020: FFWoman:LeftHandIndex3
+    100022: FFWoman:LeftHandIndex4
+    100024: FFWoman:LeftLeg
+    100026: FFWoman:LeftShoulder
+    100028: FFWoman:LeftToe_End
+    100030: FFWoman:LeftToeBase
+    100032: FFWoman:LeftUpLeg
+    100034: FFWoman:Neck
+    100036: FFWoman:RightArm
+    100038: FFWoman:RightFoot
+    100040: FFWoman:RightForeArm
+    100042: FFWoman:RightHand
+    100044: FFWoman:RightHandIndex1
+    100046: FFWoman:RightHandIndex2
+    100048: FFWoman:RightHandIndex3
+    100050: FFWoman:RightHandIndex4
+    100052: FFWoman:RightLeg
+    100054: FFWoman:RightShoulder
+    100056: FFWoman:RightToe_End
+    100058: FFWoman:RightToeBase
+    100060: FFWoman:RightUpLeg
+    100062: FFWoman:Spine
+    100064: FFWoman:Spine1
+    100066: FFWoman:Spine2
+    100068: //RootNode
+    400000: FFWoman:FFWoman
+    400002: FFWoman:Head
+    400004: FFWoman:HeadTop_End
+    400006: FFWoman:Hips
+    400008: FFWoman:LeftArm
+    400010: FFWoman:LeftFoot
+    400012: FFWoman:LeftForeArm
+    400014: FFWoman:LeftHand
+    400016: FFWoman:LeftHandIndex1
+    400018: FFWoman:LeftHandIndex2
+    400020: FFWoman:LeftHandIndex3
+    400022: FFWoman:LeftHandIndex4
+    400024: FFWoman:LeftLeg
+    400026: FFWoman:LeftShoulder
+    400028: FFWoman:LeftToe_End
+    400030: FFWoman:LeftToeBase
+    400032: FFWoman:LeftUpLeg
+    400034: FFWoman:Neck
+    400036: FFWoman:RightArm
+    400038: FFWoman:RightFoot
+    400040: FFWoman:RightForeArm
+    400042: FFWoman:RightHand
+    400044: FFWoman:RightHandIndex1
+    400046: FFWoman:RightHandIndex2
+    400048: FFWoman:RightHandIndex3
+    400050: FFWoman:RightHandIndex4
+    400052: FFWoman:RightLeg
+    400054: FFWoman:RightShoulder
+    400056: FFWoman:RightToe_End
+    400058: FFWoman:RightToeBase
+    400060: FFWoman:RightUpLeg
+    400062: FFWoman:Spine
+    400064: FFWoman:Spine1
+    400066: FFWoman:Spine2
+    400068: //RootNode
+    4300000: FFWoman:FFWoman
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: FFWoman:FFWoman
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: FFWoman:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FFWoman:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SK_char_npc_ffwoman_idle_00(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:FFWoman
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:Hips
+      position: {x: 0.00081365224, y: 0.92621464, z: 0.009229817}
+      rotation: {x: -0.0000000014551915, y: -7.2759565e-10, z: 4.547473e-10, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1.0000002}
+      transformModified: 1
+    - name: FFWoman:Spine
+      position: {x: -0, y: 0.09184738, z: -0.0041233436}
+      rotation: {x: -0.022429766, y: 0.000000001455845, z: -1.2823692e-11, w: 0.9997484}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: FFWoman:Spine1
+      position: {x: -0, y: 0.10726323, z: 0}
+      rotation: {x: -0.000000007450581, y: -6.4120603e-10, z: -0.0000000019406485,
+        w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:Spine2
+      position: {x: -0, y: 0.12258657, z: -8.881784e-18}
+      rotation: {x: 0.0000000037252903, y: 1.8796174e-10, z: -1.3096838e-10, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:RightShoulder
+      position: {x: 0.057100043, y: 0.120143905, z: -0.00061373436}
+      rotation: {x: -0.5657163, y: -0.4223503, z: 0.5718042, w: -0.417882}
+      scale: {x: 1, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: FFWoman:RightArm
+      position: {x: 1.7763568e-17, y: 0.122551665, z: 0}
+      rotation: {x: -0.116889626, y: -0.0005752742, z: 0.0065370053, w: 0.9931233}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:RightForeArm
+      position: {x: -0, y: 0.1971072, z: 0}
+      rotation: {x: -0.013558105, y: 0.0001476407, z: -0.010886401, w: 0.99984884}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: FFWoman:RightHand
+      position: {x: -8.881784e-18, y: 0.27689278, z: 0}
+      rotation: {x: 0.019368425, y: 0.0016002357, z: -0.08232835, w: -0.99641573}
+      scale: {x: 0.99999964, y: 0.9999996, z: 0.99999946}
+      transformModified: 1
+    - name: FFWoman:RightHandIndex1
+      position: {x: 4.440892e-18, y: 0.0715558, z: 0}
+      rotation: {x: 0.024939368, y: -0.0100185545, z: 0.07405278, w: -0.9968921}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+      transformModified: 1
+    - name: FFWoman:RightHandIndex2
+      position: {x: -0, y: 0.030637238, z: -1.4210854e-16}
+      rotation: {x: -0.35581878, y: -0.00000005960463, z: -0.0394806, w: 0.93372065}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: FFWoman:RightHandIndex3
+      position: {x: -0.0031677773, y: 0.02900782, z: 0.028549502}
+      rotation: {x: 0.026422879, y: 0.084009215, z: -0.08242644, w: 0.99269843}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999994}
+      transformModified: 1
+    - name: FFWoman:RightHandIndex4
+      position: {x: -0.008285377, y: 0.0156762, z: 0.013321157}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:LeftShoulder
+      position: {x: -0.057100043, y: 0.120160386, z: -0.0009806736}
+      rotation: {x: 0.5638439, y: -0.42372322, z: 0.5735333, w: 0.4166512}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:LeftArm
+      position: {x: -8.881784e-18, y: 0.122551665, z: -2.842171e-16}
+      rotation: {x: -0.1169411, y: 0.0011034609, z: -0.007792816, w: 0.9931077}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:LeftForeArm
+      position: {x: -0, y: 0.19718269, z: 0}
+      rotation: {x: -0.014134304, y: -0.0003459454, z: 0.02447343, w: 0.9996005}
+      scale: {x: 0.99999976, y: 0.9999995, z: 0.9999997}
+      transformModified: 1
+    - name: FFWoman:LeftHand
+      position: {x: -8.881784e-18, y: 0.27693194, z: 0}
+      rotation: {x: -0.04533638, y: 0.0023761094, z: -0.052285567, w: 0.9975997}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:LeftHandIndex1
+      position: {x: 8.881784e-18, y: 0.0819901, z: 0}
+      rotation: {x: 0.06897237, y: 0.010307967, z: 0.039558362, w: 0.99678063}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:LeftHandIndex2
+      position: {x: -8.881784e-18, y: 0.025967244, z: 0}
+      rotation: {x: -0.14832342, y: -0.00000010430813, z: -0.012791395, w: 0.98885626}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000001}
+      transformModified: 1
+    - name: FFWoman:LeftHandIndex3
+      position: {x: -0.0011262922, y: 0.034044303, z: 0.013060184}
+      rotation: {x: 0.20561159, y: -0.029125564, z: 0.093653806, w: 0.9737066}
+      scale: {x: 0.9999998, y: 0.99999964, z: 0.9999997}
+      transformModified: 1
+    - name: FFWoman:LeftHandIndex4
+      position: {x: 0.0028383362, y: 0.014843988, z: -0.0016150003}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:Neck
+      position: {x: -0, y: 0.13790983, z: 7.6057036e-11}
+      rotation: {x: 0.022429775, y: -2.2271646e-10, z: 0.0000000018172934, w: 0.9997484}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+      transformModified: 1
+    - name: FFWoman:Head
+      position: {x: -0, y: 0.11083572, z: 0.016663909}
+      rotation: {x: -0.00000000995351, y: -0.0000000029103835, z: 5.4569693e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:HeadTop_End
+      position: {x: -0, y: 0.23523025, z: 0.035366356}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:RightUpLeg
+      position: {x: 0.06333706, y: -0.051026303, z: -0.002178095}
+      rotation: {x: -0.000000010925014, y: -0.0020008213, z: 0.99999803, w: 0.00000000552607}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: FFWoman:RightLeg
+      position: {x: -0, y: 0.38525936, z: -2.7755575e-19}
+      rotation: {x: 0.0058470718, y: 0.00013918128, z: 0.023799913, w: 0.9996996}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.99999994}
+      transformModified: 1
+    - name: FFWoman:RightFoot
+      position: {x: -0, y: 0.39547828, z: -1.110223e-18}
+      rotation: {x: 0.52239126, y: 0.003533807, z: -0.0021649413, w: 0.8526958}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: FFWoman:RightToeBase
+      position: {x: -0, y: 0.15524398, z: 0}
+      rotation: {x: 0.21919768, y: -0.046779107, z: 0.0105221765, w: 0.9745016}
+      scale: {x: 0.9999997, y: 0.99999976, z: 0.9999997}
+      transformModified: 1
+    - name: FFWoman:RightToe_End
+      position: {x: -0, y: 0.059304368, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FFWoman:LeftUpLeg
+      position: {x: -0.06333706, y: -0.051026303, z: -0.0027156668}
+      rotation: {x: -0.000000034194688, y: -0.002233365, z: 0.9999975, w: -0.0000000010768163}
+      scale: {x: 0.9999999, y: 0.99999976, z: 1}
+      transformModified: 1
+    - name: FFWoman:LeftLeg
+      position: {x: 8.881784e-18, y: 0.3852601, z: 5.551115e-19}
+      rotation: {x: 0.0044144853, y: -0.00010512722, z: -0.023799878, w: 0.99970704}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
+      transformModified: 1
+    - name: FFWoman:LeftFoot
+      position: {x: 1.7763568e-17, y: 0.39547035, z: -1.110223e-18}
+      rotation: {x: 0.52734286, y: -0.0034311507, z: 0.0021296125, w: 0.84964305}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: FFWoman:LeftToeBase
+      position: {x: 1.7763568e-17, y: 0.15787032, z: 0}
+      rotation: {x: 0.21521544, y: 0.047201477, z: -0.010415008, w: 0.9753696}
+      scale: {x: 1.0000002, y: 1, z: 1.0000005}
+      transformModified: 1
+    - name: FFWoman:LeftToe_End
+      position: {x: -8.881784e-18, y: 0.059658162, z: 2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
