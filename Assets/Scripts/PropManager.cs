@@ -4,10 +4,14 @@ using System.Collections;
 public class PropManager : MonoBehaviour
 {
     new Rigidbody rigidbody;
+    new Collider collider;
+    new Renderer renderer;
 
     public void Awake()
     {
         rigidbody = this.GetComponent<Rigidbody>();
+        collider = this.GetComponent<Collider>();
+        renderer = this.GetComponent<Renderer>();
     }
 
     public void OnBoolIsKinematicOn()
@@ -19,5 +23,23 @@ public class PropManager : MonoBehaviour
     {
         if (rigidbody != null)
             rigidbody.isKinematic = false;
+    }
+
+    public void OnColliderOn()
+    {
+        collider.enabled = true;
+    }
+    public void OnColliderOff()
+    {
+        collider.enabled = false;
+    }
+
+    public void OnRendererOn()
+    {
+        renderer.enabled = true;
+    }
+    public void OnRendererOff()
+    {
+        renderer.enabled = false;
     }
 }
