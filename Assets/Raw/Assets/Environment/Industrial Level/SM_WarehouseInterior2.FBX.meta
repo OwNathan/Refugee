@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 27d75ee3d276a984a9341a44505e7493
+timeCreated: 1461788788
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: SM_Bags
+    100002: SM_Bags_MeshPart0
+    100004: SM_Bags_MeshPart1
+    100006: SM_Bags_MeshPart2
+    100008: SM_Barrels
+    100010: SM_ClothCover
+    100012: SM_Crates
+    100014: SM_Crates_MeshPart0
+    100016: SM_Crates_MeshPart1
+    100018: SM_Crates_MeshPart2
+    100020: SM_Crates_MeshPart3
+    100022: SM_EscapeTunnel
+    100024: SM_Furnace
+    100026: SM_Lamps
+    100028: SM_Pellets
+    100030: SM_Pellets_MeshPart0
+    100032: SM_Pellets_MeshPart1
+    100034: SM_Roofing
+    100036: SM_RoofSupports
+    100038: SM_Scaffolding
+    100040: SM_Warehouse
+    100042: //RootNode
+    400000: SM_Bags
+    400002: SM_Bags_MeshPart0
+    400004: SM_Bags_MeshPart1
+    400006: SM_Bags_MeshPart2
+    400008: SM_Barrels
+    400010: SM_ClothCover
+    400012: SM_Crates
+    400014: SM_Crates_MeshPart0
+    400016: SM_Crates_MeshPart1
+    400018: SM_Crates_MeshPart2
+    400020: SM_Crates_MeshPart3
+    400022: SM_EscapeTunnel
+    400024: SM_Furnace
+    400026: SM_Lamps
+    400028: SM_Pellets
+    400030: SM_Pellets_MeshPart0
+    400032: SM_Pellets_MeshPart1
+    400034: SM_Roofing
+    400036: SM_RoofSupports
+    400038: SM_Scaffolding
+    400040: SM_Warehouse
+    400042: //RootNode
+    2300000: SM_Bags_MeshPart0
+    2300002: SM_Bags_MeshPart1
+    2300004: SM_Bags_MeshPart2
+    2300006: SM_Barrels
+    2300008: SM_ClothCover
+    2300010: SM_Crates_MeshPart0
+    2300012: SM_Crates_MeshPart1
+    2300014: SM_Crates_MeshPart2
+    2300016: SM_Crates_MeshPart3
+    2300018: SM_EscapeTunnel
+    2300020: SM_Furnace
+    2300022: SM_Lamps
+    2300024: SM_Pellets_MeshPart0
+    2300026: SM_Pellets_MeshPart1
+    2300028: SM_Roofing
+    2300030: SM_RoofSupports
+    2300032: SM_Scaffolding
+    2300034: SM_Warehouse
+    3300000: SM_Bags_MeshPart0
+    3300002: SM_Bags_MeshPart1
+    3300004: SM_Bags_MeshPart2
+    3300006: SM_Barrels
+    3300008: SM_ClothCover
+    3300010: SM_Crates_MeshPart0
+    3300012: SM_Crates_MeshPart1
+    3300014: SM_Crates_MeshPart2
+    3300016: SM_Crates_MeshPart3
+    3300018: SM_EscapeTunnel
+    3300020: SM_Furnace
+    3300022: SM_Lamps
+    3300024: SM_Pellets_MeshPart0
+    3300026: SM_Pellets_MeshPart1
+    3300028: SM_Roofing
+    3300030: SM_RoofSupports
+    3300032: SM_Scaffolding
+    3300034: SM_Warehouse
+    4300000: SM_Warehouse
+    4300002: SM_Roofing
+    4300004: SM_Crates_MeshPart0
+    4300006: SM_Crates_MeshPart1
+    4300008: SM_Crates_MeshPart2
+    4300010: SM_Crates_MeshPart3
+    4300012: SM_ClothCover
+    4300014: SM_RoofSupports
+    4300016: SM_Furnace
+    4300018: SM_Lamps
+    4300020: SM_Scaffolding
+    4300022: SM_Pellets_MeshPart0
+    4300024: SM_Pellets_MeshPart1
+    4300026: SM_Bags_MeshPart0
+    4300028: SM_Bags_MeshPart1
+    4300030: SM_Bags_MeshPart2
+    4300032: SM_Barrels
+    4300034: SM_EscapeTunnel
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
