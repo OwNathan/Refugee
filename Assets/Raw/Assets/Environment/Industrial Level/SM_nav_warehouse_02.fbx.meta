@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 084d7b88078c23c4e8e036e1a1f0de9d
-timeCreated: 1462038877
+guid: 9c21d085876939846a18da0180af1c6b
+timeCreated: 1463561239
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_nav_warehouse_00
+    4300000: SM_nav_warehouse_04
   materials:
     importMaterials: 1
     materialName: 0
