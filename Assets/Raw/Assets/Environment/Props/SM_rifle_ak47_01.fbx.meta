@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 58c6d7b007889f04c9be969779ee3abf
-timeCreated: 1462826262
+guid: fc34d249d60a92d4682d6eb20cea65d1
+timeCreated: 1463830850
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -10,7 +10,6 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: SM_rifle_ak47_01
-    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -25,7 +24,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -69,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
