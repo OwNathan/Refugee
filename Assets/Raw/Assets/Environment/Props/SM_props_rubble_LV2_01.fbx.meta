@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 607dc2fdfc6f7904fab7476c1115f054
+timeCreated: 1464038834
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: SM_prop_barrel_06
+    100002: SM_props_box_013
+    100004: SM_props_pallet_04
+    100006: SM_props_rubble_043
+    100008: SM_props_rubble_046
+    100010: SM_props_rubble_048
+    100012: SM_props_rubble_053
+    100014: SM_props_rubble_054
+    100016: SM_props_rubble_057
+    100018: SM_props_rubble_058
+    100020: SM_props_rubble_060
+    100022: SM_props_rubble_061
+    100024: SM_props_rubble_062
+    100026: SM_props_rubble_064
+    100028: SM_props_rubble_066
+    100030: SM_props_rubble_067
+    100032: SM_props_rubble_068
+    100034: SM_props_rubble_069
+    100036: SM_props_rubble_072
+    100038: SM_props_rubble_073
+    100040: //RootNode
+    100042: SM_props_steelwire_06
+    100044: SM_props_wood2_06
+    100046: SM_props_wood4_08
+    100048: SM_props_wood4_09
+    400000: SM_prop_barrel_06
+    400002: SM_props_box_013
+    400004: SM_props_pallet_04
+    400006: SM_props_rubble_043
+    400008: SM_props_rubble_046
+    400010: SM_props_rubble_048
+    400012: SM_props_rubble_053
+    400014: SM_props_rubble_054
+    400016: SM_props_rubble_057
+    400018: SM_props_rubble_058
+    400020: SM_props_rubble_060
+    400022: SM_props_rubble_061
+    400024: SM_props_rubble_062
+    400026: SM_props_rubble_064
+    400028: SM_props_rubble_066
+    400030: SM_props_rubble_067
+    400032: SM_props_rubble_068
+    400034: SM_props_rubble_069
+    400036: SM_props_rubble_072
+    400038: SM_props_rubble_073
+    400040: //RootNode
+    400042: SM_props_steelwire_06
+    400044: SM_props_wood2_06
+    400046: SM_props_wood4_08
+    400048: SM_props_wood4_09
+    2300000: SM_prop_barrel_06
+    2300002: SM_props_box_013
+    2300004: SM_props_pallet_04
+    2300006: SM_props_rubble_043
+    2300008: SM_props_rubble_046
+    2300010: SM_props_rubble_048
+    2300012: SM_props_rubble_053
+    2300014: SM_props_rubble_054
+    2300016: SM_props_rubble_057
+    2300018: SM_props_rubble_058
+    2300020: SM_props_rubble_060
+    2300022: SM_props_rubble_061
+    2300024: SM_props_rubble_062
+    2300026: SM_props_rubble_064
+    2300028: SM_props_rubble_066
+    2300030: SM_props_rubble_067
+    2300032: SM_props_rubble_068
+    2300034: SM_props_rubble_069
+    2300036: SM_props_rubble_072
+    2300038: SM_props_rubble_073
+    2300040: SM_props_steelwire_06
+    2300042: SM_props_wood2_06
+    2300044: SM_props_wood4_08
+    2300046: SM_props_wood4_09
+    3300000: SM_prop_barrel_06
+    3300002: SM_props_box_013
+    3300004: SM_props_pallet_04
+    3300006: SM_props_rubble_043
+    3300008: SM_props_rubble_046
+    3300010: SM_props_rubble_048
+    3300012: SM_props_rubble_053
+    3300014: SM_props_rubble_054
+    3300016: SM_props_rubble_057
+    3300018: SM_props_rubble_058
+    3300020: SM_props_rubble_060
+    3300022: SM_props_rubble_061
+    3300024: SM_props_rubble_062
+    3300026: SM_props_rubble_064
+    3300028: SM_props_rubble_066
+    3300030: SM_props_rubble_067
+    3300032: SM_props_rubble_068
+    3300034: SM_props_rubble_069
+    3300036: SM_props_rubble_072
+    3300038: SM_props_rubble_073
+    3300040: SM_props_steelwire_06
+    3300042: SM_props_wood2_06
+    3300044: SM_props_wood4_08
+    3300046: SM_props_wood4_09
+    4300000: SM_props_rubble_043
+    4300002: SM_props_rubble_046
+    4300004: SM_props_rubble_048
+    4300006: SM_props_rubble_053
+    4300008: SM_props_rubble_054
+    4300010: SM_props_rubble_057
+    4300012: SM_props_rubble_058
+    4300014: SM_props_rubble_060
+    4300016: SM_props_rubble_062
+    4300018: SM_props_rubble_061
+    4300020: SM_props_rubble_064
+    4300022: SM_props_rubble_066
+    4300024: SM_props_rubble_067
+    4300026: SM_props_rubble_068
+    4300028: SM_props_rubble_069
+    4300030: SM_props_rubble_072
+    4300032: SM_props_rubble_073
+    4300034: SM_props_wood4_08
+    4300036: SM_props_wood2_06
+    4300038: SM_props_box_013
+    4300040: SM_props_wood4_09
+    4300042: SM_props_pallet_04
+    4300044: SM_prop_barrel_06
+    4300046: SM_props_steelwire_06
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
