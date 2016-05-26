@@ -42,4 +42,9 @@ public class PropManager : MonoBehaviour
     {
         renderer.enabled = false;
     }
+
+    public void OnRigidbodyCollapse()
+    {
+        rigidbody.constraints = RigidbodyConstraints.None;
+    }
 }
