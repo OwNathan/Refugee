@@ -122,7 +122,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Kick
       takeName: mixamo.com
-      firstFrame: 0
+      firstFrame: 15
       lastFrame: 127
       wrapMode: 0
       orientationOffsetY: 0
