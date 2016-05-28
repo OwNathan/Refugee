@@ -43,6 +43,16 @@ public class PropManager : MonoBehaviour
         renderer.enabled = false;
     }
 
+    public void OnActivateObject()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public void OnDeactivateObject()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     public void OnRigidbodyCollapse()
     {
         rigidbody.constraints = RigidbodyConstraints.None;
