@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 48de97d19777a3c4abff2f7488989b4c
+timeCreated: 1464527181
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: SM_EscapeTunnel
+    100002: SM_MainDoor
+    100004: SM_MainDoor001
+    100006: SM_MainDoor_Door
+    100008: SM_MainDoor_Door001
+    100010: SM_MainDoor_Frame
+    100012: SM_MainDoor_Frame001
+    100014: SM_Warehouse
+    100016: //RootNode
+    100018: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse
+    100020: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart0
+    100022: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart1
+    100024: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart2
+    100026: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart3
+    100028: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart4
+    100030: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart5
+    100032: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart6
+    100034: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart7
+    100036: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart8
+    100038: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart9
+    400000: SM_EscapeTunnel
+    400002: SM_MainDoor
+    400004: SM_MainDoor001
+    400006: SM_MainDoor_Door
+    400008: SM_MainDoor_Door001
+    400010: SM_MainDoor_Frame
+    400012: SM_MainDoor_Frame001
+    400014: SM_Warehouse
+    400016: //RootNode
+    400018: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse
+    400020: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart0
+    400022: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart1
+    400024: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart2
+    400026: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart3
+    400028: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart4
+    400030: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart5
+    400032: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart6
+    400034: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart7
+    400036: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart8
+    400038: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart9
+    2300000: SM_EscapeTunnel
+    2300002: SM_MainDoor_Door
+    2300004: SM_MainDoor_Door001
+    2300006: SM_MainDoor_Frame
+    2300008: SM_MainDoor_Frame001
+    2300010: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart0
+    2300012: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart1
+    2300014: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart2
+    2300016: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart3
+    2300018: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart4
+    2300020: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart5
+    2300022: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart6
+    2300024: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart7
+    2300026: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart8
+    2300028: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart9
+    3300000: SM_EscapeTunnel
+    3300002: SM_MainDoor_Door
+    3300004: SM_MainDoor_Door001
+    3300006: SM_MainDoor_Frame
+    3300008: SM_MainDoor_Frame001
+    3300010: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart0
+    3300012: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart1
+    3300014: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart2
+    3300016: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart3
+    3300018: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart4
+    3300020: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart5
+    3300022: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart6
+    3300024: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart7
+    3300026: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart8
+    3300028: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart9
+    4300000: SM_EscapeTunnel
+    4300002: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart0
+    4300004: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart1
+    4300006: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart2
+    4300008: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart3
+    4300010: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart4
+    4300012: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart5
+    4300014: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart6
+    4300016: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart7
+    4300018: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart8
+    4300020: WarehouseInterior_Updated_SM_Warehouse_SM_Warehouse_MeshPart9
+    4300022: SM_MainDoor_Door
+    4300024: SM_MainDoor_Frame
+    4300026: SM_MainDoor_Door001
+    4300028: SM_MainDoor_Frame001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

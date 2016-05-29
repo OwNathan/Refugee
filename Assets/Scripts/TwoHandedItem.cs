@@ -6,6 +6,7 @@ public class TwoHandedItem : MonoBehaviour
     public Transform RightHand;
     public Transform LeftHand;
     public GameObject Item;
+    public Light MuzzleFlashlight;
 
     [HideInInspector]
     public bool IsTwoHanded;
@@ -33,7 +34,15 @@ public class TwoHandedItem : MonoBehaviour
                 Item.transform.position = RightHand.transform.position;
             }
         }
+    }
+    //called by animation event for fire animamations
+    void OnShoot()
+    {
+        MuzzleFlashlight.enabled = true;
+    }
 
-
+    void OnShootEnd()
+    {
+        MuzzleFlashlight.enabled = false;
     }
 }
