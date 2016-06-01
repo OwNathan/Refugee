@@ -7,10 +7,11 @@ using System;
 public class RoadPool : MonoBehaviour
 {
     public List<RoadInfo> RoadInfos;
-    public float PlayerSpeed;
+    public float CharactersSpeed;
 
     private Queue<RoadInfo> pool;
     private Player player;
+    private List<NPC> npcs;
 
     public void Awake()
     {
@@ -20,13 +21,23 @@ public class RoadPool : MonoBehaviour
     public void Start()
     {
         player = FindObjectOfType<Player>();
-        //player.transform.forward = GetDirection(0, 1);
+        npcs = FindObjectsOfType<NPC>().ToList();
     }
 
     public void Update()
     {
         MovePlayer();
+        MoveNPCs();
         Pool();
+    }
+
+    private void MoveNPCs()
+    {
+        npcs.ForEach(hNPC =>
+        {
+            hNPC.transform.forward = GetDirection(0, 1);
+            hNPC.transform.position += hNPC.transform.forward * CharactersSpeed * Time.deltaTime;
+        });
     }
 
     private void Pool()
@@ -42,7 +53,7 @@ public class RoadPool : MonoBehaviour
     private void MovePlayer()
     {
         player.transform.forward = GetDirection(0, 1);
-        player.transform.position += player.transform.forward * PlayerSpeed * Time.deltaTime;
+        player.transform.position += player.transform.forward * CharactersSpeed * Time.deltaTime;
     }
 
     private Vector3 GetDirection(int from, int to)
