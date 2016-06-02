@@ -24,7 +24,9 @@ public class MeshDisassembler : MonoBehaviour
         isAssembled = true;
         rootRigidbody = this.GetComponent<Rigidbody>();
         targetsInfo = new Dictionary<GameObject, AssemblerInfo>();
+        targets = new List<GameObject>();
         targets = this.GetComponentsInChildren<Transform>().Select(hT => hT.gameObject).Where(GO => GO.GetComponent<MeshRenderer>() != null).ToList();
+        remainingColliders = new List<Collider>();
         remainingColliders = this.GetComponentsInChildren<Transform>().Where(hT => hT.GetComponent<MeshRenderer>() == null).Select(GO => GO.GetComponent<Collider>()).Where(hC => hC != null && hC as WheelCollider == null).ToList();
 
         rootCollider = this.GetComponent<Collider>();
@@ -100,7 +102,7 @@ public class MeshDisassembler : MonoBehaviour
            });
 
         }
-        if(remainingColliders.Count != 0)
+        if(remainingColliders.Count != 0 && remainingColliders != null)
             remainingColliders.ForEach(hC => hC.enabled = false);
         isAssembled = false;
 
