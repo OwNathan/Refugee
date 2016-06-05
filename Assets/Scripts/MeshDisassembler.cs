@@ -102,8 +102,11 @@ public class MeshDisassembler : MonoBehaviour
            });
 
         }
-        if(remainingColliders.Count != 0 && remainingColliders != null)
-            remainingColliders.ForEach(hC => hC.enabled = false);
+        if(remainingColliders != null)
+        {
+            if (remainingColliders.Count != 0)
+                remainingColliders.ForEach(hC => hC.enabled = false);
+        }
         isAssembled = false;
 
         if (rootCollider != null)
