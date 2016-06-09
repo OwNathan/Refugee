@@ -42,7 +42,7 @@ public class RoadPool : MonoBehaviour
 
     private void Pool()
     {
-        if (player.transform.position.z < pool.ElementAt(1).Road.transform.position.z)
+        if (player.transform.position.z < pool.ElementAt(2).Road.transform.position.z)
         {
             RoadInfo info = pool.Dequeue();
             info.Road.transform.position = pool.Last().Locator.transform.position;
