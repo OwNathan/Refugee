@@ -1,15 +1,25 @@
 fileFormatVersion: 2
 guid: 542f0a3972072364b9ea2d99c1ca2fe1
-timeCreated: 1465474105
+timeCreated: 1465543914
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: MailBox 1
+    100004: MailBox_Door
     400000: //RootNode
+    400002: MailBox 1
+    400004: MailBox_Door
     2300000: //RootNode
+    2300002: MailBox 1
+    2300004: MailBox_Door
     3300000: //RootNode
+    3300002: MailBox 1
+    3300004: MailBox_Door
     4300000: MailBox1
+    4300002: MailBox
+    4300004: MailBox_Door
     9500000: //RootNode
   materials:
     importMaterials: 1
