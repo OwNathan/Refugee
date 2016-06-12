@@ -14,23 +14,21 @@ using AC;
 public class GUIManager : MonoBehaviour
 {
     public List<string> ConversantNames;
-    public RectTransform CanvasRect;
-    public Image DialoguePanel;
 
     private List<GameObject> Conversants;
     private GameObject ActiveConversant;
     private GameObject PreviousConversant;
     private GameObject Rashid;
-    private Vector2 OriginalUIPosition;
+    private DialogueSystemGUIPositioner GUIPositioner;
     private string CurrentConversantName;
 
     void Awake()
     {
         Conversants = new List<GameObject>();
         CurrentConversantName = "Not Set";
-        OriginalUIPosition = DialoguePanel.rectTransform.anchoredPosition;
-        ActiveConversant = new GameObject();
-        PreviousConversant = new GameObject();
+        ActiveConversant = null;
+        PreviousConversant = null;
+        GUIPositioner = GameObject.Find("SYSTEM_DIALOGUEMANAGER").GetComponent<DialogueSystemGUIPositioner>();
     }
 
     void Start()
@@ -56,26 +54,23 @@ public class GUIManager : MonoBehaviour
 
                 throw new UnityException("Fix This pls!!!");
             }
-            
 
-            
-            if(ActiveConversant != null && ActiveConversant != PreviousConversant)
+
+
+            if (ActiveConversant != null && ActiveConversant != PreviousConversant)
             {
                 //get custom offset for speaking character
                 GUIOffsetBehaviour HeadOffset = ActiveConversant.GetComponent<GUIOffsetBehaviour>();
                 Transform HeadPosition = HeadOffset.HeadPosition;
-                
-                Vector3 ScreenPos = KickStarter.mainCamera.attachedCamera._camera.WorldToScreenPoint(HeadPosition.position);
-                Vector2 RectPos = new Vector2();
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, ScreenPos, null, out RectPos);
 
-                //set gui position
-                DialoguePanel.rectTransform.anchoredPosition = RectPos;
+                Vector3 ScreenPos = KickStarter.mainCamera.attachedCamera._camera.WorldToScreenPoint(HeadPosition.position);
+                if (GUIPositioner != null)
+                    GUIPositioner.SetConversantGUI(ScreenPos);
                 PreviousConversant = ActiveConversant;
             }
             else if (ActiveConversant == null)
             {
-                DialoguePanel.rectTransform.anchoredPosition = OriginalUIPosition;
+                GUIPositioner.ResetGUI();
                 PreviousConversant = null;
             }
         }
