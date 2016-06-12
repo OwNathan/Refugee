@@ -3,11 +3,12 @@ using System.Collections;
 using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 
-public class LuaCustomFunctionsManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
+    #region LUA
     void OnEnable()
     {
-        Lua.RegisterFunction("FindItem", this, typeof(LuaCustomFunctionsManager).GetMethod("FindItem"));
+        Lua.RegisterFunction("FindItem", this, typeof(InventoryManager).GetMethod("FindItem"));
     }
 
     void OnDisable()
@@ -19,4 +20,7 @@ public class LuaCustomFunctionsManager : MonoBehaviour
     {
         return 0;
     }
+    #endregion
+
+
 }

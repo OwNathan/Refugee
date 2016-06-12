@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class DebuggerDatabaseVarList : MonoBehaviour
 {
+    [Tooltip("If the list contains any element, the DebugMachine shows only GlobalVariables plus those var added to the list")]
+    public  List<string> Constraints;
+
     private List<string> variables;
     private string myLog = string.Empty;
     private bool isPanelActive;
@@ -24,6 +27,7 @@ public class DebuggerDatabaseVarList : MonoBehaviour
 
     public void Start()
     {
+        Constraints.Add("GlobalVariables");
         DialogueManager.Instance.initialDatabase.variables.ForEach(hVar => variables.Add(hVar.Name));
     }
 
@@ -48,7 +52,21 @@ public class DebuggerDatabaseVarList : MonoBehaviour
     private void UpdatePanel()
     {
         myLog = string.Empty;
-        variables.ForEach(hVar => myLog += hVar + ": " + DialogueLua.GetVariable(hVar).AsInt + "\n");
+
+        if(Constraints.Count > 1)   //contiene già global variables
+        {
+            for (int i = 0; i < variables.Count; i++)
+            {
+                string var = variables[i];
+                string s = var.Split(new char[] { '.' })[0];
+                if (Constraints.Contains(s))
+                {
+                    myLog += var + ": " + DialogueLua.GetVariable(var).AsInt + "\n";
+                }
+            }
+        }
+        else
+            variables.ForEach(hVar => myLog += hVar + ": " + DialogueLua.GetVariable(hVar).AsInt + "\n");
     }
 
     public void OnVariableChanged()
