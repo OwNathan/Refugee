@@ -63,6 +63,30 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    public void AddItem(string name)
+    {
+        InventoryItem item = InventoryItemFactory.Instance.GetItem(name);
+        if (item != null)
+        {
+            Add(item);
+        }
+        else
+        {
+            Debug.Log("Can't Add Item: " + name);
+        }
+    }
+    public void RemoveItem(string name)
+    {
+        InventoryItem item = InventoryItemFactory.Instance.GetItem(name);
+        if (item != null)
+        {
+            Remove(item);
+        }
+        else
+        {
+            Debug.Log("Can't Remove Item: " + name);
+        }
+    }
 }
 
 
