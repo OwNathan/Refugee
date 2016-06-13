@@ -62,8 +62,9 @@ public class GUIManager : MonoBehaviour
                 //get custom offset for speaking character
                 GUIOffsetBehaviour HeadOffset = ActiveConversant.GetComponent<GUIOffsetBehaviour>();
                 Transform HeadPosition = HeadOffset.HeadPosition;
-
+                
                 Vector3 ScreenPos = KickStarter.mainCamera.attachedCamera._camera.WorldToScreenPoint(HeadPosition.position);
+                
                 if (GUIPositioner != null)
                     GUIPositioner.SetConversantGUI(ScreenPos);
                 PreviousConversant = ActiveConversant;
@@ -74,7 +75,7 @@ public class GUIManager : MonoBehaviour
                 PreviousConversant = null;
             }
         }
-    }
+        }
 
     public void PopulateConversant()
     {
