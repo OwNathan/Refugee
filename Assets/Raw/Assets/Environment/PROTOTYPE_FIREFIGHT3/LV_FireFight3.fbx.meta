@@ -1,0 +1,578 @@
+fileFormatVersion: 2
+guid: 3e03706b0650d8f4e997a3c002b93915
+timeCreated: 1465912223
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SM_Environment
+    100004: SM_Poles
+    100006: SM_Poles1
+    100008: SM_Poles2
+    100010: SM_Poles3
+    100012: SM_prop_barrel_01
+    100014: SM_prop_barrel_010
+    100016: SM_prop_barrel_03
+    100018: SM_prop_barrel_04
+    100020: SM_prop_barrel_05
+    100022: SM_prop_barrel_06
+    100024: SM_prop_barrel_07
+    100026: SM_prop_barrel_08
+    100028: SM_prop_barrel_09
+    100030: SM_props_bag_01
+    100032: SM_props_bag_02
+    100034: SM_props_bag_03
+    100036: SM_props_bag_04
+    100038: SM_props_bag_05
+    100040: SM_props_bag_06
+    100042: SM_props_bag_07
+    100044: SM_props_box_010
+    100046: SM_props_box_011
+    100048: SM_props_box_012
+    100050: SM_props_box_013
+    100052: SM_props_box_02
+    100054: SM_props_box_03
+    100056: SM_props_box_04
+    100058: SM_props_box_05
+    100060: SM_props_box_06
+    100062: SM_props_box_08
+    100064: SM_props_box_09
+    100066: SM_props_car_type1_red
+    100068: SM_props_car_type2_black
+    100070: SM_props_car_type2_blu
+    100072: SM_props_car_type2_green
+    100074: SM_props_car_type2_grey
+    100076: SM_props_car_type3_blu
+    100078: SM_props_car_type3_blu1
+    100080: SM_props_car_type3_broken_black
+    100082: SM_props_car_type3_broken_red
+    100084: SM_props_car_type3_grey
+    100086: SM_props_car_type3_orange
+    100088: SM_props_container_01
+    100090: SM_props_container_01_door01
+    100092: SM_props_container_01_door02
+    100094: SM_props_container_01_door03
+    100096: SM_props_container_01_door04
+    100098: SM_props_container_01_door05
+    100100: SM_props_fences_01
+    100102: SM_props_fences_02
+    100104: SM_props_FireFight3
+    100106: SM_props_forklift
+    100108: SM_props_forklift1
+    100110: SM_props_Gate
+    100112: SM_props_Gate_01
+    100114: SM_props_Gate_pole_01
+    100116: SM_props_Gate_pole_02
+    100118: SM_props_newjersey_01
+    100120: SM_props_newjersey_02
+    100122: SM_props_newjersey_03
+    100124: SM_props_newjersey_04
+    100126: SM_props_trahbox_trash
+    100128: SM_props_trahbox_trash1
+    100130: SM_props_trahbox_trash2
+    100132: SM_props_trahbox_trash3
+    100134: SM_props_trahbox_trash4
+    100136: SM_props_trahbox_trash5
+    100138: SM_props_trashbox_01
+    100140: SM_props_trashbox_01 1
+    100142: SM_props_trashbox_01 2
+    100144: SM_props_trashbox_01 3
+    100146: SM_props_trashbox_01 4
+    100148: SM_props_trashbox_01 5
+    100150: SM_props_trashbox_01 6
+    100152: SM_props_trashbox_02
+    100154: SM_props_trashbox_03
+    100156: SM_props_trashbox_04
+    100158: SM_props_trashbox_05
+    100160: SM_props_trashbox_06
+    100162: SM_props_trashbox_handle_DX
+    100164: SM_props_trashbox_handle_DX 1
+    100166: SM_props_trashbox_handle_DX 2
+    100168: SM_props_trashbox_handle_DX 3
+    100170: SM_props_trashbox_handle_DX 4
+    100172: SM_props_trashbox_handle_DX 5
+    100174: SM_props_trashbox_handle_SX
+    100176: SM_props_trashbox_handle_SX 1
+    100178: SM_props_trashbox_handle_SX 2
+    100180: SM_props_trashbox_handle_SX 3
+    100182: SM_props_trashbox_handle_SX 4
+    100184: SM_props_trashbox_handle_SX 5
+    100186: SM_props_wall
+    100188: SM_Road
+    100190: SM_Road2
+    100192: SM_Road3
+    100194: SM_Terrain
+    100196: SM_Terrain2
+    100198: SM_Terrain3
+    100200: SM_Terrain4
+    100202: SM_Terrain5
+    100204: SM_Terrain6
+    100206: SM_Terrain7
+    100208: SM_Warehouse_Large_01
+    100210: SM_Warehouse_Medium_01
+    100212: SM_Warehouse_Small_01
+    100214: SM_Warehouse_Small_02
+    400000: //RootNode
+    400002: SM_Environment
+    400004: SM_Poles
+    400006: SM_Poles1
+    400008: SM_Poles2
+    400010: SM_Poles3
+    400012: SM_prop_barrel_01
+    400014: SM_prop_barrel_010
+    400016: SM_prop_barrel_03
+    400018: SM_prop_barrel_04
+    400020: SM_prop_barrel_05
+    400022: SM_prop_barrel_06
+    400024: SM_prop_barrel_07
+    400026: SM_prop_barrel_08
+    400028: SM_prop_barrel_09
+    400030: SM_props_bag_01
+    400032: SM_props_bag_02
+    400034: SM_props_bag_03
+    400036: SM_props_bag_04
+    400038: SM_props_bag_05
+    400040: SM_props_bag_06
+    400042: SM_props_bag_07
+    400044: SM_props_box_010
+    400046: SM_props_box_011
+    400048: SM_props_box_012
+    400050: SM_props_box_013
+    400052: SM_props_box_02
+    400054: SM_props_box_03
+    400056: SM_props_box_04
+    400058: SM_props_box_05
+    400060: SM_props_box_06
+    400062: SM_props_box_08
+    400064: SM_props_box_09
+    400066: SM_props_car_type1_red
+    400068: SM_props_car_type2_black
+    400070: SM_props_car_type2_blu
+    400072: SM_props_car_type2_green
+    400074: SM_props_car_type2_grey
+    400076: SM_props_car_type3_blu
+    400078: SM_props_car_type3_blu1
+    400080: SM_props_car_type3_broken_black
+    400082: SM_props_car_type3_broken_red
+    400084: SM_props_car_type3_grey
+    400086: SM_props_car_type3_orange
+    400088: SM_props_container_01
+    400090: SM_props_container_01_door01
+    400092: SM_props_container_01_door02
+    400094: SM_props_container_01_door03
+    400096: SM_props_container_01_door04
+    400098: SM_props_container_01_door05
+    400100: SM_props_fences_01
+    400102: SM_props_fences_02
+    400104: SM_props_FireFight3
+    400106: SM_props_forklift
+    400108: SM_props_forklift1
+    400110: SM_props_Gate
+    400112: SM_props_Gate_01
+    400114: SM_props_Gate_pole_01
+    400116: SM_props_Gate_pole_02
+    400118: SM_props_newjersey_01
+    400120: SM_props_newjersey_02
+    400122: SM_props_newjersey_03
+    400124: SM_props_newjersey_04
+    400126: SM_props_trahbox_trash
+    400128: SM_props_trahbox_trash1
+    400130: SM_props_trahbox_trash2
+    400132: SM_props_trahbox_trash3
+    400134: SM_props_trahbox_trash4
+    400136: SM_props_trahbox_trash5
+    400138: SM_props_trashbox_01
+    400140: SM_props_trashbox_01 1
+    400142: SM_props_trashbox_01 2
+    400144: SM_props_trashbox_01 3
+    400146: SM_props_trashbox_01 4
+    400148: SM_props_trashbox_01 5
+    400150: SM_props_trashbox_01 6
+    400152: SM_props_trashbox_02
+    400154: SM_props_trashbox_03
+    400156: SM_props_trashbox_04
+    400158: SM_props_trashbox_05
+    400160: SM_props_trashbox_06
+    400162: SM_props_trashbox_handle_DX
+    400164: SM_props_trashbox_handle_DX 1
+    400166: SM_props_trashbox_handle_DX 2
+    400168: SM_props_trashbox_handle_DX 3
+    400170: SM_props_trashbox_handle_DX 4
+    400172: SM_props_trashbox_handle_DX 5
+    400174: SM_props_trashbox_handle_SX
+    400176: SM_props_trashbox_handle_SX 1
+    400178: SM_props_trashbox_handle_SX 2
+    400180: SM_props_trashbox_handle_SX 3
+    400182: SM_props_trashbox_handle_SX 4
+    400184: SM_props_trashbox_handle_SX 5
+    400186: SM_props_wall
+    400188: SM_Road
+    400190: SM_Road2
+    400192: SM_Road3
+    400194: SM_Terrain
+    400196: SM_Terrain2
+    400198: SM_Terrain3
+    400200: SM_Terrain4
+    400202: SM_Terrain5
+    400204: SM_Terrain6
+    400206: SM_Terrain7
+    400208: SM_Warehouse_Large_01
+    400210: SM_Warehouse_Medium_01
+    400212: SM_Warehouse_Small_01
+    400214: SM_Warehouse_Small_02
+    2300000: SM_Poles
+    2300002: SM_Poles1
+    2300004: SM_Poles2
+    2300006: SM_Poles3
+    2300008: SM_prop_barrel_01
+    2300010: SM_prop_barrel_010
+    2300012: SM_prop_barrel_03
+    2300014: SM_prop_barrel_04
+    2300016: SM_prop_barrel_05
+    2300018: SM_prop_barrel_06
+    2300020: SM_prop_barrel_07
+    2300022: SM_prop_barrel_08
+    2300024: SM_prop_barrel_09
+    2300026: SM_props_bag_01
+    2300028: SM_props_bag_02
+    2300030: SM_props_bag_03
+    2300032: SM_props_bag_04
+    2300034: SM_props_bag_05
+    2300036: SM_props_bag_06
+    2300038: SM_props_bag_07
+    2300040: SM_props_box_010
+    2300042: SM_props_box_011
+    2300044: SM_props_box_012
+    2300046: SM_props_box_013
+    2300048: SM_props_box_02
+    2300050: SM_props_box_03
+    2300052: SM_props_box_04
+    2300054: SM_props_box_05
+    2300056: SM_props_box_06
+    2300058: SM_props_box_08
+    2300060: SM_props_box_09
+    2300062: SM_props_car_type1_red
+    2300064: SM_props_car_type2_black
+    2300066: SM_props_car_type2_blu
+    2300068: SM_props_car_type2_green
+    2300070: SM_props_car_type2_grey
+    2300072: SM_props_car_type3_blu
+    2300074: SM_props_car_type3_blu1
+    2300076: SM_props_car_type3_broken_black
+    2300078: SM_props_car_type3_broken_red
+    2300080: SM_props_car_type3_grey
+    2300082: SM_props_car_type3_orange
+    2300084: SM_props_container_01_door01
+    2300086: SM_props_container_01_door02
+    2300088: SM_props_container_01_door03
+    2300090: SM_props_container_01_door04
+    2300092: SM_props_container_01_door05
+    2300094: SM_props_fences_01
+    2300096: SM_props_fences_02
+    2300098: SM_props_forklift
+    2300100: SM_props_forklift1
+    2300102: SM_props_Gate_01
+    2300104: SM_props_Gate_pole_01
+    2300106: SM_props_Gate_pole_02
+    2300108: SM_props_newjersey_01
+    2300110: SM_props_newjersey_02
+    2300112: SM_props_newjersey_03
+    2300114: SM_props_newjersey_04
+    2300116: SM_props_trahbox_trash
+    2300118: SM_props_trahbox_trash1
+    2300120: SM_props_trahbox_trash2
+    2300122: SM_props_trahbox_trash3
+    2300124: SM_props_trahbox_trash4
+    2300126: SM_props_trahbox_trash5
+    2300128: SM_props_trashbox_01 1
+    2300130: SM_props_trashbox_01 2
+    2300132: SM_props_trashbox_01 3
+    2300134: SM_props_trashbox_01 4
+    2300136: SM_props_trashbox_01 5
+    2300138: SM_props_trashbox_01 6
+    2300140: SM_props_trashbox_handle_DX
+    2300142: SM_props_trashbox_handle_DX 1
+    2300144: SM_props_trashbox_handle_DX 2
+    2300146: SM_props_trashbox_handle_DX 3
+    2300148: SM_props_trashbox_handle_DX 4
+    2300150: SM_props_trashbox_handle_DX 5
+    2300152: SM_props_trashbox_handle_SX
+    2300154: SM_props_trashbox_handle_SX 1
+    2300156: SM_props_trashbox_handle_SX 2
+    2300158: SM_props_trashbox_handle_SX 3
+    2300160: SM_props_trashbox_handle_SX 4
+    2300162: SM_props_trashbox_handle_SX 5
+    2300164: SM_props_wall
+    2300166: SM_Road
+    2300168: SM_Road2
+    2300170: SM_Road3
+    2300172: SM_Terrain
+    2300174: SM_Terrain2
+    2300176: SM_Terrain3
+    2300178: SM_Terrain4
+    2300180: SM_Terrain5
+    2300182: SM_Terrain6
+    2300184: SM_Terrain7
+    2300186: SM_Warehouse_Large_01
+    2300188: SM_Warehouse_Medium_01
+    2300190: SM_Warehouse_Small_01
+    2300192: SM_Warehouse_Small_02
+    3300000: SM_Poles
+    3300002: SM_Poles1
+    3300004: SM_Poles2
+    3300006: SM_Poles3
+    3300008: SM_prop_barrel_01
+    3300010: SM_prop_barrel_010
+    3300012: SM_prop_barrel_03
+    3300014: SM_prop_barrel_04
+    3300016: SM_prop_barrel_05
+    3300018: SM_prop_barrel_06
+    3300020: SM_prop_barrel_07
+    3300022: SM_prop_barrel_08
+    3300024: SM_prop_barrel_09
+    3300026: SM_props_bag_01
+    3300028: SM_props_bag_02
+    3300030: SM_props_bag_03
+    3300032: SM_props_bag_04
+    3300034: SM_props_bag_05
+    3300036: SM_props_bag_06
+    3300038: SM_props_bag_07
+    3300040: SM_props_box_010
+    3300042: SM_props_box_011
+    3300044: SM_props_box_012
+    3300046: SM_props_box_013
+    3300048: SM_props_box_02
+    3300050: SM_props_box_03
+    3300052: SM_props_box_04
+    3300054: SM_props_box_05
+    3300056: SM_props_box_06
+    3300058: SM_props_box_08
+    3300060: SM_props_box_09
+    3300062: SM_props_car_type1_red
+    3300064: SM_props_car_type2_black
+    3300066: SM_props_car_type2_blu
+    3300068: SM_props_car_type2_green
+    3300070: SM_props_car_type2_grey
+    3300072: SM_props_car_type3_blu
+    3300074: SM_props_car_type3_blu1
+    3300076: SM_props_car_type3_broken_black
+    3300078: SM_props_car_type3_broken_red
+    3300080: SM_props_car_type3_grey
+    3300082: SM_props_car_type3_orange
+    3300084: SM_props_container_01_door01
+    3300086: SM_props_container_01_door02
+    3300088: SM_props_container_01_door03
+    3300090: SM_props_container_01_door04
+    3300092: SM_props_container_01_door05
+    3300094: SM_props_fences_01
+    3300096: SM_props_fences_02
+    3300098: SM_props_forklift
+    3300100: SM_props_forklift1
+    3300102: SM_props_Gate_01
+    3300104: SM_props_Gate_pole_01
+    3300106: SM_props_Gate_pole_02
+    3300108: SM_props_newjersey_01
+    3300110: SM_props_newjersey_02
+    3300112: SM_props_newjersey_03
+    3300114: SM_props_newjersey_04
+    3300116: SM_props_trahbox_trash
+    3300118: SM_props_trahbox_trash1
+    3300120: SM_props_trahbox_trash2
+    3300122: SM_props_trahbox_trash3
+    3300124: SM_props_trahbox_trash4
+    3300126: SM_props_trahbox_trash5
+    3300128: SM_props_trashbox_01 1
+    3300130: SM_props_trashbox_01 2
+    3300132: SM_props_trashbox_01 3
+    3300134: SM_props_trashbox_01 4
+    3300136: SM_props_trashbox_01 5
+    3300138: SM_props_trashbox_01 6
+    3300140: SM_props_trashbox_handle_DX
+    3300142: SM_props_trashbox_handle_DX 1
+    3300144: SM_props_trashbox_handle_DX 2
+    3300146: SM_props_trashbox_handle_DX 3
+    3300148: SM_props_trashbox_handle_DX 4
+    3300150: SM_props_trashbox_handle_DX 5
+    3300152: SM_props_trashbox_handle_SX
+    3300154: SM_props_trashbox_handle_SX 1
+    3300156: SM_props_trashbox_handle_SX 2
+    3300158: SM_props_trashbox_handle_SX 3
+    3300160: SM_props_trashbox_handle_SX 4
+    3300162: SM_props_trashbox_handle_SX 5
+    3300164: SM_props_wall
+    3300166: SM_Road
+    3300168: SM_Road2
+    3300170: SM_Road3
+    3300172: SM_Terrain
+    3300174: SM_Terrain2
+    3300176: SM_Terrain3
+    3300178: SM_Terrain4
+    3300180: SM_Terrain5
+    3300182: SM_Terrain6
+    3300184: SM_Terrain7
+    3300186: SM_Warehouse_Large_01
+    3300188: SM_Warehouse_Medium_01
+    3300190: SM_Warehouse_Small_01
+    3300192: SM_Warehouse_Small_02
+    4300000: SM_props_wall
+    4300002: SM_props_fences_01
+    4300004: SM_props_fences_02
+    4300006: SM_props_Gate_pole_01
+    4300008: SM_props_Gate_01
+    4300010: SM_props_Gate_pole_02
+    4300012: SM_Warehouse_Large_01
+    4300014: SM_Warehouse_Medium_01
+    4300016: SM_Warehouse_Small_02
+    4300018: SM_Warehouse_Small_01
+    4300020: SM_props_car_type2_black
+    4300022: SM_props_car_type2_blu
+    4300024: SM_props_car_type3_grey
+    4300026: SM_props_container_01_door01
+    4300028: SM_props_container_01_door02
+    4300030: SM_props_container_01_door03
+    4300032: SM_props_container_01_door04
+    4300034: SM_props_container_01_door05
+    4300036: SM_props_newjersey_01
+    4300038: SM_props_newjersey_02
+    4300040: SM_props_newjersey_03
+    4300042: SM_props_newjersey_04
+    4300044: SM_props_box_02
+    4300046: SM_props_box_03
+    4300048: SM_props_box_04
+    4300050: SM_props_box_05
+    4300052: SM_props_box_06
+    4300054: SM_props_box_08
+    4300056: SM_props_box_09
+    4300058: SM_props_trahbox_trash
+    4300060: SM_props_trashbox_handle_DX
+    4300062: SM_props_trashbox_handle_SX
+    4300064: SM_props_trashbox_01
+    4300066: SM_props_trashbox_handle_DX
+    4300068: SM_props_trashbox_handle_SX
+    4300070: SM_props_trashbox_01
+    4300072: SM_props_trahbox_trash1
+    4300074: SM_props_trashbox_handle_DX
+    4300076: SM_props_trashbox_handle_SX
+    4300078: SM_props_trashbox_01
+    4300080: SM_props_trahbox_trash2
+    4300082: SM_props_trashbox_handle_DX
+    4300084: SM_props_trashbox_handle_SX
+    4300086: SM_props_trashbox_01
+    4300088: SM_props_trahbox_trash3
+    4300090: SM_props_trashbox_handle_DX
+    4300092: SM_props_trashbox_handle_SX
+    4300094: SM_props_trashbox_01
+    4300096: SM_props_trahbox_trash4
+    4300098: SM_props_trashbox_handle_DX
+    4300100: SM_props_trashbox_handle_SX
+    4300102: SM_props_trashbox_01
+    4300104: SM_props_trahbox_trash5
+    4300106: SM_props_forklift
+    4300108: SM_props_forklift1
+    4300110: SM_prop_barrel_01
+    4300112: SM_prop_barrel_03
+    4300114: SM_prop_barrel_04
+    4300116: SM_prop_barrel_05
+    4300118: SM_prop_barrel_06
+    4300120: SM_props_bag_01
+    4300122: SM_props_bag_02
+    4300124: SM_props_bag_03
+    4300126: SM_props_bag_04
+    4300128: SM_props_bag_05
+    4300130: SM_props_bag_06
+    4300132: SM_props_bag_07
+    4300134: SM_props_car_type1_red
+    4300136: SM_props_car_type2_green
+    4300138: SM_props_car_type2_grey
+    4300140: SM_props_car_type3_blu
+    4300142: SM_props_car_type3_blu1
+    4300144: SM_props_car_type3_broken_black
+    4300146: SM_props_car_type3_orange
+    4300148: SM_props_box_010
+    4300150: SM_props_box_011
+    4300152: SM_props_box_012
+    4300154: SM_props_box_013
+    4300156: SM_prop_barrel_07
+    4300158: SM_prop_barrel_08
+    4300160: SM_prop_barrel_09
+    4300162: SM_prop_barrel_010
+    4300164: SM_props_car_type3_broken_red
+    4300166: SM_Road
+    4300168: SM_Terrain
+    4300170: SM_Poles
+    4300172: SM_Terrain2
+    4300174: SM_Road2
+    4300176: SM_Terrain3
+    4300178: SM_Road3
+    4300180: SM_Terrain4
+    4300182: SM_Terrain5
+    4300184: SM_Terrain6
+    4300186: SM_Terrain7
+    4300188: SM_Poles1
+    4300190: SM_Poles2
+    4300192: SM_Poles3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
