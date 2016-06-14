@@ -35,12 +35,15 @@ public class DialogueSystemGUIPositioner : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, ScreenPos, null, out RectPos);
 
         Bounds DialoguePanelBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(DialoguePanelTransform);
-        //Rect rect = CanvasRect.rect;
-        //DialoguePanelTransform.anchoredPosition.x + DialoguePanelBounds.extents.x > CanvasRect.rect.max.x
+
         if (RectPos.x + DialoguePanelBounds.extents.x + Offset.x > CanvasRect.rect.xMax)
             RectPos.x = CanvasRect.rect.xMax - DialoguePanelBounds.extents.x - Offset.x;
         else if (RectPos.x - DialoguePanelBounds.extents.x - Offset.x < CanvasRect.rect.xMin)
             RectPos.x = CanvasRect.rect.xMin + DialoguePanelBounds.extents.x + Offset.x;
+        else if (RectPos.y + DialoguePanelBounds.extents.y + Offset.y > CanvasRect.rect.yMax)
+            RectPos.y = CanvasRect.rect.yMax - DialoguePanelBounds.extents.y - Offset.y;
+        else if (RectPos.y - DialoguePanelBounds.extents.y - Offset.y < CanvasRect.rect.yMin)
+            RectPos.y = CanvasRect.rect.yMin + DialoguePanelBounds.extents.y + Offset.y;
         DialoguePanel.rectTransform.anchoredPosition = RectPos;
     }
 
