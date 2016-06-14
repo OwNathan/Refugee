@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: da7a501da72d5cc43a8163338381f288
-timeCreated: 1465769295
+timeCreated: 1465911030
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -16,6 +16,16 @@ ModelImporter:
     100016: SM_Warehouse_MeshPart8
     100018: SM_Warehouse_MeshPart9
     100020: //RootNode
+    100022: Warehouse_MeshPart0
+    100024: Warehouse_MeshPart1
+    100026: Warehouse_MeshPart2
+    100028: Warehouse_MeshPart3
+    100030: Warehouse_MeshPart4
+    100032: Warehouse_MeshPart5
+    100034: Warehouse_MeshPart6
+    100036: Warehouse_MeshPart7
+    100038: Warehouse_MeshPart8
+    100040: Warehouse_MeshPart9
     400000: SM_Warehouse_MeshPart0
     400002: SM_Warehouse_MeshPart1
     400004: SM_Warehouse_MeshPart2
@@ -27,6 +37,16 @@ ModelImporter:
     400016: SM_Warehouse_MeshPart8
     400018: SM_Warehouse_MeshPart9
     400020: //RootNode
+    400022: Warehouse_MeshPart0
+    400024: Warehouse_MeshPart1
+    400026: Warehouse_MeshPart2
+    400028: Warehouse_MeshPart3
+    400030: Warehouse_MeshPart4
+    400032: Warehouse_MeshPart5
+    400034: Warehouse_MeshPart6
+    400036: Warehouse_MeshPart7
+    400038: Warehouse_MeshPart8
+    400040: Warehouse_MeshPart9
     2300000: SM_Warehouse_MeshPart0
     2300002: SM_Warehouse_MeshPart1
     2300004: SM_Warehouse_MeshPart2
@@ -37,6 +57,16 @@ ModelImporter:
     2300014: SM_Warehouse_MeshPart7
     2300016: SM_Warehouse_MeshPart8
     2300018: SM_Warehouse_MeshPart9
+    2300020: Warehouse_MeshPart0
+    2300022: Warehouse_MeshPart1
+    2300024: Warehouse_MeshPart2
+    2300026: Warehouse_MeshPart3
+    2300028: Warehouse_MeshPart4
+    2300030: Warehouse_MeshPart5
+    2300032: Warehouse_MeshPart6
+    2300034: Warehouse_MeshPart7
+    2300036: Warehouse_MeshPart8
+    2300038: Warehouse_MeshPart9
     3300000: SM_Warehouse_MeshPart0
     3300002: SM_Warehouse_MeshPart1
     3300004: SM_Warehouse_MeshPart2
@@ -47,6 +77,16 @@ ModelImporter:
     3300014: SM_Warehouse_MeshPart7
     3300016: SM_Warehouse_MeshPart8
     3300018: SM_Warehouse_MeshPart9
+    3300020: Warehouse_MeshPart0
+    3300022: Warehouse_MeshPart1
+    3300024: Warehouse_MeshPart2
+    3300026: Warehouse_MeshPart3
+    3300028: Warehouse_MeshPart4
+    3300030: Warehouse_MeshPart5
+    3300032: Warehouse_MeshPart6
+    3300034: Warehouse_MeshPart7
+    3300036: Warehouse_MeshPart8
+    3300038: Warehouse_MeshPart9
     4300000: SM_Warehouse_MeshPart0
     4300002: SM_Warehouse_MeshPart1
     4300004: SM_Warehouse_MeshPart2
@@ -57,6 +97,16 @@ ModelImporter:
     4300014: SM_Warehouse_MeshPart7
     4300016: SM_Warehouse_MeshPart8
     4300018: SM_Warehouse_MeshPart9
+    4300020: Warehouse_MeshPart0
+    4300022: Warehouse_MeshPart1
+    4300024: Warehouse_MeshPart2
+    4300026: Warehouse_MeshPart3
+    4300028: Warehouse_MeshPart4
+    4300030: Warehouse_MeshPart5
+    4300032: Warehouse_MeshPart6
+    4300034: Warehouse_MeshPart7
+    4300036: Warehouse_MeshPart8
+    4300038: Warehouse_MeshPart9
     9500000: //RootNode
   materials:
     importMaterials: 1
