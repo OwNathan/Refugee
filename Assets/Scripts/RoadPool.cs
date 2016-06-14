@@ -6,8 +6,9 @@ using System;
 
 public class RoadPool : MonoBehaviour
 {
-    public List<RoadInfo> RoadInfos;
     public float CharactersSpeed;
+    public int PoolingIndex;
+    public List<RoadInfo> RoadInfos;
 
     private Queue<RoadInfo> pool;
     private Player player;
@@ -42,7 +43,7 @@ public class RoadPool : MonoBehaviour
 
     private void Pool()
     {
-        if (player.transform.position.z < pool.ElementAt(2).Road.transform.position.z)
+        if (player.transform.position.z < pool.ElementAt(PoolingIndex).Road.transform.position.z)
         {
             RoadInfo info = pool.Dequeue();
             info.Road.transform.position = pool.Last().Locator.transform.position;
