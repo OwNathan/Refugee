@@ -40,7 +40,7 @@ public class DialogueSystemGUIPositioner : MonoBehaviour
             RectPos.x = CanvasRect.rect.xMax - DialoguePanelBounds.extents.x - Offset.x;
         else if (RectPos.x - DialoguePanelBounds.extents.x - Offset.x < CanvasRect.rect.xMin)
             RectPos.x = CanvasRect.rect.xMin + DialoguePanelBounds.extents.x + Offset.x;
-        else if (RectPos.y + DialoguePanelBounds.extents.y + Offset.y > CanvasRect.rect.yMax)
+        if (RectPos.y + DialoguePanelBounds.extents.y + Offset.y > CanvasRect.rect.yMax)
             RectPos.y = CanvasRect.rect.yMax - DialoguePanelBounds.extents.y - Offset.y;
         else if (RectPos.y - DialoguePanelBounds.extents.y - Offset.y < CanvasRect.rect.yMin)
             RectPos.y = CanvasRect.rect.yMin + DialoguePanelBounds.extents.y + Offset.y;
