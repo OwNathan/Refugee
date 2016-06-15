@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 //ITEM CONFIGURABILI TRAMITE LA FACTORY
+[Serializable]
 public class InventoryItem
 {
     public string Name;
