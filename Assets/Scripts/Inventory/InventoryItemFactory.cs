@@ -10,13 +10,14 @@ public class InventoryItemFactory : MonoBehaviour
     public static InventoryItemFactory Instance;
     public List<InventoryItem> Items;
 
-
     void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        DontDestroyOnLoad(this);
     }
 
     internal InventoryItem GetItem(string name)

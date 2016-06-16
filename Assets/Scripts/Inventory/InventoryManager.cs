@@ -68,6 +68,8 @@ public class InventoryManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
+
         Items = new Dictionary<InventoryItem, int>();
     }
 
