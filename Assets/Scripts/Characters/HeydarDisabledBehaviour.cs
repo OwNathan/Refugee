@@ -20,20 +20,26 @@ public class HeydarDisabledBehaviour : StateMachineBehaviour {
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         CurrentTime += Time.deltaTime;
-        
+        //if (animator.GetBool("IsUsing"))
+        //    animator.SetBool("IsUsing", false);
+        //if (animator.GetBool("IsIdleLookingAround"))
+        //    animator.SetBool("IsIdleLookingAround", false);
+
         if (CurrentTime >= RandomTime && AnimToSwitch < 2.0f)
         {
             CurrentTime = 0.0f;
             RandomTime = Random.Range(5.0f, 10.0f);
             AnimToSwitch = Random.Range(0.0f, 5.0f);
-            animator.SetBool("IsUsing", true);
+            animator.SetBool("IsIdlePain", false);
+            animator.SetBool("IsIdleFear", true);
         }
-        else if (CurrentTime >= RandomTime && AnimToSwitch > 2.0f)
+        else if(CurrentTime >= RandomTime && AnimToSwitch > 2.0f)
         {
             CurrentTime = 0.0f;
             RandomTime = Random.Range(5.0f, 10.0f);
             AnimToSwitch = Random.Range(0.0f, 5.0f);
-            animator.SetBool("IsIdleLookingAround", true);
+            animator.SetBool("IsIdleFear", false);
+            animator.SetBool("IsIdlePain", true);
         }
     }
 

@@ -5,24 +5,26 @@ public class CharacterAnimatorSwitch : MonoBehaviour
 {
 
     public Animator DefaultAnimator;
-    public RuntimeAnimatorController AlternativeAnimator;
+    public RuntimeAnimatorController DisabledHeydarAC;
+    public RuntimeAnimatorController WomanHeydarAC;
+    public RuntimeAnimatorController CrippledHeydarAC;
 
+    public void SetDisabledAnimator()
+    {
+        DefaultAnimator.runtimeAnimatorController = DisabledHeydarAC;
+    }
+    public void DisableHeydarCharacter()
+    {
+        this.gameObject.SetActive(false);
+    }
 
-    
-	// Use this for initialization
-	void Start ()
+    public void EnableHeydarWomanCharacter()
     {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
+        this.gameObject.SetActive(true);
+    }
 
-    public void ChangeAnimator()
+    public void SetCrippledAnimator()
     {
-        DefaultAnimator.runtimeAnimatorController = AlternativeAnimator;
+        DefaultAnimator.runtimeAnimatorController = CrippledHeydarAC;
     }
 }
