@@ -1,65 +1,92 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-public class InventorySlot : MonoBehaviour {
-
-    public Button Slot;
-    public Image ItemImage;
-    public Text CountText;
-
+public class InventorySlot : MonoBehaviour
+{
     public InventoryItem Item { get; private set; }
-    private int Count;
-    private Sprite EmptyImage;
 
-    void Awake()
+    private Image               icon;           //icona
+    private Button              button;         //non so
+    private Text                text;           //testo per il contatore
+
+    private Sprite              emptySprite;    //sprite di base
+    private int                 counter;
+
+    private void Awake()
     {
-        Count = 0;
-        Item = null;
-        EmptyImage = ItemImage.sprite;
+        icon = this.GetComponent<Image>();
+        emptySprite  = icon.sprite;
+        button = this.GetComponent<Button>();
+        text = this.GetComponentInChildren<Text>();
     }
-
-    public void UpdateCounter(bool IsIncrementing)
+    
+    public void Add(InventoryItem item)
     {
-        if(IsIncrementing)
+        if(Item == null)
+            Item = item;
+        text.text = (++counter).ToString();
+        icon.sprite = item.Icon;
+    }
+    public void Remove(InventoryItem item)
+    {
+        text.text = (--counter).ToString();
+        if (counter == 0)
         {
-            ItemImage.sprite = Item.Image;
-            Count++;
-            CountText.text = Count.ToString();
+            Item = null;
+            text.text = string.Empty;
+            icon.sprite = emptySprite;
         }
         else
         {
-            Count--;
-            if (Count <= 0)
-            {
-                Count = 0;
-                Item = null;
-                CountText.text = string.Empty;
-                
-            }
-            else
-            {
-                CountText.text = Count.ToString();
-                ItemImage.sprite = EmptyImage;
-            }
+            text.text = counter.ToString();
         }
     }
+    #region OLD
+    //public void UpdateCounter(bool IsIncrementing)
+    //{
+    //    if (IsIncrementing)
+    //    {
+    //        ItemImage.sprite = Item.Image;
+    //        Count++;
+    //        CountText.text = Count.ToString();
+    //    }
+    //    else
+    //    {
+    //        Count--;
+    //        if (Count <= 0)
+    //        {
+    //            Count = 0;
+    //            Item = null;
+    //            CountText.text = string.Empty;
+    //        }
+    //        else
+    //        {
+    //            CountText.text = Count.ToString();
+    //            ItemImage.sprite = EmptyImage;
+    //        }
+    //    }
+    //}
 
-    public void SetItem(InventoryItem item)
-    {
-        Item = item;
-        if(item.IsMultipleItem)
-        {
-            CountText.text = Count.ToString();
-        }
-        else
-        {
-            CountText.text = string.Empty;
-        }
-    }
-
-    public void EnableSlot()
-    {
-        this.gameObject.SetActive(true);
-    }
+    //public void SetItem(InventoryItem item)
+    //{
+    //    if (item != null)
+    //    {
+    //        Item = item;
+    //        ItemImage.sprite = item.Image;
+    //        if (item.IsMultipleItem)
+    //        {
+    //            CountText.text = Count.ToString();
+    //        }
+    //        else
+    //        {
+    //            CountText.text = string.Empty;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Item = null;
+    //        ItemImage.sprite = EmptyImage;
+    //    }
+    //}
+    #endregion
 }

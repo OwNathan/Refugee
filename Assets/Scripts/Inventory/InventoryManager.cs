@@ -1,22 +1,21 @@
-﻿using UnityEngine;
-using System.Collections;
-using PixelCrushers;
-using PixelCrushers.DialogueSystem;
+﻿using PixelCrushers.DialogueSystem;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 //INVENTARIO DI GIOCO
 public class InventoryManager : MonoBehaviour
 {
     #region LUA
-    void OnEnable()
+
+    private void OnEnable()
     {
         Lua.RegisterFunction("FindItem", this, typeof(InventoryManager).GetMethod("FindItem"));
         Lua.RegisterFunction("AddItem", this, typeof(InventoryManager).GetMethod("AddItem"));
         Lua.RegisterFunction("RemoveItem", this, typeof(InventoryManager).GetMethod("RemoveItem"));
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         Lua.UnregisterFunction("FindItem");
         Lua.UnregisterFunction("AddItem");
@@ -25,16 +24,17 @@ public class InventoryManager : MonoBehaviour
 
     public int FindItem(string name)
     {
-        List<InventoryItem> myItems = Items.Select(kvp => kvp.Key).Where(hI => hI.Name == name).ToList();
+        List<InventoryItem> myItems = items.Select(kvp => kvp.Key).Where(hI => hI.Name == name).ToList();
         if (myItems == null)
         {
             return 0;
         }
         else
         {
-            return myItems.Sum(hI => Items[hI]);
+            return myItems.Sum(hI => items[hI]);
         }
     }
+
     public void AddItem(string name)
     {
         InventoryItem item = InventoryItemFactory.Instance.GetItem(name);
@@ -48,9 +48,10 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("<color=red>Can't Add Item: </color>" + name);
         }
     }
+
     public void RemoveItem(string name)
     {
-        InventoryItem item = Items.Select(kvp => kvp.Key).Where(hI => hI.Name == name).FirstOrDefault();
+        InventoryItem item = items.Select(kvp => kvp.Key).Where(hI => hI.Name == name).FirstOrDefault();
         if (item != null)
         {
             Remove(item);
@@ -61,54 +62,73 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("<color=red>Can't Remove Item: </color>" + name);
         }
     }
-    #endregion
+
+    #endregion LUA
 
     //RIFERIMENTO AGLI ITEM CON IL LORO COUNTER
-    private Dictionary<InventoryItem, int> Items;
+    private Dictionary<InventoryItem, int> items;
+    private InventoryGUIManager inventoryGUI;
 
-    void Awake()
+    private void Awake()
     {
         DontDestroyOnLoad(this);
 
-        Items = new Dictionary<InventoryItem, int>();
+        items = new Dictionary<InventoryItem, int>();
     }
 
-    public void Update()
+    private void Start()
+    {
+        inventoryGUI = AC.PlayerMenus.GetMenuWithName("RefugeeInventory").canvas.gameObject.GetComponent<InventoryGUIManager>();
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("<color=blue>INVENTORY:</color>");
-            Items.ToList().ForEach(kvp => Debug.Log(kvp.Key.Name + ": " + kvp.Value));
+            items.ToList().ForEach(kvp => Debug.Log(kvp.Key.Name + ": " + kvp.Value));
         }
     }
 
     public void Add(InventoryItem item)
     {
-        InventoryItem myItem = Items.Select(kvp => kvp.Key).Where(hI => hI.Name == item.Name).FirstOrDefault();
-        if (myItem != null && item.IsMultipleItem)
+        if (item != null)
         {
-            Items[myItem]++;
+            InventoryItem myItem = items.Select(kvp => kvp.Key).Where(hI => hI.Name == item.Name).FirstOrDefault();
+            if (myItem != null && item.IsMultipleItem)
+            {
+                items[myItem]++;
+                //UPDATE ON GUI
+                inventoryGUI.Add(myItem);
+            }
+            else
+            {
+                items.Add(item, 1);
+                //UPDATE ON GUI
+                inventoryGUI.Add(item);
+            }
         }
         else
         {
-            Items.Add(item, 1);
+            Debug.Log("<color=red>CAN'T ADD ITEM!</color>");
         }
     }
+
     public void Remove(InventoryItem item)
     {
-        if (Items.ContainsKey(item))
+        if (item != null && items.ContainsKey(item))
         {
-            Items[item]--;
-            if (Items[item] == 0)
+            items[item]--;
+            if (items[item] == 0)
             {
-                Items.Remove(item);
+                items.Remove(item);
             }
+            //UPDATE ON GUI
+            inventoryGUI.Remove(item);
+        }
+        else
+        {
+            Debug.Log("<color=red>CAN'T REMOVE ITEM!</color>");
         }
     }
-
 }
-
-
-
-
-

@@ -9,16 +9,16 @@ public class InventoryItem
 {
     public string Name;
     public bool IsMultipleItem;
-    public Sprite Image;
+    public Sprite Icon;
 
     public InventoryItem(string Name, bool IsMultipleItem, Sprite Image)
     {
         this.Name = Name;
         this.IsMultipleItem = IsMultipleItem;
-        this.Image = Image;
+        this.Icon = Image;
     }
 
-    public InventoryItem(InventoryItem item) : this(item.Name, item.IsMultipleItem, item.Image)
+    public InventoryItem(InventoryItem item) : this(item.Name, item.IsMultipleItem, item.Icon)
     {
         
     }
