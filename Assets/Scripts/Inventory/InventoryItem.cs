@@ -9,9 +9,9 @@ public class InventoryItem
 {
     public string Name;
     public bool IsMultipleItem;
-    public Image Image;
+    public Sprite Image;
 
-    public InventoryItem(string Name, bool IsMultipleItem, Image Image)
+    public InventoryItem(string Name, bool IsMultipleItem, Sprite Image)
     {
         this.Name = Name;
         this.IsMultipleItem = IsMultipleItem;

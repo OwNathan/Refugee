@@ -10,20 +10,20 @@ public class InventorySlot : MonoBehaviour {
 
     public InventoryItem Item { get; private set; }
     private int Count;
-    private Image EmptyImage;
+    private Sprite EmptyImage;
 
     void Awake()
     {
         Count = 0;
         Item = null;
-        EmptyImage = ItemImage;
+        EmptyImage = ItemImage.sprite;
     }
 
     public void UpdateCounter(bool IsIncrementing)
     {
         if(IsIncrementing)
         {
-            ItemImage.sprite = Item.Image.sprite;
+            ItemImage.sprite = Item.Image;
             Count++;
             CountText.text = Count.ToString();
         }
@@ -40,7 +40,7 @@ public class InventorySlot : MonoBehaviour {
             else
             {
                 CountText.text = Count.ToString();
-                ItemImage.sprite = EmptyImage.sprite;
+                ItemImage.sprite = EmptyImage;
             }
         }
     }
@@ -56,5 +56,10 @@ public class InventorySlot : MonoBehaviour {
         {
             CountText.text = string.Empty;
         }
+    }
+
+    public void EnableSlot()
+    {
+        this.gameObject.SetActive(true);
     }
 }
