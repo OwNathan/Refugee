@@ -4,6 +4,7 @@ using AC;
 
 public class PlayerManager : MonoBehaviour
 {
+    public bool GiveLabelToRashid;
     private GameObject Target;
     private BoxCollider handsCollider;
 
@@ -13,6 +14,12 @@ public class PlayerManager : MonoBehaviour
         if(Target != null)
         {
             handsCollider = Target.GetComponentInChildren<BoxCollider>();
+
+            if(GiveLabelToRashid)
+            {
+                Hotspot hs = Target.AddComponent<Hotspot>();
+                hs.hotspotName = "Rashid";
+            }
         }
     }
 
