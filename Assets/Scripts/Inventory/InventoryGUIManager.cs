@@ -7,56 +7,6 @@ public class InventoryGUIManager : MonoBehaviour
     public Animator InventoryAnimator;
     public List<InventorySlot> Slots;
 
-    #region ManageGraphicInventory
-
-    //public void AddItem(InventoryItem item)
-    //{
-    //    if (item != null)
-    //    {
-    //        if (item.IsMultipleItem)
-    //        {
-    //            InventorySlot tmpSlot = Slots.Where(hI => hI.Item == item).FirstOrDefault();
-    //            if (tmpSlot != null)
-    //            {
-    //                tmpSlot.UpdateCounter(true);
-    //            }
-    //            else
-    //            {
-    //                Slots.ForEach(hS =>
-    //                {
-    //                    hS.SetItem(item);
-    //                    hS.UpdateCounter(true);
-    //                });
-    //            }
-    //        }
-    //        else
-    //        {
-    //            Slots.Where(hS => hS.Item == null).FirstOrDefault().SetItem(item);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("<color=red>Can't Add Item On GUI!</color>");
-    //    }
-    //}
-    //public void RemoveItem(InventoryItem item)
-    //{
-    //    if (item != null)
-    //    {
-    //        InventorySlot tmpSlot = Slots.Where(hI => hI.Item.Name == item.Name).FirstOrDefault();
-    //        if (tmpSlot != null)
-    //        {
-    //            tmpSlot.UpdateCounter(false);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("<color=red>Can't Remove Item On GUI!</color>");
-    //        }
-    //    }
-    //}
-
-    #endregion ManageGraphicInventory
-
     public void Add(InventoryItem item)
     {
         List<InventorySlot> fullSlots = this.Slots.Where(hS => hS.Item != null).ToList();
@@ -66,7 +16,7 @@ public class InventoryGUIManager : MonoBehaviour
         {
             InventorySlot slot;
 
-            if (item.IsMultipleItem && fullSlots != null)
+            if (item.IsMultipleItem && fullSlots.Count != 0)
             {
                 slot = fullSlots.Where(hS => hS.Item.Name == item.Name).FirstOrDefault();
                 if (slot != null)
@@ -78,7 +28,7 @@ public class InventoryGUIManager : MonoBehaviour
                     emptySlots.FirstOrDefault().Add(item);
                 }
             }
-            else if (!item.IsMultipleItem && emptySlots != null)
+            else if (!item.IsMultipleItem && emptySlots.Count != 0)
             {
                 emptySlots.FirstOrDefault().Add(item);
             }
@@ -127,5 +77,5 @@ public class InventoryGUIManager : MonoBehaviour
         InventoryAnimator.SetBool("GoLeft", true);
     }
 
-    #endregion CycleInventory
+    #endregion
 }

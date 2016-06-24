@@ -35,6 +35,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void AddItems(string name, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            AddItem(name);
+        }
+    }
+    public void RemoveItems(string name, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            RemoveItem(name);
+        }
+    }
+
     public void AddItem(string name)
     {
         InventoryItem item = InventoryItemFactory.Instance.GetItem(name);
