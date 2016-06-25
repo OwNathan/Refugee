@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
+using AC;
 using System.Collections;
 
 public class CharacterAnimatorSwitch : MonoBehaviour
 {
 
     public Animator DefaultAnimator;
-    public RuntimeAnimatorController DisabledHeydarAC;
-    public RuntimeAnimatorController WomanHeydarAC;
-    public RuntimeAnimatorController CrippledHeydarAC;
+    public RuntimeAnimatorController DisabledAC;
+    public RuntimeAnimatorController WomanAC;
+    public RuntimeAnimatorController CrippledAC;
+    public RuntimeAnimatorController NormalAC;
 
     public void SetDisabledAnimator()
     {
-        DefaultAnimator.runtimeAnimatorController = DisabledHeydarAC;
+        DefaultAnimator.runtimeAnimatorController = DisabledAC;
     }
     public void DisableHeydarCharacter()
     {
-        this.gameObject.SetActive(false);
+        this.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+        //this.gameObject.SetActive(false);
     }
 
     public void EnableHeydarWomanCharacter()
@@ -25,6 +28,10 @@ public class CharacterAnimatorSwitch : MonoBehaviour
 
     public void SetCrippledAnimator()
     {
-        DefaultAnimator.runtimeAnimatorController = CrippledHeydarAC;
+        DefaultAnimator.runtimeAnimatorController = CrippledAC;
+    }
+    public void SetNormamlAnimator()
+    {
+        DefaultAnimator.runtimeAnimatorController = NormalAC;
     }
 }
