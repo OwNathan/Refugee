@@ -106,7 +106,7 @@ ModelImporter:
     - serializedVersion: 16
       name: AshaCry
       takeName: mixamo.com
-      firstFrame: 0
+      firstFrame: 78
       lastFrame: 754
       wrapMode: 0
       orientationOffsetY: 0
