@@ -122,7 +122,7 @@ ModelImporter:
     - serializedVersion: 16
       name: BadGuy3_Night_StandUpChestUp
       takeName: mixamo.com
-      firstFrame: 0
+      firstFrame: 79
       lastFrame: 496
       wrapMode: 0
       orientationOffsetY: 0
