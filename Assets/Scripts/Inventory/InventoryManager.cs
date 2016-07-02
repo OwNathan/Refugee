@@ -12,14 +12,18 @@ public class InventoryManager : MonoBehaviour
     {
         Lua.RegisterFunction("FindItem", this, typeof(InventoryManager).GetMethod("FindItem"));
         Lua.RegisterFunction("AddItem", this, typeof(InventoryManager).GetMethod("AddItem"));
+        Lua.RegisterFunction("AddItems", this, typeof(InventoryManager).GetMethod("AddItems"));
         Lua.RegisterFunction("RemoveItem", this, typeof(InventoryManager).GetMethod("RemoveItem"));
+        Lua.RegisterFunction("RemoveItems", this, typeof(InventoryManager).GetMethod("RemoveItems"));
     }
 
     private void OnDisable()
     {
         Lua.UnregisterFunction("FindItem");
         Lua.UnregisterFunction("AddItem");
+        Lua.UnregisterFunction("AddItems");
         Lua.UnregisterFunction("RemoveItem");
+        Lua.UnregisterFunction("RemoveItems");
     }
 
     public int FindItem(string name)
@@ -35,16 +39,16 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void AddItems(string name, int count)
+    public void AddItems(string name, string count)
     {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < int.Parse(count); i++)
         {
             AddItem(name);
         }
     }
-    public void RemoveItems(string name, int count)
+    public void RemoveItems(string name, string count)
     {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < int.Parse(count); i++)
         {
             RemoveItem(name);
         }
