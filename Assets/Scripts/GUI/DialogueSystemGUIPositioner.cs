@@ -10,8 +10,7 @@ public class DialogueSystemGUIPositioner : MonoBehaviour
 
     public RectTransform CanvasRect;
     public RectTransform DialoguePanelTransform;
-    public RectTransform CharacterNameTransform;
-    public RectTransform SubTitleLineTransform;
+
 
     public float PaddingX;
     public float PaddingY;
@@ -36,8 +35,7 @@ public class DialogueSystemGUIPositioner : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, ScreenPos, null, out RectPos);
 
 
-        //Bounds SubTitleLineBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(SubTitleLineTransform);
-        //Bounds CharacterNameBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(CharacterNameTransform);
+
 
         if (RectPos.x + DialoguePanelTransform.rect.width / 2 + Offset.x > CanvasRect.rect.xMax)
             RectPos.x = CanvasRect.rect.xMax - DialoguePanelTransform.rect.width / 2 - Offset.x;
