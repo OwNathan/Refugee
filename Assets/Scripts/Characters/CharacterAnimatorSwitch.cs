@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using AC;
 using System.Collections;
-
+/// <summary>
+/// This script handles animator changes to fit situational cutscene/gameplay needs, like Heydar in checkpoint charlie
+/// usually mounted on root character gameobject and called by actions from AC (Object->callEvent)
+/// </summary>
 public class CharacterAnimatorSwitch : MonoBehaviour
 {
 

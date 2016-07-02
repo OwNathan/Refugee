@@ -4,7 +4,7 @@ using PixelCrushers.DialogueSystem;
 /// <summary>
 /// Called in cutscenes to close dialogues when a scene need to be reloaded (eg. player death) in order to avoid dialogue desync
 /// </summary>
-public class DialogueSystem_SkipDialogue : MonoBehaviour
+public class ResetDialogueOnSceneReloading : MonoBehaviour
 {
 
     public void CloseDialogue()

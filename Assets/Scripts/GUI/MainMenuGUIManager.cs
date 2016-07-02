@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Handles custom functions for main menu UI
+/// </summary>
 public class MainMenuGUIManager : MonoBehaviour
 {
 

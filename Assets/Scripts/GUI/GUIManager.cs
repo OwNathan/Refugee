@@ -10,16 +10,22 @@ using AC;
 //TODO: field encapsulation
 //TODO: manage gui position for extreme camera shots
 //TODO: delocallizare GUIManager da dialogue manager e gettare i componenti della gui
-
+/// <summary>
+/// Manages custom UI features like: dialogue box positioning, characters name text color
+/// </summary>
 public class GUIManager : MonoBehaviour
 {
     public List<string> ConversantNames;
+    public Color NameColor { get; private set; }
 
     private List<GameObject> Conversants;
     private GameObject ActiveConversant;
     private GameObject PreviousConversant;
     private GameObject Rashid;
     private DialogueSystemGUIPositioner GUIPositioner;
+    CharacterGUIInfo CharInfo;
+    private _Camera currentCamera;
+    private _Camera lastCamera;
     private string CurrentConversantName;
 
     void Awake()
@@ -29,6 +35,9 @@ public class GUIManager : MonoBehaviour
         ActiveConversant = null;
         PreviousConversant = null;
         GUIPositioner = GameObject.Find("SYSTEM_DIALOGUEMANAGER").GetComponent<DialogueSystemGUIPositioner>();
+        NameColor = Color.black;
+        currentCamera = KickStarter.mainCamera.attachedCamera;
+        lastCamera = KickStarter.mainCamera.attachedCamera;
     }
 
     void Start()
@@ -54,17 +63,23 @@ public class GUIManager : MonoBehaviour
 
                 throw new UnityException("Fix This pls!!!");
             }
+            //finally
+            //{
+            //    if (ActiveConversant == null)
+            //        NameColor = Color.black;
+            //}
 
 
 
             if (ActiveConversant != null && ActiveConversant != PreviousConversant)
             {
                 //get custom offset for speaking character
-                GUIOffsetBehaviour HeadOffset = ActiveConversant.GetComponent<GUIOffsetBehaviour>();
-                Transform HeadPosition = HeadOffset.HeadPosition;
-                
+                CharInfo = ActiveConversant.GetComponent<CharacterGUIInfo>();
+                Transform HeadPosition = CharInfo.HeadPosition;
+                NameColor = CharInfo.NameTextColor;
+
                 Vector3 ScreenPos = KickStarter.mainCamera.attachedCamera._camera.WorldToScreenPoint(HeadPosition.position);
-                
+
                 if (GUIPositioner != null)
                     GUIPositioner.SetConversantGUI(ScreenPos);
                 PreviousConversant = ActiveConversant;
@@ -75,7 +90,20 @@ public class GUIManager : MonoBehaviour
                 PreviousConversant = null;
             }
         }
+        _Camera tmpCamera = KickStarter.mainCamera.attachedCamera;
+        if(tmpCamera != currentCamera && CharInfo != null)
+        {
+
+            Transform HeadPosition = CharInfo.HeadPosition;
+            Vector3 ScreenPos = KickStarter.mainCamera.attachedCamera._camera.WorldToScreenPoint(HeadPosition.position);
+
+            if (GUIPositioner != null)
+                GUIPositioner.SetConversantGUI(ScreenPos);
+
+            lastCamera = currentCamera;
+            currentCamera = tmpCamera;
         }
+    }
 
     public void PopulateConversant()
     {
