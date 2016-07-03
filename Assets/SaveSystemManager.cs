@@ -6,18 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SaveSystemManager : MonoBehaviour
 {
-    private Dictionary<string, int> initialDatabase;
-    private int lastScene = -1;
+    private static Dictionary<string, int> initialDatabase = new Dictionary<string, int>();
+    private static int lastScene = -1;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        initialDatabase = new Dictionary<string, int>();
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
     {
-        if(lastScene != SceneManager.GetActiveScene().buildIndex)
+        if (lastScene != SceneManager.GetActiveScene().buildIndex)
         {
             Save();
             lastScene = SceneManager.GetActiveScene().buildIndex;
@@ -27,9 +26,10 @@ public class SaveSystemManager : MonoBehaviour
             Load();
         }
     }
-    
+
     private void Save()
     {
+        initialDatabase.Clear();
         //Save Variables Initial Values
         DialogueManager.Instance.initialDatabase.variables.ForEach(hVar =>
         {
