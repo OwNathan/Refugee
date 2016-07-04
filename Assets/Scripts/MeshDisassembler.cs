@@ -160,7 +160,14 @@ public class MeshDisassembler : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         //if (collision.gameObject.GetComponent<ControllerWheels>())
-        //    Disassemble();
+        //    Disassemble();à
+
+        Disassemble();
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        Disassemble();
     }
 
     private struct AssemblerInfo
