@@ -18,6 +18,8 @@ public class InventorySlot : MonoBehaviour
         emptySprite  = icon.sprite;
         button = this.GetComponent<Button>();
         text = this.GetComponentInChildren<Text>();
+
+        text.text = string.Empty;
     }
     
     public void Add(InventoryItem item)

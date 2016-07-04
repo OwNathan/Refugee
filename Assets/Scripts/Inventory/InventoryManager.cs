@@ -6,6 +6,9 @@ using UnityEngine;
 //INVENTARIO DI GIOCO
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
+    
+
     #region LUA
 
     private void OnEnable()
@@ -90,7 +93,14 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+
 
         items = new Dictionary<InventoryItem, int>();
     }
@@ -111,7 +121,9 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(InventoryItem item)
     {
-        if (item != null)
+        List<InventorySlot> fullSlots = inventoryGUI.Slots.Where(hS => hS.Item != null).ToList();
+
+        if (item != null || fullSlots.Count == inventoryGUI.Slots.Count)
         {
             InventoryItem myItem = items.Select(kvp => kvp.Key).Where(hI => hI.Name == item.Name).FirstOrDefault();
             if (myItem != null && item.IsMultipleItem)

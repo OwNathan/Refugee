@@ -7,16 +7,19 @@ public class InventoryGUIManager : MonoBehaviour
     public Animator InventoryAnimator;
     public List<InventorySlot> Slots;
 
+    void Start()
+    {
+    }
     public void Add(InventoryItem item)
     {
         List<InventorySlot> fullSlots = this.Slots.Where(hS => hS.Item != null).ToList();
         List<InventorySlot> emptySlots = this.Slots.Where(hS => hS.Item == null).ToList();
 
-        if (item != null)
+        if (item != null || fullSlots.Count == Slots.Count)
         {
             InventorySlot slot;
 
-            if (item.IsMultipleItem && fullSlots.Count != 0)
+            if (item.IsMultipleItem)
             {
                 slot = fullSlots.Where(hS => hS.Item.Name == item.Name).FirstOrDefault();
                 if (slot != null)
@@ -28,14 +31,11 @@ public class InventoryGUIManager : MonoBehaviour
                     emptySlots.FirstOrDefault().Add(item);
                 }
             }
-            else if (!item.IsMultipleItem && emptySlots.Count != 0)
+            else
             {
                 emptySlots.FirstOrDefault().Add(item);
             }
-            else
-            {
-                Debug.Log("<color=red>Can't Add Item On GUI!</color>");
-            }
+            
         }
         else
         {
