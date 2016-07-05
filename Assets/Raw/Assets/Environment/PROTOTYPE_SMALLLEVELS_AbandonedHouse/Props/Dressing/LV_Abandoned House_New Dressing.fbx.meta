@@ -1,0 +1,1513 @@
+fileFormatVersion: 2
+guid: a2cdeefe5b11fec4493ea9435837dad1
+timeCreated: 1467721122
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: detriti_fra1:SM_Debris
+    100002: //RootNode
+    100004: New_Dressing
+    100006: SM_Debris
+    100008: SM_Debris1
+    100010: SM_Debris2
+    100012: SM_Debris3
+    100014: SM_HouseWalls1
+    100016: SM_HouseWalls2
+    100018: SM_HouseWalls3
+    100020: SM_HouseWalls4
+    100022: SM_prop_barrel_010
+    100024: SM_prop_barrel_011
+    100026: SM_prop_barrel_02
+    100028: SM_prop_barrel_03
+    100030: SM_prop_barrel_06
+    100032: SM_prop_barrel_07
+    100034: SM_prop_barrel_08
+    100036: SM_prop_barrel_09
+    100038: SM_props_bed_large1
+    100040: SM_props_BigCan_Close_010
+    100042: SM_props_BigCan_Close_02
+    100044: SM_props_BigCan_Close_05
+    100046: SM_props_BigCan_Close_06
+    100048: SM_props_BigCan_Close_07
+    100050: SM_props_BigCan_Close_08
+    100052: SM_props_BigCan_Close_09
+    100054: SM_props_BigCan_Open_02
+    100056: SM_props_BigCan_Open_03
+    100058: SM_props_BigCan_Open_04
+    100060: SM_props_BigCan_Open_05
+    100062: SM_props_box_010
+    100064: SM_props_box_011
+    100066: SM_props_box_012
+    100068: SM_props_box_013
+    100070: SM_props_box_014
+    100072: SM_props_box_02
+    100074: SM_props_box_03
+    100076: SM_props_box_09
+    100078: SM_props_cabinet_04
+    100080: SM_props_car_type1_brocken_black
+    100082: SM_props_car_type1_brocken_green
+    100084: SM_props_car_type1_brocken_grey
+    100086: SM_props_car_type1_green
+    100088: SM_props_car_type2_broken_black
+    100090: SM_props_car_type2_broken_green
+    100092: SM_props_car_type2_broken_red
+    100094: SM_props_car_type2_orange
+    100096: SM_props_car_type3_broken_black
+    100098: SM_props_chair005
+    100100: SM_props_chair006
+    100102: SM_props_chair007
+    100104: SM_props_chair008
+    100106: SM_props_chair009
+    100108: SM_props_roadsign
+    100110: SM_props_roadsign1
+    100112: SM_props_rubble_01
+    100114: SM_props_rubble_010
+    100116: SM_props_rubble_010 1
+    100118: SM_props_rubble_010 2
+    100120: SM_props_rubble_010 3
+    100122: SM_props_rubble_010 4
+    100124: SM_props_rubble_011
+    100126: SM_props_rubble_011 1
+    100128: SM_props_rubble_011 2
+    100130: SM_props_rubble_011 3
+    100132: SM_props_rubble_011 4
+    100134: SM_props_rubble_013
+    100136: SM_props_rubble_013 1
+    100138: SM_props_rubble_013 2
+    100140: SM_props_rubble_013 3
+    100142: SM_props_rubble_013 4
+    100144: SM_props_rubble_015
+    100146: SM_props_rubble_015 1
+    100148: SM_props_rubble_015 2
+    100150: SM_props_rubble_015 3
+    100152: SM_props_rubble_015 4
+    100154: SM_props_rubble_018
+    100156: SM_props_rubble_018 1
+    100158: SM_props_rubble_018 2
+    100160: SM_props_rubble_018 3
+    100162: SM_props_rubble_018 4
+    100164: SM_props_rubble_019
+    100166: SM_props_rubble_019 1
+    100168: SM_props_rubble_019 2
+    100170: SM_props_rubble_019 3
+    100172: SM_props_rubble_019 4
+    100174: SM_props_rubble_02
+    100176: SM_props_rubble_02 1
+    100178: SM_props_rubble_02 2
+    100180: SM_props_rubble_02 3
+    100182: SM_props_rubble_02 4
+    100184: SM_props_rubble_020
+    100186: SM_props_rubble_020 1
+    100188: SM_props_rubble_020 2
+    100190: SM_props_rubble_020 3
+    100192: SM_props_rubble_020 4
+    100194: SM_props_rubble_021
+    100196: SM_props_rubble_021 1
+    100198: SM_props_rubble_021 2
+    100200: SM_props_rubble_021 3
+    100202: SM_props_rubble_021 4
+    100204: SM_props_rubble_023
+    100206: SM_props_rubble_023 1
+    100208: SM_props_rubble_023 2
+    100210: SM_props_rubble_023 3
+    100212: SM_props_rubble_023 4
+    100214: SM_props_rubble_027
+    100216: SM_props_rubble_027 1
+    100218: SM_props_rubble_027 2
+    100220: SM_props_rubble_027 3
+    100222: SM_props_rubble_027 4
+    100224: SM_props_rubble_028
+    100226: SM_props_rubble_028 1
+    100228: SM_props_rubble_028 2
+    100230: SM_props_rubble_028 3
+    100232: SM_props_rubble_028 4
+    100234: SM_props_rubble_029
+    100236: SM_props_rubble_029 1
+    100238: SM_props_rubble_029 2
+    100240: SM_props_rubble_029 3
+    100242: SM_props_rubble_029 4
+    100244: SM_props_rubble_03
+    100246: SM_props_rubble_03 1
+    100248: SM_props_rubble_03 2
+    100250: SM_props_rubble_03 3
+    100252: SM_props_rubble_03 4
+    100254: SM_props_rubble_030
+    100256: SM_props_rubble_030 1
+    100258: SM_props_rubble_030 2
+    100260: SM_props_rubble_030 3
+    100262: SM_props_rubble_030 4
+    100264: SM_props_rubble_031
+    100266: SM_props_rubble_031 1
+    100268: SM_props_rubble_031 2
+    100270: SM_props_rubble_031 3
+    100272: SM_props_rubble_031 4
+    100274: SM_props_rubble_033
+    100276: SM_props_rubble_033 1
+    100278: SM_props_rubble_033 2
+    100280: SM_props_rubble_033 3
+    100282: SM_props_rubble_033 4
+    100284: SM_props_rubble_034
+    100286: SM_props_rubble_034 1
+    100288: SM_props_rubble_034 2
+    100290: SM_props_rubble_034 3
+    100292: SM_props_rubble_034 4
+    100294: SM_props_rubble_035
+    100296: SM_props_rubble_035 1
+    100298: SM_props_rubble_035 2
+    100300: SM_props_rubble_035 3
+    100302: SM_props_rubble_035 4
+    100304: SM_props_rubble_036
+    100306: SM_props_rubble_036 1
+    100308: SM_props_rubble_036 2
+    100310: SM_props_rubble_036 3
+    100312: SM_props_rubble_036 4
+    100314: SM_props_rubble_039
+    100316: SM_props_rubble_039 1
+    100318: SM_props_rubble_039 2
+    100320: SM_props_rubble_039 3
+    100322: SM_props_rubble_039 4
+    100324: SM_props_rubble_04
+    100326: SM_props_rubble_04 1
+    100328: SM_props_rubble_04 2
+    100330: SM_props_rubble_04 3
+    100332: SM_props_rubble_04 4
+    100334: SM_props_rubble_041
+    100336: SM_props_rubble_041 1
+    100338: SM_props_rubble_041 2
+    100340: SM_props_rubble_041 3
+    100342: SM_props_rubble_041 4
+    100344: SM_props_rubble_042
+    100346: SM_props_rubble_042 1
+    100348: SM_props_rubble_042 2
+    100350: SM_props_rubble_042 3
+    100352: SM_props_rubble_042 4
+    100354: SM_props_rubble_043
+    100356: SM_props_rubble_048
+    100358: SM_props_rubble_05
+    100360: SM_props_rubble_05 1
+    100362: SM_props_rubble_05 2
+    100364: SM_props_rubble_05 3
+    100366: SM_props_rubble_05 4
+    100368: SM_props_rubble_054
+    100370: SM_props_rubble_057
+    100372: SM_props_rubble_06
+    100374: SM_props_rubble_06 1
+    100376: SM_props_rubble_06 2
+    100378: SM_props_rubble_06 3
+    100380: SM_props_rubble_06 4
+    100382: SM_props_rubble_061
+    100384: SM_props_rubble_062
+    100386: SM_props_rubble_066
+    100388: SM_props_rubble_067
+    100390: SM_props_rubble_068
+    100392: SM_props_rubble_069
+    100394: SM_props_rubble_07
+    100396: SM_props_rubble_07 1
+    100398: SM_props_rubble_07 2
+    100400: SM_props_rubble_07 3
+    100402: SM_props_rubble_07 4
+    100404: SM_props_rubble_072
+    100406: SM_props_rubble_073
+    100408: SM_props_rubble_075
+    100410: SM_props_rubble_076
+    100412: SM_props_rubble_077
+    100414: SM_props_rubble_08
+    100416: SM_props_rubble_08 1
+    100418: SM_props_rubble_08 2
+    100420: SM_props_rubble_08 3
+    100422: SM_props_rubble_08 4
+    100424: SM_props_rubble_09
+    100426: SM_props_rubble_09 1
+    100428: SM_props_rubble_09 2
+    100430: SM_props_rubble_09 3
+    100432: SM_props_rubble_09 4
+    100434: SM_props_rubble_LV1
+    100436: SM_props_rubble_LV2
+    100438: SM_props_rubble_LV3
+    100440: SM_props_rubble_LV4
+    100442: SM_props_rubble_LV5
+    100444: SM_props_rubble_LV6
+    100446: SM_props_rubble_LV7
+    100448: SM_props_sign
+    100450: SM_props_sign1
+    100452: SM_props_sign2
+    100454: SM_props_sofa1
+    100456: SM_props_steelwire_02
+    100458: SM_props_steelwire_07
+    100460: SM_props_steelwire_08
+    100462: SM_props_table1
+    100464: SM_props_trahbox_trash
+    100466: SM_props_trashbox_01
+    100468: SM_props_trashbox_01 1
+    100470: SM_props_trashbox_01 2
+    100472: SM_props_trashbox_01 3
+    100474: SM_props_trashbox_01 4
+    100476: SM_props_trashbox_04
+    100478: SM_props_trashbox_05
+    100480: SM_props_trashbox_06
+    100482: SM_props_trashbox_handle_DX
+    100484: SM_props_trashbox_handle_DX 1
+    100486: SM_props_trashbox_handle_DX 2
+    100488: SM_props_trashbox_handle_SX
+    100490: SM_props_trashbox_handle_SX 1
+    100492: SM_props_trashbox_handle_SX 2
+    100494: SM_props_Vase
+    100496: SM_props_Vase1
+    100498: SM_props_Vase_Broken
+    100500: SM_props_wardrobe002
+    100502: SM_props_wood2_04
+    100504: SM_props_wood2_05
+    100506: SM_props_wood2_05 1
+    100508: SM_props_wood2_05 2
+    100510: SM_props_wood2_05 3
+    100512: SM_props_wood2_05 4
+    100514: SM_props_wood3_06
+    100516: SM_props_wood3_06 1
+    100518: SM_props_wood3_06 2
+    100520: SM_props_wood3_06 3
+    100522: SM_props_wood3_06 4
+    100524: SM_props_wood3_07
+    100526: SM_props_wood3_07 1
+    100528: SM_props_wood3_07 2
+    100530: SM_props_wood3_07 3
+    100532: SM_props_wood3_07 4
+    100534: SM_props_woodfences_01
+    100536: SM_props_woodfences_010
+    100538: SM_props_woodfences_011
+    100540: SM_props_woodfences_012
+    100542: SM_props_woodfences_013
+    100544: SM_props_woodfences_014
+    100546: SM_props_woodfences_015
+    100548: SM_props_woodfences_016
+    100550: SM_props_woodfences_017
+    100552: SM_props_woodfences_018
+    100554: SM_props_woodfences_019
+    100556: SM_props_woodfences_02
+    100558: SM_props_woodfences_020
+    100560: SM_props_woodfences_021
+    100562: SM_props_woodfences_022
+    100564: SM_props_woodfences_023
+    100566: SM_props_woodfences_024
+    100568: SM_props_woodfences_025
+    100570: SM_props_woodfences_026
+    100572: SM_props_woodfences_03
+    100574: SM_props_woodfences_04
+    100576: SM_props_woodfences_05
+    100578: SM_props_woodfences_06
+    100580: SM_props_woodfences_07
+    100582: SM_props_woodfences_08
+    100584: SM_props_woodfences_09
+    100586: SM_Road1
+    100588: SM_Road2
+    100590: SM_Stairs1
+    400000: detriti_fra1:SM_Debris
+    400002: //RootNode
+    400004: New_Dressing
+    400006: SM_Debris
+    400008: SM_Debris1
+    400010: SM_Debris2
+    400012: SM_Debris3
+    400014: SM_HouseWalls1
+    400016: SM_HouseWalls2
+    400018: SM_HouseWalls3
+    400020: SM_HouseWalls4
+    400022: SM_prop_barrel_010
+    400024: SM_prop_barrel_011
+    400026: SM_prop_barrel_02
+    400028: SM_prop_barrel_03
+    400030: SM_prop_barrel_06
+    400032: SM_prop_barrel_07
+    400034: SM_prop_barrel_08
+    400036: SM_prop_barrel_09
+    400038: SM_props_bed_large1
+    400040: SM_props_BigCan_Close_010
+    400042: SM_props_BigCan_Close_02
+    400044: SM_props_BigCan_Close_05
+    400046: SM_props_BigCan_Close_06
+    400048: SM_props_BigCan_Close_07
+    400050: SM_props_BigCan_Close_08
+    400052: SM_props_BigCan_Close_09
+    400054: SM_props_BigCan_Open_02
+    400056: SM_props_BigCan_Open_03
+    400058: SM_props_BigCan_Open_04
+    400060: SM_props_BigCan_Open_05
+    400062: SM_props_box_010
+    400064: SM_props_box_011
+    400066: SM_props_box_012
+    400068: SM_props_box_013
+    400070: SM_props_box_014
+    400072: SM_props_box_02
+    400074: SM_props_box_03
+    400076: SM_props_box_09
+    400078: SM_props_cabinet_04
+    400080: SM_props_car_type1_brocken_black
+    400082: SM_props_car_type1_brocken_green
+    400084: SM_props_car_type1_brocken_grey
+    400086: SM_props_car_type1_green
+    400088: SM_props_car_type2_broken_black
+    400090: SM_props_car_type2_broken_green
+    400092: SM_props_car_type2_broken_red
+    400094: SM_props_car_type2_orange
+    400096: SM_props_car_type3_broken_black
+    400098: SM_props_chair005
+    400100: SM_props_chair006
+    400102: SM_props_chair007
+    400104: SM_props_chair008
+    400106: SM_props_chair009
+    400108: SM_props_roadsign
+    400110: SM_props_roadsign1
+    400112: SM_props_rubble_01
+    400114: SM_props_rubble_010
+    400116: SM_props_rubble_010 1
+    400118: SM_props_rubble_010 2
+    400120: SM_props_rubble_010 3
+    400122: SM_props_rubble_010 4
+    400124: SM_props_rubble_011
+    400126: SM_props_rubble_011 1
+    400128: SM_props_rubble_011 2
+    400130: SM_props_rubble_011 3
+    400132: SM_props_rubble_011 4
+    400134: SM_props_rubble_013
+    400136: SM_props_rubble_013 1
+    400138: SM_props_rubble_013 2
+    400140: SM_props_rubble_013 3
+    400142: SM_props_rubble_013 4
+    400144: SM_props_rubble_015
+    400146: SM_props_rubble_015 1
+    400148: SM_props_rubble_015 2
+    400150: SM_props_rubble_015 3
+    400152: SM_props_rubble_015 4
+    400154: SM_props_rubble_018
+    400156: SM_props_rubble_018 1
+    400158: SM_props_rubble_018 2
+    400160: SM_props_rubble_018 3
+    400162: SM_props_rubble_018 4
+    400164: SM_props_rubble_019
+    400166: SM_props_rubble_019 1
+    400168: SM_props_rubble_019 2
+    400170: SM_props_rubble_019 3
+    400172: SM_props_rubble_019 4
+    400174: SM_props_rubble_02
+    400176: SM_props_rubble_02 1
+    400178: SM_props_rubble_02 2
+    400180: SM_props_rubble_02 3
+    400182: SM_props_rubble_02 4
+    400184: SM_props_rubble_020
+    400186: SM_props_rubble_020 1
+    400188: SM_props_rubble_020 2
+    400190: SM_props_rubble_020 3
+    400192: SM_props_rubble_020 4
+    400194: SM_props_rubble_021
+    400196: SM_props_rubble_021 1
+    400198: SM_props_rubble_021 2
+    400200: SM_props_rubble_021 3
+    400202: SM_props_rubble_021 4
+    400204: SM_props_rubble_023
+    400206: SM_props_rubble_023 1
+    400208: SM_props_rubble_023 2
+    400210: SM_props_rubble_023 3
+    400212: SM_props_rubble_023 4
+    400214: SM_props_rubble_027
+    400216: SM_props_rubble_027 1
+    400218: SM_props_rubble_027 2
+    400220: SM_props_rubble_027 3
+    400222: SM_props_rubble_027 4
+    400224: SM_props_rubble_028
+    400226: SM_props_rubble_028 1
+    400228: SM_props_rubble_028 2
+    400230: SM_props_rubble_028 3
+    400232: SM_props_rubble_028 4
+    400234: SM_props_rubble_029
+    400236: SM_props_rubble_029 1
+    400238: SM_props_rubble_029 2
+    400240: SM_props_rubble_029 3
+    400242: SM_props_rubble_029 4
+    400244: SM_props_rubble_03
+    400246: SM_props_rubble_03 1
+    400248: SM_props_rubble_03 2
+    400250: SM_props_rubble_03 3
+    400252: SM_props_rubble_03 4
+    400254: SM_props_rubble_030
+    400256: SM_props_rubble_030 1
+    400258: SM_props_rubble_030 2
+    400260: SM_props_rubble_030 3
+    400262: SM_props_rubble_030 4
+    400264: SM_props_rubble_031
+    400266: SM_props_rubble_031 1
+    400268: SM_props_rubble_031 2
+    400270: SM_props_rubble_031 3
+    400272: SM_props_rubble_031 4
+    400274: SM_props_rubble_033
+    400276: SM_props_rubble_033 1
+    400278: SM_props_rubble_033 2
+    400280: SM_props_rubble_033 3
+    400282: SM_props_rubble_033 4
+    400284: SM_props_rubble_034
+    400286: SM_props_rubble_034 1
+    400288: SM_props_rubble_034 2
+    400290: SM_props_rubble_034 3
+    400292: SM_props_rubble_034 4
+    400294: SM_props_rubble_035
+    400296: SM_props_rubble_035 1
+    400298: SM_props_rubble_035 2
+    400300: SM_props_rubble_035 3
+    400302: SM_props_rubble_035 4
+    400304: SM_props_rubble_036
+    400306: SM_props_rubble_036 1
+    400308: SM_props_rubble_036 2
+    400310: SM_props_rubble_036 3
+    400312: SM_props_rubble_036 4
+    400314: SM_props_rubble_039
+    400316: SM_props_rubble_039 1
+    400318: SM_props_rubble_039 2
+    400320: SM_props_rubble_039 3
+    400322: SM_props_rubble_039 4
+    400324: SM_props_rubble_04
+    400326: SM_props_rubble_04 1
+    400328: SM_props_rubble_04 2
+    400330: SM_props_rubble_04 3
+    400332: SM_props_rubble_04 4
+    400334: SM_props_rubble_041
+    400336: SM_props_rubble_041 1
+    400338: SM_props_rubble_041 2
+    400340: SM_props_rubble_041 3
+    400342: SM_props_rubble_041 4
+    400344: SM_props_rubble_042
+    400346: SM_props_rubble_042 1
+    400348: SM_props_rubble_042 2
+    400350: SM_props_rubble_042 3
+    400352: SM_props_rubble_042 4
+    400354: SM_props_rubble_043
+    400356: SM_props_rubble_048
+    400358: SM_props_rubble_05
+    400360: SM_props_rubble_05 1
+    400362: SM_props_rubble_05 2
+    400364: SM_props_rubble_05 3
+    400366: SM_props_rubble_05 4
+    400368: SM_props_rubble_054
+    400370: SM_props_rubble_057
+    400372: SM_props_rubble_06
+    400374: SM_props_rubble_06 1
+    400376: SM_props_rubble_06 2
+    400378: SM_props_rubble_06 3
+    400380: SM_props_rubble_06 4
+    400382: SM_props_rubble_061
+    400384: SM_props_rubble_062
+    400386: SM_props_rubble_066
+    400388: SM_props_rubble_067
+    400390: SM_props_rubble_068
+    400392: SM_props_rubble_069
+    400394: SM_props_rubble_07
+    400396: SM_props_rubble_07 1
+    400398: SM_props_rubble_07 2
+    400400: SM_props_rubble_07 3
+    400402: SM_props_rubble_07 4
+    400404: SM_props_rubble_072
+    400406: SM_props_rubble_073
+    400408: SM_props_rubble_075
+    400410: SM_props_rubble_076
+    400412: SM_props_rubble_077
+    400414: SM_props_rubble_08
+    400416: SM_props_rubble_08 1
+    400418: SM_props_rubble_08 2
+    400420: SM_props_rubble_08 3
+    400422: SM_props_rubble_08 4
+    400424: SM_props_rubble_09
+    400426: SM_props_rubble_09 1
+    400428: SM_props_rubble_09 2
+    400430: SM_props_rubble_09 3
+    400432: SM_props_rubble_09 4
+    400434: SM_props_rubble_LV1
+    400436: SM_props_rubble_LV2
+    400438: SM_props_rubble_LV3
+    400440: SM_props_rubble_LV4
+    400442: SM_props_rubble_LV5
+    400444: SM_props_rubble_LV6
+    400446: SM_props_rubble_LV7
+    400448: SM_props_sign
+    400450: SM_props_sign1
+    400452: SM_props_sign2
+    400454: SM_props_sofa1
+    400456: SM_props_steelwire_02
+    400458: SM_props_steelwire_07
+    400460: SM_props_steelwire_08
+    400462: SM_props_table1
+    400464: SM_props_trahbox_trash
+    400466: SM_props_trashbox_01
+    400468: SM_props_trashbox_01 1
+    400470: SM_props_trashbox_01 2
+    400472: SM_props_trashbox_01 3
+    400474: SM_props_trashbox_01 4
+    400476: SM_props_trashbox_04
+    400478: SM_props_trashbox_05
+    400480: SM_props_trashbox_06
+    400482: SM_props_trashbox_handle_DX
+    400484: SM_props_trashbox_handle_DX 1
+    400486: SM_props_trashbox_handle_DX 2
+    400488: SM_props_trashbox_handle_SX
+    400490: SM_props_trashbox_handle_SX 1
+    400492: SM_props_trashbox_handle_SX 2
+    400494: SM_props_Vase
+    400496: SM_props_Vase1
+    400498: SM_props_Vase_Broken
+    400500: SM_props_wardrobe002
+    400502: SM_props_wood2_04
+    400504: SM_props_wood2_05
+    400506: SM_props_wood2_05 1
+    400508: SM_props_wood2_05 2
+    400510: SM_props_wood2_05 3
+    400512: SM_props_wood2_05 4
+    400514: SM_props_wood3_06
+    400516: SM_props_wood3_06 1
+    400518: SM_props_wood3_06 2
+    400520: SM_props_wood3_06 3
+    400522: SM_props_wood3_06 4
+    400524: SM_props_wood3_07
+    400526: SM_props_wood3_07 1
+    400528: SM_props_wood3_07 2
+    400530: SM_props_wood3_07 3
+    400532: SM_props_wood3_07 4
+    400534: SM_props_woodfences_01
+    400536: SM_props_woodfences_010
+    400538: SM_props_woodfences_011
+    400540: SM_props_woodfences_012
+    400542: SM_props_woodfences_013
+    400544: SM_props_woodfences_014
+    400546: SM_props_woodfences_015
+    400548: SM_props_woodfences_016
+    400550: SM_props_woodfences_017
+    400552: SM_props_woodfences_018
+    400554: SM_props_woodfences_019
+    400556: SM_props_woodfences_02
+    400558: SM_props_woodfences_020
+    400560: SM_props_woodfences_021
+    400562: SM_props_woodfences_022
+    400564: SM_props_woodfences_023
+    400566: SM_props_woodfences_024
+    400568: SM_props_woodfences_025
+    400570: SM_props_woodfences_026
+    400572: SM_props_woodfences_03
+    400574: SM_props_woodfences_04
+    400576: SM_props_woodfences_05
+    400578: SM_props_woodfences_06
+    400580: SM_props_woodfences_07
+    400582: SM_props_woodfences_08
+    400584: SM_props_woodfences_09
+    400586: SM_Road1
+    400588: SM_Road2
+    400590: SM_Stairs1
+    2300000: detriti_fra1:SM_Debris
+    2300002: SM_Debris
+    2300004: SM_Debris1
+    2300006: SM_Debris2
+    2300008: SM_Debris3
+    2300010: SM_HouseWalls1
+    2300012: SM_HouseWalls2
+    2300014: SM_HouseWalls3
+    2300016: SM_HouseWalls4
+    2300018: SM_prop_barrel_010
+    2300020: SM_prop_barrel_011
+    2300022: SM_prop_barrel_02
+    2300024: SM_prop_barrel_03
+    2300026: SM_prop_barrel_06
+    2300028: SM_prop_barrel_07
+    2300030: SM_prop_barrel_08
+    2300032: SM_prop_barrel_09
+    2300034: SM_props_bed_large1
+    2300036: SM_props_BigCan_Close_010
+    2300038: SM_props_BigCan_Close_02
+    2300040: SM_props_BigCan_Close_05
+    2300042: SM_props_BigCan_Close_06
+    2300044: SM_props_BigCan_Close_07
+    2300046: SM_props_BigCan_Close_08
+    2300048: SM_props_BigCan_Close_09
+    2300050: SM_props_BigCan_Open_02
+    2300052: SM_props_BigCan_Open_03
+    2300054: SM_props_BigCan_Open_04
+    2300056: SM_props_BigCan_Open_05
+    2300058: SM_props_box_010
+    2300060: SM_props_box_011
+    2300062: SM_props_box_012
+    2300064: SM_props_box_013
+    2300066: SM_props_box_014
+    2300068: SM_props_box_02
+    2300070: SM_props_box_03
+    2300072: SM_props_box_09
+    2300074: SM_props_cabinet_04
+    2300076: SM_props_car_type1_brocken_black
+    2300078: SM_props_car_type1_brocken_green
+    2300080: SM_props_car_type1_brocken_grey
+    2300082: SM_props_car_type1_green
+    2300084: SM_props_car_type2_broken_black
+    2300086: SM_props_car_type2_broken_green
+    2300088: SM_props_car_type2_broken_red
+    2300090: SM_props_car_type2_orange
+    2300092: SM_props_car_type3_broken_black
+    2300094: SM_props_chair005
+    2300096: SM_props_chair006
+    2300098: SM_props_chair007
+    2300100: SM_props_chair008
+    2300102: SM_props_chair009
+    2300104: SM_props_roadsign
+    2300106: SM_props_roadsign1
+    2300108: SM_props_rubble_01
+    2300110: SM_props_rubble_010
+    2300112: SM_props_rubble_010 1
+    2300114: SM_props_rubble_010 2
+    2300116: SM_props_rubble_010 3
+    2300118: SM_props_rubble_010 4
+    2300120: SM_props_rubble_011
+    2300122: SM_props_rubble_011 1
+    2300124: SM_props_rubble_011 2
+    2300126: SM_props_rubble_011 3
+    2300128: SM_props_rubble_011 4
+    2300130: SM_props_rubble_013
+    2300132: SM_props_rubble_013 1
+    2300134: SM_props_rubble_013 2
+    2300136: SM_props_rubble_013 3
+    2300138: SM_props_rubble_013 4
+    2300140: SM_props_rubble_015
+    2300142: SM_props_rubble_015 1
+    2300144: SM_props_rubble_015 2
+    2300146: SM_props_rubble_015 3
+    2300148: SM_props_rubble_015 4
+    2300150: SM_props_rubble_018
+    2300152: SM_props_rubble_018 1
+    2300154: SM_props_rubble_018 2
+    2300156: SM_props_rubble_018 3
+    2300158: SM_props_rubble_018 4
+    2300160: SM_props_rubble_019
+    2300162: SM_props_rubble_019 1
+    2300164: SM_props_rubble_019 2
+    2300166: SM_props_rubble_019 3
+    2300168: SM_props_rubble_019 4
+    2300170: SM_props_rubble_02
+    2300172: SM_props_rubble_02 1
+    2300174: SM_props_rubble_02 2
+    2300176: SM_props_rubble_02 3
+    2300178: SM_props_rubble_02 4
+    2300180: SM_props_rubble_020
+    2300182: SM_props_rubble_020 1
+    2300184: SM_props_rubble_020 2
+    2300186: SM_props_rubble_020 3
+    2300188: SM_props_rubble_020 4
+    2300190: SM_props_rubble_021
+    2300192: SM_props_rubble_021 1
+    2300194: SM_props_rubble_021 2
+    2300196: SM_props_rubble_021 3
+    2300198: SM_props_rubble_021 4
+    2300200: SM_props_rubble_023
+    2300202: SM_props_rubble_023 1
+    2300204: SM_props_rubble_023 2
+    2300206: SM_props_rubble_023 3
+    2300208: SM_props_rubble_023 4
+    2300210: SM_props_rubble_027
+    2300212: SM_props_rubble_027 1
+    2300214: SM_props_rubble_027 2
+    2300216: SM_props_rubble_027 3
+    2300218: SM_props_rubble_027 4
+    2300220: SM_props_rubble_028
+    2300222: SM_props_rubble_028 1
+    2300224: SM_props_rubble_028 2
+    2300226: SM_props_rubble_028 3
+    2300228: SM_props_rubble_028 4
+    2300230: SM_props_rubble_029
+    2300232: SM_props_rubble_029 1
+    2300234: SM_props_rubble_029 2
+    2300236: SM_props_rubble_029 3
+    2300238: SM_props_rubble_029 4
+    2300240: SM_props_rubble_03
+    2300242: SM_props_rubble_03 1
+    2300244: SM_props_rubble_03 2
+    2300246: SM_props_rubble_03 3
+    2300248: SM_props_rubble_03 4
+    2300250: SM_props_rubble_030
+    2300252: SM_props_rubble_030 1
+    2300254: SM_props_rubble_030 2
+    2300256: SM_props_rubble_030 3
+    2300258: SM_props_rubble_030 4
+    2300260: SM_props_rubble_031
+    2300262: SM_props_rubble_031 1
+    2300264: SM_props_rubble_031 2
+    2300266: SM_props_rubble_031 3
+    2300268: SM_props_rubble_031 4
+    2300270: SM_props_rubble_033
+    2300272: SM_props_rubble_033 1
+    2300274: SM_props_rubble_033 2
+    2300276: SM_props_rubble_033 3
+    2300278: SM_props_rubble_033 4
+    2300280: SM_props_rubble_034
+    2300282: SM_props_rubble_034 1
+    2300284: SM_props_rubble_034 2
+    2300286: SM_props_rubble_034 3
+    2300288: SM_props_rubble_034 4
+    2300290: SM_props_rubble_035
+    2300292: SM_props_rubble_035 1
+    2300294: SM_props_rubble_035 2
+    2300296: SM_props_rubble_035 3
+    2300298: SM_props_rubble_035 4
+    2300300: SM_props_rubble_036
+    2300302: SM_props_rubble_036 1
+    2300304: SM_props_rubble_036 2
+    2300306: SM_props_rubble_036 3
+    2300308: SM_props_rubble_036 4
+    2300310: SM_props_rubble_039
+    2300312: SM_props_rubble_039 1
+    2300314: SM_props_rubble_039 2
+    2300316: SM_props_rubble_039 3
+    2300318: SM_props_rubble_039 4
+    2300320: SM_props_rubble_04
+    2300322: SM_props_rubble_04 1
+    2300324: SM_props_rubble_04 2
+    2300326: SM_props_rubble_04 3
+    2300328: SM_props_rubble_04 4
+    2300330: SM_props_rubble_041
+    2300332: SM_props_rubble_041 1
+    2300334: SM_props_rubble_041 2
+    2300336: SM_props_rubble_041 3
+    2300338: SM_props_rubble_041 4
+    2300340: SM_props_rubble_042
+    2300342: SM_props_rubble_042 1
+    2300344: SM_props_rubble_042 2
+    2300346: SM_props_rubble_042 3
+    2300348: SM_props_rubble_042 4
+    2300350: SM_props_rubble_043
+    2300352: SM_props_rubble_048
+    2300354: SM_props_rubble_05
+    2300356: SM_props_rubble_05 1
+    2300358: SM_props_rubble_05 2
+    2300360: SM_props_rubble_05 3
+    2300362: SM_props_rubble_05 4
+    2300364: SM_props_rubble_054
+    2300366: SM_props_rubble_057
+    2300368: SM_props_rubble_06
+    2300370: SM_props_rubble_06 1
+    2300372: SM_props_rubble_06 2
+    2300374: SM_props_rubble_06 3
+    2300376: SM_props_rubble_06 4
+    2300378: SM_props_rubble_061
+    2300380: SM_props_rubble_062
+    2300382: SM_props_rubble_066
+    2300384: SM_props_rubble_067
+    2300386: SM_props_rubble_068
+    2300388: SM_props_rubble_069
+    2300390: SM_props_rubble_07
+    2300392: SM_props_rubble_07 1
+    2300394: SM_props_rubble_07 2
+    2300396: SM_props_rubble_07 3
+    2300398: SM_props_rubble_07 4
+    2300400: SM_props_rubble_072
+    2300402: SM_props_rubble_073
+    2300404: SM_props_rubble_075
+    2300406: SM_props_rubble_076
+    2300408: SM_props_rubble_077
+    2300410: SM_props_rubble_08
+    2300412: SM_props_rubble_08 1
+    2300414: SM_props_rubble_08 2
+    2300416: SM_props_rubble_08 3
+    2300418: SM_props_rubble_08 4
+    2300420: SM_props_rubble_09
+    2300422: SM_props_rubble_09 1
+    2300424: SM_props_rubble_09 2
+    2300426: SM_props_rubble_09 3
+    2300428: SM_props_rubble_09 4
+    2300430: SM_props_sign
+    2300432: SM_props_sign1
+    2300434: SM_props_sign2
+    2300436: SM_props_sofa1
+    2300438: SM_props_steelwire_02
+    2300440: SM_props_steelwire_07
+    2300442: SM_props_steelwire_08
+    2300444: SM_props_table1
+    2300446: SM_props_trahbox_trash
+    2300448: SM_props_trashbox_01 1
+    2300450: SM_props_trashbox_01 2
+    2300452: SM_props_trashbox_01 3
+    2300454: SM_props_trashbox_01 4
+    2300456: SM_props_trashbox_handle_DX
+    2300458: SM_props_trashbox_handle_DX 1
+    2300460: SM_props_trashbox_handle_DX 2
+    2300462: SM_props_trashbox_handle_SX
+    2300464: SM_props_trashbox_handle_SX 1
+    2300466: SM_props_trashbox_handle_SX 2
+    2300468: SM_props_Vase
+    2300470: SM_props_Vase1
+    2300472: SM_props_Vase_Broken
+    2300474: SM_props_wardrobe002
+    2300476: SM_props_wood2_04
+    2300478: SM_props_wood2_05
+    2300480: SM_props_wood2_05 1
+    2300482: SM_props_wood2_05 2
+    2300484: SM_props_wood2_05 3
+    2300486: SM_props_wood2_05 4
+    2300488: SM_props_wood3_06
+    2300490: SM_props_wood3_06 1
+    2300492: SM_props_wood3_06 2
+    2300494: SM_props_wood3_06 3
+    2300496: SM_props_wood3_06 4
+    2300498: SM_props_wood3_07
+    2300500: SM_props_wood3_07 1
+    2300502: SM_props_wood3_07 2
+    2300504: SM_props_wood3_07 3
+    2300506: SM_props_wood3_07 4
+    2300508: SM_props_woodfences_01
+    2300510: SM_props_woodfences_010
+    2300512: SM_props_woodfences_011
+    2300514: SM_props_woodfences_012
+    2300516: SM_props_woodfences_013
+    2300518: SM_props_woodfences_014
+    2300520: SM_props_woodfences_015
+    2300522: SM_props_woodfences_016
+    2300524: SM_props_woodfences_017
+    2300526: SM_props_woodfences_018
+    2300528: SM_props_woodfences_019
+    2300530: SM_props_woodfences_02
+    2300532: SM_props_woodfences_020
+    2300534: SM_props_woodfences_021
+    2300536: SM_props_woodfences_022
+    2300538: SM_props_woodfences_023
+    2300540: SM_props_woodfences_024
+    2300542: SM_props_woodfences_025
+    2300544: SM_props_woodfences_026
+    2300546: SM_props_woodfences_03
+    2300548: SM_props_woodfences_04
+    2300550: SM_props_woodfences_05
+    2300552: SM_props_woodfences_06
+    2300554: SM_props_woodfences_07
+    2300556: SM_props_woodfences_08
+    2300558: SM_props_woodfences_09
+    2300560: SM_Road1
+    2300562: SM_Road2
+    2300564: SM_Stairs1
+    3300000: detriti_fra1:SM_Debris
+    3300002: SM_Debris
+    3300004: SM_Debris1
+    3300006: SM_Debris2
+    3300008: SM_Debris3
+    3300010: SM_HouseWalls1
+    3300012: SM_HouseWalls2
+    3300014: SM_HouseWalls3
+    3300016: SM_HouseWalls4
+    3300018: SM_prop_barrel_010
+    3300020: SM_prop_barrel_011
+    3300022: SM_prop_barrel_02
+    3300024: SM_prop_barrel_03
+    3300026: SM_prop_barrel_06
+    3300028: SM_prop_barrel_07
+    3300030: SM_prop_barrel_08
+    3300032: SM_prop_barrel_09
+    3300034: SM_props_bed_large1
+    3300036: SM_props_BigCan_Close_010
+    3300038: SM_props_BigCan_Close_02
+    3300040: SM_props_BigCan_Close_05
+    3300042: SM_props_BigCan_Close_06
+    3300044: SM_props_BigCan_Close_07
+    3300046: SM_props_BigCan_Close_08
+    3300048: SM_props_BigCan_Close_09
+    3300050: SM_props_BigCan_Open_02
+    3300052: SM_props_BigCan_Open_03
+    3300054: SM_props_BigCan_Open_04
+    3300056: SM_props_BigCan_Open_05
+    3300058: SM_props_box_010
+    3300060: SM_props_box_011
+    3300062: SM_props_box_012
+    3300064: SM_props_box_013
+    3300066: SM_props_box_014
+    3300068: SM_props_box_02
+    3300070: SM_props_box_03
+    3300072: SM_props_box_09
+    3300074: SM_props_cabinet_04
+    3300076: SM_props_car_type1_brocken_black
+    3300078: SM_props_car_type1_brocken_green
+    3300080: SM_props_car_type1_brocken_grey
+    3300082: SM_props_car_type1_green
+    3300084: SM_props_car_type2_broken_black
+    3300086: SM_props_car_type2_broken_green
+    3300088: SM_props_car_type2_broken_red
+    3300090: SM_props_car_type2_orange
+    3300092: SM_props_car_type3_broken_black
+    3300094: SM_props_chair005
+    3300096: SM_props_chair006
+    3300098: SM_props_chair007
+    3300100: SM_props_chair008
+    3300102: SM_props_chair009
+    3300104: SM_props_roadsign
+    3300106: SM_props_roadsign1
+    3300108: SM_props_rubble_01
+    3300110: SM_props_rubble_010
+    3300112: SM_props_rubble_010 1
+    3300114: SM_props_rubble_010 2
+    3300116: SM_props_rubble_010 3
+    3300118: SM_props_rubble_010 4
+    3300120: SM_props_rubble_011
+    3300122: SM_props_rubble_011 1
+    3300124: SM_props_rubble_011 2
+    3300126: SM_props_rubble_011 3
+    3300128: SM_props_rubble_011 4
+    3300130: SM_props_rubble_013
+    3300132: SM_props_rubble_013 1
+    3300134: SM_props_rubble_013 2
+    3300136: SM_props_rubble_013 3
+    3300138: SM_props_rubble_013 4
+    3300140: SM_props_rubble_015
+    3300142: SM_props_rubble_015 1
+    3300144: SM_props_rubble_015 2
+    3300146: SM_props_rubble_015 3
+    3300148: SM_props_rubble_015 4
+    3300150: SM_props_rubble_018
+    3300152: SM_props_rubble_018 1
+    3300154: SM_props_rubble_018 2
+    3300156: SM_props_rubble_018 3
+    3300158: SM_props_rubble_018 4
+    3300160: SM_props_rubble_019
+    3300162: SM_props_rubble_019 1
+    3300164: SM_props_rubble_019 2
+    3300166: SM_props_rubble_019 3
+    3300168: SM_props_rubble_019 4
+    3300170: SM_props_rubble_02
+    3300172: SM_props_rubble_02 1
+    3300174: SM_props_rubble_02 2
+    3300176: SM_props_rubble_02 3
+    3300178: SM_props_rubble_02 4
+    3300180: SM_props_rubble_020
+    3300182: SM_props_rubble_020 1
+    3300184: SM_props_rubble_020 2
+    3300186: SM_props_rubble_020 3
+    3300188: SM_props_rubble_020 4
+    3300190: SM_props_rubble_021
+    3300192: SM_props_rubble_021 1
+    3300194: SM_props_rubble_021 2
+    3300196: SM_props_rubble_021 3
+    3300198: SM_props_rubble_021 4
+    3300200: SM_props_rubble_023
+    3300202: SM_props_rubble_023 1
+    3300204: SM_props_rubble_023 2
+    3300206: SM_props_rubble_023 3
+    3300208: SM_props_rubble_023 4
+    3300210: SM_props_rubble_027
+    3300212: SM_props_rubble_027 1
+    3300214: SM_props_rubble_027 2
+    3300216: SM_props_rubble_027 3
+    3300218: SM_props_rubble_027 4
+    3300220: SM_props_rubble_028
+    3300222: SM_props_rubble_028 1
+    3300224: SM_props_rubble_028 2
+    3300226: SM_props_rubble_028 3
+    3300228: SM_props_rubble_028 4
+    3300230: SM_props_rubble_029
+    3300232: SM_props_rubble_029 1
+    3300234: SM_props_rubble_029 2
+    3300236: SM_props_rubble_029 3
+    3300238: SM_props_rubble_029 4
+    3300240: SM_props_rubble_03
+    3300242: SM_props_rubble_03 1
+    3300244: SM_props_rubble_03 2
+    3300246: SM_props_rubble_03 3
+    3300248: SM_props_rubble_03 4
+    3300250: SM_props_rubble_030
+    3300252: SM_props_rubble_030 1
+    3300254: SM_props_rubble_030 2
+    3300256: SM_props_rubble_030 3
+    3300258: SM_props_rubble_030 4
+    3300260: SM_props_rubble_031
+    3300262: SM_props_rubble_031 1
+    3300264: SM_props_rubble_031 2
+    3300266: SM_props_rubble_031 3
+    3300268: SM_props_rubble_031 4
+    3300270: SM_props_rubble_033
+    3300272: SM_props_rubble_033 1
+    3300274: SM_props_rubble_033 2
+    3300276: SM_props_rubble_033 3
+    3300278: SM_props_rubble_033 4
+    3300280: SM_props_rubble_034
+    3300282: SM_props_rubble_034 1
+    3300284: SM_props_rubble_034 2
+    3300286: SM_props_rubble_034 3
+    3300288: SM_props_rubble_034 4
+    3300290: SM_props_rubble_035
+    3300292: SM_props_rubble_035 1
+    3300294: SM_props_rubble_035 2
+    3300296: SM_props_rubble_035 3
+    3300298: SM_props_rubble_035 4
+    3300300: SM_props_rubble_036
+    3300302: SM_props_rubble_036 1
+    3300304: SM_props_rubble_036 2
+    3300306: SM_props_rubble_036 3
+    3300308: SM_props_rubble_036 4
+    3300310: SM_props_rubble_039
+    3300312: SM_props_rubble_039 1
+    3300314: SM_props_rubble_039 2
+    3300316: SM_props_rubble_039 3
+    3300318: SM_props_rubble_039 4
+    3300320: SM_props_rubble_04
+    3300322: SM_props_rubble_04 1
+    3300324: SM_props_rubble_04 2
+    3300326: SM_props_rubble_04 3
+    3300328: SM_props_rubble_04 4
+    3300330: SM_props_rubble_041
+    3300332: SM_props_rubble_041 1
+    3300334: SM_props_rubble_041 2
+    3300336: SM_props_rubble_041 3
+    3300338: SM_props_rubble_041 4
+    3300340: SM_props_rubble_042
+    3300342: SM_props_rubble_042 1
+    3300344: SM_props_rubble_042 2
+    3300346: SM_props_rubble_042 3
+    3300348: SM_props_rubble_042 4
+    3300350: SM_props_rubble_043
+    3300352: SM_props_rubble_048
+    3300354: SM_props_rubble_05
+    3300356: SM_props_rubble_05 1
+    3300358: SM_props_rubble_05 2
+    3300360: SM_props_rubble_05 3
+    3300362: SM_props_rubble_05 4
+    3300364: SM_props_rubble_054
+    3300366: SM_props_rubble_057
+    3300368: SM_props_rubble_06
+    3300370: SM_props_rubble_06 1
+    3300372: SM_props_rubble_06 2
+    3300374: SM_props_rubble_06 3
+    3300376: SM_props_rubble_06 4
+    3300378: SM_props_rubble_061
+    3300380: SM_props_rubble_062
+    3300382: SM_props_rubble_066
+    3300384: SM_props_rubble_067
+    3300386: SM_props_rubble_068
+    3300388: SM_props_rubble_069
+    3300390: SM_props_rubble_07
+    3300392: SM_props_rubble_07 1
+    3300394: SM_props_rubble_07 2
+    3300396: SM_props_rubble_07 3
+    3300398: SM_props_rubble_07 4
+    3300400: SM_props_rubble_072
+    3300402: SM_props_rubble_073
+    3300404: SM_props_rubble_075
+    3300406: SM_props_rubble_076
+    3300408: SM_props_rubble_077
+    3300410: SM_props_rubble_08
+    3300412: SM_props_rubble_08 1
+    3300414: SM_props_rubble_08 2
+    3300416: SM_props_rubble_08 3
+    3300418: SM_props_rubble_08 4
+    3300420: SM_props_rubble_09
+    3300422: SM_props_rubble_09 1
+    3300424: SM_props_rubble_09 2
+    3300426: SM_props_rubble_09 3
+    3300428: SM_props_rubble_09 4
+    3300430: SM_props_sign
+    3300432: SM_props_sign1
+    3300434: SM_props_sign2
+    3300436: SM_props_sofa1
+    3300438: SM_props_steelwire_02
+    3300440: SM_props_steelwire_07
+    3300442: SM_props_steelwire_08
+    3300444: SM_props_table1
+    3300446: SM_props_trahbox_trash
+    3300448: SM_props_trashbox_01 1
+    3300450: SM_props_trashbox_01 2
+    3300452: SM_props_trashbox_01 3
+    3300454: SM_props_trashbox_01 4
+    3300456: SM_props_trashbox_handle_DX
+    3300458: SM_props_trashbox_handle_DX 1
+    3300460: SM_props_trashbox_handle_DX 2
+    3300462: SM_props_trashbox_handle_SX
+    3300464: SM_props_trashbox_handle_SX 1
+    3300466: SM_props_trashbox_handle_SX 2
+    3300468: SM_props_Vase
+    3300470: SM_props_Vase1
+    3300472: SM_props_Vase_Broken
+    3300474: SM_props_wardrobe002
+    3300476: SM_props_wood2_04
+    3300478: SM_props_wood2_05
+    3300480: SM_props_wood2_05 1
+    3300482: SM_props_wood2_05 2
+    3300484: SM_props_wood2_05 3
+    3300486: SM_props_wood2_05 4
+    3300488: SM_props_wood3_06
+    3300490: SM_props_wood3_06 1
+    3300492: SM_props_wood3_06 2
+    3300494: SM_props_wood3_06 3
+    3300496: SM_props_wood3_06 4
+    3300498: SM_props_wood3_07
+    3300500: SM_props_wood3_07 1
+    3300502: SM_props_wood3_07 2
+    3300504: SM_props_wood3_07 3
+    3300506: SM_props_wood3_07 4
+    3300508: SM_props_woodfences_01
+    3300510: SM_props_woodfences_010
+    3300512: SM_props_woodfences_011
+    3300514: SM_props_woodfences_012
+    3300516: SM_props_woodfences_013
+    3300518: SM_props_woodfences_014
+    3300520: SM_props_woodfences_015
+    3300522: SM_props_woodfences_016
+    3300524: SM_props_woodfences_017
+    3300526: SM_props_woodfences_018
+    3300528: SM_props_woodfences_019
+    3300530: SM_props_woodfences_02
+    3300532: SM_props_woodfences_020
+    3300534: SM_props_woodfences_021
+    3300536: SM_props_woodfences_022
+    3300538: SM_props_woodfences_023
+    3300540: SM_props_woodfences_024
+    3300542: SM_props_woodfences_025
+    3300544: SM_props_woodfences_026
+    3300546: SM_props_woodfences_03
+    3300548: SM_props_woodfences_04
+    3300550: SM_props_woodfences_05
+    3300552: SM_props_woodfences_06
+    3300554: SM_props_woodfences_07
+    3300556: SM_props_woodfences_08
+    3300558: SM_props_woodfences_09
+    3300560: SM_Road1
+    3300562: SM_Road2
+    3300564: SM_Stairs1
+    4300000: SM_props_wardrobe002
+    4300002: detriti_fra1:SM_Debris
+    4300004: SM_HouseWalls1
+    4300006: SM_HouseWalls2
+    4300008: SM_Road1
+    4300010: SM_Road2
+    4300012: SM_HouseWalls3
+    4300014: SM_HouseWalls4
+    4300016: SM_Stairs1
+    4300018: SM_props_cabinet_04
+    4300020: SM_props_chair005
+    4300022: SM_Debris
+    4300024: SM_Debris1
+    4300026: SM_Debris2
+    4300028: SM_Debris3
+    4300030: SM_props_sign
+    4300032: SM_props_roadsign
+    4300034: SM_props_roadsign1
+    4300036: SM_props_sign1
+    4300038: SM_props_sign2
+    4300040: SM_props_BigCan_Open_02
+    4300042: SM_props_BigCan_Close_05
+    4300044: SM_props_BigCan_Close_02
+    4300046: SM_props_BigCan_Open_04
+    4300048: SM_props_BigCan_Open_03
+    4300050: SM_props_BigCan_Close_06
+    4300052: SM_props_BigCan_Close_07
+    4300054: SM_props_BigCan_Close_08
+    4300056: SM_props_BigCan_Close_09
+    4300058: SM_props_BigCan_Open_05
+    4300060: SM_props_Vase
+    4300062: SM_props_Vase1
+    4300064: SM_props_Vase_Broken
+    4300066: SM_props_bed_large1
+    4300068: SM_props_table1
+    4300070: SM_props_sofa1
+    4300072: SM_props_chair006
+    4300074: SM_props_chair007
+    4300076: SM_props_chair008
+    4300078: SM_props_chair009
+    4300080: SM_props_rubble_043
+    4300082: SM_props_rubble_048
+    4300084: SM_props_rubble_054
+    4300086: SM_props_rubble_057
+    4300088: SM_props_rubble_062
+    4300090: SM_props_rubble_061
+    4300092: SM_props_rubble_066
+    4300094: SM_props_rubble_067
+    4300096: SM_props_rubble_068
+    4300098: SM_props_rubble_069
+    4300100: SM_props_rubble_072
+    4300102: SM_props_rubble_073
+    4300104: SM_prop_barrel_06
+    4300106: SM_props_rubble_01
+    4300108: SM_props_woodfences_01
+    4300110: SM_props_woodfences_02
+    4300112: SM_props_woodfences_03
+    4300114: SM_props_woodfences_04
+    4300116: SM_props_woodfences_05
+    4300118: SM_props_woodfences_06
+    4300120: SM_props_woodfences_07
+    4300122: SM_props_woodfences_08
+    4300124: SM_props_woodfences_09
+    4300126: SM_props_woodfences_010
+    4300128: SM_props_woodfences_011
+    4300130: SM_props_woodfences_012
+    4300132: SM_props_woodfences_013
+    4300134: SM_props_woodfences_014
+    4300136: SM_props_woodfences_015
+    4300138: SM_props_woodfences_016
+    4300140: SM_props_woodfences_017
+    4300142: SM_props_woodfences_018
+    4300144: SM_props_woodfences_019
+    4300146: SM_props_woodfences_020
+    4300148: SM_props_woodfences_021
+    4300150: SM_props_woodfences_022
+    4300152: SM_props_woodfences_023
+    4300154: SM_props_woodfences_024
+    4300156: SM_props_woodfences_025
+    4300158: SM_props_woodfences_026
+    4300160: SM_props_steelwire_02
+    4300162: SM_props_steelwire_07
+    4300164: SM_props_steelwire_08
+    4300166: SM_props_box_09
+    4300168: SM_props_BigCan_Close_010
+    4300170: SM_props_box_010
+    4300172: SM_props_box_02
+    4300174: SM_props_box_011
+    4300176: SM_props_box_012
+    4300178: SM_prop_barrel_02
+    4300180: SM_prop_barrel_07
+    4300182: SM_prop_barrel_08
+    4300184: SM_props_trashbox_handle_DX
+    4300186: SM_props_trashbox_handle_SX
+    4300188: SM_props_trashbox_01
+    4300190: SM_props_trahbox_trash
+    4300192: SM_props_trashbox_handle_DX
+    4300194: SM_props_trashbox_handle_SX
+    4300196: SM_props_trashbox_01
+    4300198: SM_props_trashbox_handle_DX
+    4300200: SM_props_trashbox_handle_SX
+    4300202: SM_props_trashbox_01
+    4300204: SM_props_trashbox_01
+    4300206: SM_props_car_type3_broken_black
+    4300208: SM_props_car_type2_broken_green
+    4300210: SM_props_car_type2_broken_red
+    4300212: SM_props_car_type1_brocken_black
+    4300214: SM_props_car_type1_brocken_green
+    4300216: SM_props_car_type2_orange
+    4300218: SM_props_car_type1_brocken_grey
+    4300220: SM_props_car_type1_green
+    4300222: SM_props_car_type2_broken_black
+    4300224: SM_prop_barrel_09
+    4300226: SM_prop_barrel_010
+    4300228: SM_prop_barrel_011
+    4300230: SM_props_box_03
+    4300232: SM_props_box_013
+    4300234: SM_props_box_014
+    4300236: SM_props_rubble_075
+    4300238: SM_props_rubble_076
+    4300240: SM_prop_barrel_03
+    4300242: SM_props_wood2_04
+    4300244: SM_props_rubble_077
+    4300246: SM_props_rubble_02
+    4300248: SM_props_rubble_03
+    4300250: SM_props_rubble_04
+    4300252: SM_props_rubble_05
+    4300254: SM_props_rubble_06
+    4300256: SM_props_rubble_07
+    4300258: SM_props_rubble_08
+    4300260: SM_props_rubble_09
+    4300262: SM_props_rubble_010
+    4300264: SM_props_rubble_011
+    4300266: SM_props_rubble_013
+    4300268: SM_props_rubble_015
+    4300270: SM_props_rubble_018
+    4300272: SM_props_rubble_019
+    4300274: SM_props_rubble_020
+    4300276: SM_props_rubble_021
+    4300278: SM_props_rubble_023
+    4300280: SM_props_rubble_028
+    4300282: SM_props_rubble_027
+    4300284: SM_props_rubble_029
+    4300286: SM_props_rubble_030
+    4300288: SM_props_rubble_031
+    4300290: SM_props_rubble_033
+    4300292: SM_props_rubble_034
+    4300294: SM_props_rubble_035
+    4300296: SM_props_rubble_036
+    4300298: SM_props_rubble_039
+    4300300: SM_props_rubble_041
+    4300302: SM_props_rubble_042
+    4300304: SM_props_wood3_06
+    4300306: SM_props_wood2_05
+    4300308: SM_props_wood3_07
+    4300310: SM_props_rubble_02
+    4300312: SM_props_rubble_03
+    4300314: SM_props_rubble_04
+    4300316: SM_props_rubble_05
+    4300318: SM_props_rubble_06
+    4300320: SM_props_rubble_07
+    4300322: SM_props_rubble_08
+    4300324: SM_props_rubble_09
+    4300326: SM_props_rubble_010
+    4300328: SM_props_rubble_011
+    4300330: SM_props_rubble_013
+    4300332: SM_props_rubble_015
+    4300334: SM_props_rubble_018
+    4300336: SM_props_rubble_019
+    4300338: SM_props_rubble_020
+    4300340: SM_props_rubble_021
+    4300342: SM_props_rubble_023
+    4300344: SM_props_rubble_028
+    4300346: SM_props_rubble_027
+    4300348: SM_props_rubble_029
+    4300350: SM_props_rubble_030
+    4300352: SM_props_rubble_031
+    4300354: SM_props_rubble_033
+    4300356: SM_props_rubble_034
+    4300358: SM_props_rubble_035
+    4300360: SM_props_rubble_036
+    4300362: SM_props_rubble_039
+    4300364: SM_props_rubble_041
+    4300366: SM_props_rubble_042
+    4300368: SM_props_wood3_06
+    4300370: SM_props_wood2_05
+    4300372: SM_props_wood3_07
+    4300374: SM_props_rubble_02
+    4300376: SM_props_rubble_03
+    4300378: SM_props_rubble_04
+    4300380: SM_props_rubble_05
+    4300382: SM_props_rubble_06
+    4300384: SM_props_rubble_07
+    4300386: SM_props_rubble_08
+    4300388: SM_props_rubble_09
+    4300390: SM_props_rubble_010
+    4300392: SM_props_rubble_011
+    4300394: SM_props_rubble_013
+    4300396: SM_props_rubble_015
+    4300398: SM_props_rubble_018
+    4300400: SM_props_rubble_019
+    4300402: SM_props_rubble_020
+    4300404: SM_props_rubble_021
+    4300406: SM_props_rubble_023
+    4300408: SM_props_rubble_028
+    4300410: SM_props_rubble_027
+    4300412: SM_props_rubble_029
+    4300414: SM_props_rubble_030
+    4300416: SM_props_rubble_031
+    4300418: SM_props_rubble_033
+    4300420: SM_props_rubble_034
+    4300422: SM_props_rubble_035
+    4300424: SM_props_rubble_036
+    4300426: SM_props_rubble_039
+    4300428: SM_props_rubble_041
+    4300430: SM_props_rubble_042
+    4300432: SM_props_wood3_06
+    4300434: SM_props_wood2_05
+    4300436: SM_props_wood3_07
+    4300438: SM_props_rubble_02
+    4300440: SM_props_rubble_03
+    4300442: SM_props_rubble_04
+    4300444: SM_props_rubble_05
+    4300446: SM_props_rubble_06
+    4300448: SM_props_rubble_07
+    4300450: SM_props_rubble_08
+    4300452: SM_props_rubble_09
+    4300454: SM_props_rubble_010
+    4300456: SM_props_rubble_011
+    4300458: SM_props_rubble_013
+    4300460: SM_props_rubble_015
+    4300462: SM_props_rubble_018
+    4300464: SM_props_rubble_019
+    4300466: SM_props_rubble_020
+    4300468: SM_props_rubble_021
+    4300470: SM_props_rubble_023
+    4300472: SM_props_rubble_028
+    4300474: SM_props_rubble_027
+    4300476: SM_props_rubble_029
+    4300478: SM_props_rubble_030
+    4300480: SM_props_rubble_031
+    4300482: SM_props_rubble_033
+    4300484: SM_props_rubble_034
+    4300486: SM_props_rubble_035
+    4300488: SM_props_rubble_036
+    4300490: SM_props_rubble_039
+    4300492: SM_props_rubble_041
+    4300494: SM_props_rubble_042
+    4300496: SM_props_wood3_06
+    4300498: SM_props_wood2_05
+    4300500: SM_props_wood3_07
+    4300502: SM_props_rubble_02
+    4300504: SM_props_rubble_03
+    4300506: SM_props_rubble_04
+    4300508: SM_props_rubble_05
+    4300510: SM_props_rubble_06
+    4300512: SM_props_rubble_07
+    4300514: SM_props_rubble_08
+    4300516: SM_props_rubble_09
+    4300518: SM_props_rubble_010
+    4300520: SM_props_rubble_011
+    4300522: SM_props_rubble_013
+    4300524: SM_props_rubble_015
+    4300526: SM_props_rubble_018
+    4300528: SM_props_rubble_019
+    4300530: SM_props_rubble_020
+    4300532: SM_props_rubble_021
+    4300534: SM_props_rubble_023
+    4300536: SM_props_rubble_028
+    4300538: SM_props_rubble_027
+    4300540: SM_props_rubble_029
+    4300542: SM_props_rubble_030
+    4300544: SM_props_rubble_031
+    4300546: SM_props_rubble_033
+    4300548: SM_props_rubble_034
+    4300550: SM_props_rubble_035
+    4300552: SM_props_rubble_036
+    4300554: SM_props_rubble_039
+    4300556: SM_props_rubble_041
+    4300558: SM_props_rubble_042
+    4300560: SM_props_wood3_06
+    4300562: SM_props_wood2_05
+    4300564: SM_props_wood3_07
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
