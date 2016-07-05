@@ -20,7 +20,8 @@ public class ColoredNames : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        currentColor = guiManager.NameColor;
+        if (guiManager != null)
+            currentColor = guiManager.NameColor;
 
     }
     //Every scene has a different GUIManager so every time we load a level we need to refence it again
@@ -33,7 +34,10 @@ public class ColoredNames : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (currentColor != guiManager.NameColor)
+        if(guiManager != null)
+            guiManager = GameObject.FindObjectOfType<GUIManager>();
+
+        if (currentColor != guiManager.NameColor && currentColor != null)
         {
             lastColor = currentColor;
             currentColor = guiManager.NameColor;
