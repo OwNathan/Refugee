@@ -16,7 +16,7 @@ using AC;
 public class GUIManager : MonoBehaviour
 {
     public List<string> ConversantNames;
-    public Color NameColor { get; private set; }
+    public static Color NameColor { get; private set; }
 
     private List<GameObject> Conversants;
     private GameObject ActiveConversant;
