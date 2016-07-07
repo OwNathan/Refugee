@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: fd394c9c176b6f04a87a96ee541a07b2
+timeCreated: 1467902429
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SM_Landscape_Mountain_003
+    100004: SM_Landscape_Mountain_004
+    100006: SM_Landscape_Mountain_005
+    100008: SM_Landscape_Mountain_006
+    100010: SM_Landscape_Mountain_007
+    100012: SM_Landscape_Mountain_02
+    100014: SM_Landscape_Mountain__002
+    100016: SM_Landscape_Mountain__003
+    100018: SM_Landscape_Mountain__004
+    100020: SM_Landscape_Mountain__005
+    100022: SM_Landscape_Mountain__006
+    100024: SM_Landscape_Mountain__007
+    100026: SM_Landscape_Mountain__008
+    100028: SM_Landscape_Mountain__01
+    400000: //RootNode
+    400002: SM_Landscape_Mountain_003
+    400004: SM_Landscape_Mountain_004
+    400006: SM_Landscape_Mountain_005
+    400008: SM_Landscape_Mountain_006
+    400010: SM_Landscape_Mountain_007
+    400012: SM_Landscape_Mountain_02
+    400014: SM_Landscape_Mountain__002
+    400016: SM_Landscape_Mountain__003
+    400018: SM_Landscape_Mountain__004
+    400020: SM_Landscape_Mountain__005
+    400022: SM_Landscape_Mountain__006
+    400024: SM_Landscape_Mountain__007
+    400026: SM_Landscape_Mountain__008
+    400028: SM_Landscape_Mountain__01
+    2300000: SM_Landscape_Mountain_003
+    2300002: SM_Landscape_Mountain_004
+    2300004: SM_Landscape_Mountain_005
+    2300006: SM_Landscape_Mountain_006
+    2300008: SM_Landscape_Mountain_007
+    2300010: SM_Landscape_Mountain_02
+    2300012: SM_Landscape_Mountain__002
+    2300014: SM_Landscape_Mountain__003
+    2300016: SM_Landscape_Mountain__004
+    2300018: SM_Landscape_Mountain__005
+    2300020: SM_Landscape_Mountain__006
+    2300022: SM_Landscape_Mountain__007
+    2300024: SM_Landscape_Mountain__008
+    2300026: SM_Landscape_Mountain__01
+    3300000: SM_Landscape_Mountain_003
+    3300002: SM_Landscape_Mountain_004
+    3300004: SM_Landscape_Mountain_005
+    3300006: SM_Landscape_Mountain_006
+    3300008: SM_Landscape_Mountain_007
+    3300010: SM_Landscape_Mountain_02
+    3300012: SM_Landscape_Mountain__002
+    3300014: SM_Landscape_Mountain__003
+    3300016: SM_Landscape_Mountain__004
+    3300018: SM_Landscape_Mountain__005
+    3300020: SM_Landscape_Mountain__006
+    3300022: SM_Landscape_Mountain__007
+    3300024: SM_Landscape_Mountain__008
+    3300026: SM_Landscape_Mountain__01
+    4300000: SM_Landscape_Mountain__01
+    4300002: SM_Landscape_Mountain__002
+    4300004: SM_Landscape_Mountain_02
+    4300006: SM_Landscape_Mountain_003
+    4300008: SM_Landscape_Mountain__003
+    4300010: SM_Landscape_Mountain_004
+    4300012: SM_Landscape_Mountain__004
+    4300014: SM_Landscape_Mountain_005
+    4300016: SM_Landscape_Mountain_006
+    4300018: SM_Landscape_Mountain_007
+    4300020: SM_Landscape_Mountain__005
+    4300022: SM_Landscape_Mountain__006
+    4300024: SM_Landscape_Mountain__007
+    4300026: SM_Landscape_Mountain__008
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
