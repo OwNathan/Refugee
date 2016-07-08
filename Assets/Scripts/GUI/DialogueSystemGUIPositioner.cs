@@ -24,6 +24,8 @@ public class DialogueSystemGUIPositioner : MonoBehaviour
     {
         OriginalUIPosition = DialoguePanelTransform.anchoredPosition;
         Offset = new Vector2(PaddingX, PaddingY);
+        lastScreenPos = new Vector2();
+        OriginalUIPosition = new Vector2();
     }
 
 
