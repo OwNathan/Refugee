@@ -5,7 +5,9 @@ public class SFXManager : MonoBehaviour
 {
     public AudioSource FootstepSFX;
     public float PitchVariation;
+    public bool DontPlay;
     private float originalPitch;
+
     
     void Awake()
     {
@@ -16,8 +18,12 @@ public class SFXManager : MonoBehaviour
     {
         if (FootstepSFX != null)
         {
-            FootstepSFX.pitch = originalPitch + Random.Range(-PitchVariation, PitchVariation);
-            FootstepSFX.Play();
+            if (!DontPlay)
+            {
+                FootstepSFX.pitch = originalPitch + Random.Range(-PitchVariation, PitchVariation);
+                FootstepSFX.Play();
+            }
+            
         }
     }
 }
