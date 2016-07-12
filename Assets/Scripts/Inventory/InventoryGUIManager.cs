@@ -6,10 +6,7 @@ public class InventoryGUIManager : MonoBehaviour
 {
     public Animator InventoryAnimator;
     public List<InventorySlot> Slots;
-
-    void Start()
-    {
-    }
+    
     public void Add(InventoryItem item)
     {
         List<InventorySlot> fullSlots = this.Slots.Where(hS => hS.Item != null).ToList();

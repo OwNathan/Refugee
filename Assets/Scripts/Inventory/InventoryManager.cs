@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 //INVENTARIO DI GIOCO
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    
+    private static string VariableResetScene = "_MAIN_MENU";
 
     #region LUA
 
@@ -96,13 +98,12 @@ public class InventoryManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            items = new Dictionary<InventoryItem, int>();
+
             DontDestroyOnLoad(this.gameObject);
         }
         else
             Destroy(this.gameObject);
-
-
-        items = new Dictionary<InventoryItem, int>();
     }
 
     private void Start()
@@ -110,8 +111,19 @@ public class InventoryManager : MonoBehaviour
         inventoryGUI = AC.PlayerMenus.GetMenuWithName("RefugeeInventory").canvas.gameObject.GetComponent<InventoryGUIManager>();
     }
 
+    private void ResetInventory()
+    {
+        items.Keys.ToList().ForEach(hKey =>
+        {
+            RemoveItems(hKey.Name, items[hKey].ToString());
+        });
+    }
+
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == VariableResetScene && items.Count != 0)
+            ResetInventory();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("<color=blue>INVENTORY:</color>");
