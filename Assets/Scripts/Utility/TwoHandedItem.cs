@@ -7,6 +7,8 @@ public class TwoHandedItem : MonoBehaviour
     public Transform LeftHand;
     public GameObject Item;
     public Light MuzzleFlashlight;
+    public AudioSource ShootSFX;
+    public bool SoundEnable;
 
     [HideInInspector]
     public bool IsTwoHanded;
@@ -39,8 +41,13 @@ public class TwoHandedItem : MonoBehaviour
     void OnShoot()
     {
         MuzzleFlashlight.enabled = true;
+        if (ShootSFX != null && SoundEnable)
+            ShootSFX.Play();
     }
-
+    public void OnShootEnable()
+    {
+        SoundEnable = true;
+    }
     void OnShootEnd()
     {
         MuzzleFlashlight.enabled = false;
