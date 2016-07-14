@@ -146,14 +146,16 @@ ModelImporter:
       - time: 0.15617932
         functionName: OnShoot
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 6728a45cbbb9a9741a7fd3d82db8e7d3,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.23664208
         functionName: OnShootEnd
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 6728a45cbbb9a9741a7fd3d82db8e7d3,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
