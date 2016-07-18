@@ -126,7 +126,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("<color=blue>INVENTORY:</color>");
+            //Debug.Log("<color=blue>INVENTORY:</color>");
             items.ToList().ForEach(kvp => Debug.Log(kvp.Key.Name + ": " + kvp.Value));
         }
     }
