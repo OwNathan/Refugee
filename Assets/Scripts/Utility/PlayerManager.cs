@@ -33,4 +33,8 @@ public class PlayerManager : MonoBehaviour
         if (handsCollider != null)
             handsCollider.enabled = false;
     }
+    public void OnDisable()
+    {
+        Target.gameObject.SetActive(false);
+    }
 }
