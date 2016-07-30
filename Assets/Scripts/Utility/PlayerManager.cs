@@ -11,11 +11,11 @@ public class PlayerManager : MonoBehaviour
     public void Start()
     {
         Target = GameObject.FindObjectOfType<Player>().gameObject;
-        if(Target != null)
+        if (Target != null)
         {
             handsCollider = Target.GetComponentInChildren<BoxCollider>();
 
-            if(GiveLabelToRashid)
+            if (GiveLabelToRashid)
             {
                 Hotspot hs = Target.AddComponent<Hotspot>();
                 hs.hotspotName = "Rashid";
@@ -35,6 +35,12 @@ public class PlayerManager : MonoBehaviour
     }
     public void OnDisable()
     {
-        Target.gameObject.SetActive(false);
+        if (Target != null)
+            Target.gameObject.SetActive(false);
+    }
+    public void DestroyPlayer()
+    {
+        if (Target != null)
+            GameObject.Destroy(Target);
     }
 }
